@@ -18,9 +18,9 @@ const commonVideos = [
     key: "glides"
   },
   {
-    id: "E8G2QAt64yk",
+    id: "sr3hW43i9tg",
     source: "Ask Doctor Jo",
-    url: "https://www.youtube.com/watch?v=E8G2QAt64yk",
+    url: "https://www.youtube.com/watch?v=sr3hW43i9tg",
     key: "daily"
   },
   {
