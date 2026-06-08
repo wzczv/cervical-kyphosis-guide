@@ -8,25 +8,25 @@ const commonVideos = [
   {
     id: "gZUNcfcdHW4",
     source: "Ask Doctor Jo",
-    url: "https://www.askdoctorjo.com/video/pinched-nerve-cervical-radiculopathy-stretches-exercises/",
+    url: "https://www.youtube.com/watch?v=gZUNcfcdHW4",
     key: "pinched"
   },
   {
     id: "yZJ1MfKqByY",
     source: "Ask Doctor Jo",
-    url: "https://www.askdoctorjo.com/content/neural-glides-ulnar-median-radial-nerves",
+    url: "https://www.youtube.com/watch?v=yZJ1MfKqByY",
     key: "glides"
   },
   {
     id: "E8G2QAt64yk",
     source: "Ask Doctor Jo",
-    url: "https://www.askdoctorjo.com/video/neck-pain-relief-exercise-daily/",
+    url: "https://www.youtube.com/watch?v=E8G2QAt64yk",
     key: "daily"
   },
   {
     id: "WOp5Fnma-po",
     source: "Ask Doctor Jo",
-    url: "https://www.askdoctorjo.com/video/best-shoulder-pain-relief-exercise-real-time-routine/",
+    url: "https://www.youtube.com/watch?v=WOp5Fnma-po",
     key: "shoulder"
   }
 ];
@@ -265,10 +265,10 @@ const content = {
       "rehab.title": "A practical rehab map for non-emergency cases.",
       "rehab.copy":
         "The safest framing is graded exposure: calm symptoms, restore tolerable motion, build shoulder-blade and thoracic strength, then return to sport with load rules.",
-      "videos.eyebrow": "Video library",
-      "videos.title": "Curated YouTube rehab references.",
+      "videos.eyebrow": "Exercise guides",
+      "videos.title": "Read the drill first, then use YouTube as reference.",
       "videos.copy":
-        "These videos are references to discuss with a clinician, especially if symptoms travel into the arm or hand. Stop if symptoms worsen, spread, or linger after a session.",
+        "Each card explains who the drill may fit, how to try it, and when to stop. YouTube is used as a visual reference after the on-site guidance.",
       "sports.eyebrow": "Sport relationship",
       "sports.title": "Surfing, skiing, and climbing change neck loading.",
       "sports.copy":
@@ -418,37 +418,87 @@ const content = {
       }
     ],
     videos: {
+      guideLabels: {
+        bestFor: "Best for",
+        steps: "How to try it",
+        stop: "Stop if"
+      },
       radiculopathy: {
         tag: "Education + exercise",
         title: "Cervical Radiculopathy | Pinched Nerve in Neck Rehab",
         body:
-          "A broad evidence-informed overview covering myths, exercise options, and when surgery enters the conversation."
+          "A broad evidence-informed overview covering myths, exercise options, and when surgery enters the conversation.",
+        bestFor:
+          "Readers with neck pain plus arm pain, tingling, or hand numbness who need a framework before copying exercises.",
+        steps: [
+          "Use the video to understand options, not to diagnose which nerve is involved.",
+          "Compare any exercise with your own 24-hour response: calmer, unchanged, or worse.",
+          "Prioritize positions that reduce arm symptoms before chasing harder strengthening."
+        ],
+        stop:
+          "new weakness, spreading numbness, balance changes, hand clumsiness, or symptoms that stay worse the next day."
       },
       pinched: {
         tag: "Stretches + exercises",
         title: "Pinched Nerve Cervical Radiculopathy Stretches & Exercises",
         body:
-          "Useful for showing common home movements, with the reminder that radicular symptoms should be monitored carefully."
+          "Useful for showing common home movements, with the reminder that radicular symptoms should be monitored carefully.",
+        bestFor:
+          "Mild to moderate radiating symptoms that are not rapidly worsening and have no red flags.",
+        steps: [
+          "Start with the smallest comfortable range, especially for neck side-bending or rotation.",
+          "Keep effort low for the first session; the goal is symptom information, not fatigue.",
+          "Reduce range or skip a drill if arm symptoms move farther down the arm."
+        ],
+        stop:
+          "pain shoots below the elbow, numbness increases, grip feels weaker, or dizziness appears."
       },
       glides: {
         tag: "Nerve mobility",
         title: "Neural Glides for Ulnar, Median & Radial Nerves",
         body:
-          "Reference for gentle nerve sliding patterns. These should feel easy and should not be treated as aggressive stretching."
+          "Reference for gentle nerve sliding patterns. These should feel easy and should not be treated as aggressive stretching.",
+        bestFor:
+          "Tingling that changes with arm, wrist, or neck position, especially when symptoms are irritable but not progressive.",
+        steps: [
+          "Move in and out of tension smoothly; do not hold the end position.",
+          "Use fewer repetitions than you think you need, then reassess the next morning.",
+          "Match the glide to the symptom pattern instead of doing all nerve glides every day."
+        ],
+        stop:
+          "tingling becomes sharper, lasts after the set, or spreads into a larger hand area."
       },
       daily: {
         tag: "Neck control",
         title: "Neck Pain Relief Daily Exercise",
         body:
-          "A simple starting point for neck motion and control when symptoms are mild and non-emergency."
+          "A simple starting point for neck motion and control when symptoms are mild and non-emergency.",
+        bestFor:
+          "Stiff, achy necks without progressive arm symptoms, weakness, or spinal-cord warning signs.",
+        steps: [
+          "Use slow, comfortable motion to map what your neck tolerates today.",
+          "Pair neck control with breathing and relaxed shoulders instead of forcing posture.",
+          "Keep the session short enough that symptoms settle within the same day."
+        ],
+        stop:
+          "movement creates arm pain, visual symptoms, dizziness, nausea, or a headache that escalates."
       },
       shoulder: {
         tag: "Shoulder blade support",
         title: "Shoulder Pain Relief Exercise Routine",
         body:
-          "Shoulder blade and upper-back work matters because the neck often overworks when the thoracic spine and scapulae underperform."
+          "Shoulder blade and upper-back work matters because the neck often overworks when the thoracic spine and scapulae underperform.",
+        bestFor:
+          "People whose neck symptoms flare with desk work, paddling, climbing, carrying, or shoulder fatigue.",
+        steps: [
+          "Keep the neck quiet while the shoulder blade moves; avoid shrugging through every rep.",
+          "Build easy volume before adding bands, weights, or long holds.",
+          "Use it as support work, not as proof that the neck curve has been corrected."
+        ],
+        stop:
+          "shoulder work reproduces arm numbness, pinching, or neck pain that lingers beyond the workout."
       },
-      link: "Open source"
+      link: "Watch reference on YouTube"
     },
     sports: [
       {
@@ -628,10 +678,10 @@ const content = {
       "rehab.title": "非急症情况下的实用康复地图。",
       "rehab.copy":
         "更稳妥的框架是渐进暴露：先降低症状敏感度，再恢复可耐受活动度，建立肩胛和胸椎力量，最后用负荷规则回到运动。",
-      "videos.eyebrow": "视频库",
-      "videos.title": "精选 YouTube 康复参考。",
+      "videos.eyebrow": "动作指南",
+      "videos.title": "先看站内训练说明，再把 YouTube 当作动作参考。",
       "videos.copy":
-        "这些视频适合作为和医生或物理治疗师讨论的参考，尤其是症状放射到手臂或手部时。练习后如果症状加重、扩散或持续，应停止并评估。",
+        "每张卡片先说明适合谁、怎么尝试、何时停止。YouTube 用来辅助看动作，不让网站变成单纯跳转页。",
       "sports.eyebrow": "运动关系",
       "sports.title": "冲浪、滑雪和攀岩会改变颈部负荷。",
       "sports.copy":
@@ -780,32 +830,72 @@ const content = {
       }
     ],
     videos: {
+      guideLabels: {
+        bestFor: "适合谁",
+        steps: "怎么尝试",
+        stop: "停止信号"
+      },
       radiculopathy: {
         tag: "教育 + 练习",
         title: "颈椎神经根症状：夹住的颈部神经康复",
-        body: "较系统地讲解误区、练习选择，以及什么时候需要讨论手术等更高阶处理。"
+        body: "较系统地讲解误区、练习选择，以及什么时候需要讨论手术等更高阶处理。",
+        bestFor: "有颈痛并伴随手臂痛、刺麻或手指麻的人，先建立判断框架，再决定是否跟练。",
+        steps: [
+          "先用视频理解可选路径，不要只靠视频判断是哪条神经受压。",
+          "每个动作都用 24 小时反应来判断：变轻、没变，还是加重。",
+          "优先选择能让手臂症状减轻或不扩散的姿势，再考虑更强的训练。"
+        ],
+        stop: "出现新的无力、麻木扩散、走路不稳、手变笨，或第二天仍明显加重。"
       },
       pinched: {
         tag: "拉伸 + 练习",
         title: "颈椎神经根症状的伸展和练习",
-        body: "适合展示常见居家动作，但有手臂放射症状时要谨慎监测反应。"
+        body: "适合展示常见居家动作，但有手臂放射症状时要谨慎监测反应。",
+        bestFor: "轻到中度的放射痛或麻木，且没有快速恶化和危险信号的人。",
+        steps: [
+          "从最小、最舒服的活动范围开始，尤其是侧屈和旋转。",
+          "第一组只做低强度，用来收集症状反应，而不是追求酸累。",
+          "如果症状往手臂远端跑，就缩小幅度或跳过这个动作。"
+        ],
+        stop: "疼痛射到肘部以下、麻木增加、握力变弱，或出现头晕。"
       },
       glides: {
         tag: "神经滑动",
         title: "尺神经、正中神经和桡神经滑动",
-        body: "神经滑动应轻柔、顺畅，不应当做强拉伸来做。"
+        body: "神经滑动应轻柔、顺畅，不应当做强拉伸来做。",
+        bestFor: "手指刺麻会随手臂、手腕或颈部姿势变化，但症状没有进行性加重的人。",
+        steps: [
+          "像让神经轻轻滑过一样来回动，不要在末端拉住。",
+          "次数宁可少一点，第二天再看麻木是否更安静。",
+          "按症状分布选择一种神经滑动，不必每天把所有神经都做一遍。"
+        ],
+        stop: "刺麻变尖锐、做完仍持续，或扩散到更大的手部区域。"
       },
       daily: {
         tag: "颈部控制",
         title: "每日颈痛缓解练习",
-        body: "症状较轻且没有危险信号时，可作为颈部活动和控制的起点。"
+        body: "症状较轻且没有危险信号时，可作为颈部活动和控制的起点。",
+        bestFor: "颈部僵硬酸痛，但没有进行性手臂症状、无力或脊髓危险信号的人。",
+        steps: [
+          "用慢而舒服的动作，观察今天颈部能接受什么。",
+          "配合呼吸和肩膀放松，不要硬把姿势顶到标准位置。",
+          "把训练控制在当天能恢复的量，不追求一次做很多。"
+        ],
+        stop: "动作引出手臂痛、视觉异常、头晕、恶心，或头痛明显升级。"
       },
       shoulder: {
         tag: "肩胛支撑",
         title: "肩痛缓解与上背练习",
-        body: "肩胛和上背能力很关键，因为胸椎和肩胛表现不足时，颈部常常代偿过度。"
+        body: "肩胛和上背能力很关键，因为胸椎和肩胛表现不足时，颈部常常代偿过度。",
+        bestFor: "久坐、划水、攀岩、背包或肩膀疲劳后容易颈部发作的人。",
+        steps: [
+          "让肩胛在动，颈部尽量安静，避免每一下都耸肩代偿。",
+          "先建立轻松的次数和耐力，再加弹力带、重量或长时间保持。",
+          "把它当作支撑训练，不要把它理解成已经把曲度练回来了。"
+        ],
+        stop: "肩部练习诱发手麻、卡压感，或颈痛在训练后持续不退。"
       },
-      link: "打开来源"
+      link: "在 YouTube 观看参考"
     },
     sports: [
       {
@@ -982,10 +1072,10 @@ const content = {
       "rehab.title": "非緊急例のための実用的リハビリ地図。",
       "rehab.copy":
         "安全な考え方は段階的な負荷です。症状を落ち着かせ、許容できる可動性を戻し、肩甲帯と胸椎の力を作り、ルールを持ってスポーツへ戻します。",
-      "videos.eyebrow": "動画ライブラリ",
-      "videos.title": "厳選した YouTube リハビリ参考動画。",
+      "videos.eyebrow": "運動ガイド",
+      "videos.title": "まずサイト内の説明を読み、YouTube は動きの参考にする。",
       "videos.copy":
-        "腕や手に症状がある場合は、これらの動画を医師や理学療法士と相談するための参考にしてください。症状が悪化、拡大、または長引く場合は中止します。",
+        "各カードは、適する人、試し方、中止サインを先に説明します。YouTube は動きを確認するための参考です。",
       "sports.eyebrow": "スポーツとの関係",
       "sports.title": "サーフィン、スキー、クライミングは首の負荷を変える。",
       "sports.copy":
@@ -1134,32 +1224,72 @@ const content = {
       }
     ],
     videos: {
+      guideLabels: {
+        bestFor: "適する人",
+        steps: "試し方",
+        stop: "中止サイン"
+      },
       radiculopathy: {
         tag: "教育 + 運動",
         title: "頸椎神経根症：首の「挟まれた神経」リハビリ",
-        body: "誤解、運動選択、手術を検討する場面まで広く扱う参考動画です。"
+        body: "誤解、運動選択、手術を検討する場面まで広く扱う参考動画です。",
+        bestFor: "首痛に腕痛、しびれ、手指の感覚変化があり、運動を真似る前に全体像を知りたい人。",
+        steps: [
+          "動画は診断ではなく、選択肢を理解するために使います。",
+          "各運動は 24 時間後の反応で判断します。軽くなる、変わらない、悪くなるを記録します。",
+          "腕症状が減る姿勢を優先し、強い筋トレはその後に進めます。"
+        ],
+        stop: "新しい筋力低下、しびれの拡大、歩行不安定、手の不器用さ、翌日の悪化がある場合。"
       },
       pinched: {
         tag: "ストレッチ + 運動",
         title: "頸椎神経根症のストレッチと運動",
-        body: "一般的なホームエクササイズの参考。腕への放散症状がある場合は反応を慎重に見ます。"
+        body: "一般的なホームエクササイズの参考。腕への放散症状がある場合は反応を慎重に見ます。",
+        bestFor: "軽度から中等度の放散痛やしびれで、急速な悪化や危険サインがない人。",
+        steps: [
+          "首の側屈や回旋は、最小で快適な範囲から始めます。",
+          "最初のセッションは低強度にし、疲労より症状反応を見ます。",
+          "症状が腕の遠くへ広がる場合は、範囲を減らすかその運動を避けます。"
+        ],
+        stop: "痛みが肘より下へ走る、しびれが増える、握力が落ちる、めまいが出る場合。"
       },
       glides: {
         tag: "神経滑走",
         title: "尺骨神経、正中神経、橈骨神経のグライド",
-        body: "神経グライドは軽く滑らせる運動で、強いストレッチとして行うものではありません。"
+        body: "神経グライドは軽く滑らせる運動で、強いストレッチとして行うものではありません。",
+        bestFor: "腕、手首、首の姿勢でしびれが変化し、進行性ではない人。",
+        steps: [
+          "末端で止めず、張力に出入りするように滑らかに動かします。",
+          "回数は少なめにし、翌朝のしびれを確認します。",
+          "すべてを行うのではなく、症状パターンに合うグライドを選びます。"
+        ],
+        stop: "しびれが鋭くなる、セット後も残る、手の広い範囲へ広がる場合。"
       },
       daily: {
         tag: "頸部制御",
         title: "毎日の首痛軽減エクササイズ",
-        body: "症状が軽く危険サインがない場合の、首の動きと制御の入り口になります。"
+        body: "症状が軽く危険サインがない場合の、首の動きと制御の入り口になります。",
+        bestFor: "首のこわばりや鈍痛があり、進行する腕症状、筋力低下、脊髄サインがない人。",
+        steps: [
+          "ゆっくり快適に動かし、今日の許容範囲を確認します。",
+          "姿勢を押し込まず、呼吸と肩の脱力を合わせます。",
+          "その日のうちに落ち着く量にとどめます。"
+        ],
+        stop: "腕痛、視覚症状、めまい、吐き気、強まる頭痛が出る場合。"
       },
       shoulder: {
         tag: "肩甲帯サポート",
         title: "肩痛軽減と上背部エクササイズ",
-        body: "胸椎や肩甲骨が働きにくいと首が代償しやすいため、上背部の力は重要です。"
+        body: "胸椎や肩甲骨が働きにくいと首が代償しやすいため、上背部の力は重要です。",
+        bestFor: "デスクワーク、パドリング、クライミング、荷物、肩疲労で首症状が出やすい人。",
+        steps: [
+          "肩甲骨を動かし、首は静かに保ちます。毎回肩をすくめないようにします。",
+          "バンドや重り、長い保持を足す前に、楽な回数と持久力を作ります。",
+          "首のカーブを直した証明ではなく、支える運動として使います。"
+        ],
+        stop: "肩の運動で手のしびれ、挟まる感じ、残る首痛が出る場合。"
       },
-      link: "出典を開く"
+      link: "YouTube で参考を見る"
     },
     sports: [
       {
@@ -1336,10 +1466,10 @@ const content = {
       "rehab.title": "Un mapa práctico para casos no urgentes.",
       "rehab.copy":
         "El marco más seguro es la exposición gradual: calmar síntomas, recuperar movimiento tolerable, fortalecer escápulas y columna torácica, y volver al deporte con reglas de carga.",
-      "videos.eyebrow": "Biblioteca de videos",
-      "videos.title": "Referencias de rehabilitación en YouTube.",
+      "videos.eyebrow": "Guías de ejercicio",
+      "videos.title": "Lee la guía primero; usa YouTube como referencia visual.",
       "videos.copy":
-        "Estos videos sirven como referencia para hablar con un profesional, especialmente si los síntomas bajan al brazo o la mano. Detente si empeoran, se extienden o duran después de la sesión.",
+        "Cada tarjeta explica para quién puede servir, cómo probarlo y cuándo detenerse. YouTube queda como apoyo visual, no como simple salto fuera del sitio.",
       "sports.eyebrow": "Relación con deporte",
       "sports.title": "Surf, esquí y escalada cambian la carga del cuello.",
       "sports.copy":
@@ -1489,36 +1619,86 @@ const content = {
       }
     ],
     videos: {
+      guideLabels: {
+        bestFor: "Mejor para",
+        steps: "Cómo probarlo",
+        stop: "Detente si"
+      },
       radiculopathy: {
         tag: "Educación + ejercicio",
         title: "Radiculopatía cervical: rehabilitación del nervio pinzado en el cuello",
         body:
-          "Panorama amplio sobre mitos, opciones de ejercicio y cuándo entra la conversación quirúrgica."
+          "Panorama amplio sobre mitos, opciones de ejercicio y cuándo entra la conversación quirúrgica.",
+        bestFor:
+          "Personas con dolor de cuello más dolor de brazo, hormigueo o dedos dormidos que necesitan contexto antes de copiar ejercicios.",
+        steps: [
+          "Usa el video para entender opciones, no para diagnosticar qué nervio está implicado.",
+          "Juzga cada ejercicio por la respuesta de 24 horas: calma, igual o peor.",
+          "Prioriza posturas que reduzcan síntomas del brazo antes de añadir fuerza difícil."
+        ],
+        stop:
+          "hay nueva debilidad, entumecimiento que se extiende, problemas de equilibrio, torpeza de la mano o empeora al día siguiente."
       },
       pinched: {
         tag: "Estiramientos + ejercicios",
         title: "Estiramientos y ejercicios para radiculopatía cervical",
         body:
-          "Útil para movimientos caseros comunes, con vigilancia especial si hay síntomas que bajan al brazo."
+          "Útil para movimientos caseros comunes, con vigilancia especial si hay síntomas que bajan al brazo.",
+        bestFor:
+          "Síntomas irradiados leves o moderados que no empeoran rápido y no tienen señales de alarma.",
+        steps: [
+          "Empieza con el rango más pequeño y cómodo, sobre todo en inclinación o rotación del cuello.",
+          "Mantén baja la intensidad al principio; busca información de síntomas, no fatiga.",
+          "Reduce el rango o salta el ejercicio si los síntomas bajan más por el brazo."
+        ],
+        stop:
+          "el dolor baja del codo, aumenta el entumecimiento, el agarre se debilita o aparece mareo."
       },
       glides: {
         tag: "Movilidad neural",
         title: "Deslizamientos del nervio cubital, mediano y radial",
         body:
-          "Referencia para patrones suaves de deslizamiento neural. No deben sentirse como estiramientos agresivos."
+          "Referencia para patrones suaves de deslizamiento neural. No deben sentirse como estiramientos agresivos.",
+        bestFor:
+          "Hormigueo que cambia con la posición del brazo, muñeca o cuello, sin progresión rápida.",
+        steps: [
+          "Entra y sale de la tensión suavemente; no sostengas el final del movimiento.",
+          "Haz menos repeticiones de las que crees necesitar y revisa la respuesta al día siguiente.",
+          "Elige el deslizamiento según el patrón, no todos los nervios todos los días."
+        ],
+        stop:
+          "el hormigueo se vuelve agudo, dura después de la serie o se extiende a más zonas de la mano."
       },
       daily: {
         tag: "Control cervical",
         title: "Ejercicio diario para aliviar dolor de cuello",
-        body: "Punto de partida simple para movilidad y control si los síntomas son leves y no hay señales de alarma."
+        body: "Punto de partida simple para movilidad y control si los síntomas son leves y no hay señales de alarma.",
+        bestFor:
+          "Cuello rígido o doloroso sin síntomas progresivos del brazo, debilidad ni señales medulares.",
+        steps: [
+          "Muévete lento y cómodo para mapear lo que el cuello tolera hoy.",
+          "Combina control cervical con respiración y hombros relajados, sin forzar postura.",
+          "Mantén la sesión lo bastante corta para que los síntomas se calmen el mismo día."
+        ],
+        stop:
+          "aparece dolor de brazo, síntomas visuales, mareo, náusea o dolor de cabeza que aumenta."
       },
       shoulder: {
         tag: "Soporte escapular",
         title: "Rutina para dolor de hombro y espalda alta",
         body:
-          "El trabajo escapular y torácico importa porque el cuello suele compensar cuando la espalda alta no ayuda."
+          "El trabajo escapular y torácico importa porque el cuello suele compensar cuando la espalda alta no ayuda.",
+        bestFor:
+          "Personas cuyos síntomas del cuello suben con escritorio, remada, escalada, cargar peso o fatiga de hombro.",
+        steps: [
+          "Deja que se mueva la escápula mientras el cuello permanece tranquilo; evita encoger hombros en cada repetición.",
+          "Construye volumen fácil antes de añadir bandas, peso o pausas largas.",
+          "Úsalo como apoyo, no como prueba de que la curva cervical ya se corrigió."
+        ],
+        stop:
+          "el trabajo de hombro reproduce entumecimiento del brazo, pinzamiento o dolor de cuello que persiste."
       },
-      link: "Abrir fuente"
+      link: "Ver referencia en YouTube"
     },
     sports: [
       {
@@ -1775,13 +1955,14 @@ function renderVideos() {
   const grid = document.querySelector("#video-grid");
   const cards = commonVideos.map((video) => {
     const copy = active.videos[video.key];
+    const labels = active.videos.guideLabels;
     const card = document.createElement("article");
     card.className = "video-card";
 
     const frame = document.createElement("div");
     frame.className = "video-frame";
     const iframe = document.createElement("iframe");
-    iframe.src = `https://www.youtube.com/embed/${video.id}`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}`;
     iframe.title = `${copy.title} - ${video.source}`;
     iframe.allow =
       "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
@@ -1797,16 +1978,54 @@ function renderVideos() {
     const title = document.createElement("h3");
     title.textContent = copy.title;
     const description = document.createElement("p");
+    description.className = "video-summary";
     description.textContent = copy.body;
+
+    const guide = document.createElement("div");
+    guide.className = "video-guide";
+
+    const bestFor = document.createElement("div");
+    bestFor.className = "video-guide-block";
+    const bestForLabel = document.createElement("h4");
+    bestForLabel.textContent = labels.bestFor;
+    const bestForText = document.createElement("p");
+    bestForText.textContent = copy.bestFor;
+    bestFor.append(bestForLabel, bestForText);
+
+    const steps = document.createElement("div");
+    steps.className = "video-guide-block";
+    const stepsLabel = document.createElement("h4");
+    stepsLabel.textContent = labels.steps;
+    const stepsList = document.createElement("ol");
+    copy.steps.forEach((step) => {
+      const item = document.createElement("li");
+      item.textContent = step;
+      stepsList.append(item);
+    });
+    steps.append(stepsLabel, stepsList);
+
+    const stop = document.createElement("div");
+    stop.className = "video-guide-block warning";
+    const stopLabel = document.createElement("h4");
+    stopLabel.textContent = labels.stop;
+    const stopText = document.createElement("p");
+    stopText.textContent = copy.stop;
+    stop.append(stopLabel, stopText);
+    guide.append(bestFor, steps, stop);
+
+    body.append(tag, title, description, guide);
+
+    const actions = document.createElement("div");
+    actions.className = "video-actions";
     const link = document.createElement("a");
     link.className = "video-link";
     link.href = video.url;
     link.target = "_blank";
-    link.rel = "noreferrer";
+    link.rel = "noopener noreferrer";
     link.textContent = active.videos.link;
-    body.append(tag, title, description, link);
+    actions.append(link);
 
-    card.append(frame, body);
+    card.append(body, frame, actions);
     return card;
   });
   grid.replaceChildren(...cards);

@@ -485,6 +485,8 @@ td:first-child {
 }
 
 .video-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -501,6 +503,8 @@ td:first-child {
 }
 
 .video-body {
+  display: grid;
+  gap: 14px;
   padding: 20px;
 }
 
@@ -511,6 +515,53 @@ td:first-child {
   font-weight: 900;
   margin-bottom: 9px;
   text-transform: uppercase;
+}
+
+.video-summary {
+  margin: 0;
+}
+
+.video-guide {
+  display: grid;
+  gap: 10px;
+}
+
+.video-guide-block {
+  background: #f6fbfa;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px;
+}
+
+.video-guide-block.warning {
+  background: #fff8f4;
+  border-color: rgba(224, 105, 69, 0.28);
+}
+
+.video-guide-block h4 {
+  color: var(--ink);
+  font-size: 0.86rem;
+  margin: 0 0 7px;
+}
+
+.video-guide-block p,
+.video-guide-block ol {
+  color: var(--muted);
+  font-size: 0.94rem;
+  margin: 0;
+}
+
+.video-guide-block ol {
+  padding-left: 18px;
+}
+
+.video-guide-block li + li {
+  margin-top: 6px;
+}
+
+.video-actions {
+  border-top: 1px solid var(--line);
+  padding: 16px 20px 20px;
 }
 
 .video-link,
