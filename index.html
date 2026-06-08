@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cervical Curve Guide | Conservative Rehab for Cervical Kyphosis</title>
+    <meta
+      name="description"
+      content="A multilingual education site about cervical kyphosis, loss of cervical lordosis, conservative rehabilitation, nerve glides, back strengthening, and sport-specific neck care."
+    />
+    <meta name="theme-color" content="#f5fbfb" />
+    <link rel="preload" href="assets/hero-cervical-kyphosis.png" as="image" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        "name": "Cervical Curve Guide",
+        "about": ["Cervical kyphosis", "Loss of cervical lordosis", "Neck pain rehabilitation"],
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Patients and active adults researching conservative neck rehabilitation"
+        },
+        "medicalAudience": "Patient",
+        "inLanguage": ["en", "zh-Hans", "ja", "es"],
+        "lastReviewed": "2026-06-08"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" data-elevated="false">
+      <a class="brand" href="#top" aria-label="Cervical Curve Guide home">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span data-i18n="brand">Cervical Curve Guide</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#learn" data-i18n="nav.learn">Learn</a>
+        <a href="#symptoms" data-i18n="nav.symptoms">Symptoms</a>
+        <a href="#rehab" data-i18n="nav.rehab">Rehab</a>
+        <a href="#videos" data-i18n="nav.videos">Videos</a>
+        <a href="#sports" data-i18n="nav.sports">Sports</a>
+      </nav>
+      <div class="language-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-button is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-button" data-lang="zh">中文</button>
+        <button type="button" class="lang-button" data-lang="ja">日本語</button>
+        <button type="button" class="lang-button" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/hero-cervical-kyphosis.png"
+          alt="Educational illustration of cervical spine alignment and conservative rehabilitation"
+        />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Evidence-aware neck curve education</p>
+          <h1 id="hero-title" data-i18n="hero.title">Cervical kyphosis, explained without panic.</h1>
+          <p class="hero-copy" data-i18n="hero.copy">
+            A multilingual guide for understanding reversed or flattened cervical curve findings, conservative rehab, nerve mobility,
+            upper-back strength, and smarter sport participation.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#rehab" data-i18n="hero.primary">Start with the rehab map</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="notice-band" aria-label="Medical notice">
+        <strong data-i18n="notice.title">Important:</strong>
+        <span data-i18n="notice.copy">
+          This site is educational, not a diagnosis or prescription. New weakness, numbness, gait changes, fever, trauma, cancer history,
+          or bowel/bladder symptoms need prompt medical care.
+        </span>
+      </section>
+
+      <section class="section" id="learn" aria-labelledby="learn-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="learn.eyebrow">The core idea</p>
+          <h2 id="learn-title" data-i18n="learn.title">The curve matters, but symptoms matter more.</h2>
+          <p data-i18n="learn.copy">
+            "Cervical kyphosis" can describe a reversed curve, while "loss of cervical lordosis" often describes a flattened curve.
+            An image finding alone does not prove the pain source; function, nerve signs, sleep, work exposure, and sport load all matter.
+          </p>
+        </div>
+        <div class="feature-grid" id="learn-cards"></div>
+      </section>
+
+      <section class="section symptom-section" id="symptoms" aria-labelledby="symptoms-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="symptoms.eyebrow">Symptom map</p>
+          <h2 id="symptoms-title" data-i18n="symptoms.title">Hand numbness is a clue, not a diagnosis.</h2>
+          <p data-i18n="symptoms.copy">
+            Cervical kyphosis or straightening becomes clinically important when it appears with nerve-root or spinal-cord symptoms:
+            radiating arm pain, tingling, weakness, hand clumsiness, or walking changes.
+          </p>
+        </div>
+        <div class="symptom-layout">
+          <div class="symptom-grid" id="symptom-cards"></div>
+          <div class="table-panel">
+            <div class="table-panel-header">
+              <p class="eyebrow" data-i18n="nerve.eyebrow">Finger pattern guide</p>
+              <h3 data-i18n="nerve.title">Which nerve pattern fits the fingers?</h3>
+              <p data-i18n="nerve.copy">
+                Patterns overlap, and double-crush can happen. Use this as a discussion guide for clinical exam, imaging, and EMG/NCS when appropriate.
+              </p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th data-i18n="nerve.col.source">Source</th>
+                    <th data-i18n="nerve.col.numbness">Common numb area</th>
+                    <th data-i18n="nerve.col.clues">Extra clues</th>
+                  </tr>
+                </thead>
+                <tbody id="nerve-table"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section" id="rehab" aria-labelledby="rehab-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="rehab.eyebrow">Conservative care</p>
+          <h2 id="rehab-title" data-i18n="rehab.title">A practical rehab map for non-emergency cases.</h2>
+          <p data-i18n="rehab.copy">
+            The safest framing is graded exposure: calm symptoms, restore tolerable motion, build shoulder-blade and thoracic strength,
+            then return to sport with load rules.
+          </p>
+        </div>
+        <div class="timeline" id="rehab-steps"></div>
+      </section>
+
+      <section class="section muted-section" id="videos" aria-labelledby="videos-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="videos.eyebrow">Video library</p>
+          <h2 id="videos-title" data-i18n="videos.title">Curated YouTube rehab references.</h2>
+          <p data-i18n="videos.copy">
+            These videos are references to discuss with a clinician, especially if symptoms travel into the arm or hand. Stop if symptoms
+            worsen, spread, or linger after a session.
+          </p>
+        </div>
+        <div class="video-grid" id="video-grid"></div>
+      </section>
+
+      <section class="section" id="sports" aria-labelledby="sports-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="sports.eyebrow">Sport relationship</p>
+          <h2 id="sports-title" data-i18n="sports.title">Surfing, skiing, and climbing change neck loading.</h2>
+          <p data-i18n="sports.copy">
+            Sports rarely fit a simple "good" or "bad" label. The key is the position, exposure time, impact risk, and how your symptoms
+            respond over the next 24 hours.
+          </p>
+        </div>
+        <div class="research-band" id="surf-research"></div>
+        <div class="sport-grid" id="sport-grid"></div>
+        <div class="sport-protocols" id="sport-protocols"></div>
+      </section>
+
+      <section class="section muted-section" id="sources" aria-labelledby="sources-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="sources.eyebrow">References</p>
+          <h2 id="sources-title" data-i18n="sources.title">Source base for this prototype.</h2>
+          <p data-i18n="sources.copy">
+            The site should keep a visible review date, cite clinician-grade sources, and avoid claiming that exercise can guarantee curve
+            restoration.
+          </p>
+        </div>
+        <ul class="source-list" id="source-list"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footer.copy">
+        Built as a multilingual educational prototype for conservative cervical curve care.
+      </p>
+      <a href="#top" data-i18n="footer.top">Back to top</a>
+    </footer>
+
+    <script src="assets/app.js" defer></script>
+  </body>
+</html>
