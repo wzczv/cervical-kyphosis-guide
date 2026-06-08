@@ -91,10 +91,10 @@ const sourceLinks = [
 ];
 
 const protocolVideoLabels = {
-  en: { heading: "Video references", open: "Open" },
-  zh: { heading: "视频参考", open: "打开" },
-  ja: { heading: "動画参考", open: "開く" },
-  es: { heading: "Videos de referencia", open: "Abrir" }
+  en: { heading: "YouTube references", open: "Open on YouTube" },
+  zh: { heading: "YouTube 视频参考", open: "在 YouTube 打开" },
+  ja: { heading: "YouTube 動画参考", open: "YouTubeで開く" },
+  es: { heading: "Referencias en YouTube", open: "Abrir en YouTube" }
 };
 
 const protocolVideoRefs = [
@@ -103,79 +103,79 @@ const protocolVideoRefs = [
       {
         title: "Foam Rolling for Thoracic Extension",
         source: "Point Performance",
-        url: "https://www.pointperformance.com/foam-rolling-thoracic-extension-video/"
+        url: "https://www.youtube.com/watch?v=6gUphK9a-Gg"
       },
       {
         title: "Surfer shoulder thoracic mobility drill",
         source: "Surf Strength Coach",
-        url: "https://surfstrengthcoach.com/thoracic-spine-mobility-drill-a-step-towards-stronger-shoulders/"
+        url: "https://www.youtube.com/watch?v=so9kxCJmbcE"
       },
       {
         title: "Pressup Cobra Spine Stretch",
         source: "Stone Clinic",
-        url: "https://www.stoneclinic.com/video/Pressup-Cobra-Spine-Stretch"
+        url: "https://www.youtube.com/watch?v=L3A0pW34o44"
       }
     ],
     [
       {
         title: "How to Improve Your Surfboard Paddling",
         source: "Degree 33 Surfboards",
-        url: "https://www.degree33surfboards.com/blogs/gettin-pitted/how-to-improve-your-surfboard-paddling"
+        url: "https://www.youtube.com/watch?v=SSDITQG1s08"
       },
       {
         title: "Surfer's neck strengthening and soft tissue program",
         source: "Martin Dunn / Michelle Drielsma",
-        url: "https://www.martindunn.com.au/10-minute-neck-strengthening-and-soft-tissue-release-program/"
+        url: "https://www.youtube.com/watch?v=C_OVd3_BCJo"
       }
     ],
     [
       {
         title: "Surfboard paddling body position and technique",
         source: "Degree 33 Surfboards",
-        url: "https://www.degree33surfboards.com/blogs/gettin-pitted/how-to-improve-your-surfboard-paddling"
+        url: "https://www.youtube.com/watch?v=SSDITQG1s08"
       },
       {
         title: "Surf shoulders: thoracic spine mobility",
         source: "Surf Strength Coach",
-        url: "https://surfstrengthcoach.com/thoracic-spine-mobility-drill-a-step-towards-stronger-shoulders/"
+        url: "https://www.youtube.com/watch?v=so9kxCJmbcE"
       }
     ]
   ],
   [
     [
       {
-        title: "Isometric Neck Exercises",
-        source: "MEDtube / Donald Corenman",
-        url: "https://medtube.net/orthopedics/medical-videos/15648-isometric-neck-exercises"
+        title: "Neck motor control",
+        source: "Active Life Chiropractic",
+        url: "https://www.youtube.com/watch?v=gIoBiQ52xSw"
       },
       {
-        title: "Neck motor control and strengthening exercises",
+        title: "Isometric neck strengthening",
         source: "Active Life Chiropractic",
-        url: "https://activelifechiropractic.ca/exercises-and-stretches"
+        url: "https://www.youtube.com/watch?v=tLasge6DkZk"
       }
     ],
     [
       {
         title: "Home exercises for upper back and neck strain",
         source: "ChoosePT",
-        url: "https://www.choosept.com/video/exercises-manage-upper-back-and-neck-strain"
+        url: "https://www.youtube.com/watch?v=D8GZu6kWtcY"
       },
       {
         title: "Neck strengthening exercises",
-        source: "Fundación Valle del Lili",
-        url: "https://valledellili.org/en/exercises-to-strengthen-the-neck/"
+        source: "Active Life Chiropractic",
+        url: "https://www.youtube.com/watch?v=SQLmgKoUm4U"
       }
     ],
     [
       {
-        title: "Isometric Neck Exercises",
-        source: "MEDtube / Donald Corenman",
-        url: "https://medtube.net/orthopedics/medical-videos/15648-isometric-neck-exercises"
+        title: "Strengthening neck retraction",
+        source: "Active Life Chiropractic",
+        url: "https://www.youtube.com/watch?v=D2scztt0fJU"
       },
       {
-        title: "Cervical exercise guide",
-        source: "North American Spine Society",
-        url: "https://www.spine.org/Portals/0/Assets/Downloads/KnowYourBack/CervicalExercise.pdf"
+        title: "Neck extensor strengthening",
+        source: "Active Life Chiropractic",
+        url: "https://www.youtube.com/watch?v=HbLiEFFH2Sg"
       }
     ]
   ],
@@ -183,42 +183,42 @@ const protocolVideoRefs = [
     [
       {
         title: "Belay glasses overview",
-        source: "Wikipedia",
-        url: "https://en.wikipedia.org/wiki/Belay_glasses"
+        source: "BMC TV",
+        url: "https://www.youtube.com/watch?v=O3SSFmG_taE"
       },
       {
-        title: "IFSC belaying protocol",
-        source: "IFSC",
-        url: "https://images.ifsc-climbing.org/ifsc/image/private/t_q_good/prd/lux6orlm14zh85j1rkzo.pdf"
+        title: "Lead belay technique",
+        source: "REI",
+        url: "https://www.youtube.com/watch?v=S_F1MfVGOzk"
       }
     ],
     [
       {
         title: "W Exercise with Band for Shoulders and Scapular Strengthening",
         source: "Point Performance",
-        url: "https://www.pointperformance.com/video-w-exercise-band-shoulders-scapular-strengthening/"
+        url: "https://www.youtube.com/watch?v=E_jTdfyvXW4"
       },
       {
         title: "Wall Slides for Scapular Stability",
         source: "Total Physical Therapy",
-        url: "https://total-pt.com/2014/03/18/wall-slides-for-scapular-stability/"
+        url: "https://www.youtube.com/watch?v=SoC1P-Aoywk"
       },
       {
         title: "Banded I, T, Ys for Scapular Retraction",
-        source: "Full Body Fix",
-        url: "https://fullbodyfix.com/banded-scapular-retraction/"
+        source: "GoTherex",
+        url: "https://www.youtube.com/watch?v=fqrKXC1H4KI"
       }
     ],
     [
       {
         title: "Levator scapula stretch",
         source: "DNA Physical Therapy",
-        url: "https://dnaphysicaltherapy.com/exercises/neck/levator-scapula-stretch/"
+        url: "https://www.youtube.com/watch?v=nnpTI3gKSuw"
       },
       {
         title: "Home exercises for upper back and neck strain",
         source: "ChoosePT",
-        url: "https://www.choosept.com/video/exercises-manage-upper-back-and-neck-strain"
+        url: "https://www.youtube.com/watch?v=D8GZu6kWtcY"
       }
     ]
   ]
