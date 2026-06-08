@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wzczv.github.io/cervical-kyphosis-guide/sitemap.xml

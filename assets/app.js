@@ -279,6 +279,9 @@ const content = {
         "The site should keep a visible review date, cite clinician-grade sources, and avoid claiming that exercise can guarantee curve restoration.",
       "footer.copy":
         "Built as a multilingual educational prototype for conservative cervical curve care.",
+      "footer.disclaimer": "Medical disclaimer",
+      "footer.privacy": "Privacy",
+      "footer.terms": "Terms",
       "footer.top": "Back to top"
     },
     learnCards: [
@@ -638,6 +641,9 @@ const content = {
       "sources.copy":
         "网站应保留明显审校日期，引用临床级资料，并避免承诺“运动一定能恢复曲度”。",
       "footer.copy": "一个面向颈椎曲度保守康复的多语言健康教育原型。",
+      "footer.disclaimer": "医疗免责声明",
+      "footer.privacy": "隐私政策",
+      "footer.terms": "使用条款",
       "footer.top": "回到顶部"
     },
     learnCards: [
@@ -989,6 +995,9 @@ const content = {
       "sources.copy":
         "サイトにはレビュー日を明記し、臨床レベルの情報源を引用し、運動で必ずカーブが戻るという表現は避けます。",
       "footer.copy": "頸椎カーブの保存的ケアを扱う多言語教育プロトタイプです。",
+      "footer.disclaimer": "医療免責事項",
+      "footer.privacy": "プライバシー",
+      "footer.terms": "利用規約",
       "footer.top": "上へ戻る"
     },
     learnCards: [
@@ -1341,6 +1350,9 @@ const content = {
         "El sitio debe mostrar fecha de revisión, citar fuentes clínicas y evitar prometer que el ejercicio restaura la curva con garantía.",
       "footer.copy":
         "Prototipo educativo multilingüe para cuidado conservador de la curva cervical.",
+      "footer.disclaimer": "Aviso médico",
+      "footer.privacy": "Privacidad",
+      "footer.terms": "Términos",
       "footer.top": "Volver arriba"
     },
     learnCards: [
