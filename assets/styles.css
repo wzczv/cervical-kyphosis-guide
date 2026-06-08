@@ -493,13 +493,57 @@ td:first-child {
 .video-frame {
   aspect-ratio: 16 / 9;
   background: #dbe8e5;
+  display: block;
+  position: relative;
 }
 
-.video-frame iframe {
-  border: 0;
+.video-frame img {
   display: block;
   height: 100%;
+  object-fit: cover;
   width: 100%;
+}
+
+.video-preview::after {
+  background: linear-gradient(180deg, rgba(14, 26, 30, 0.08), rgba(14, 26, 30, 0.48));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.video-play {
+  background: #d91f1f;
+  border-radius: 14px;
+  height: 58px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 82px;
+  z-index: 1;
+}
+
+.video-play::before {
+  border-bottom: 13px solid transparent;
+  border-left: 22px solid #fff;
+  border-top: 13px solid transparent;
+  content: "";
+  left: 33px;
+  position: absolute;
+  top: 16px;
+}
+
+.video-platform {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  bottom: 18px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 8px 12px;
+  position: absolute;
+  right: 18px;
+  z-index: 1;
 }
 
 .video-body {

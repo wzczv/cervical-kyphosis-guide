@@ -1959,16 +1959,24 @@ function renderVideos() {
     const card = document.createElement("article");
     card.className = "video-card";
 
-    const frame = document.createElement("div");
-    frame.className = "video-frame";
-    const iframe = document.createElement("iframe");
-    iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}`;
-    iframe.title = `${copy.title} - ${video.source}`;
-    iframe.allow =
-      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
-    iframe.loading = "lazy";
-    frame.append(iframe);
+    const frame = document.createElement("a");
+    frame.className = "video-frame video-preview";
+    frame.href = video.url;
+    frame.target = "_blank";
+    frame.rel = "noopener noreferrer";
+    frame.setAttribute("aria-label", `${active.videos.link}: ${copy.title}`);
+
+    const thumbnail = document.createElement("img");
+    thumbnail.src = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
+    thumbnail.alt = `${copy.title} - ${video.source}`;
+    thumbnail.loading = "lazy";
+    const play = document.createElement("span");
+    play.className = "video-play";
+    play.setAttribute("aria-hidden", "true");
+    const platform = document.createElement("span");
+    platform.className = "video-platform";
+    platform.textContent = "YouTube";
+    frame.append(thumbnail, play, platform);
 
     const body = document.createElement("div");
     body.className = "video-body";
