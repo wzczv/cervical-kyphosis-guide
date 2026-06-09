@@ -9,7 +9,7 @@ Last updated: 2026-06-09
 | HTTPS | Done | `https://cervicalcurveguide.com/` returns 200; `http://` redirects to HTTPS |
 | Google Search Console | Done | Property: `https://cervicalcurveguide.com/` |
 | Google sitemap | Done | GSC Sitemaps: `/sitemap.xml`, status `Success` |
-| Bing Webmaster Tools | Done | Site: `cervicalcurveguide.com`; sitemap status `Success` |
+| Bing Webmaster Tools | Done | Site: `cervicalcurveguide.com`; sitemap resubmitted and currently `Processing` after expansion |
 | IndexNow | Done | Key file: `/16d893c718cadee9837fbde922d08c8f.txt`; API accepted sitemap URLs |
 | GA4 | Done | Property: `Cervical Curve Guide`; measurement ID `G-L8TWWKFELJ` |
 
@@ -17,7 +17,7 @@ Last updated: 2026-06-09
 
 | Date | GSC sitemap status | Discovered URLs | Indexed pages | Not indexed reasons | Manual URL checks | Notes |
 | --- | --- | ---: | ---: | --- | --- | --- |
-| 2026-06-09 | Success | 19 before new article expansion; sitemap expanded to 36 URLs locally | Homepage URL Inspection says indexed | Page indexing report still processing | Homepage checked | Public Google `site:` visibility may lag behind URL Inspection |
+| 2026-06-09 | Success | 36 after resubmitting `/sitemap.xml` in GSC | Homepage URL Inspection says indexed; new article pages requested and pending | Page indexing report still processing; new URLs may need crawl/index time | Homepage plus 5 priority article URLs checked/requested | Public Google `site:` visibility may lag behind URL Inspection; Bing sitemap resubmitted and still processing 19 at check time |
 
 ## Key Queries To Track Weekly
 
@@ -45,6 +45,19 @@ Last updated: 2026-06-09
 | Date | URL | Result | Follow-up |
 | --- | --- | --- | --- |
 | 2026-06-09 | `https://cervicalcurveguide.com/` | URL Inspection: indexed and eligible for Google Search | Recheck public result visibility |
+| 2026-06-09 | `https://cervicalcurveguide.com/articles/cervical-kyphosis-vs-loss-lordosis/` | URL Inspection: not yet indexed before request; request indexing accepted | Recheck in 24-72 hours |
+| 2026-06-09 | `https://cervicalcurveguide.com/articles/cervical-radiculopathy-myelopathy-red-flags/` | Request indexing accepted | Recheck in 24-72 hours |
+| 2026-06-09 | `https://cervicalcurveguide.com/articles/can-cervical-curve-be-restored/` | Request indexing accepted | Recheck in 24-72 hours |
+| 2026-06-09 | `https://cervicalcurveguide.com/articles/traction-pillow-manipulation-risk-guide/` | Request indexing accepted | Recheck in 24-72 hours |
+| 2026-06-09 | `https://cervicalcurveguide.com/en/articles/cervical-kyphosis-vs-loss-lordosis/` | Request indexing accepted | Recheck in 24-72 hours |
+
+## Sitemap and IndexNow Submission Log
+
+| Date | Platform | Submitted | Visible result | Follow-up |
+| --- | --- | --- | --- | --- |
+| 2026-06-09 | Google Search Console | `https://cervicalcurveguide.com/sitemap.xml` | Success; discovered URLs updated to 36 | Recheck Page Indexing after crawl |
+| 2026-06-09 | IndexNow API | 36 sitemap URLs | Accepted by IndexNow endpoint | Watch Bing Webmaster Tools and server logs |
+| 2026-06-09 | Bing Webmaster Tools | `https://cervicalcurveguide.com/sitemap.xml` | Submitted; row shows Processing and 19 discovered URLs at check time | Recheck later for 36 discovered URLs |
 
 ## Weekly Quality Checks
 
