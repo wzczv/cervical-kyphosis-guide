@@ -194,6 +194,18 @@ const sources = {
     label: "PMC: Loss of cervical lordosis prognosis review",
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5324370/"
   },
+  spineBasics: {
+    label: "AAOS OrthoInfo: Spine Basics",
+    url: "https://www.orthoinfo.org/en/diseases--conditions/spine-basics/"
+  },
+  curvesOfSpine: {
+    label: "Cedars-Sinai: Curves of the Spine",
+    url: "https://www.cedars-sinai.org/health-library/diseases-and-conditions/c/curves-of-the-spine.html"
+  },
+  clevelandKyphosis: {
+    label: "Cleveland Clinic: Cervical Kyphosis",
+    url: "https://my.clevelandclinic.org/health/diseases/22868-cervical-kyphosis"
+  },
   carpal: {
     label: "MedlinePlus: Carpal Tunnel Syndrome",
     url: "https://medlineplus.gov/carpaltunnelsyndrome.html"
@@ -458,8 +470,84 @@ const extraFaqs = {
 
 const pillarPages = [
   {
+    slug: "cervical-curve",
+    sources: [sources.spineBasics, sources.curvesOfSpine, sources.lordosisReview, sources.neckPainGuideline],
+    related: [
+      "cervical-kyphosis-vs-loss-lordosis",
+      "can-cervical-curve-be-restored",
+      "office-neck-curve-ergonomics",
+      "pillow-height-sleep-position"
+    ],
+    translations: {
+      zh: {
+        kicker: "Pillar 页面",
+        title: "颈椎曲度：正常颈曲、变直、反弓和保守处理",
+        description:
+          "解释 cervical curve、正常颈椎前凸、颈椎曲度变直、loss of cervical lordosis 和反弓的区别，以及哪些症状需要优先就医。",
+        intro: [
+          "Cervical curve 通常指从侧面看颈椎的自然前凸曲线。很多人搜索这个词，是因为报告里写了曲度变直、loss of cervical lordosis、reversed curve 或 cervical kyphosis。",
+          "这页把宽泛的“颈椎曲度”问题拆成几个更实用的判断：正常曲线是什么，影像词是否等于疼痛来源，哪些症状比曲线形状更重要，以及保守处理应该追踪什么。"
+        ],
+        sections: [
+          ["什么是正常颈椎曲度", ["从侧面看，颈椎通常有一个轻微向前的 lordotic curve。它是脊柱整体曲线的一部分，帮助头颈负荷分布和日常活动。", "不同机构对角度和测量方式的表述可能不同，所以不要只用一个数字判断好坏。更重要的是症状、功能和神经系统线索是否匹配。"]],
+          ["变直、loss of lordosis 和反弓有什么区别", ["Straightening 或 loss of cervical lordosis 通常表示正常前凸减少或变平；reversed curve 或 cervical kyphosis 则说明曲线方向可能发生反向。", "这些词描述的是影像上的形态，不等于单独诊断。拍片姿势、疼痛保护、肌肉紧张和退变都可能影响曲线外观。"]],
+          ["什么时候曲度问题更需要重视", ["局部僵硬或轻度颈痛可以先看睡眠、工作姿势、训练负荷和上背力量。", "手臂放射痛、手指麻木、无力、手变笨、走路不稳或大小便异常，比曲线是否好看更决定优先级。新出现或进展的神经症状应尽快评估。"]],
+          ["保守处理应该追踪什么", ["保守处理不应承诺把曲度练回某个角度。更有用的目标是疼痛减少、睡眠改善、麻木更稳定、活动范围和负荷耐受提升。", "记录 24 小时反应：如果某个动作让症状往手臂远端扩散、第二天明显更差或力量变化，就应该降量或停止，并考虑专业评估。"]]
+        ]
+      },
+      en: {
+        kicker: "Pillar guide",
+        title: "Cervical Curve: Normal Neck Curve, Straightening, and Loss of Lordosis",
+        description:
+          "A plain-language guide to the cervical curve, normal neck lordosis, straightening, reversed curve, symptoms, conservative care, and when to seek medical evaluation.",
+        intro: [
+          "The cervical curve is the natural curve of the neck seen from the side. Many people search for it after an X-ray or MRI report mentions straightening, loss of cervical lordosis, reversed curve, or cervical kyphosis.",
+          "This guide answers the broad question first: what the normal neck curve is, what common report words mean, why symptoms matter more than the curve alone, and what conservative care can reasonably track."
+        ],
+        sections: [
+          ["What the cervical curve is", ["Viewed from the side, the cervical spine normally has a gentle lordotic curve as part of the spine's overall curves. It helps distribute load through the neck and supports everyday motion.", "A single angle is not the whole story. Measurement method, posture during imaging, symptoms, function, and neurological signs all matter when interpreting the curve."]],
+          ["Straightening, loss of lordosis, and reversed curve", ["Straightening or loss of cervical lordosis usually means the normal lordotic curve is reduced or flattened. A reversed curve or cervical kyphosis suggests the curve may bend in the opposite direction.", "These are imaging descriptions, not complete diagnoses. Positioning, pain guarding, muscle tone, and degenerative findings can all change how the neck curve appears on an image."]],
+          ["When the curve finding deserves more attention", ["Local stiffness or mild neck ache usually starts with daily load, sleep setup, workstation exposure, upper-back capacity, and movement tolerance.", "Radiating arm pain, finger numbness, weakness, hand clumsiness, walking changes, or bowel/bladder symptoms matter more than whether the curve looks ideal. New or progressive neurological symptoms should be assessed promptly."]],
+          ["What conservative care can track", ["Conservative care should not promise to force the curve back to a specific angle. More useful goals are less pain, better sleep, steadier numbness, improved motion, and higher work or sport tolerance.", "Track the 24-hour response. If a drill sends symptoms farther down the arm, leaves the next day clearly worse, or changes strength, reduce the dose or stop and consider professional evaluation."]]
+        ]
+      },
+      ja: {
+        kicker: "Pillar ガイド",
+        title: "頸椎カーブ：正常な首のカーブ、ストレート、前弯減少",
+        description:
+          "頸椎カーブ、正常前弯、ストレートネック、前弯減少、逆カーブ、症状、保存的ケア、受診目安を整理します。",
+        intro: [
+          "頸椎カーブは、横から見た首の自然な前弯です。画像レポートでストレート、前弯減少、逆カーブ、頸椎後弯と書かれて検索する人が多い言葉です。",
+          "このページでは、正常カーブ、画像用語、症状の優先度、保存的ケアで追うべきことをまとめます。"
+        ],
+        sections: [
+          ["頸椎カーブとは", ["横から見ると、頸椎にはゆるやかな前弯があります。脊柱全体のカーブの一部で、首への負荷分散と日常動作を支えます。", "角度だけで良し悪しを決めるのではなく、撮影姿勢、症状、機能、神経所見と合わせて読みます。"]],
+          ["ストレート、前弯減少、逆カーブ", ["ストレートや前弯減少は、通常の前弯が小さい、または平らに近い状態を指します。逆カーブや後弯は方向が反対に近いことを示す場合があります。", "これらは画像上の説明であり、完全な診断ではありません。痛み、筋緊張、姿勢、変性所見で見え方が変わります。"]],
+          ["注意が必要な症状", ["軽い首こりや局所痛では、睡眠、作業姿勢、負荷、上背部の能力を確認します。", "腕へ走る痛み、指のしびれ、筋力低下、手の不器用さ、歩行変化、排尿排便異常は優先度が高く、早めの評価が必要です。"]],
+          ["保存的ケアで追うこと", ["特定の角度へ戻す約束ではなく、痛み、睡眠、しびれ、動きやすさ、仕事やスポーツ耐性を追います。", "運動で症状が腕の遠くへ広がる、翌日悪化する、筋力が変わる場合は量を下げるか中止し、相談を検討します。"]]
+        ]
+      },
+      es: {
+        kicker: "Guía pilar",
+        title: "Curva cervical: lordosis normal, rectificación y pérdida de lordosis",
+        description:
+          "Guía clara sobre curva cervical, lordosis normal, rectificación, curva invertida, síntomas, cuidado conservador y cuándo consultar.",
+        intro: [
+          "La curva cervical es la curva natural del cuello vista de lado. Muchas personas buscan este término después de que un informe menciona rectificación, pérdida de lordosis, curva invertida o cifosis cervical.",
+          "Esta guía responde primero la pregunta amplia: qué es la curva normal, qué significan los términos del informe, por qué los síntomas pesan más que la curva sola y qué puede seguir el cuidado conservador."
+        ],
+        sections: [
+          ["Qué es la curva cervical", ["Vista de lado, la columna cervical suele tener una lordosis suave como parte de las curvas de la columna. Ayuda a distribuir carga y permite movimiento cotidiano.", "Un ángulo aislado no cuenta toda la historia. Método de medición, postura durante la imagen, síntomas, función y signos neurológicos importan."]],
+          ["Rectificación, pérdida de lordosis y curva invertida", ["Rectificación o pérdida de lordosis significa que la curva lordótica normal está reducida o aplanada. Curva invertida o cifosis cervical puede indicar que se curva en la dirección contraria.", "Son descripciones de imagen, no diagnósticos completos. Posición, protección por dolor, tono muscular y degeneración pueden cambiar la apariencia."]],
+          ["Cuándo merece más atención", ["Rigidez local o dolor leve suele empezar por carga diaria, sueño, trabajo, capacidad de espalda alta y tolerancia de movimiento.", "Dolor irradiado al brazo, dedos dormidos, debilidad, torpeza de mano, cambios al caminar o síntomas urinarios/intestinales pesan más que una curva ideal."]],
+          ["Qué puede seguir el cuidado conservador", ["No debe prometer forzar la curva a un ángulo concreto. Metas útiles son menos dolor, mejor sueño, entumecimiento más estable, más movimiento y mayor tolerancia laboral o deportiva.", "Registra la respuesta de 24 horas. Si un ejercicio manda síntomas más lejos, empeora al día siguiente o cambia la fuerza, baja dosis o detente y considera evaluación."]]
+        ]
+      }
+    }
+  },
+  {
     slug: "cervical-kyphosis",
-    sources: [sources.kyphosisReview, sources.lordosisReview, sources.neckPainGuideline],
+    sources: [sources.clevelandKyphosis, sources.kyphosisReview, sources.lordosisReview, sources.neckPainGuideline],
     related: [
       "cervical-kyphosis-vs-loss-lordosis",
       "can-cervical-curve-be-restored",
@@ -667,7 +755,7 @@ const visuals = [
   {
     slug: "cervical-curve-diagram",
     file: "cervical-curve-diagram.svg",
-    related: "cervical-kyphosis",
+    related: "cervical-curve",
     labels: {
       zh: ["颈椎曲度图解", "原创图解对比正常前凸、颈椎曲度变直和反弓/后凸，帮助读者先理解报告词，再结合症状、功能和检查线索判断下一步。"],
       en: ["Cervical curve diagram", "Original visual comparing usual lordosis, straightened cervical curve, and reversed or kyphotic alignment so readers can interpret report language with symptoms."],
@@ -1139,6 +1227,10 @@ function renderFooter(lang) {
 
 function structuredData({ lang, url, title, description, route, article, breadcrumbs = [], extraGraph = [], faqs = [], image }) {
   const l = languages[lang];
+  const pageAbout =
+    route === "cervical-curve"
+      ? ["Cervical curve", "Cervical lordosis", "Cervical kyphosis", "Loss of cervical lordosis", "Neck pain", "Cervical radiculopathy"]
+      : ["Cervical kyphosis", "Loss of cervical lordosis", "Neck pain", "Cervical radiculopathy"];
   const graph = [
     {
       "@type": "Organization",
@@ -1169,7 +1261,7 @@ function structuredData({ lang, url, title, description, route, article, breadcr
       lastReviewed: reviewDate,
       dateModified: reviewDate,
       reviewedBy: { "@id": `${baseUrl}/#organization` },
-      about: ["Cervical kyphosis", "Loss of cervical lordosis", "Neck pain", "Cervical radiculopathy"],
+      about: pageAbout,
       isPartOf: { "@id": `${baseUrl}/#website` }
     },
     {

@@ -21,6 +21,12 @@ window.CCG_GROWTH = {
     "zh": [
       {
         "tag": "Pillar 页面",
+        "title": "颈椎曲度：正常颈曲、变直、反弓和保守处理",
+        "body": "解释 cervical curve、正常颈椎前凸、颈椎曲度变直、loss of cervical lordosis 和反弓的区别，以及哪些症状需要优先就医。",
+        "url": "/cervical-curve/"
+      },
+      {
+        "tag": "Pillar 页面",
         "title": "颈椎反弓完整指南：报告词、症状、康复和风险边界",
         "body": "一个保守、可核查的颈椎反弓总览页，解释影像报告、症状优先级、康复目标、治疗边界和什么时候应就医。",
         "url": "/cervical-kyphosis/"
@@ -171,6 +177,12 @@ window.CCG_GROWTH = {
       }
     ],
     "en": [
+      {
+        "tag": "Pillar guide",
+        "title": "Cervical Curve: Normal Neck Curve, Straightening, and Loss of Lordosis",
+        "body": "A plain-language guide to the cervical curve, normal neck lordosis, straightening, reversed curve, symptoms, conservative care, and when to seek medical evaluation.",
+        "url": "/en/cervical-curve/"
+      },
       {
         "tag": "Pillar guide",
         "title": "Cervical Kyphosis: Report Meaning, Symptoms, Rehab, and Safety Boundaries",
@@ -325,6 +337,12 @@ window.CCG_GROWTH = {
     "ja": [
       {
         "tag": "Pillar ガイド",
+        "title": "頸椎カーブ：正常な首のカーブ、ストレート、前弯減少",
+        "body": "頸椎カーブ、正常前弯、ストレートネック、前弯減少、逆カーブ、症状、保存的ケア、受診目安を整理します。",
+        "url": "/ja/cervical-curve/"
+      },
+      {
+        "tag": "Pillar ガイド",
         "title": "頸椎後弯ガイド：画像用語、症状、リハビリ、安全な境界",
         "body": "頸椎後弯について、画像の読み方、症状の優先度、リハビリ目標、治療道具の限界、受診目安を保守的に整理します。",
         "url": "/ja/cervical-kyphosis/"
@@ -475,6 +493,12 @@ window.CCG_GROWTH = {
       }
     ],
     "es": [
+      {
+        "tag": "Guía pilar",
+        "title": "Curva cervical: lordosis normal, rectificación y pérdida de lordosis",
+        "body": "Guía clara sobre curva cervical, lordosis normal, rectificación, curva invertida, síntomas, cuidado conservador y cuándo consultar.",
+        "url": "/es/cervical-curve/"
+      },
       {
         "tag": "Guía pilar",
         "title": "Cifosis cervical: informe, síntomas, rehabilitación y límites de seguridad",

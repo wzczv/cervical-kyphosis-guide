@@ -23,6 +23,7 @@ Last updated: 2026-06-09
 
 | Query | Target page | Locale |
 | --- | --- | --- |
+| cervical curve | `/en/cervical-curve/` | English |
 | cervical kyphosis | `/en/` | English |
 | loss of cervical lordosis | `/en/articles/cervical-kyphosis-vs-loss-lordosis/` | English |
 | cervical radiculopathy finger numbness | `/en/articles/finger-numbness-nerve-map/` | English |
