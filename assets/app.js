@@ -31,6 +31,27 @@ const commonVideos = [
   }
 ];
 
+const supportedLanguages = ["zh", "en", "ja", "es"];
+const siteBaseUrl = "https://cervicalcurveguide.com/";
+const languageUrls = {
+  zh: siteBaseUrl,
+  en: `${siteBaseUrl}?lang=en`,
+  ja: `${siteBaseUrl}?lang=ja`,
+  es: `${siteBaseUrl}?lang=es`
+};
+const openGraphLocales = {
+  zh: "zh_CN",
+  en: "en_US",
+  ja: "ja_JP",
+  es: "es_ES"
+};
+const languageNames = {
+  zh: "中文",
+  en: "English",
+  ja: "日本語",
+  es: "Español"
+};
+
 const sourceLinks = [
   {
     label: "AAFP: Nonoperative Management of Cervical Radiculopathy",
@@ -69,12 +90,12 @@ const sourceLinks = [
     url: "https://my.clevelandclinic.org/health/diseases/22868-cervical-kyphosis"
   },
   {
-    label: "Merck Manual Professional: Radiculopathy dermatomal patterns",
-    url: "https://www.merckmanuals.com/professional/multimedia/table/symptoms-of-common-radiculopathies-by-dermatomal-level"
+    label: "NCBI Bookshelf: Cervical Radiculopathy",
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK441828/"
   },
   {
-    label: "Johns Hopkins Medicine: Thoracic outlet syndrome",
-    url: "https://www.hopkinsmedicine.org/health/conditions-and-diseases/thoracic-outlet-syndrome"
+    label: "MedlinePlus: Thoracic Outlet Syndrome",
+    url: "https://medlineplus.gov/thoracicoutletsyndrome.html"
   },
   {
     label: "PubMed: Spinal injury in alpine winter sports review",
@@ -85,8 +106,8 @@ const sourceLinks = [
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5110349/"
   },
   {
-    label: "ScienceDirect: Cervical load while belaying in climbing",
-    url: "https://www.sciencedirect.com/science/article/abs/pii/S0949328X13001294"
+    label: "DOI: Cervical strains while belaying in climbing (access-limited abstract)",
+    url: "https://doi.org/10.1016/j.orthtr.2013.05.002"
   }
 ];
 
@@ -123,7 +144,7 @@ const protocolVideoRefs = [
         url: "https://www.youtube.com/watch?v=SSDITQG1s08"
       },
       {
-        title: "Surfer's neck strengthening and soft tissue program",
+        title: "Surfer neck strengthening reference",
         source: "Martin Dunn / Michelle Drielsma",
         url: "https://www.youtube.com/watch?v=C_OVd3_BCJo"
       }
@@ -238,6 +259,8 @@ const content = {
       "nav.rehab": "Rehab",
       "nav.videos": "Videos",
       "nav.sports": "Sports",
+      "nav.faq": "FAQ",
+      "skip.content": "Skip to content",
       "hero.eyebrow": "Evidence-aware neck curve education",
       "hero.title": "Cervical kyphosis,\nexplained without panic.",
       "hero.copy":
@@ -277,6 +300,11 @@ const content = {
       "sources.title": "Source base for this prototype.",
       "sources.copy":
         "The site should keep a visible review date, cite clinician-grade sources, and avoid claiming that exercise can guarantee curve restoration.",
+      "faq.eyebrow": "Common questions",
+      "faq.title": "Careful answers before you self-treat.",
+      "faq.copy":
+        "These short answers summarize the site's conservative position and point back to the deeper sections above.",
+      "ads.label": "Advertisement",
       "footer.copy":
         "Built as a multilingual educational prototype for conservative cervical curve care.",
       "footer.disclaimer": "Medical disclaimer",
@@ -329,6 +357,11 @@ const content = {
     ],
     nerveRows: [
       {
+        source: "C5 nerve root",
+        numbness: "Outer shoulder and upper arm; hand numbness is uncommon",
+        clues: "May involve deltoid weakness or reduced biceps reflex, so it can mimic shoulder problems more than finger numbness."
+      },
+      {
         source: "C6 nerve root",
         numbness: "Thumb, index finger, radial forearm",
         clues: "Often linked with wrist-extension or biceps weakness and reduced brachioradialis reflex."
@@ -352,6 +385,11 @@ const content = {
         source: "Ulnar nerve / cubital or Guyon's tunnel",
         numbness: "Little finger and ulnar half of ring finger",
         clues: "Often worse with prolonged elbow flexion or handlebar/grip pressure; may affect finger spreading."
+      },
+      {
+        source: "Radial nerve / superficial radial branch",
+        numbness: "Back of thumb, index web space, or radial back of hand",
+        clues: "Often relates to forearm compression, tight straps, wrist positions, or direct pressure rather than neck position."
       },
       {
         source: "Thoracic outlet / lower brachial plexus",
@@ -636,7 +674,34 @@ const content = {
         ]
       }
     ],
-    sourceNote: "Used for medical framing, symptom education, sport loading, and video curation."
+    sourceNote: "Used for medical framing, symptom education, sport loading, and video curation.",
+    faqs: [
+      {
+        question: "Can exercises restore the cervical curve?",
+        answer:
+          "Exercise may improve pain, tolerance, posture control, and strength, but this site does not claim that exercise reliably restores cervical lordosis. Curve findings should be interpreted with symptoms and clinical exam."
+      },
+      {
+        question: "When should hand numbness be checked urgently?",
+        answer:
+          "Seek prompt care for new or worsening weakness, spreading numbness, hand clumsiness, walking changes, bowel or bladder symptoms, fever, cancer history, major trauma, or symptoms that keep worsening."
+      },
+      {
+        question: "Does numbness in specific fingers prove a neck problem?",
+        answer:
+          "No. C6, C7, and C8 nerve roots can create finger patterns, but carpal tunnel, ulnar nerve compression, radial nerve irritation, thoracic outlet syndrome, and double-crush patterns can overlap."
+      },
+      {
+        question: "Should I stop surfing, skiing, snowboarding, or climbing?",
+        answer:
+          "Not automatically. Use symptom response and risk. Reduce exposure if arm symptoms spread, strength changes, sleep worsens, or symptoms remain worse the next day; get evaluated after significant head or neck trauma."
+      },
+      {
+        question: "Are the YouTube videos a treatment plan?",
+        answer:
+          "No. They are visual references after the on-site guidance. They should not replace diagnosis, individualized rehab, or medical care when neurological symptoms or red flags are present."
+      }
+    ]
   },
   zh: {
     lang: "zh-Hans",
@@ -651,6 +716,8 @@ const content = {
       "nav.rehab": "康复",
       "nav.videos": "视频",
       "nav.sports": "运动",
+      "nav.faq": "问答",
+      "skip.content": "跳到正文",
       "hero.eyebrow": "有依据的颈椎曲度教育",
       "hero.title": "颈椎反弓，\n不必先恐慌。",
       "hero.copy":
@@ -690,6 +757,11 @@ const content = {
       "sources.title": "这个原型的资料基础。",
       "sources.copy":
         "网站应保留明显审校日期，引用临床级资料，并避免承诺“运动一定能恢复曲度”。",
+      "faq.eyebrow": "常见问题",
+      "faq.title": "自我练习前，先看保守答案。",
+      "faq.copy":
+        "这些短问答总结本站的谨慎立场，并把读者引回上方更深入的内容。",
+      "ads.label": "广告位",
       "footer.copy": "一个面向颈椎曲度保守康复的多语言健康教育原型。",
       "footer.disclaimer": "医疗免责声明",
       "footer.privacy": "隐私政策",
@@ -741,6 +813,11 @@ const content = {
     ],
     nerveRows: [
       {
+        source: "C5 神经根",
+        numbness: "肩外侧、上臂外侧；单纯手指麻较少见",
+        clues: "可伴三角肌无力或肱二头肌反射变化，因此有时更像肩部问题，而不是典型手麻。"
+      },
+      {
         source: "C6 神经根",
         numbness: "拇指、食指、桡侧前臂",
         clues: "可伴腕背伸或肱二头肌无力，肱桡肌反射减弱。"
@@ -764,6 +841,11 @@ const content = {
         source: "尺神经 / 肘管或 Guyon 管",
         numbness: "小指、无名指尺侧半",
         clues: "常因长时间屈肘、车把/握持压力加重；可能影响手指分开和夹纸力量。"
+      },
+      {
+        source: "桡神经 / 浅支",
+        numbness: "拇指背侧、虎口背侧，或手背桡侧",
+        clues: "常与前臂受压、紧腕带、手腕姿势或直接压迫有关，不一定随颈部姿势改变。"
       },
       {
         source: "胸廓出口 / 下臂丛",
@@ -1030,7 +1112,34 @@ const content = {
         ]
       }
     ],
-    sourceNote: "用于医学框架、症状教育、运动负荷和视频选择。"
+    sourceNote: "用于医学框架、症状教育、运动负荷和视频选择。",
+    faqs: [
+      {
+        question: "练习能把颈椎曲度练回来吗？",
+        answer:
+          "练习可能改善疼痛、活动耐受、姿势控制和肌肉力量，但本站不承诺运动一定能恢复颈椎前凸。曲度结果要结合症状和体格检查一起解释。"
+      },
+      {
+        question: "手麻什么时候需要尽快就医？",
+        answer:
+          "新出现或加重的无力、麻木扩散、手变笨、走路不稳、大小便异常、发热、肿瘤病史、明显外伤，或症状持续恶化，都应尽快就医。"
+      },
+      {
+        question: "某几个手指麻，就一定是颈椎问题吗？",
+        answer:
+          "不一定。C6、C7、C8 神经根会形成手指分布，但腕管综合征、尺神经卡压、桡神经刺激、胸廓出口综合征和双重卡压都可能重叠。"
+      },
+      {
+        question: "冲浪、滑雪/单板、攀岩必须完全停止吗？",
+        answer:
+          "不一定。更重要的是症状反应和风险控制。如果手臂症状扩散、力量变化、睡眠变差，或第二天仍明显加重，应减少暴露；明显头颈外伤后应评估。"
+      },
+      {
+        question: "YouTube 视频可以当治疗方案吗？",
+        answer:
+          "不可以。视频只是站内说明之后的动作参考，不能替代诊断、个体化康复方案，也不能替代有神经症状或危险信号时的医疗评估。"
+      }
+    ]
   },
   ja: {
     lang: "ja",
@@ -1045,6 +1154,8 @@ const content = {
       "nav.rehab": "リハビリ",
       "nav.videos": "動画",
       "nav.sports": "スポーツ",
+      "nav.faq": "FAQ",
+      "skip.content": "本文へ移動",
       "hero.eyebrow": "根拠を意識した頸椎カーブ教育",
       "hero.title": "頸椎後弯を、\n恐怖ではなく\n根拠で理解する。",
       "hero.copy":
@@ -1084,6 +1195,11 @@ const content = {
       "sources.title": "このプロトタイプの情報基盤。",
       "sources.copy":
         "サイトにはレビュー日を明記し、臨床レベルの情報源を引用し、運動で必ずカーブが戻るという表現は避けます。",
+      "faq.eyebrow": "よくある質問",
+      "faq.title": "自己判断で運動する前に確認すること。",
+      "faq.copy":
+        "短い回答でこのサイトの慎重な立場をまとめ、詳しいセクションへ戻れるようにしています。",
+      "ads.label": "広告枠",
       "footer.copy": "頸椎カーブの保存的ケアを扱う多言語教育プロトタイプです。",
       "footer.disclaimer": "医療免責事項",
       "footer.privacy": "プライバシー",
@@ -1135,6 +1251,11 @@ const content = {
     ],
     nerveRows: [
       {
+        source: "C5 神経根",
+        numbness: "肩外側から上腕外側。手指のしびれは典型的ではありません",
+        clues: "三角筋の弱さや上腕二頭筋反射の変化が手がかりで、指より肩の問題に見えることがあります。"
+      },
+      {
         source: "C6 神経根",
         numbness: "親指、人差し指、橈側前腕",
         clues: "手首伸展や上腕二頭筋の筋力低下、腕橈骨筋反射低下が手がかりになります。"
@@ -1158,6 +1279,11 @@ const content = {
         source: "尺骨神経 / 肘部管または Guyon 管",
         numbness: "小指、薬指の尺側半分",
         clues: "長時間の肘屈曲、グリップ圧、ハンドル圧で悪化し、指を広げる力に影響することがあります。"
+      },
+      {
+        source: "橈骨神経 / 浅枝",
+        numbness: "親指背側、母指と示指の間、手背の橈側",
+        clues: "前腕の圧迫、きついストラップ、手首姿勢、直接圧迫に関連し、首の姿勢とは一致しないことがあります。"
       },
       {
         source: "胸郭出口 / 下部腕神経叢",
@@ -1424,7 +1550,34 @@ const content = {
         ]
       }
     ],
-    sourceNote: "医学的枠組み、症状教育、スポーツ負荷、動画選定の参考として使用。"
+    sourceNote: "医学的枠組み、症状教育、スポーツ負荷、動画選定の参考として使用。",
+    faqs: [
+      {
+        question: "運動で頸椎カーブは戻りますか？",
+        answer:
+          "運動は痛み、耐性、姿勢制御、筋力の改善に役立つことがありますが、このサイトは頸椎前弯が必ず戻るとは主張しません。画像所見は症状と診察所見と合わせて考えます。"
+      },
+      {
+        question: "手のしびれはいつ早めに相談すべきですか？",
+        answer:
+          "新しい筋力低下、広がるしびれ、手の不器用さ、歩行変化、排尿排便の異常、発熱、がんの既往、大きな外傷、悪化し続ける症状は早めの医療相談が必要です。"
+      },
+      {
+        question: "特定の指がしびれれば首が原因ですか？",
+        answer:
+          "断定はできません。C6、C7、C8 神経根は指のパターンを作りますが、手根管、尺骨神経、橈骨神経、胸郭出口、ダブルクラッシュが重なることがあります。"
+      },
+      {
+        question: "サーフィン、スキー、スノーボード、クライミングは中止すべきですか？",
+        answer:
+          "自動的に中止ではありません。症状反応とリスクで調整します。腕症状が広がる、筋力が変わる、睡眠が悪化する、翌日も悪い場合は負荷を減らし、強い頭頸部外傷後は評価を受けます。"
+      },
+      {
+        question: "YouTube 動画は治療計画になりますか？",
+        answer:
+          "なりません。動画はサイト内説明の後に動きを確認する参考です。診断、個別リハビリ、神経症状や危険サインがある時の医療評価の代わりにはなりません。"
+      }
+    ]
   },
   es: {
     lang: "es",
@@ -1439,6 +1592,8 @@ const content = {
       "nav.rehab": "Rehab",
       "nav.videos": "Videos",
       "nav.sports": "Deporte",
+      "nav.faq": "FAQ",
+      "skip.content": "Saltar al contenido",
       "hero.eyebrow": "Educación sobre la curva cervical basada en evidencia",
       "hero.title": "Cifosis cervical,\nexplicada sin alarmismo.",
       "hero.copy":
@@ -1478,6 +1633,11 @@ const content = {
       "sources.title": "Base de fuentes del prototipo.",
       "sources.copy":
         "El sitio debe mostrar fecha de revisión, citar fuentes clínicas y evitar prometer que el ejercicio restaura la curva con garantía.",
+      "faq.eyebrow": "Preguntas frecuentes",
+      "faq.title": "Respuestas prudentes antes de autocuidarte.",
+      "faq.copy":
+        "Estas respuestas resumen la postura conservadora del sitio y enlazan con las secciones más completas.",
+      "ads.label": "Publicidad",
       "footer.copy":
         "Prototipo educativo multilingüe para cuidado conservador de la curva cervical.",
       "footer.disclaimer": "Aviso médico",
@@ -1530,6 +1690,11 @@ const content = {
     ],
     nerveRows: [
       {
+        source: "Raíz C5",
+        numbness: "Hombro externo y parte lateral del brazo; los dedos dormidos son poco típicos",
+        clues: "Puede incluir debilidad del deltoides o cambio del reflejo bicipital, y parecer más un problema de hombro."
+      },
+      {
         source: "Raíz C6",
         numbness: "Pulgar, índice, antebrazo radial",
         clues: "Puede asociarse con debilidad de extensión de muñeca o bíceps y reflejo braquiorradial reducido."
@@ -1553,6 +1718,11 @@ const content = {
         source: "Nervio cubital / túnel cubital o Guyon",
         numbness: "Meñique y mitad cubital del anular",
         clues: "A menudo peor con flexión prolongada del codo o presión de agarre; puede afectar separar los dedos."
+      },
+      {
+        source: "Nervio radial / rama superficial",
+        numbness: "Dorso del pulgar, espacio entre pulgar e índice, o dorso radial de la mano",
+        clues: "A menudo se relaciona con compresión del antebrazo, correas apretadas, postura de muñeca o presión directa."
       },
       {
         source: "Salida torácica / plexo braquial inferior",
@@ -1834,13 +2004,74 @@ const content = {
       }
     ],
     sourceNote:
-      "Usado para marco médico, educación de síntomas, carga deportiva y curaduría de videos."
+      "Usado para marco médico, educación de síntomas, carga deportiva y curaduría de videos.",
+    faqs: [
+      {
+        question: "¿Los ejercicios pueden restaurar la curva cervical?",
+        answer:
+          "El ejercicio puede mejorar dolor, tolerancia, control postural y fuerza, pero este sitio no afirma que restaure la lordosis cervical de forma fiable. La imagen debe interpretarse con síntomas y exploración clínica."
+      },
+      {
+        question: "¿Cuándo debe revisarse pronto el adormecimiento de la mano?",
+        answer:
+          "Busca atención si hay debilidad nueva o progresiva, entumecimiento que se extiende, torpeza manual, cambios al caminar, síntomas urinarios/intestinales, fiebre, antecedente de cáncer, trauma importante o empeoramiento continuo."
+      },
+      {
+        question: "¿Los dedos dormidos prueban que el problema está en el cuello?",
+        answer:
+          "No. Las raíces C6, C7 y C8 pueden crear patrones en dedos, pero túnel carpiano, nervio cubital, nervio radial, salida torácica y doble compresión pueden superponerse."
+      },
+      {
+        question: "¿Debo dejar surf, esquí, snowboard o escalada?",
+        answer:
+          "No automáticamente. Ajusta según respuesta de síntomas y riesgo. Reduce exposición si los síntomas bajan al brazo, cambia la fuerza, empeora el sueño o sigues peor al día siguiente; evalúate tras trauma importante de cabeza o cuello."
+      },
+      {
+        question: "¿Los videos de YouTube son un plan de tratamiento?",
+        answer:
+          "No. Son referencias visuales después de la guía del sitio. No sustituyen diagnóstico, rehabilitación individual ni atención médica cuando hay síntomas neurológicos o señales de alarma."
+      }
+    ]
   }
 };
 
 const state = {
-  lang: localStorage.getItem("ccg_lang") || "zh"
+  lang: getInitialLanguage()
 };
+
+function isSupportedLanguage(lang) {
+  return supportedLanguages.includes(lang);
+}
+
+function getInitialLanguage() {
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get("lang");
+  if (isSupportedLanguage(urlLang)) return urlLang;
+
+  const savedLang = localStorage.getItem("ccg_lang");
+  if (isSupportedLanguage(savedLang)) return savedLang;
+
+  return "zh";
+}
+
+function getCanonicalUrl(lang = state.lang) {
+  return languageUrls[lang] || languageUrls.zh;
+}
+
+function updateLanguageUrl(lang) {
+  const nextUrl = new URL(window.location.href);
+  if (lang === "zh") {
+    nextUrl.searchParams.delete("lang");
+  } else {
+    nextUrl.searchParams.set("lang", lang);
+  }
+  window.history.replaceState({ lang }, "", nextUrl);
+}
+
+function setMetaContent(selector, value) {
+  const element = document.querySelector(selector);
+  if (element) element.setAttribute("content", value);
+}
 
 function getActiveContent() {
   return content[state.lang] || content.zh;
@@ -1848,10 +2079,19 @@ function getActiveContent() {
 
 function renderI18n() {
   const active = getActiveContent();
+  const pageUrl = getCanonicalUrl();
   document.documentElement.lang = active.lang;
   document.title = active.title;
   const description = document.querySelector('meta[name="description"]');
   if (description) description.setAttribute("content", active.description);
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute("href", pageUrl);
+  setMetaContent('meta[property="og:title"]', active.strings.brand);
+  setMetaContent('meta[property="og:description"]', active.description);
+  setMetaContent('meta[property="og:url"]', pageUrl);
+  setMetaContent('meta[property="og:locale"]', openGraphLocales[state.lang] || openGraphLocales.zh);
+  setMetaContent('meta[name="twitter:title"]', active.strings.brand);
+  setMetaContent('meta[name="twitter:description"]', active.description);
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
@@ -1860,7 +2100,14 @@ function renderI18n() {
   });
 
   document.querySelectorAll(".lang-button").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.lang === state.lang);
+    const isActive = button.dataset.lang === state.lang;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+    button.setAttribute("aria-label", languageNames[button.dataset.lang] || button.textContent.trim());
+  });
+
+  document.querySelectorAll(".ad-slot").forEach((slot) => {
+    slot.setAttribute("aria-label", active.strings["ads.label"] || "Advertisement");
   });
 }
 
@@ -1970,6 +2217,12 @@ function renderVideos() {
     thumbnail.src = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
     thumbnail.alt = `${copy.title} - ${video.source}`;
     thumbnail.loading = "lazy";
+    thumbnail.decoding = "async";
+    thumbnail.referrerPolicy = "no-referrer";
+    thumbnail.addEventListener("error", () => {
+      frame.classList.add("video-preview-missing");
+      thumbnail.remove();
+    });
     const play = document.createElement("span");
     play.className = "video-play";
     play.setAttribute("aria-hidden", "true");
@@ -2104,7 +2357,7 @@ function renderSportProtocols() {
           const link = document.createElement("a");
           link.href = ref.url;
           link.target = "_blank";
-          link.rel = "noreferrer";
+          link.rel = "noopener noreferrer";
           link.textContent = `${labels.open}: ${ref.title}`;
           const source = document.createElement("span");
           source.textContent = ref.source;
@@ -2167,7 +2420,7 @@ function renderSources() {
     const link = document.createElement("a");
     link.href = source.url;
     link.target = "_blank";
-    link.rel = "noreferrer";
+    link.rel = "noopener noreferrer";
     link.textContent = source.label;
     const note = document.createElement("span");
     note.textContent = active.sourceNote;
@@ -2175,6 +2428,99 @@ function renderSources() {
     return item;
   });
   list.replaceChildren(...items);
+}
+
+function renderFaqs() {
+  const active = getActiveContent();
+  const list = document.querySelector("#faq-list");
+  if (!list) return;
+  const items = (active.faqs || []).map((faq, index) => {
+    const item = document.createElement("details");
+    item.className = "faq-item";
+    if (index === 0) item.open = true;
+
+    const summary = document.createElement("summary");
+    summary.textContent = faq.question;
+    const answer = document.createElement("p");
+    answer.textContent = faq.answer;
+    item.append(summary, answer);
+    return item;
+  });
+  list.replaceChildren(...items);
+}
+
+function renderStructuredData() {
+  const active = getActiveContent();
+  const script = document.querySelector("#structured-data");
+  if (!script) return;
+
+  const pageUrl = getCanonicalUrl();
+  const graph = [
+    {
+      "@type": "WebSite",
+      "@id": `${siteBaseUrl}#website`,
+      name: "Cervical Curve Guide",
+      url: siteBaseUrl,
+      inLanguage: content.en.lang,
+      isAccessibleForFree: true
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": `${pageUrl}#medical-page`,
+      name: active.strings.brand,
+      headline: active.title,
+      description: active.description,
+      url: pageUrl,
+      image: `${siteBaseUrl}assets/hero-cervical-kyphosis.jpg`,
+      about: [
+        "Cervical kyphosis",
+        "Loss of cervical lordosis",
+        "Cervical radiculopathy",
+        "Neck pain rehabilitation"
+      ],
+      audience: {
+        "@type": "Audience",
+        audienceType: "Patients and active adults researching conservative neck rehabilitation"
+      },
+      medicalAudience: "Patient",
+      inLanguage: active.lang,
+      isAccessibleForFree: true,
+      lastReviewed: "2026-06-09",
+      dateModified: "2026-06-09",
+      isPartOf: { "@id": `${siteBaseUrl}#website` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: active.strings.brand,
+          item: pageUrl
+        }
+      ]
+    }
+  ];
+
+  if (active.faqs?.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      url: pageUrl,
+      inLanguage: active.lang,
+      mainEntity: active.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer
+        }
+      }))
+    });
+  }
+
+  script.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
 }
 
 function renderAll() {
@@ -2187,13 +2533,16 @@ function renderAll() {
   renderSurfResearch();
   renderSports();
   renderSportProtocols();
+  renderFaqs();
   renderSources();
+  renderStructuredData();
 }
 
 document.querySelectorAll(".lang-button").forEach((button) => {
   button.addEventListener("click", () => {
     state.lang = button.dataset.lang;
     localStorage.setItem("ccg_lang", state.lang);
+    updateLanguageUrl(state.lang);
     renderAll();
   });
 });
