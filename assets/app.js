@@ -2296,8 +2296,25 @@ function getActiveContent() {
   return content[state.lang] || content.zh;
 }
 
+function getGrowthContent(key) {
+  return window.CCG_GROWTH?.[key]?.[state.lang] || [];
+}
+
+function getGrowthStrings() {
+  return window.CCG_GROWTH?.strings?.[state.lang] || {};
+}
+
+function getAllArticleCards(active = getActiveContent()) {
+  return [...(active.articleCards || []), ...getGrowthContent("articleCards")];
+}
+
+function getAllFaqs(active = getActiveContent()) {
+  return [...(active.faqs || []), ...getGrowthContent("faqs").map(([question, answer]) => ({ question, answer }))];
+}
+
 function renderI18n() {
   const active = getActiveContent();
+  const growthStrings = getGrowthStrings();
   const pageUrl = getCanonicalUrl();
   document.documentElement.lang = active.lang;
   document.title = active.title;
@@ -2314,7 +2331,7 @@ function renderI18n() {
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
-    const value = active.strings[key];
+    const value = growthStrings[key] || active.strings[key];
     if (value) element.textContent = value;
   });
 
@@ -2603,7 +2620,7 @@ function renderArticleCards() {
   const grid = document.querySelector("#article-grid");
   if (!grid) return;
 
-  const cards = (active.articleCards || []).map((item) => {
+  const cards = getAllArticleCards(active).map((item) => {
     const card = document.createElement("article");
     card.className = "article-card";
 
@@ -2681,7 +2698,7 @@ function renderFaqs() {
   const active = getActiveContent();
   const list = document.querySelector("#faq-list");
   if (!list) return;
-  const items = (active.faqs || []).map((faq, index) => {
+  const items = getAllFaqs(active).map((faq, index) => {
     const item = document.createElement("details");
     item.className = "faq-item";
     if (index === 0) item.open = true;
@@ -2750,12 +2767,13 @@ function renderStructuredData() {
     }
   ];
 
-  if (active.articleCards?.length) {
+  const allArticleCards = getAllArticleCards(active);
+  if (allArticleCards.length) {
     graph.push({
       "@type": "ItemList",
       "@id": `${pageUrl}#guides`,
-      name: active.strings["guides.title"],
-      itemListElement: active.articleCards.map((card, index) => ({
+      name: getGrowthStrings()["guides.title"] || active.strings["guides.title"],
+      itemListElement: allArticleCards.map((card, index) => ({
         "@type": "ListItem",
         position: index + 1,
         name: card.title,
@@ -2764,13 +2782,14 @@ function renderStructuredData() {
     });
   }
 
-  if (active.faqs?.length) {
+  const allFaqs = getAllFaqs(active);
+  if (allFaqs.length) {
     graph.push({
       "@type": "FAQPage",
       "@id": `${pageUrl}#faq`,
       url: pageUrl,
       inLanguage: active.lang,
-      mainEntity: active.faqs.map((faq) => ({
+      mainEntity: allFaqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
         acceptedAnswer: {

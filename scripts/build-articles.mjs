@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 const baseUrl = "https://cervicalcurveguide.com";
-const version = "20260609-content";
+const version = "20260609-growth";
 const reviewDate = "2026-06-09";
 
 const languages = {
@@ -1396,6 +1396,11 @@ function pathFor(lang, slug) {
   return `${prefix}/articles/${slug}/`;
 }
 
+function routePath(lang, route) {
+  const prefix = languages[lang].prefix;
+  return `${prefix}/${route}/`.replace(/\/+/g, "/");
+}
+
 function outputPath(lang, slug) {
   const prefix = languages[lang].prefix.replace(/^\//, "");
   return join(prefix, "articles", slug, "index.html");
@@ -1594,9 +1599,9 @@ function renderArticle(article, lang) {
   const pageUrl = urlFor(lang, article.slug);
   const siteNav = `
         <a href="${labels.home}#learn">${labels.nav.learn}</a>
-        <a href="${labels.home}#symptoms">${labels.nav.symptoms}</a>
-        <a href="${labels.home}#rehab">${labels.nav.rehab}</a>
-        <a href="${labels.home}#sports">${labels.nav.sports}</a>
+        <a href="${routePath(lang, "symptoms")}">${labels.nav.symptoms}</a>
+        <a href="${routePath(lang, "exercises")}">${labels.nav.rehab}</a>
+        <a href="${routePath(lang, "sports")}">${labels.nav.sports}</a>
         <a href="${labels.home}#guides">${labels.nav.guides}</a>
         <a href="${labels.home}#faq">${labels.nav.faq}</a>`;
 

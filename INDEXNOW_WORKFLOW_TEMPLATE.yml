@@ -1,0 +1,34 @@
+name: Submit IndexNow
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "sitemap.xml"
+      - "articles/**"
+      - "en/articles/**"
+      - "ja/articles/**"
+      - "es/articles/**"
+      - "symptoms/**"
+      - "diagnosis/**"
+      - "exercises/**"
+      - "treatments/**"
+      - "sports/**"
+      - "videos/**"
+      - "tools/**"
+      - "assets/**"
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Wait briefly for Pages deployment
+        run: sleep 90
+      - name: Submit sitemap URLs to IndexNow and Bing
+        run: node scripts/submit-indexnow.mjs
