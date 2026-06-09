@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 const baseUrl = "https://cervicalcurveguide.com";
-const version = "20260609-content-clusters";
+const version = "20260609-analytics";
 const reviewDate = "2026-06-09";
 
 const languages = {
@@ -862,6 +862,7 @@ function renderArticle(article, lang) {
     <meta name="twitter:description" content="${escapeHtml(translation.description)}" />
     <meta name="twitter:image" content="${baseUrl}/assets/hero-cervical-kyphosis.jpg" />
     <link rel="stylesheet" href="/assets/styles.css?v=${version}" />
+    <script src="/assets/analytics.js?v=${version}" defer></script>
     <script type="application/ld+json">${renderStructuredData(article, translation, lang)}</script>
   </head>
   <body>
