@@ -35,9 +35,15 @@ const supportedLanguages = ["zh", "en", "ja", "es"];
 const siteBaseUrl = "https://cervicalcurveguide.com/";
 const languageUrls = {
   zh: siteBaseUrl,
-  en: `${siteBaseUrl}?lang=en`,
-  ja: `${siteBaseUrl}?lang=ja`,
-  es: `${siteBaseUrl}?lang=es`
+  en: `${siteBaseUrl}en/`,
+  ja: `${siteBaseUrl}ja/`,
+  es: `${siteBaseUrl}es/`
+};
+const languagePaths = {
+  zh: "/",
+  en: "/en/",
+  ja: "/ja/",
+  es: "/es/"
 };
 const openGraphLocales = {
   zh: "zh_CN",
@@ -2044,9 +2050,15 @@ function isSupportedLanguage(lang) {
 }
 
 function getInitialLanguage() {
+  const pathLang = window.location.pathname.split("/").filter(Boolean)[0];
+  if (isSupportedLanguage(pathLang)) return pathLang;
+
   const params = new URLSearchParams(window.location.search);
   const urlLang = params.get("lang");
   if (isSupportedLanguage(urlLang)) return urlLang;
+
+  const isRootPage = window.location.pathname === "/" || window.location.pathname.endsWith("/index.html");
+  if (isRootPage) return "zh";
 
   const savedLang = localStorage.getItem("ccg_lang");
   if (isSupportedLanguage(savedLang)) return savedLang;
@@ -2059,13 +2071,20 @@ function getCanonicalUrl(lang = state.lang) {
 }
 
 function updateLanguageUrl(lang) {
-  const nextUrl = new URL(window.location.href);
-  if (lang === "zh") {
-    nextUrl.searchParams.delete("lang");
-  } else {
-    nextUrl.searchParams.set("lang", lang);
+  const targetPath = languagePaths[lang] || languagePaths.zh;
+  const currentPath = window.location.pathname.endsWith("/index.html")
+    ? window.location.pathname.replace(/index\.html$/, "")
+    : window.location.pathname;
+  const nextUrl = new URL(targetPath, window.location.origin);
+  nextUrl.hash = window.location.hash;
+
+  if (currentPath !== targetPath || window.location.search) {
+    window.location.assign(nextUrl.href);
+    return false;
   }
+
   window.history.replaceState({ lang }, "", nextUrl);
+  return true;
 }
 
 function setMetaContent(selector, value) {
@@ -2542,8 +2561,7 @@ document.querySelectorAll(".lang-button").forEach((button) => {
   button.addEventListener("click", () => {
     state.lang = button.dataset.lang;
     localStorage.setItem("ccg_lang", state.lang);
-    updateLanguageUrl(state.lang);
-    renderAll();
+    if (updateLanguageUrl(state.lang)) renderAll();
   });
 });
 
