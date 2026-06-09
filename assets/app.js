@@ -265,6 +265,7 @@ const content = {
       "nav.rehab": "Rehab",
       "nav.videos": "Videos",
       "nav.sports": "Sports",
+      "nav.guides": "Guides",
       "nav.faq": "FAQ",
       "skip.content": "Skip to content",
       "hero.eyebrow": "Evidence-aware neck curve education",
@@ -302,6 +303,11 @@ const content = {
       "sports.title": "Surfing, skiing, and climbing change neck loading.",
       "sports.copy":
         "Sports rarely fit a simple \"good\" or \"bad\" label. The key is the position, exposure time, impact risk, and how your symptoms respond over the next 24 hours.",
+      "guides.eyebrow": "Deep-dive guides",
+      "guides.title": "Two topics deserve their own pages.",
+      "guides.copy":
+        "These static guides give search engines and readers focused, source-backed pages on finger numbness patterns and sport-specific neck loading.",
+      "guides.link": "Read the guide",
       "sources.eyebrow": "References",
       "sources.title": "Source base for this prototype.",
       "sources.copy":
@@ -680,6 +686,22 @@ const content = {
         ]
       }
     ],
+    articleCards: [
+      {
+        tag: "Symptom guide",
+        title: "Finger numbness map: cervical root or peripheral nerve?",
+        body:
+          "A conservative guide to thumb, index, middle, ring, and little-finger numbness patterns, including cervical roots, carpal tunnel, ulnar nerve, radial nerve, and thoracic outlet clues.",
+        url: "/en/articles/finger-numbness-nerve-map/"
+      },
+      {
+        tag: "Sport guide",
+        title: "Can you surf, ski, snowboard, or climb with cervical kyphosis?",
+        body:
+          "A return-to-sport framework for surf paddling, ski and snowboard impact risk, climbing belay posture, and the 24-hour symptom rule.",
+        url: "/en/articles/sports-neck-load-return-guide/"
+      }
+    ],
     sourceNote: "Used for medical framing, symptom education, sport loading, and video curation.",
     faqs: [
       {
@@ -722,6 +744,7 @@ const content = {
       "nav.rehab": "康复",
       "nav.videos": "视频",
       "nav.sports": "运动",
+      "nav.guides": "专题",
       "nav.faq": "问答",
       "skip.content": "跳到正文",
       "hero.eyebrow": "有依据的颈椎曲度教育",
@@ -759,6 +782,11 @@ const content = {
       "sports.title": "冲浪、滑雪和攀岩会改变颈部负荷。",
       "sports.copy":
         "运动很少能简单说成“好”或“坏”。关键是颈部姿势、持续时间、冲击风险，以及接下来 24 小时内症状如何反应。",
+      "guides.eyebrow": "深度专题",
+      "guides.title": "两个主题值得单独成页。",
+      "guides.copy":
+        "这些静态专题页把手指麻木鉴别和运动负荷回归拆开讲，方便读者深入阅读，也更适合搜索引擎理解。",
+      "guides.link": "阅读专题",
       "sources.eyebrow": "参考来源",
       "sources.title": "这个原型的资料基础。",
       "sources.copy":
@@ -1118,6 +1146,22 @@ const content = {
         ]
       }
     ],
+    articleCards: [
+      {
+        tag: "症状专题",
+        title: "手指麻木地图：颈椎神经根还是周围神经？",
+        body:
+          "保守梳理拇指、食指、中指、无名指、小指麻木对应的颈椎神经根、腕管、尺神经、桡神经和胸廓出口线索。",
+        url: "/articles/finger-numbness-nerve-map/"
+      },
+      {
+        tag: "运动专题",
+        title: "颈椎反弓还能冲浪、滑雪/单板或攀岩吗？",
+        body:
+          "解释冲浪划水、滑雪和单板冲击风险、攀岩保护仰头姿势，以及用 24 小时症状规则回归运动。",
+        url: "/articles/sports-neck-load-return-guide/"
+      }
+    ],
     sourceNote: "用于医学框架、症状教育、运动负荷和视频选择。",
     faqs: [
       {
@@ -1160,6 +1204,7 @@ const content = {
       "nav.rehab": "リハビリ",
       "nav.videos": "動画",
       "nav.sports": "スポーツ",
+      "nav.guides": "特集",
       "nav.faq": "FAQ",
       "skip.content": "本文へ移動",
       "hero.eyebrow": "根拠を意識した頸椎カーブ教育",
@@ -1197,6 +1242,11 @@ const content = {
       "sports.title": "サーフィン、スキー、クライミングは首の負荷を変える。",
       "sports.copy":
         "スポーツは単純に良い悪いで判断しにくいものです。大切なのは姿勢、時間、衝撃リスク、そして次の 24 時間の症状反応です。",
+      "guides.eyebrow": "詳しい特集",
+      "guides.title": "単独ページで読むべき二つのテーマ。",
+      "guides.copy":
+        "指のしびれパターンとスポーツ別の首の負荷を、検索にも読者にも分かりやすい静的ページとして整理しました。",
+      "guides.link": "特集を読む",
       "sources.eyebrow": "参考文献",
       "sources.title": "このプロトタイプの情報基盤。",
       "sources.copy":
@@ -1556,6 +1606,22 @@ const content = {
         ]
       }
     ],
+    articleCards: [
+      {
+        tag: "症状特集",
+        title: "指のしびれマップ：頸椎神経根か、末梢神経か",
+        body:
+          "親指、人差し指、中指、薬指、小指のしびれを、頸椎神経根、手根管、尺骨神経、橈骨神経、胸郭出口の手がかりから整理します。",
+        url: "/ja/articles/finger-numbness-nerve-map/"
+      },
+      {
+        tag: "スポーツ特集",
+        title: "頸椎後弯でもサーフィン、スキー、スノーボード、クライミングはできる？",
+        body:
+          "パドリング、雪上での衝撃、ビレイ姿勢、24時間ルールを使い、首症状がある時のスポーツ復帰を保守的に考えます。",
+        url: "/ja/articles/sports-neck-load-return-guide/"
+      }
+    ],
     sourceNote: "医学的枠組み、症状教育、スポーツ負荷、動画選定の参考として使用。",
     faqs: [
       {
@@ -1598,6 +1664,7 @@ const content = {
       "nav.rehab": "Rehab",
       "nav.videos": "Videos",
       "nav.sports": "Deporte",
+      "nav.guides": "Guías",
       "nav.faq": "FAQ",
       "skip.content": "Saltar al contenido",
       "hero.eyebrow": "Educación sobre la curva cervical basada en evidencia",
@@ -1635,6 +1702,11 @@ const content = {
       "sports.title": "Surf, esquí y escalada cambian la carga del cuello.",
       "sports.copy":
         "El deporte rara vez es simplemente bueno o malo. La clave es la posición, el tiempo de exposición, el riesgo de impacto y la respuesta de tus síntomas durante las próximas 24 horas.",
+      "guides.eyebrow": "Guías en profundidad",
+      "guides.title": "Dos temas merecen páginas propias.",
+      "guides.copy":
+        "Estas páginas estáticas explican patrones de dedos dormidos y carga deportiva del cuello con más foco para lectores y buscadores.",
+      "guides.link": "Leer la guía",
       "sources.eyebrow": "Referencias",
       "sources.title": "Base de fuentes del prototipo.",
       "sources.copy":
@@ -2007,6 +2079,22 @@ const content = {
             ]
           }
         ]
+      }
+    ],
+    articleCards: [
+      {
+        tag: "Guía de síntomas",
+        title: "Mapa de dedos dormidos: raíz cervical o nervio periférico",
+        body:
+          "Una guía prudente para pulgar, índice, medio, anular y meñique, con pistas de raíz cervical, túnel carpiano, nervio cubital, radial y salida torácica.",
+        url: "/es/articles/finger-numbness-nerve-map/"
+      },
+      {
+        tag: "Guía deportiva",
+        title: "¿Puedes surfear, esquiar, hacer snowboard o escalar con cifosis cervical?",
+        body:
+          "Un marco de vuelta al deporte para remada de surf, riesgo de impacto en nieve, postura de aseguramiento y regla de síntomas de 24 horas.",
+        url: "/es/articles/sports-neck-load-return-guide/"
       }
     ],
     sourceNote:
@@ -2398,6 +2486,34 @@ function renderSportProtocols() {
   container.replaceChildren(...rendered);
 }
 
+function renderArticleCards() {
+  const active = getActiveContent();
+  const grid = document.querySelector("#article-grid");
+  if (!grid) return;
+
+  const cards = (active.articleCards || []).map((item) => {
+    const card = document.createElement("article");
+    card.className = "article-card";
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = item.tag;
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+    const body = document.createElement("p");
+    body.textContent = item.body;
+    const link = document.createElement("a");
+    link.href = item.url;
+    link.textContent = active.strings["guides.link"] || "Read";
+    link.setAttribute("aria-label", `${link.textContent}: ${item.title}`);
+
+    card.append(tag, title, body, link);
+    return card;
+  });
+
+  grid.replaceChildren(...cards);
+}
+
 function renderSurfResearch() {
   const active = getActiveContent();
   const band = document.querySelector("#surf-research");
@@ -2522,6 +2638,20 @@ function renderStructuredData() {
     }
   ];
 
+  if (active.articleCards?.length) {
+    graph.push({
+      "@type": "ItemList",
+      "@id": `${pageUrl}#guides`,
+      name: active.strings["guides.title"],
+      itemListElement: active.articleCards.map((card, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: card.title,
+        url: new URL(card.url, siteBaseUrl).href
+      }))
+    });
+  }
+
   if (active.faqs?.length) {
     graph.push({
       "@type": "FAQPage",
@@ -2552,6 +2682,7 @@ function renderAll() {
   renderSurfResearch();
   renderSports();
   renderSportProtocols();
+  renderArticleCards();
   renderFaqs();
   renderSources();
   renderStructuredData();
