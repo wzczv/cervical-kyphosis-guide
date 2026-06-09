@@ -2,6 +2,16 @@
 
 Last updated: 2026-06-09
 
+## Implemented Traffic Upgrades
+
+- Added page-specific 1200x630 Open Graph PNG/SVG share cards under `assets/og/` for core pages, articles, hubs, tools, videos, visual landing pages, and localized homepages.
+- Added visible FAQ sections and matching `FAQPage` JSON-LD to article, pillar, hub, tools, videos, and tracker pages.
+- Upgraded `/videos/` localized pages with lazy YouTube embeds, thumbnail dimensions, and `VideoObject` JSON-LD.
+- Shortened long English and Spanish title tags while keeping the visible page headings intact.
+- Added practical tool/tracker cards into related-reading sections to strengthen internal links across clusters.
+- Added hero image dimensions and high-priority loading hints on localized homepages to reduce layout shift and improve LCP handling.
+- Expanded image sitemap entries for original visual landing pages with both SVG assets and share-card PNGs.
+
 ## Weekly Search Console Loop
 
 1. Export Google Search Console queries and pages for the last 28 days.

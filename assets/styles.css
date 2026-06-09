@@ -1233,6 +1233,15 @@ td:first-child {
   color: var(--muted);
 }
 
+.video-embed {
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-top: 1px solid var(--line);
+  display: block;
+  min-height: 220px;
+  width: 100%;
+}
+
 .pillar-toc {
   background: #f6fbfa;
   border: 1px solid var(--line);

@@ -1,4 +1,5 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { dirname, join } from "node:path";
 
 const baseUrl = "https://cervicalcurveguide.com";
@@ -668,10 +669,10 @@ const visuals = [
     file: "cervical-curve-diagram.svg",
     related: "cervical-kyphosis",
     labels: {
-      zh: ["颈椎曲度图解", "正常前凸、曲度变直和反弓/后凸的原创对比图。"],
-      en: ["Cervical curve diagram", "Original comparison of usual lordosis, straightened curve, and reversed/kyphotic curve."],
-      ja: ["頸椎カーブ図", "通常の前弯、前弯減少、逆カーブ/後弯のオリジナル比較図。"],
-      es: ["Diagrama de curva cervical", "Comparación original de lordosis habitual, curva rectificada e invertida/cifótica."]
+      zh: ["颈椎曲度图解", "原创图解对比正常前凸、颈椎曲度变直和反弓/后凸，帮助读者先理解报告词，再结合症状、功能和检查线索判断下一步。"],
+      en: ["Cervical curve diagram", "Original visual comparing usual lordosis, straightened cervical curve, and reversed or kyphotic alignment so readers can interpret report language with symptoms."],
+      ja: ["頸椎カーブ図", "通常の前弯、前弯減少、逆カーブ/後弯を比較するオリジナル図です。画像用語を症状や機能と合わせて読むための入口になります。"],
+      es: ["Diagrama de curva cervical", "Visual original que compara lordosis habitual, curva rectificada e invertida/cifótica para leer el informe junto con síntomas y función."]
     }
   },
   {
@@ -679,10 +680,10 @@ const visuals = [
     file: "c6-c7-c8-finger-numbness-map.svg",
     related: "cervical-radiculopathy",
     labels: {
-      zh: ["C6 C7 C8 手指麻木地图", "原创手指麻木分布图，强调神经根分布会重叠，不能自我诊断。"],
-      en: ["C6 C7 C8 finger numbness map", "Original finger numbness map showing overlapping nerve-root clues, not a self-diagnosis."],
-      ja: ["C6 C7 C8 指のしびれマップ", "神経根の重なりを示すオリジナル図。自己診断用ではありません。"],
-      es: ["Mapa C6 C7 C8 de dedos dormidos", "Mapa original de dedos dormidos con solapamiento de raíces; no es autodiagnóstico."]
+      zh: ["C6 C7 C8 手指麻木地图", "原创手指麻木分布图，整理 C6、C7、C8 神经根与腕管、尺神经等常见重叠线索，强调它只适合记录和讨论，不能自我诊断。"],
+      en: ["C6 C7 C8 finger numbness map", "Original finger numbness map showing overlapping C6, C7, C8, carpal tunnel, and ulnar-nerve clues. Use it for discussion, not self-diagnosis."],
+      ja: ["C6 C7 C8 指のしびれマップ", "C6、C7、C8神経根と手根管、尺骨神経などの重なりを整理するオリジナル図です。自己診断ではなく相談の材料です。"],
+      es: ["Mapa C6 C7 C8 de dedos dormidos", "Mapa original de dedos dormidos que muestra solapamientos entre C6, C7, C8, túnel carpiano y nervio cubital; no es autodiagnóstico."]
     }
   },
   {
@@ -690,15 +691,152 @@ const visuals = [
     file: "24-hour-neck-symptom-response-chart.svg",
     related: "loss-of-cervical-lordosis",
     labels: {
-      zh: ["24 小时颈部症状反应图", "原创运动后反应决策图，用于判断继续、降量或停止就医。"],
-      en: ["24-hour neck symptom response chart", "Original post-exercise response chart for deciding whether to progress, deload, or stop and seek care."],
-      ja: ["24時間首症状反応チャート", "進める、量を下げる、中止して相談する判断を整理するオリジナル図。"],
-      es: ["Gráfico de respuesta cervical 24 h", "Gráfico original para decidir progresar, descargar o parar y buscar atención."]
+      zh: ["24 小时颈部症状反应图", "原创运动后反应决策图，把疼痛、手麻扩散、无力和第二天反应放在一起，用于判断继续、降量或停止并就医。"],
+      en: ["24-hour neck symptom response chart", "Original post-exercise response chart combining pain, spreading numbness, weakness, and next-day response to choose progress, deload, or care."],
+      ja: ["24時間首症状反応チャート", "運動後の痛み、しびれの拡大、筋力低下、翌日反応を合わせ、進行、減量、中止と相談を判断するための図です。"],
+      es: ["Gráfico de respuesta cervical 24 h", "Gráfico original que combina dolor, entumecimiento que se extiende, debilidad y respuesta al día siguiente para decidir progresar, descargar o consultar."]
     }
   }
 ];
 
 const printableRoute = "printable-neck-symptom-tracker";
+
+const specialPageMeta = {
+  tools: {
+    zh: ["工具和原创图解", "手麻地图、颈椎曲度图解和 24 小时反应记录器", "使用原创神经分布图、颈椎曲度图解和 24 小时反应记录器，整理手麻、颈痛、运动后反应和就医前要记录的线索。"],
+    en: ["Tools and original visuals", "Nerve maps, curve diagrams, and a 24-hour response tracker", "Use original nerve maps, cervical curve diagrams, and a 24-hour response tracker to organize numbness, neck pain, exercise response, and appointment notes."],
+    ja: ["ツールと図解", "しびれマップ、頸椎カーブ図、24時間反応記録", "オリジナルの神経マップ、頸椎カーブ図、24時間反応記録で、しびれ、首痛、運動後反応、受診前メモを整理します。"],
+    es: ["Herramientas y visuales", "Mapas nerviosos, diagramas y registro 24 h", "Usa mapas nerviosos, diagramas de curva cervical y un registro de 24 horas para ordenar entumecimiento, dolor cervical y respuesta al ejercicio."]
+  },
+  videos: {
+    zh: ["参考视频索引", "颈椎练习视频参考：神经滑动、力量和运动", "按神经滑动、颈部控制、肩胛力量、胸椎伸展和运动场景整理 YouTube 参考视频；先读站内说明，再看动作画面。"],
+    en: ["Reference video index", "Neck exercise video references: nerve glides, strength, and sport", "Curated YouTube references for nerve glides, neck control, scapular strength, thoracic extension, and sport contexts after the on-site guidance."],
+    ja: ["参考動画インデックス", "首の運動動画参考：神経グライド、筋力、スポーツ", "神経グライド、首の制御、肩甲骨強化、胸椎伸展、スポーツ別のYouTube参考動画を、本文の後に使えるよう整理します。"],
+    es: ["Índice de videos de referencia", "Videos de ejercicios cervicales: nervios, fuerza y deporte", "Videos de YouTube organizados para deslizamientos neurales, control cervical, fuerza escapular, extensión torácica y deporte tras leer la guía."]
+  },
+  [printableRoute]: {
+    zh: ["可打印记录表", "7 天颈痛和手麻记录表", "打印或保存这张 7 天记录表，用同一标准记录疼痛、手麻、睡眠、诱因、练习、训练量和第二天症状反应。"],
+    en: ["Printable tracker", "7-Day Neck Pain and Numbness Tracker", "Print or save this 7-day tracker to record pain, numbness, sleep, triggers, exercises, training load, and next-day symptom response consistently."],
+    ja: ["印刷用記録表", "7日間の首痛・しびれ記録表", "痛み、しびれ、睡眠、誘因、運動、運動量、翌日反応を同じ基準で記録するための7日間表です。"],
+    es: ["Registro imprimible", "Registro de 7 días de cuello y entumecimiento", "Imprime o guarda este registro de 7 días para anotar dolor, entumecimiento, sueño, desencadenantes, ejercicios, carga y respuesta al día siguiente."]
+  }
+};
+
+const categoryFaqs = {
+  symptoms: {
+    zh: [
+      ["手指麻木能直接判断是哪一节颈椎吗？", "不能。手指分布只是线索，C6、C7、C8 和腕管、尺神经、胸廓出口等问题会重叠，需要结合诱因、体征和必要检查。"],
+      ["什么时候手麻不能继续观察？", "新出现或加重的无力、麻木扩散、手变笨、走路不稳、大小便异常或外伤后症状，应尽快就医。"]
+    ],
+    en: [
+      ["Can finger numbness identify the exact neck level?", "No. Finger maps are clues only; C6, C7, C8, carpal tunnel, ulnar nerve, and thoracic outlet patterns can overlap."],
+      ["When should numbness not be watched at home?", "New or worsening weakness, spreading numbness, hand clumsiness, walking change, bowel/bladder symptoms, or symptoms after trauma need prompt care."]
+    ],
+    ja: [
+      ["指のしびれだけで首のレベルは分かりますか？", "分かりません。指の分布は手がかりで、C6、C7、C8、手根管、尺骨神経、胸郭出口の症状は重なります。"],
+      ["しびれを様子見しない方がよい時は？", "新しい筋力低下、しびれの拡大、手の不器用さ、歩行変化、排尿排便異常、外傷後の症状は早めに相談します。"]
+    ],
+    es: [
+      ["¿Los dedos dormidos identifican el nivel cervical exacto?", "No. El mapa de dedos solo da pistas; C6, C7, C8, túnel carpiano, nervio cubital y salida torácica pueden solaparse."],
+      ["¿Cuándo no conviene observar el entumecimiento en casa?", "Debilidad nueva o progresiva, entumecimiento que se extiende, torpeza de mano, cambios de marcha, síntomas urinarios/intestinales o trauma requieren atención."]
+    ]
+  },
+  diagnosis: {
+    zh: [
+      ["MRI 或 X 光报告写得严重，就一定是疼痛来源吗？", "不一定。影像词描述结构，是否重要要看症状侧别、神经体征、功能变化和检查结果是否一致。"],
+      ["曲度变直和颈椎反弓是一回事吗？", "不完全一样。曲度变直通常指前凸减少，反弓/后凸指曲线方向改变，但都不能单独诊断疼痛来源。"]
+    ],
+    en: [
+      ["Does a severe-sounding MRI or X-ray report prove the pain source?", "Not by itself. Imaging words describe structure; clinical relevance depends on symptoms, side, neurological signs, function, and exam agreement."],
+      ["Are straightening and cervical kyphosis the same thing?", "Not exactly. Straightening usually means reduced lordosis, while kyphosis or reversal means a directional curve change. Neither alone diagnoses pain."]
+    ],
+    ja: [
+      ["MRIやX線の言葉が強ければ痛みの原因ですか？", "それだけでは決まりません。画像は構造を説明し、症状側、神経所見、機能、診察との一致で意味が変わります。"],
+      ["ストレートネックと頸椎後弯は同じですか？", "完全には同じではありません。ストレートは前弯減少、後弯や逆カーブは方向変化を指しますが、単独で痛みを診断しません。"]
+    ],
+    es: [
+      ["¿Un informe de MRI o radiografía serio prueba la causa del dolor?", "No por sí solo. La imagen describe estructura; importa si coincide con síntomas, lado, signos neurológicos, función y exploración."],
+      ["¿Rectificación y cifosis cervical son lo mismo?", "No exactamente. Rectificación suele ser menor lordosis; cifosis o curva invertida implica cambio de dirección. Ninguna diagnostica dolor por sí sola."]
+    ]
+  },
+  exercises: {
+    zh: [
+      ["练习目标是把曲度练回来吗？", "本站不承诺练习能恢复曲度。更可靠的目标是疼痛、手麻、睡眠、活动度、力量和运动耐受改善。"],
+      ["练习后第二天更麻怎么办？", "先降量或停止该动作，记录诱因和反应；如果麻木扩散、无力或功能变差，应就医评估。"]
+    ],
+    en: [
+      ["Is the exercise goal to restore the curve?", "This site does not promise curve restoration. More useful goals are pain, numbness, sleep, motion, strength, and activity tolerance."],
+      ["What if numbness is worse the next day?", "Reduce or stop that drill, record the response, and seek care if numbness spreads, weakness appears, or function worsens."]
+    ],
+    ja: [
+      ["運動の目的はカーブを戻すことですか？", "このサイトはカーブ回復を約束しません。痛み、しびれ、睡眠、可動域、筋力、活動耐性を目標にします。"],
+      ["翌日にしびれが強くなったら？", "その運動を減らすか中止し、反応を記録します。しびれ拡大、筋力低下、機能低下があれば相談してください。"]
+    ],
+    es: [
+      ["¿El objetivo del ejercicio es restaurar la curva?", "Este sitio no promete restaurar la curva. Objetivos más útiles son dolor, entumecimiento, sueño, movimiento, fuerza y tolerancia."],
+      ["¿Qué hago si al día siguiente hay más entumecimiento?", "Reduce o detén ese ejercicio, registra la respuesta y consulta si se extiende, aparece debilidad o empeora la función."]
+    ]
+  },
+  treatments: {
+    zh: [
+      ["牵引、枕头或按摩能把颈椎复位吗？", "不能这样承诺。它们可能短期改变症状或舒适度，但不等于结构复位或曲度恢复。"],
+      ["做完手法后头晕或手麻加重要怎么办？", "不要反复尝试同一手法，应停止并尽快就医评估，尤其伴随无力、走路不稳或明显头痛时。"]
+    ],
+    en: [
+      ["Can traction, pillows, or massage realign the neck?", "They should not promise realignment. They may change comfort or symptoms short term, but that does not prove structural correction."],
+      ["What if dizziness or numbness worsens after manual treatment?", "Do not keep repeating it. Stop and seek assessment, especially with weakness, gait change, or significant headache."]
+    ],
+    ja: [
+      ["牽引、枕、マッサージで首は整復されますか？", "整復を約束するものではありません。短期的な楽さはあり得ますが、構造が直った証明ではありません。"],
+      ["手技後にめまいやしびれが悪化したら？", "同じ手技を繰り返さず中止し、筋力低下、歩行変化、強い頭痛を伴う場合は早めに相談します。"]
+    ],
+    es: [
+      ["¿Tracción, almohadas o masaje realinean el cuello?", "No deberían prometer realineación. Pueden cambiar comodidad o síntomas a corto plazo, pero no prueban corrección estructural."],
+      ["¿Y si mareo o entumecimiento empeoran tras manipulación?", "No lo repitas. Para y busca valoración, sobre todo con debilidad, cambio al caminar o dolor de cabeza importante."]
+    ]
+  },
+  sports: {
+    zh: [
+      ["有颈椎反弓还能运动吗？", "很多人可以运动，但要看神经症状、外伤风险、训练量和 24 小时反应，而不是只看报告词。"],
+      ["运动后怎么判断要不要降量？", "如果疼痛明显上升、手麻扩散、睡眠变差或第二天功能下降，下一次先减少时长、强度或颈部后仰暴露。"]
+    ],
+    en: [
+      ["Can I still play sports with cervical kyphosis?", "Many people can, but decisions should consider nerve symptoms, trauma risk, dose, and 24-hour response, not report language alone."],
+      ["How do I decide when to deload?", "If pain rises, numbness spreads, sleep worsens, or function drops the next day, reduce duration, intensity, or neck-extension exposure."]
+    ],
+    ja: [
+      ["頸椎後弯でもスポーツはできますか？", "多くの人は可能ですが、画像用語だけでなく神経症状、外傷リスク、量、24時間反応で判断します。"],
+      ["運動量を下げる基準は？", "痛み上昇、しびれ拡大、睡眠悪化、翌日の機能低下があれば、時間、強度、首の伸展暴露を下げます。"]
+    ],
+    es: [
+      ["¿Puedo hacer deporte con cifosis cervical?", "Muchas personas pueden, pero decide por síntomas nerviosos, riesgo de trauma, dosis y respuesta de 24 horas, no solo por el informe."],
+      ["¿Cuándo conviene descargar?", "Si sube el dolor, se extiende el entumecimiento, empeora el sueño o baja la función al día siguiente, reduce duración, intensidad o extensión cervical."]
+    ]
+  }
+};
+
+const seoTitleRewrites = {
+  "Cervical Kyphosis vs Loss of Cervical Lordosis: What the Report Means": "Cervical Kyphosis vs Loss of Lordosis",
+  "Can You Surf, Ski, Snowboard, or Climb with Cervical Kyphosis?": "Sports with Cervical Kyphosis: Surf, Snow, Climb",
+  "Can Cervical Curve Be Restored? What Conservative Rehab Should Track": "Can Cervical Curve Be Restored?",
+  "Traction, Pillows, Massage, and Manipulation: Conservative Care Boundaries": "Traction, Pillows, Massage: Safety Boundaries",
+  "Finger Numbness Map: Cervical Nerve Root or Peripheral Nerve?": "Finger Numbness Map: Neck or Peripheral Nerve?",
+  "Conservative boundaries for traction, pillows, massage, and manipulation": "Traction, Pillows, Massage: Boundaries",
+  "When should cervical kyphosis be checked by orthopedics, neurology, or rehab?": "When to See a Doctor for Cervical Kyphosis",
+  "Pillow height and sleep position for cervical kyphosis or straight neck": "Pillow Height for Cervical Kyphosis",
+  "Cervical Kyphosis: Report Meaning, Symptoms, Rehab, and Safety Boundaries": "Cervical Kyphosis: Symptoms, Rehab, Safety",
+  "Cervical Radiculopathy: Arm Pain, Finger Numbness, Testing, and Conservative Rehab": "Cervical Radiculopathy: Arm Pain and Numbness",
+  "Cifosis cervical vs pérdida de lordosis: qué significa el informe": "Cifosis vs pérdida de lordosis cervical",
+  "¿Puedes surfear, esquiar, hacer snowboard o escalar con cifosis cervical?": "Deporte con cifosis cervical: surf, nieve y escalada",
+  "¿Se puede recuperar la curva cervical? Qué debería medir la rehabilitación": "¿Se puede recuperar la curva cervical?",
+  "Tracción, almohadas, masaje y manipulación: límites del cuidado conservador": "Tracción, almohadas y manipulación cervical",
+  "Mapa de dedos dormidos: raíz cervical o nervio periférico": "Dedos dormidos: raíz cervical o nervio periférico",
+  "Radiculopatía cervical y mielopatía: señales de alarma": "Radiculopatía y mielopatía: alarmas",
+  "Cifosis cervical: informe, síntomas, rehabilitación y límites de seguridad": "Cifosis cervical: síntomas, rehab y seguridad",
+  "Radiculopatía cervical: dolor de brazo, dedos dormidos, pruebas y rehabilitación": "Radiculopatía cervical: dolor y dedos dormidos",
+  "Pérdida de lordosis cervical: significado, síntomas y cuidado conservador": "Pérdida de lordosis cervical: significado y cuidado",
+  "Guía de Curva Cervical | Rehabilitación conservadora para cifosis cervical": "Guía de Curva Cervical"
+};
 
 function escapeHtml(value) {
   return String(value)
@@ -706,6 +844,10 @@ function escapeHtml(value) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function escapeXml(value) {
+  return escapeHtml(value).replace(/'/g, "&apos;");
 }
 
 function localizedPath(lang, route) {
@@ -734,6 +876,204 @@ function outputLocalized(lang, route) {
 function outputArticle(lang, slug) {
   const prefix = languages[lang].prefix.replace(/^\//, "");
   return join(prefix, "articles", slug, "index.html");
+}
+
+function pathToOutputFile(path) {
+  if (path === "/") return "index.html";
+  return `${path.replace(/^\//, "")}index.html`;
+}
+
+function ogAssetId(lang, path) {
+  const normalized = path === "/" ? "home" : path.replace(/^\/|\/$/g, "").replace(/\//g, "-");
+  return `${lang}-${normalized}`.replace(/[^a-z0-9-]/gi, "-").replace(/-+/g, "-").toLowerCase();
+}
+
+function ogAssetPath(lang, path, ext = "png") {
+  return `/assets/og/${ogAssetId(lang, path)}.${ext}`;
+}
+
+function publicPathForPage(lang, route, articleSlug) {
+  if (articleSlug) return articlePath(lang, articleSlug);
+  return localizedPath(lang, route);
+}
+
+function ogImageUrl(lang, route, articleSlug) {
+  return `${baseUrl}${ogAssetPath(lang, publicPathForPage(lang, route, articleSlug))}`;
+}
+
+function titleTag(title) {
+  const compact = seoTitleRewrites[title] || title;
+  const withBrand = `${compact} | Cervical Curve Guide`;
+  return withBrand.length <= 68 ? withBrand : compact;
+}
+
+function pageFaqs(lang, category) {
+  return [...(categoryFaqs[category]?.[lang] || []), ...(extraFaqs[lang] || []).slice(0, 1)].slice(0, 3);
+}
+
+function renderFaqSection(lang, faqs) {
+  if (!faqs?.length) return "";
+  const heading = { zh: "常见问题", en: "FAQ", ja: "よくある質問", es: "Preguntas frecuentes" }[lang];
+  return `<section class="article-section">
+          <h2>${escapeHtml(heading)}</h2>
+          <div class="faq-list">
+            ${faqs
+              .map(([question, answer]) => `<details class="faq-item"><summary>${escapeHtml(question)}</summary><p>${escapeHtml(answer)}</p></details>`)
+              .join("\n")}
+          </div>
+        </section>`;
+}
+
+function utilityCardsForCategory(lang, category) {
+  const l = languages[lang];
+  const tractionCard = existingArticles.find((item) => item.slug === "traction-pillow-manipulation-risk-guide");
+  const cards = {
+    symptoms: [
+      {
+        tag: l.nav.tools,
+        title: visuals[1].labels[lang][0],
+        body: visuals[1].labels[lang][1],
+        url: localizedPath(lang, `images/${visuals[1].slug}`)
+      },
+      {
+        tag: { zh: "记录表", en: "Tracker", ja: "記録表", es: "Registro" }[lang],
+        title: specialPageMeta[printableRoute][lang][1],
+        body: specialPageMeta[printableRoute][lang][2],
+        url: localizedPath(lang, printableRoute)
+      }
+    ],
+    diagnosis: [
+      {
+        tag: l.nav.tools,
+        title: visuals[0].labels[lang][0],
+        body: visuals[0].labels[lang][1],
+        url: localizedPath(lang, `images/${visuals[0].slug}`)
+      },
+      {
+        tag: l.nav.diagnosis,
+        title: hubs.diagnosis.meta[lang][1],
+        body: hubs.diagnosis.meta[lang][2],
+        url: localizedPath(lang, "diagnosis")
+      }
+    ],
+    exercises: [
+      {
+        tag: l.nav.tools,
+        title: visuals[2].labels[lang][0],
+        body: visuals[2].labels[lang][1],
+        url: localizedPath(lang, `images/${visuals[2].slug}`)
+      },
+      {
+        tag: { zh: "记录表", en: "Tracker", ja: "記録表", es: "Registro" }[lang],
+        title: specialPageMeta[printableRoute][lang][1],
+        body: specialPageMeta[printableRoute][lang][2],
+        url: localizedPath(lang, printableRoute)
+      }
+    ],
+    treatments: [
+      {
+        tag: l.nav.treatments,
+        title: cardForArticle(tractionCard, lang).title,
+        body: cardForArticle(tractionCard, lang).body,
+        url: articlePath(lang, "traction-pillow-manipulation-risk-guide")
+      },
+      {
+        tag: l.nav.tools,
+        title: visuals[2].labels[lang][0],
+        body: visuals[2].labels[lang][1],
+        url: localizedPath(lang, `images/${visuals[2].slug}`)
+      }
+    ],
+    sports: [
+      {
+        tag: l.nav.tools,
+        title: visuals[2].labels[lang][0],
+        body: visuals[2].labels[lang][1],
+        url: localizedPath(lang, `images/${visuals[2].slug}`)
+      },
+      {
+        tag: l.nav.videos,
+        title: specialPageMeta.videos[lang][1],
+        body: specialPageMeta.videos[lang][2],
+        url: localizedPath(lang, "videos")
+      }
+    ]
+  };
+  return cards[category] || [];
+}
+
+function wrapText(text, maxChars, maxLines) {
+  const clean = String(text).replace(/\s+/g, " ").trim();
+  if (!clean) return [];
+  const hasSpaces = /\s/.test(clean);
+  const lines = [];
+  if (hasSpaces) {
+    let line = "";
+    for (const word of clean.split(" ")) {
+      const next = line ? `${line} ${word}` : word;
+      if (next.length > maxChars && line) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = next;
+      }
+      if (lines.length === maxLines) break;
+    }
+    if (line && lines.length < maxLines) lines.push(line);
+  } else {
+    for (let i = 0; i < clean.length && lines.length < maxLines; i += maxChars) {
+      lines.push(clean.slice(i, i + maxChars));
+    }
+  }
+  if (lines.length === maxLines && lines.join(hasSpaces ? " " : "").length < clean.length) {
+    lines[lines.length - 1] = `${lines[lines.length - 1].replace(/[。.,，、;；:：!?！？]$/, "")}...`;
+  }
+  return lines;
+}
+
+function ogCardSvg(entry) {
+  const isLatin = entry.lang === "en" || entry.lang === "es";
+  const titleLines = wrapText(entry.title, isLatin ? 34 : 18, 3);
+  const descLines = wrapText(entry.description, isLatin ? 58 : 28, 3);
+  const motif =
+    {
+      symptoms: `<g transform="translate(885 155)"><rect x="0" y="112" width="54" height="220" rx="27" fill="#167a7f"/><rect x="76" y="70" width="54" height="262" rx="27" fill="#167a7f"/><rect x="152" y="42" width="54" height="290" rx="27" fill="#d8644a"/><rect x="228" y="78" width="54" height="254" rx="27" fill="#c8902f"/><path d="M44 370 C96 410 224 410 282 370" fill="none" stroke="#9db8b4" stroke-width="24" stroke-linecap="round"/></g>`,
+      sports: `<g transform="translate(880 170)"><circle cx="150" cy="135" r="112" fill="#fff" stroke="#d9e5e2" stroke-width="8"/><path d="M74 156 C130 88 193 92 242 152" fill="none" stroke="#167a7f" stroke-width="20" stroke-linecap="round"/><path d="M62 244 C130 202 216 202 288 244" fill="none" stroke="#d8644a" stroke-width="18" stroke-linecap="round"/><circle cx="150" cy="135" r="24" fill="#c8902f"/></g>`,
+      treatments: `<g transform="translate(900 155)"><rect width="235" height="310" rx="24" fill="#fff" stroke="#d9e5e2" stroke-width="8"/><path d="M70 66 C128 120 128 206 72 254" fill="none" stroke="#167a7f" stroke-width="18" stroke-linecap="round"/><path d="M154 70 C126 130 124 196 156 254" fill="none" stroke="#d8644a" stroke-width="18" stroke-linecap="round"/><circle cx="78" cy="255" r="16" fill="#9db8b4"/><circle cx="158" cy="255" r="16" fill="#9db8b4"/></g>`,
+      videos: `<g transform="translate(890 170)"><rect width="260" height="180" rx="26" fill="#fff" stroke="#d9e5e2" stroke-width="8"/><path d="M112 58 L112 122 L172 90 Z" fill="#d8644a"/><rect x="18" y="220" width="224" height="28" rx="14" fill="#167a7f" opacity=".9"/></g>`,
+      tools: `<g transform="translate(880 150)"><rect width="290" height="260" rx="26" fill="#fff" stroke="#d9e5e2" stroke-width="8"/><circle cx="74" cy="78" r="30" fill="#4d8061"/><circle cx="145" cy="78" r="30" fill="#c8902f"/><circle cx="216" cy="78" r="30" fill="#d8644a"/><path d="M62 178 C112 120 178 238 232 172" fill="none" stroke="#167a7f" stroke-width="18" stroke-linecap="round"/></g>`,
+      diagnosis: `<g transform="translate(905 145)"><path d="M110 20 C190 115 188 255 108 340" fill="none" stroke="#167a7f" stroke-width="28" stroke-linecap="round"/><path d="M210 20 C162 120 162 245 212 340" fill="none" stroke="#d8644a" stroke-width="24" stroke-linecap="round"/><circle cx="132" cy="78" r="24" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="136" cy="152" r="24" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="130" cy="226" r="24" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="116" cy="300" r="24" fill="#fff" stroke="#9db8b4" stroke-width="7"/></g>`
+    }[entry.kind] || "";
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7fbfa"/>
+  <rect x="46" y="46" width="1108" height="538" rx="28" fill="#fff" stroke="#d9e5e2" stroke-width="2"/>
+  <circle cx="96" cy="96" r="24" fill="${entry.accent}"/>
+  <text x="136" y="105" fill="#162026" font-family="Arial, sans-serif" font-size="25" font-weight="800">Cervical Curve Guide</text>
+  <text x="84" y="188" fill="${entry.accent}" font-family="Arial, sans-serif" font-size="28" font-weight="900">${escapeXml(entry.tag)}</text>
+  ${titleLines.map((line, index) => `<text x="84" y="${254 + index * 60}" fill="#162026" font-family="Arial, sans-serif" font-size="50" font-weight="850">${escapeXml(line)}</text>`).join("\n  ")}
+  ${descLines.map((line, index) => `<text x="86" y="${465 + index * 36}" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">${escapeXml(line)}</text>`).join("\n  ")}
+  <text x="84" y="558" fill="#5b6a72" font-family="Arial, sans-serif" font-size="22">cervicalcurveguide.com</text>
+  ${motif}
+</svg>`;
+}
+
+function convertSvgToPng(svgPath, pngPath) {
+  if (!existsSync("/usr/bin/qlmanage")) return false;
+  const outputDir = dirname(svgPath);
+  const quicklookPng = `${svgPath}.png`;
+  rmSync(quicklookPng, { force: true });
+  rmSync(pngPath, { force: true });
+  try {
+    execFileSync("/usr/bin/qlmanage", ["-t", "-s", "1200", "-o", outputDir, svgPath], { stdio: "ignore" });
+    if (existsSync(quicklookPng)) {
+      renameSync(quicklookPng, pngPath);
+      execFileSync("/usr/bin/sips", ["-c", "630", "1200", "--cropOffset", "285", "0", pngPath], { stdio: "ignore" });
+      return true;
+    }
+  } catch {
+    return false;
+  }
+  return false;
 }
 
 function renderHreflang(route, isArticle = false) {
@@ -797,7 +1137,7 @@ function renderFooter(lang) {
     </footer>`;
 }
 
-function structuredData({ lang, url, title, description, route, article, breadcrumbs = [], extraGraph = [] }) {
+function structuredData({ lang, url, title, description, route, article, breadcrumbs = [], extraGraph = [], faqs = [], image }) {
   const l = languages[lang];
   const graph = [
     {
@@ -822,6 +1162,7 @@ function structuredData({ lang, url, title, description, route, article, breadcr
       headline: title,
       description,
       url,
+      image,
       inLanguage: l.htmlLang,
       medicalAudience: "Patient",
       isAccessibleForFree: true,
@@ -853,7 +1194,7 @@ function structuredData({ lang, url, title, description, route, article, breadcr
       headline: title,
       description,
       url,
-      image: `${baseUrl}/assets/hero-cervical-kyphosis.jpg`,
+      image,
       inLanguage: l.htmlLang,
       datePublished: reviewDate,
       dateModified: reviewDate,
@@ -880,21 +1221,38 @@ function structuredData({ lang, url, title, description, route, article, breadcr
     }
   }
 
+  if (faqs.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: faqs.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answer
+        }
+      }))
+    });
+  }
+
   graph.push(...extraGraph);
 
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2);
 }
 
-function htmlShell({ lang, route, articleSlug, title, description, content, article, breadcrumbs, extraGraph = [] }) {
+function htmlShell({ lang, route, articleSlug, title, description, content, article, breadcrumbs, extraGraph = [], faqs = [] }) {
   const l = languages[lang];
   const url = articleSlug ? articleUrl(lang, articleSlug) : localizedUrl(lang, route);
   const hrefLangRoute = articleSlug || route;
+  const pageTitle = titleTag(title);
+  const image = ogImageUrl(lang, route, articleSlug);
   return `<!doctype html>
 <html lang="${l.htmlLang}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${escapeHtml(title)} | Cervical Curve Guide</title>
+    <title>${escapeHtml(pageTitle)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="author" content="Cervical Curve Guide" />
@@ -902,14 +1260,16 @@ function htmlShell({ lang, route, articleSlug, title, description, content, arti
     <link rel="canonical" href="${url}" />
     ${renderHreflang(hrefLangRoute, Boolean(articleSlug))}
     <meta property="og:type" content="${articleSlug ? "article" : "website"}" />
-    <meta property="og:title" content="${escapeHtml(title)}" />
+    <meta property="og:title" content="${escapeHtml(pageTitle)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${url}" />
-    <meta property="og:image" content="${baseUrl}/assets/hero-cervical-kyphosis.jpg" />
+    <meta property="og:image" content="${image}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${escapeHtml(title)}" />
+    <meta name="twitter:title" content="${escapeHtml(pageTitle)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
-    <meta name="twitter:image" content="${baseUrl}/assets/hero-cervical-kyphosis.jpg" />
+    <meta name="twitter:image" content="${image}" />
     <link rel="stylesheet" href="/assets/styles.css?v=${version}" />
     <script src="/assets/analytics.js?v=${version}" defer></script>
     <script type="application/ld+json">${structuredData({
@@ -920,7 +1280,9 @@ function htmlShell({ lang, route, articleSlug, title, description, content, arti
       route,
       article,
       breadcrumbs,
-      extraGraph
+      extraGraph,
+      faqs,
+      image
     })}</script>
   </head>
   <body>
@@ -985,6 +1347,7 @@ function renderCardGrid(cards, lang) {
 function renderArticlePage(article, lang) {
   const l = languages[lang];
   const [kicker, title, description, focus, keyPoints] = article.translations[lang];
+  const faqs = pageFaqs(lang, article.category);
   const relatedCards = allArticles
     .filter((item) => item.slug !== article.slug && item.category === article.category)
     .slice(0, 6)
@@ -1011,6 +1374,7 @@ function renderArticlePage(article, lang) {
           <h2>${escapeHtml(l.redFlagHeading)}</h2>
           <p>${escapeHtml(l.redFlag)}</p>
         </section>
+        ${renderFaqSection(lang, faqs)}
         <aside class="ad-slot ad-slot-article" aria-label="${escapeHtml(l.ad)}"><span>${escapeHtml(l.ad)}</span></aside>
         <section class="article-section article-sources">
           <h2>${escapeHtml(l.sourceHeading)}</h2>
@@ -1030,6 +1394,7 @@ function renderArticlePage(article, lang) {
                 body: hubs[hub].meta[lang][2],
                 url: localizedPath(lang, hub)
               },
+              ...utilityCardsForCategory(lang, article.category),
               ...relatedCards
             ],
             lang
@@ -1047,7 +1412,8 @@ function renderArticlePage(article, lang) {
     breadcrumbs: [
       { name: hubs[hub].meta[lang][1], url: localizedUrl(lang, hub) },
       { name: title, url: articleUrl(lang, article.slug) }
-    ]
+    ],
+    faqs
   });
 }
 
@@ -1056,6 +1422,7 @@ function renderHubPage(route, lang) {
   const hub = hubs[route];
   const [kicker, title, description] = hub.meta[lang];
   const cards = getCardsForRoute(lang, route);
+  const faqs = [...(categoryFaqs[hub.categories[0]]?.[lang] || []), ...(extraFaqs[lang] || []).slice(0, 1)].slice(0, 3);
   const content = `<main class="legal-main growth-main" id="content">
       <article class="legal-article growth-page">
         <p class="legal-meta">${escapeHtml(l.updated)} · ${escapeHtml(kicker)}</p>
@@ -1067,14 +1434,7 @@ function renderHubPage(route, lang) {
           ${renderCardGrid(cards, lang)}
         </section>
         <aside class="ad-slot ad-slot-article" aria-label="${escapeHtml(l.ad)}"><span>${escapeHtml(l.ad)}</span></aside>
-        <section class="article-section">
-          <h2>FAQ</h2>
-          <div class="faq-list">
-            ${extraFaqs[lang]
-              .map(([question, answer]) => `<details class="faq-item"><summary>${escapeHtml(question)}</summary><p>${escapeHtml(answer)}</p></details>`)
-              .join("\n")}
-          </div>
-        </section>
+        ${renderFaqSection(lang, faqs)}
       </article>
     </main>`;
   return htmlShell({
@@ -1083,18 +1443,15 @@ function renderHubPage(route, lang) {
     title,
     description,
     content,
-    breadcrumbs: [{ name: title, url: localizedUrl(lang, route) }]
+    breadcrumbs: [{ name: title, url: localizedUrl(lang, route) }],
+    faqs
   });
 }
 
 function renderToolsPage(lang) {
   const l = languages[lang];
-  const meta = {
-    zh: ["工具和原创图解", "手麻地图、颈椎曲度图解和 24 小时反应记录器", "用原创图解和小工具帮助读者整理线索。结果只用于教育和记录，不能替代诊断。"],
-    en: ["Tools and original visuals", "Nerve maps, curve diagrams, and a 24-hour response tracker", "Original visuals and small tools help readers organize clues. Results are educational records, not diagnoses."],
-    ja: ["ツールと図解", "しびれマップ、頸椎カーブ図、24時間反応記録", "図解と小ツールで手がかりを整理します。結果は教育と記録用で診断ではありません。"],
-    es: ["Herramientas y visuales", "Mapas nerviosos, diagramas de curva y registro de 24 horas", "Visuales originales y herramientas pequeñas ayudan a ordenar pistas. El resultado es educativo, no diagnóstico."]
-  }[lang];
+  const meta = specialPageMeta.tools[lang];
+  const faqs = extraFaqs[lang];
   const labels = {
     zh: ["正常前凸", "曲度变直", "反弓/后凸", "24 小时反应记录器", "疼痛是否升高 2 分以上？", "手麻或手臂痛是否扩散？", "是否出现无力、手变笨或走路不稳？", "生成提示", "可以继续小幅进阶。", "先降量并观察。", "停止并尽快就医评估。"],
     en: ["Usual lordosis", "Straightened curve", "Reversed/kyphotic", "24-hour response tracker", "Did pain rise by more than 2 points?", "Did arm or hand symptoms spread?", "Any weakness, hand clumsiness, or walking change?", "Generate guidance", "Small progression may be reasonable.", "Deload and observe first.", "Stop and seek prompt medical assessment."],
@@ -1196,6 +1553,7 @@ function renderToolsPage(lang) {
             <output id="tool-output" class="tool-output" aria-live="polite"></output>
           </form>
         </section>
+        ${renderFaqSection(lang, faqs)}
         <aside class="ad-slot ad-slot-article" aria-label="${escapeHtml(l.ad)}"><span>${escapeHtml(l.ad)}</span></aside>
       </article>
     </main>
@@ -1213,17 +1571,13 @@ function renderToolsPage(lang) {
         });
       })();
     </script>`;
-  return htmlShell({ lang, route: "tools", title: meta[1], description: meta[2], content, breadcrumbs: [{ name: meta[1], url: localizedUrl(lang, "tools") }] });
+  return htmlShell({ lang, route: "tools", title: meta[1], description: meta[2], content, breadcrumbs: [{ name: meta[1], url: localizedUrl(lang, "tools") }], faqs });
 }
 
 function renderVideosPage(lang) {
   const l = languages[lang];
-  const meta = {
-    zh: ["参考视频索引", "YouTube 只作为动作参考，不替代站内内容", "先读本站说明，再把视频当成动作视觉参考。任何视频都不能替代个人诊断、处方或复健计划。"],
-    en: ["Reference video index", "YouTube is a visual reference, not a replacement for site content", "Read the on-site explanation first, then use video for visual reference. No video replaces diagnosis, prescription, or individualized rehab."],
-    ja: ["参考動画インデックス", "YouTubeは動作参考であり、本文の代わりではありません", "まずサイト内説明を読み、動画は視覚的参考として使います。診断、処方、個別リハビリの代わりではありません。"],
-    es: ["Índice de videos de referencia", "YouTube es referencia visual, no reemplazo del contenido", "Lee primero la explicación del sitio y usa el video como referencia visual. Ningún video sustituye diagnóstico, prescripción ni rehabilitación individual."]
-  }[lang];
+  const meta = specialPageMeta.videos[lang];
+  const faqs = extraFaqs[lang];
   const content = `<main class="legal-main growth-main" id="content">
       <article class="legal-article growth-page">
         <p class="legal-meta">${escapeHtml(l.updated)}</p>
@@ -1234,7 +1588,7 @@ function renderVideosPage(lang) {
             .map(
               ([id, source, title, tag]) => `<article class="video-card">
                 <a class="video-frame video-preview" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">
-                  <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${escapeHtml(title)}" loading="lazy" />
+                  <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${escapeHtml(title)}" width="480" height="360" loading="lazy" decoding="async" />
                   <span class="video-play" aria-hidden="true"></span>
                   <span class="video-platform">YouTube</span>
                 </a>
@@ -1244,20 +1598,36 @@ function renderVideosPage(lang) {
                   <p>${escapeHtml(meta[2])}</p>
                   <a class="video-link" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">YouTube reference</a>
                 </div>
+                <iframe class="video-embed" loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/${id}" title="${escapeHtml(title)}" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </article>`
             )
             .join("\n")}
         </div>
+        ${renderFaqSection(lang, faqs)}
         <aside class="ad-slot ad-slot-article" aria-label="${escapeHtml(l.ad)}"><span>${escapeHtml(l.ad)}</span></aside>
       </article>
     </main>`;
-  return htmlShell({ lang, route: "videos", title: meta[1], description: meta[2], content, breadcrumbs: [{ name: meta[1], url: localizedUrl(lang, "videos") }] });
+  const extraGraph = videoRefs.map(([id, source, title, tag]) => ({
+    "@type": "VideoObject",
+    "@id": `${localizedUrl(lang, "videos")}#video-${id}`,
+    name: title,
+    description: `${source}: ${tag}. ${meta[2]}`,
+    thumbnailUrl: [`https://i.ytimg.com/vi/${id}/hqdefault.jpg`],
+    uploadDate: reviewDate,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${id}`,
+    contentUrl: `https://www.youtube.com/watch?v=${id}`,
+    publisher: { "@id": `${baseUrl}/#organization` },
+    isPartOf: { "@id": `${localizedUrl(lang, "videos")}#medical-page` }
+  }));
+  return htmlShell({ lang, route: "videos", title: meta[1], description: meta[2], content, breadcrumbs: [{ name: meta[1], url: localizedUrl(lang, "videos") }], extraGraph, faqs });
 }
 
 function renderPillarPage(pillar, lang) {
   const l = languages[lang];
   const t = pillar.translations[lang];
   const url = localizedUrl(lang, pillar.slug);
+  const pillarCategory = pillar.slug === "cervical-radiculopathy" ? "symptoms" : pillar.slug === "loss-of-cervical-lordosis" ? "exercises" : "diagnosis";
+  const faqs = pageFaqs(lang, pillarCategory);
   const relatedCards = pillar.related
     .map((slug) => allArticles.find((article) => article.slug === slug))
     .filter(Boolean)
@@ -1282,6 +1652,7 @@ function renderPillarPage(pillar, lang) {
             </section>`
           )
           .join("\n")}
+        ${renderFaqSection(lang, faqs)}
         <aside class="ad-slot ad-slot-article" aria-label="${escapeHtml(l.ad)}"><span>${escapeHtml(l.ad)}</span></aside>
         <section class="article-section article-sources">
           <h2>${escapeHtml(l.sourceHeading)}</h2>
@@ -1317,6 +1688,7 @@ function renderPillarPage(pillar, lang) {
                 }[lang],
                 url: localizedPath(lang, printableRoute)
               },
+              ...utilityCardsForCategory(lang, pillarCategory),
               ...relatedCards
             ],
             lang
@@ -1331,7 +1703,8 @@ function renderPillarPage(pillar, lang) {
     description: t.description,
     content,
     article: { sources: pillar.sources },
-    breadcrumbs: [{ name: t.title, url }]
+    breadcrumbs: [{ name: t.title, url }],
+    faqs
   });
 }
 
@@ -1417,6 +1790,150 @@ function writeVisualAssets() {
   }
 }
 
+function kindForCategory(category) {
+  return {
+    symptoms: "symptoms",
+    diagnosis: "diagnosis",
+    exercises: "tools",
+    treatments: "treatments",
+    sports: "sports"
+  }[category] || "tools";
+}
+
+function accentForKind(kind) {
+  return {
+    symptoms: "#d8644a",
+    diagnosis: "#167a7f",
+    tools: "#4d8061",
+    treatments: "#c8902f",
+    sports: "#0d5559",
+    videos: "#d8644a"
+  }[kind] || "#167a7f";
+}
+
+function buildOgEntries() {
+  const entries = [];
+  const add = ({ lang, path, title, description, tag, kind }) => {
+    entries.push({
+      lang,
+      path,
+      title,
+      description,
+      tag,
+      kind,
+      accent: accentForKind(kind),
+      svgPath: ogAssetPath(lang, path, "svg"),
+      pngPath: ogAssetPath(lang, path, "png")
+    });
+  };
+
+  for (const lang of Object.keys(languages)) {
+    add({
+      lang,
+      path: languages[lang].home,
+      title: { zh: "颈椎曲度指南", en: "Cervical Curve Guide", ja: "頸椎カーブガイド", es: "Guía de Curva Cervical" }[lang],
+      description: {
+        zh: "颈椎反弓、曲度变直、手麻、保守康复和运动负荷的多语言健康教育网站。",
+        en: "Multilingual education for cervical kyphosis, straightened curve, numbness, rehab, and sport loading.",
+        ja: "頸椎後弯、前弯減少、しびれ、保存的リハビリ、スポーツ負荷を扱う多言語サイト。",
+        es: "Educación multilingüe sobre cifosis cervical, curva rectificada, entumecimiento, rehabilitación y deporte."
+      }[lang],
+      tag: languages[lang].nav.home,
+      kind: "diagnosis"
+    });
+
+    for (const article of allArticles) {
+      const data = article.translations?.[lang] || article.cards?.[lang];
+      if (!data) continue;
+      const [, title, description] = data;
+      add({
+        lang,
+        path: articlePath(lang, article.slug),
+        title,
+        description,
+        tag: data[0],
+        kind: kindForCategory(article.category)
+      });
+    }
+
+    for (const pillar of pillarPages) {
+      const data = pillar.translations[lang];
+      const kind = pillar.slug === "cervical-radiculopathy" ? "symptoms" : pillar.slug === "loss-of-cervical-lordosis" ? "tools" : "diagnosis";
+      add({
+        lang,
+        path: localizedPath(lang, pillar.slug),
+        title: data.title,
+        description: data.description,
+        tag: data.kicker,
+        kind
+      });
+    }
+
+    for (const [route, hub] of Object.entries(hubs)) {
+      const [tag, title, description] = hub.meta[lang];
+      add({ lang, path: localizedPath(lang, route), title, description, tag, kind: kindForCategory(hub.categories[0]) });
+    }
+
+    for (const route of ["tools", "videos", printableRoute]) {
+      const [tag, title, description] = specialPageMeta[route][lang];
+      add({ lang, path: localizedPath(lang, route), title, description, tag, kind: route === "videos" ? "videos" : "tools" });
+    }
+
+    for (const visual of visuals) {
+      const [title, description] = visual.labels[lang];
+      add({ lang, path: localizedPath(lang, `images/${visual.slug}`), title, description, tag: languages[lang].nav.tools, kind: "tools" });
+    }
+  }
+
+  return entries;
+}
+
+function writeOgAssets(entries) {
+  mkdirSync(join("assets", "og"), { recursive: true });
+  let converted = 0;
+  for (const entry of entries) {
+    const svgPath = entry.svgPath.replace(/^\//, "");
+    const pngPath = entry.pngPath.replace(/^\//, "");
+    writePage(svgPath, ogCardSvg(entry));
+    if (convertSvgToPng(svgPath, pngPath)) converted += 1;
+  }
+  return converted;
+}
+
+function postProcessOgReferences(entries) {
+  const byPath = new Map(entries.map((entry) => [entry.path, entry]));
+  for (const [path, entry] of byPath) {
+    const imageUrl = `${baseUrl}${entry.pngPath}`;
+    const file = pathToOutputFile(path);
+    if (!existsSync(file)) continue;
+    let html = readFileSync(file, "utf8");
+    html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(titleTag(entry.title))}</title>`);
+    html = html.replace(/\n\s*<meta property="og:image:(?:width|height)" content="[^"]*" \/>/g, "");
+    html = html.replace(/<meta property="og:image" content="[^"]*" \/>/, `<meta property="og:image" content="${imageUrl}" />\n    <meta property="og:image:width" content="1200" />\n    <meta property="og:image:height" content="630" />`);
+    html = html.replace(/<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${imageUrl}" />`);
+    html = html.replaceAll(`${baseUrl}/assets/hero-cervical-kyphosis.jpg`, imageUrl);
+    writeFileSync(file, html);
+  }
+}
+
+function postProcessHomePerformance() {
+  for (const lang of Object.keys(languages)) {
+    const file = pathToOutputFile(languages[lang].home);
+    if (!existsSync(file)) continue;
+    let html = readFileSync(file, "utf8");
+    html = html.replace(
+      /(<img\s+class="hero-image"\s+src="[^"]+"\s+alt="[^"]*")\s*\/>/,
+      `$1
+          width="1672"
+          height="941"
+          decoding="async"
+          fetchpriority="high"
+        />`
+    );
+    writeFileSync(file, html);
+  }
+}
+
 function renderVisualPage(visual, lang) {
   const l = languages[lang];
   const [title, description] = visual.labels[lang];
@@ -1486,12 +2003,8 @@ function renderVisualPage(visual, lang) {
 
 function renderPrintableTrackerPage(lang) {
   const l = languages[lang];
-  const meta = {
-    zh: ["可打印记录表", "7 天颈痛和手麻记录表", "打印或保存这张 7 天记录表，用同一标准记录疼痛、手麻、睡眠、诱因、练习和第二天反应。"],
-    en: ["Printable tracker", "7-Day Neck Pain and Numbness Tracker", "Print or save this 7-day tracker to record pain, numbness, sleep, triggers, exercises, and next-day response consistently."],
-    ja: ["印刷用記録表", "7日間の首痛・しびれ記録表", "痛み、しびれ、睡眠、誘因、運動、翌日反応を同じ基準で記録するための7日間表です。"],
-    es: ["Registro imprimible", "Registro de 7 días de cuello y entumecimiento", "Imprime o guarda este registro de 7 días para anotar dolor, entumecimiento, sueño, desencadenantes, ejercicios y respuesta al día siguiente."]
-  }[lang];
+  const meta = specialPageMeta[printableRoute][lang];
+  const faqs = extraFaqs[lang];
   const headers = {
     zh: ["日期", "疼痛 0-10", "手麻/手臂痛", "睡眠", "诱因", "做了什么", "第二天反应"],
     en: ["Date", "Pain 0-10", "Numbness / arm pain", "Sleep", "Trigger", "What changed", "Next-day response"],
@@ -1524,6 +2037,7 @@ function renderPrintableTrackerPage(lang) {
             lang
           )}
         </section>
+        ${renderFaqSection(lang, faqs)}
       </article>
     </main>`;
   return htmlShell({
@@ -1532,7 +2046,8 @@ function renderPrintableTrackerPage(lang) {
     title: meta[1],
     description: meta[2],
     content,
-    breadcrumbs: [{ name: meta[1], url: localizedUrl(lang, printableRoute) }]
+    breadcrumbs: [{ name: meta[1], url: localizedUrl(lang, printableRoute) }],
+    faqs
   });
 }
 
@@ -1542,6 +2057,8 @@ function writePage(path, html) {
 }
 
 const allArticles = [...existingArticles, ...newArticles];
+const ogEntries = buildOgEntries();
+const ogPngCount = writeOgAssets(ogEntries);
 
 writeVisualAssets();
 
@@ -1676,8 +2193,10 @@ const sitemapUrls = [
   ...visuals.flatMap((visual) =>
     Object.keys(languages).map((lang) => ({
       path: localizedPath(lang, `images/${visual.slug}`),
-      image: `/assets/visuals/${visual.file}`,
-      title: visual.labels[lang][0]
+      images: [
+        { url: `/assets/visuals/${visual.file}`, title: visual.labels[lang][0] },
+        { url: ogAssetPath(lang, localizedPath(lang, `images/${visual.slug}`)), title: `${visual.labels[lang][0]} share card` }
+      ]
     }))
   ),
   ...staticUrls
@@ -1688,11 +2207,16 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${sitemapUrls
   .map((entry) => {
     const path = typeof entry === "string" ? entry : entry.path;
-    const image = typeof entry === "string" ? "" : `
+    const images = typeof entry === "string" ? [] : entry.images || [{ url: entry.image, title: entry.title }];
+    const image = images
+      .map(
+        (item) => `
     <image:image>
-      <image:loc>${baseUrl}${entry.image}</image:loc>
-      <image:title>${escapeHtml(entry.title)}</image:title>
-    </image:image>`;
+      <image:loc>${baseUrl}${item.url}</image:loc>
+      <image:title>${escapeHtml(item.title)}</image:title>
+    </image:image>`
+      )
+      .join("");
     return `  <url>
     <loc>${baseUrl}${path}</loc>
     <lastmod>${reviewDate}</lastmod>${image}
@@ -1703,7 +2227,9 @@ ${sitemapUrls
 `;
 
 writeFileSync("sitemap.xml", sitemap);
+postProcessOgReferences(ogEntries);
+postProcessHomePerformance();
 
 console.log(
-  `Generated ${newArticles.length * Object.keys(languages).length} new article pages, ${pillarPages.length * Object.keys(languages).length} pillar pages, ${Object.keys(hubs).length * Object.keys(languages).length} hub pages, visual pages, tools/videos pages, growth data, and ${sitemapUrls.length} sitemap URLs.`
+  `Generated ${newArticles.length * Object.keys(languages).length} new article pages, ${pillarPages.length * Object.keys(languages).length} pillar pages, ${Object.keys(hubs).length * Object.keys(languages).length} hub pages, visual pages, tools/videos pages, ${ogPngCount} OG PNGs, growth data, and ${sitemapUrls.length} sitemap URLs.`
 );

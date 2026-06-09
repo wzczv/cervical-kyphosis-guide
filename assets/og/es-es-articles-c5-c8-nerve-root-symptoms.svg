@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7fbfa"/>
+  <rect x="46" y="46" width="1108" height="538" rx="28" fill="#fff" stroke="#d9e5e2" stroke-width="2"/>
+  <circle cx="96" cy="96" r="24" fill="#d8644a"/>
+  <text x="136" y="105" fill="#162026" font-family="Arial, sans-serif" font-size="25" font-weight="800">Cervical Curve Guide</text>
+  <text x="84" y="188" fill="#d8644a" font-family="Arial, sans-serif" font-size="28" font-weight="900">Guía de síntomas</text>
+  <text x="84" y="254" fill="#162026" font-family="Arial, sans-serif" font-size="50" font-weight="850">Síntomas de raíces C5, C6, C7 y C8</text>
+  <text x="86" y="465" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">Los patrones radiculares ayudan, pero los territorios</text>
+  <text x="86" y="501" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">sensitivos se superponen. Un dedo dormido no basta para</text>
+  <text x="86" y="537" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">autodefinir un nivel.</text>
+  <text x="84" y="558" fill="#5b6a72" font-family="Arial, sans-serif" font-size="22">cervicalcurveguide.com</text>
+  <g transform="translate(885 155)"><rect x="0" y="112" width="54" height="220" rx="27" fill="#167a7f"/><rect x="76" y="70" width="54" height="262" rx="27" fill="#167a7f"/><rect x="152" y="42" width="54" height="290" rx="27" fill="#d8644a"/><rect x="228" y="78" width="54" height="254" rx="27" fill="#c8902f"/><path d="M44 370 C96 410 224 410 282 370" fill="none" stroke="#9db8b4" stroke-width="24" stroke-linecap="round"/></g>
+</svg>
