@@ -23,11 +23,33 @@
     <meta name="twitter:title" content="指のしびれマップ：頸椎神経根か、末梢神経か" />
     <meta name="twitter:description" content="親指、人差し指、中指、薬指、小指のしびれを、頸椎神経根、手根管、尺骨神経、橈骨神経、胸郭出口の手がかりから保守的に整理します。" />
     <meta name="twitter:image" content="https://cervicalcurveguide.com/assets/hero-cervical-kyphosis.jpg" />
-    <link rel="stylesheet" href="/assets/styles.css?v=20260609-analytics" />
-    <script src="/assets/analytics.js?v=20260609-analytics" defer></script>
+    <link rel="stylesheet" href="/assets/styles.css?v=20260609-content" />
+    <script src="/assets/analytics.js?v=20260609-content" defer></script>
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cervicalcurveguide.com/#organization",
+      "name": "Cervical Curve Guide",
+      "url": "https://cervicalcurveguide.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cervicalcurveguide.com/#website",
+      "name": "Cervical Curve Guide",
+      "url": "https://cervicalcurveguide.com/",
+      "publisher": {
+        "@id": "https://cervicalcurveguide.com/#organization"
+      },
+      "inLanguage": [
+        "zh-Hans",
+        "en",
+        "ja",
+        "es"
+      ],
+      "isAccessibleForFree": true
+    },
     {
       "@type": "MedicalWebPage",
       "@id": "https://cervicalcurveguide.com/ja/articles/finger-numbness-nerve-map/#medical-page",
@@ -40,6 +62,9 @@
       "isAccessibleForFree": true,
       "lastReviewed": "2026-06-09",
       "dateModified": "2026-06-09",
+      "reviewedBy": {
+        "@id": "https://cervicalcurveguide.com/#organization"
+      },
       "about": [
         "Cervical kyphosis",
         "Loss of cervical lordosis",
@@ -62,13 +87,23 @@
       "datePublished": "2026-06-09",
       "dateModified": "2026-06-09",
       "author": {
-        "@type": "Organization",
-        "name": "Cervical Curve Guide"
+        "@id": "https://cervicalcurveguide.com/#organization"
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "Cervical Curve Guide"
+        "@id": "https://cervicalcurveguide.com/#organization"
       },
+      "reviewedBy": {
+        "@id": "https://cervicalcurveguide.com/#organization"
+      },
+      "citation": [
+        "https://www.ncbi.nlm.nih.gov/books/NBK441828/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4958381/",
+        "https://www.aafp.org/afp/2016/0501/p746",
+        "https://medlineplus.gov/carpaltunnelsyndrome.html",
+        "https://medlineplus.gov/ency/article/000789.htm",
+        "https://www.ncbi.nlm.nih.gov/sites/books/NBK431097/",
+        "https://medlineplus.gov/thoracicoutletsyndrome.html"
+      ],
       "isPartOf": {
         "@id": "https://cervicalcurveguide.com/ja/articles/finger-numbness-nerve-map/#medical-page"
       }
@@ -120,6 +155,7 @@
     <main class="legal-main article-main" id="article-content">
       <article class="legal-article article-page">
         <p class="legal-meta">最終確認：2026年6月9日 · 症状特集</p>
+        <p class="legal-meta">編集レビュー：保守的な健康教育表現として確認済み。現時点では、氏名を表示した有資格臨床家による独立レビューは未完了です。</p>
         <h1>指のしびれは手がかりであり、自己診断ではありません。</h1>
         <div class="article-dek">
           <p>画像レポートで「頸椎後弯」や「頸椎前弯減少」と書かれると、手のしびれをすべて首のせいにしたくなります。実際には、原因は頸椎神経根、手首、肘、前腕、胸郭出口、または複数部位の組み合わせで起こります。</p>
@@ -188,6 +224,22 @@
                 <span>スポーツ特集</span>
                 <strong>頸椎後弯でもサーフィン、スキー、スノーボード、クライミングはできる？</strong>
               </a>
+<a class="article-related-card" href="/ja/articles/cervical-kyphosis-vs-loss-lordosis/">
+                <span>画像の読み方</span>
+                <strong>頸椎後弯と頸椎前弯減少：画像レポートの言葉を整理する</strong>
+              </a>
+<a class="article-related-card" href="/ja/articles/cervical-radiculopathy-myelopathy-red-flags/">
+                <span>危険サイン</span>
+                <strong>頸椎神経根症と脊髄症の危険サイン</strong>
+              </a>
+<a class="article-related-card" href="/ja/articles/can-cervical-curve-be-restored/">
+                <span>リハビリの期待値</span>
+                <strong>頸椎カーブは運動で戻る？保存的リハビリで追うべき指標</strong>
+              </a>
+<a class="article-related-card" href="/ja/articles/traction-pillow-manipulation-risk-guide/">
+                <span>治療の境界</span>
+                <strong>牽引、枕、マッサージ、手技療法：保存的ケアの境界</strong>
+              </a>
             </div>
           </section>
       </article>
@@ -200,6 +252,7 @@
       <p>頸椎カーブの保存的ケアを扱う多言語教育プロトタイプです。</p>
       <nav class="footer-links" aria-label="Footer links">
         <a href="/about.html">About</a>
+        <a href="/authors.html">Authors</a>
         <a href="/editorial-policy.html">Editorial policy</a>
         <a href="/medical-review-policy.html">Medical review</a>
         <a href="/contact.html">Contact</a>

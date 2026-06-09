@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 const baseUrl = "https://cervicalcurveguide.com";
-const version = "20260609-analytics";
+const version = "20260609-content";
 const reviewDate = "2026-06-09";
 
 const languages = {
@@ -24,6 +24,7 @@ const languages = {
     footer:
       "一个面向颈椎曲度保守康复的多语言健康教育原型。",
     lastReviewed: "最后审校：2026 年 6 月 9 日",
+    reviewStatus: "编辑审阅：已按保守健康教育标准检查；尚未由具名执业临床人员独立审阅。",
     medicalNoticeLabel: "医疗提醒：",
     adLabel: "广告位",
     medicalNote:
@@ -50,6 +51,8 @@ const languages = {
     footer:
       "Built as a multilingual educational prototype for conservative cervical curve care.",
     lastReviewed: "Last reviewed: June 9, 2026",
+    reviewStatus:
+      "Editorial review: checked for conservative health-education wording; not yet independently reviewed by a named licensed clinician.",
     medicalNoticeLabel: "Medical notice:",
     adLabel: "Advertisement",
     medicalNote:
@@ -75,6 +78,8 @@ const languages = {
     },
     footer: "頸椎カーブの保存的ケアを扱う多言語教育プロトタイプです。",
     lastReviewed: "最終確認：2026年6月9日",
+    reviewStatus:
+      "編集レビュー：保守的な健康教育表現として確認済み。現時点では、氏名を表示した有資格臨床家による独立レビューは未完了です。",
     medicalNoticeLabel: "医療上の注意：",
     adLabel: "広告枠",
     medicalNote:
@@ -101,6 +106,8 @@ const languages = {
     footer:
       "Prototipo educativo multilingüe para cuidado conservador de la curva cervical.",
     lastReviewed: "Última revisión: 9 de junio de 2026",
+    reviewStatus:
+      "Revisión editorial: comprobado con lenguaje conservador de educación sanitaria; aún no revisado de forma independiente por un profesional clínico identificado.",
     medicalNoticeLabel: "Aviso médico:",
     adLabel: "Publicidad",
     medicalNote:
@@ -632,6 +639,745 @@ const articles = [
   }
 ];
 
+articles.push(
+  {
+    slug: "cervical-kyphosis-vs-loss-lordosis",
+    sources: [
+      {
+        label: "PMC: Etiology and treatment of cervical kyphosis, narrative review",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8511555/"
+      },
+      {
+        label: "PMC: Loss of cervical lordosis, prognosis review",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5324370/"
+      },
+      {
+        label: "AAFP: Neck Pain Initial Evaluation and Management",
+        url: "https://www.aafp.org/pubs/afp/issues/2020/0801/p150.html"
+      }
+    ],
+    translations: {
+      zh: {
+        title: "颈椎反弓、颈椎后凸和生理曲度变直：报告词到底差在哪",
+        description:
+          "解释颈椎反弓、颈椎后凸、颈椎生理曲度变直、loss of cervical lordosis 的区别，以及为什么影像词不等于疼痛诊断。",
+        kicker: "影像解读",
+        headline: "先把报告词翻译成人话，再决定该不该紧张。",
+        intro: [
+          "很多报告会写“颈椎生理曲度变直”“反弓”“后凸”或英文的 loss of cervical lordosis、cervical kyphosis。这些词都在描述侧位影像上的排列，但严重程度、稳定性和临床意义并不相同。",
+          "更重要的是：影像词不能单独解释疼痛。症状分布、神经体征、外伤史、持续时间、工作和运动负荷，才决定下一步应该观察、保守处理还是就医评估。"
+        ],
+        callout:
+          "不要把“曲度变直”自动理解成不可逆损伤，也不要把“没有明显曲度问题”理解成一定没事。影像只是线索之一。",
+        sections: [
+          {
+            title: "三个词常被混用，但含义不同",
+            table: {
+              headers: ["报告词", "通常在说什么", "临床上怎么理解"],
+              rows: [
+                ["曲度变直 / loss of lordosis", "正常前凸减少或变平", "可与姿势、疼痛保护、肌肉紧张、退变或拍片体位有关，本身不等于病因。"],
+                ["颈椎反弓", "局部或整体曲线向相反方向弯", "需要结合节段、症状、稳定性和是否有神经压迫线索。"],
+                ["cervical kyphosis / 后凸", "更明确的后凸排列", "从轻度排列改变到明显畸形都可能使用这个词，不能只看词不看程度。"]
+              ]
+            }
+          },
+          {
+            title: "为什么同一个人不同片子会不一样",
+            body: [
+              "颈部疼痛时，人会下意识减少活动并收紧肌肉；拍片时的站姿、下巴位置、肩膀紧张程度也会影响曲线。短期曲度变化不一定代表结构已经永久改变。",
+              "真正需要更认真对待的是进行性畸形、明显外伤后改变、神经根或脊髓症状、或与影像相匹配的持续功能下降。"
+            ]
+          },
+          {
+            title: "该问医生或康复师的四个问题",
+            bullets: [
+              "这个曲度变化是整体还是局部？有没有节段不稳或明显退变？",
+              "手麻、手臂痛或无力是否符合某个神经根模式？",
+              "有没有脊髓受压线索，例如手变笨、走路不稳或反射异常？",
+              "保守处理的目标是减痛、改善功能和负荷耐受，还是确实需要进一步影像或转诊？"
+            ]
+          }
+        ]
+      },
+      en: {
+        title: "Cervical Kyphosis vs Loss of Cervical Lordosis: What the Report Means",
+        description:
+          "Plain-language differences between cervical kyphosis, reversed curve, straightened cervical lordosis, and why imaging words alone do not diagnose pain.",
+        kicker: "Imaging guide",
+        headline: "Translate the report before you panic.",
+        intro: [
+          "Reports may say straightening, loss of cervical lordosis, reversed curve, or cervical kyphosis. All describe alignment on a side-view image, but they do not carry the same severity or clinical meaning.",
+          "The key point: imaging language alone does not identify the pain generator. Symptom pattern, nerve signs, trauma history, duration, work exposure, and sport load decide the next step."
+        ],
+        callout:
+          "Do not treat a straightened curve as automatic permanent damage, and do not treat a normal-looking curve as proof that symptoms are harmless.",
+        sections: [
+          {
+            title: "Terms that often get mixed together",
+            table: {
+              headers: ["Term", "Usually describes", "How to interpret it"],
+              rows: [
+                ["Loss of cervical lordosis", "Reduced or flattened normal forward curve", "Can relate to positioning, pain guarding, muscle tone, degeneration, or x-ray setup; not a diagnosis by itself."],
+                ["Reversed cervical curve", "A local or global curve bending the other way", "Needs context: segment, symptoms, stability, and nerve-compression clues."],
+                ["Cervical kyphosis", "A more explicit kyphotic alignment", "Can range from mild alignment change to significant deformity; the word alone is not the severity."]
+              ]
+            }
+          },
+          {
+            title: "Why the curve can look different across images",
+            body: [
+              "Pain, guarding, chin position, shoulder tension, and standing posture can all change the curve seen on a single image. A short-term curve change does not always mean permanent structural change.",
+              "More weight should be placed on progressive deformity, trauma-related change, nerve-root or spinal-cord symptoms, and function loss that matches the clinical picture."
+            ]
+          },
+          {
+            title: "Four questions to ask",
+            bullets: [
+              "Is the alignment change global or segmental, and is there instability or marked degeneration?",
+              "Do numbness, arm pain, or weakness match a nerve-root pattern?",
+              "Are there spinal-cord clues such as hand clumsiness, gait change, or abnormal reflexes?",
+              "Is the conservative goal pain/function improvement, or is more imaging or referral needed?"
+            ]
+          }
+        ]
+      },
+      ja: {
+        title: "頸椎後弯と頸椎前弯減少：画像レポートの言葉を整理する",
+        description:
+          "頸椎後弯、反りの減少、ストレートネック、loss of cervical lordosis の違いと、画像所見だけで痛みを診断できない理由を説明します。",
+        kicker: "画像の読み方",
+        headline: "不安になる前に、レポートの言葉を整理しましょう。",
+        intro: [
+          "画像レポートには、頸椎前弯減少、ストレートネック、反対方向へのカーブ、頸椎後弯などの表現が出ます。どれも横から見た配列を示しますが、重症度や臨床的意味は同じではありません。",
+          "画像の言葉だけで痛みの原因は決まりません。症状の分布、神経所見、外傷歴、期間、仕事やスポーツの負荷を合わせて判断します。"
+        ],
+        callout:
+          "前弯減少を自動的に不可逆な損傷と考えないでください。逆に、カーブが正常に見えることも症状が無害である証明にはなりません。",
+        sections: [
+          {
+            title: "混同されやすい用語",
+            table: {
+              headers: ["用語", "主に示すこと", "考え方"],
+              rows: [
+                ["頸椎前弯減少", "通常の前方カーブが少ない、または平坦", "姿勢、痛みによる防御、筋緊張、退行変化、撮影条件の影響もあり得ます。"],
+                ["反対方向のカーブ", "局所または全体が逆方向に曲がる", "部位、症状、安定性、神経圧迫の手がかりと合わせて見ます。"],
+                ["頸椎後弯", "より明確な後弯配列", "軽い配列変化から大きな変形まで幅があり、用語だけでは重症度は決まりません。"]
+              ]
+            }
+          },
+          {
+            title: "画像ごとに違って見える理由",
+            body: [
+              "痛み、防御的な筋緊張、あごの位置、肩の力み、立ち方で一枚の画像に写るカーブは変わります。短期的な変化が永久的な構造変化とは限りません。",
+              "より重要なのは、進行する変形、外傷後の変化、神経根や脊髄の症状、機能低下との一致です。"
+            ]
+          },
+          {
+            title: "相談時に聞きたいこと",
+            bullets: [
+              "配列変化は全体的か局所的か。不安定性や強い退行変化はあるか。",
+              "しびれ、腕の痛み、筋力低下は神経根パターンに合うか。",
+              "手の不器用さ、歩行変化、反射異常など脊髄の手がかりはあるか。",
+              "保存的ケアの目的は痛みと機能改善か、それとも追加検査や紹介が必要か。"
+            ]
+          }
+        ]
+      },
+      es: {
+        title: "Cifosis cervical vs pérdida de lordosis: qué significa el informe",
+        description:
+          "Diferencias entre cifosis cervical, curva invertida, lordosis cervical rectificada y por qué las palabras de una imagen no diagnostican el dolor por sí solas.",
+        kicker: "Guía de imagen",
+        headline: "Traduce el informe antes de alarmarte.",
+        intro: [
+          "Un informe puede decir rectificación, pérdida de lordosis, curva invertida o cifosis cervical. Todos describen la alineación en una imagen lateral, pero no tienen la misma gravedad ni el mismo significado clínico.",
+          "La imagen por sí sola no identifica la fuente del dolor. El patrón de síntomas, signos nerviosos, antecedente de trauma, duración, trabajo y deporte orientan el siguiente paso."
+        ],
+        callout:
+          "No interpretes una curva rectificada como daño permanente automático, ni una curva normal como prueba de que los síntomas son irrelevantes.",
+        sections: [
+          {
+            title: "Términos que se mezclan con frecuencia",
+            table: {
+              headers: ["Término", "Qué suele describir", "Cómo interpretarlo"],
+              rows: [
+                ["Pérdida de lordosis cervical", "Curva normal reducida o plana", "Puede relacionarse con postura, defensa por dolor, tono muscular, degeneración o técnica de imagen."],
+                ["Curva cervical invertida", "Curva local o global hacia el lado contrario", "Necesita contexto: segmento, síntomas, estabilidad y pistas de compresión nerviosa."],
+                ["Cifosis cervical", "Alineación cifótica más explícita", "Puede ir de cambio leve a deformidad importante; la palabra sola no define gravedad."]
+              ]
+            }
+          },
+          {
+            title: "Por qué una imagen puede verse distinta de otra",
+            body: [
+              "Dolor, defensa muscular, posición del mentón, tensión de hombros y postura al estar de pie pueden cambiar la curva visible. Un cambio temporal no siempre implica estructura permanente.",
+              "Pesa más una deformidad progresiva, cambios tras trauma, síntomas de raíz o médula, y pérdida funcional que encaja con la exploración."
+            ]
+          },
+          {
+            title: "Cuatro preguntas útiles",
+            bullets: [
+              "¿El cambio es global o segmentario? ¿Hay inestabilidad o degeneración marcada?",
+              "¿El entumecimiento, dolor de brazo o debilidad encaja con una raíz nerviosa?",
+              "¿Hay torpeza de manos, cambio de marcha o reflejos anormales?",
+              "¿El objetivo conservador es mejorar dolor/función o hace falta imagen o derivación?"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    slug: "cervical-radiculopathy-myelopathy-red-flags",
+    sources: [
+      {
+        label: "NCBI Bookshelf: Cervical Radiculopathy",
+        url: "https://www.ncbi.nlm.nih.gov/books/NBK441828/"
+      },
+      {
+        label: "AAFP: Nonoperative Management of Cervical Radiculopathy",
+        url: "https://www.aafp.org/afp/2016/0501/p746"
+      },
+      {
+        label: "AAOS OrthoInfo: Cervical Radiculopathy",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/cervical-radiculopathy-pinched-nerve/"
+      },
+      {
+        label: "AAFP: Neck Pain Initial Evaluation and Management",
+        url: "https://www.aafp.org/pubs/afp/issues/2020/0801/p150.html"
+      }
+    ],
+    translations: {
+      zh: {
+        title: "颈椎神经根病和脊髓受压：哪些症状不能只靠自我康复",
+        description:
+          "区分手臂放射痛、手麻、肌力下降、手变笨、走路不稳等神经根和脊髓线索，并说明什么时候应尽快就医。",
+        kicker: "危险信号",
+        headline: "手臂痛可以保守观察，但神经进展不能拖。",
+        intro: [
+          "颈椎神经根病通常表现为从颈部或肩胛区放射到手臂的痛、麻、刺、无力，可能对应 C5-C8 不同神经根。很多稳定病例会先尝试保守治疗。",
+          "脊髓受压的风险级别不同。手变笨、走路不稳、双手麻木、大小便变化或进行性无力，不适合作为普通落枕或姿势问题处理。"
+        ],
+        callout:
+          "本站的练习建议只适合非急症、稳定、无进行性神经缺损的人。症状进展时，正确动作不是加练，而是评估。",
+        sections: [
+          {
+            title: "更像神经根的线索",
+            bullets: [
+              "疼痛或麻木沿肩、上臂、前臂到手指呈带状放射。",
+              "颈部后仰、转向患侧、咳嗽或打喷嚏会让手臂症状更明显。",
+              "某一肌群力量下降，例如肱二头肌、腕伸、肱三头肌或握力变化。",
+              "手臂抬到头顶有时缓解，这是部分神经根刺激的常见线索。"
+            ]
+          },
+          {
+            title: "更担心脊髓的线索",
+            bullets: [
+              "扣扣子、写字、拿筷子或拿钥匙变笨。",
+              "走路像踩棉花、容易绊倒、平衡明显变差。",
+              "双手或双脚麻木、僵硬，或症状不只在单侧一条神经分布。",
+              "大小便控制变化、会阴区麻木或进行性无力。"
+            ]
+          },
+          {
+            title: "何时需要影像或进一步检查",
+            body: [
+              "持续、加重、伴随无力或影响功能的症状，通常不应只靠网上练习处理。医生可能根据病史和查体考虑 MRI、神经传导/肌电图，或转诊。",
+              "保守治疗的目标是降低症状、恢复睡眠和功能、逐步增加耐受；它不是用疼痛来证明自己能忍。"
+            ]
+          }
+        ]
+      },
+      en: {
+        title: "Cervical Radiculopathy and Myelopathy Red Flags",
+        description:
+          "How to separate arm pain, finger numbness, weakness, hand clumsiness, and gait changes into safer nerve-root and spinal-cord warning categories.",
+        kicker: "Red flags",
+        headline: "Arm pain can be monitored; progressing nerve signs should not wait.",
+        intro: [
+          "Cervical radiculopathy often causes radiating arm pain, tingling, numbness, or weakness that may follow C5-C8 nerve-root patterns. Many stable cases begin with nonoperative care.",
+          "Spinal-cord signs are different. Hand clumsiness, gait imbalance, bilateral symptoms, bowel/bladder change, or progressive weakness should not be treated as ordinary posture pain."
+        ],
+        callout:
+          "The exercise guidance on this site is for stable, non-emergency situations without progressive neurological loss. If nerve signs progress, the next step is evaluation, not more reps.",
+        sections: [
+          {
+            title: "Clues that fit nerve-root irritation",
+            bullets: [
+              "Pain, tingling, or numbness travels from neck or shoulder blade into the arm and fingers.",
+              "Neck extension, turning toward the symptomatic side, coughing, or sneezing aggravates arm symptoms.",
+              "A specific strength change appears, such as biceps, wrist extension, triceps, or grip weakness.",
+              "Placing the hand on top of the head sometimes reduces symptoms in some nerve-root patterns."
+            ]
+          },
+          {
+            title: "Clues that raise spinal-cord concern",
+            bullets: [
+              "Buttoning, handwriting, chopsticks, keys, or other fine hand tasks become clumsy.",
+              "Walking feels unsteady, balance worsens, or tripping increases.",
+              "Symptoms affect both hands or feet, or do not fit one single nerve distribution.",
+              "Bowel/bladder changes, saddle numbness, or progressive weakness appear."
+            ]
+          },
+          {
+            title: "When further testing may be needed",
+            body: [
+              "Persistent or worsening symptoms, weakness, or function loss should not be managed only with online exercises. A clinician may consider MRI, electrodiagnostic testing, or referral based on the exam.",
+              "Conservative care should reduce symptoms, improve sleep and function, and build tolerance. It should not require proving that you can endure nerve pain."
+            ]
+          }
+        ]
+      },
+      ja: {
+        title: "頸椎神経根症と脊髄症の危険サイン",
+        description:
+          "腕へ走る痛み、指のしびれ、筋力低下、手の不器用さ、歩行変化を神経根と脊髄のサインとして安全に整理します。",
+        kicker: "危険サイン",
+        headline: "腕の痛みは経過観察できることがありますが、進行する神経症状は待てません。",
+        intro: [
+          "頸椎神経根症では、首や肩甲骨周辺から腕や指へ走る痛み、しびれ、筋力低下が出ることがあります。安定した例では保存療法から始めることがあります。",
+          "一方で脊髄のサインは別です。手の不器用さ、歩行不安定、両側症状、排尿排便変化、進行する筋力低下は、普通の姿勢痛として扱わないでください。"
+        ],
+        callout:
+          "このサイトの運動情報は、非緊急で安定し、進行する神経障害がない人向けです。神経症状が進む時は、回数を増やすより評価が必要です。",
+        sections: [
+          {
+            title: "神経根刺激に合いやすい手がかり",
+            bullets: [
+              "首や肩甲骨から腕、指へ痛みやしびれが帯状に広がる。",
+              "首を反らす、患側へ向ける、咳やくしゃみで腕症状が強くなる。",
+              "上腕二頭筋、手首伸展、上腕三頭筋、握力など特定の筋力が落ちる。",
+              "手を頭の上に置くと一部の症状が軽くなることがある。"
+            ]
+          },
+          {
+            title: "脊髄への注意が必要な手がかり",
+            bullets: [
+              "ボタン、字を書く、箸、鍵など細かい作業が不器用になる。",
+              "歩行が不安定、バランス低下、つまずきが増える。",
+              "両手や両足に症状がある、または単一神経の分布に合わない。",
+              "排尿排便変化、会陰部のしびれ、進行する筋力低下がある。"
+            ]
+          },
+          {
+            title: "追加検査が必要になり得る時",
+            body: [
+              "持続または悪化する症状、筋力低下、機能低下は、オンライン運動だけで対応すべきではありません。診察により MRI、神経伝導/筋電図、紹介が検討されます。",
+              "保存療法の目的は症状、睡眠、機能、耐性の改善です。神経痛を我慢できるか試すことではありません。"
+            ]
+          }
+        ]
+      },
+      es: {
+        title: "Radiculopatía cervical y mielopatía: señales de alarma",
+        description:
+          "Cómo ordenar dolor de brazo, dedos dormidos, debilidad, torpeza de mano y cambios de marcha como pistas de raíz nerviosa o médula.",
+        kicker: "Señales de alarma",
+        headline: "El dolor de brazo puede observarse; los signos nerviosos progresivos no deberían esperar.",
+        intro: [
+          "La radiculopatía cervical puede causar dolor que baja al brazo, hormigueo, entumecimiento o debilidad según patrones C5-C8. Muchos casos estables empiezan con cuidado no quirúrgico.",
+          "Los signos medulares son distintos. Torpeza de manos, inestabilidad al caminar, síntomas bilaterales, cambios urinarios/intestinales o debilidad progresiva no son un simple problema postural."
+        ],
+        callout:
+          "Las recomendaciones de ejercicio del sitio son para situaciones estables, no urgentes y sin pérdida neurológica progresiva. Si los signos nerviosos avanzan, toca evaluar, no hacer más repeticiones.",
+        sections: [
+          {
+            title: "Pistas compatibles con raíz nerviosa",
+            bullets: [
+              "Dolor, hormigueo o entumecimiento viaja desde cuello u omóplato hacia brazo y dedos.",
+              "Extender o girar el cuello, toser o estornudar agrava síntomas del brazo.",
+              "Aparece cambio de fuerza en bíceps, extensión de muñeca, tríceps o agarre.",
+              "Poner la mano sobre la cabeza a veces reduce síntomas en algunos patrones."
+            ]
+          },
+          {
+            title: "Pistas que preocupan por médula",
+            bullets: [
+              "Abotonar, escribir, usar llaves o tareas finas de mano se vuelven torpes.",
+              "La marcha se siente inestable, empeora el equilibrio o aumentan tropiezos.",
+              "Síntomas en ambas manos o pies, o distribución que no encaja con un solo nervio.",
+              "Cambios urinarios/intestinales, entumecimiento en silla de montar o debilidad progresiva."
+            ]
+          },
+          {
+            title: "Cuándo pueden hacer falta pruebas",
+            body: [
+              "Síntomas persistentes o progresivos, debilidad o pérdida funcional no deberían manejarse solo con ejercicios online. Según la exploración, un profesional puede considerar MRI, estudios electrodiagnósticos o derivación.",
+              "El cuidado conservador debe reducir síntomas, mejorar sueño y función, y construir tolerancia. No debe ser una prueba de cuánto dolor nervioso puedes soportar."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    slug: "can-cervical-curve-be-restored",
+    sources: [
+      {
+        label: "PMC: Loss of cervical lordosis, prognosis review",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5324370/"
+      },
+      {
+        label: "PMC: Etiology and treatment of cervical kyphosis, narrative review",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8511555/"
+      },
+      {
+        label: "AAFP: Neck Pain Initial Evaluation and Management",
+        url: "https://www.aafp.org/pubs/afp/issues/2020/0801/p150.html"
+      }
+    ],
+    translations: {
+      zh: {
+        title: "颈椎曲度能练回来吗？保守康复真正该追踪什么",
+        description:
+          "解释为什么本站不承诺练习恢复颈椎前凸，并给出更可靠的追踪指标：疼痛、手麻、睡眠、活动范围、力量和运动耐受。",
+        kicker: "康复预期",
+        headline: "把目标从“把片子练漂亮”改成“让身体更能用”。",
+        intro: [
+          "网上常见的说法是某个动作、枕头或牵引能把颈椎曲度练回来。对健康教育站来说，这种承诺风险很高：不同人的曲度变化来源不同，影像变化也不一定和症状改善同步。",
+          "更稳妥的目标是改善疼痛、睡眠、颈部活动、肩背力量、神经症状稳定性和工作/运动耐受。影像可以作为背景，但不应成为每天焦虑的打分表。"
+        ],
+        callout:
+          "保守康复可以很有价值，但价值不等于保证改变 X 光角度。能安全生活、工作和运动，通常比曲线数字更重要。",
+        sections: [
+          {
+            title: "为什么不承诺恢复曲度",
+            bullets: [
+              "曲度会受疼痛、防御性肌紧张、拍片姿势、退变、外伤和结构因素影响。",
+              "有些人影像变化明显但症状少，有些人影像不重却很痛。",
+              "短期训练可能改善控制和耐受，但不能保证骨性排列或长期角度改变。",
+              "把目标只放在曲度上，容易忽略手麻、无力、睡眠和功能这些更关键指标。"
+            ]
+          },
+          {
+            title: "更值得记录的指标",
+            table: {
+              headers: ["指标", "怎么记录", "为什么有用"],
+              rows: [
+                ["疼痛和手麻", "0-10 分，记录是否向手指扩散", "帮助判断负荷是否过量。"],
+                ["睡眠", "入睡、夜醒、枕头耐受", "颈痛恢复常先反映在睡眠。"],
+                ["活动范围", "转头看盲区、低头阅读、抬头时间", "比单次角度更贴近生活功能。"],
+                ["力量耐受", "划船、面拉、深颈屈肌低强度保持", "反映肩胛和颈部控制是否稳定。"],
+                ["运动后 24 小时反应", "当天和第二天是否更差", "决定是否能进阶。"]
+              ]
+            }
+          },
+          {
+            title: "什么样的改善算有意义",
+            body: [
+              "如果 4-8 周内疼痛频率下降、手麻不再扩散、睡眠更稳、工作后不容易反跳、运动量可以渐进增加，即使曲度还没复查，也已经是有意义的改变。",
+              "如果训练越做越麻、力量下降或睡眠变差，应先降负荷或评估，而不是追求更强的拉伸和更久的牵引。"
+            ]
+          }
+        ]
+      },
+      en: {
+        title: "Can Cervical Curve Be Restored? What Conservative Rehab Should Track",
+        description:
+          "Why this site does not promise cervical lordosis restoration, and what to track instead: pain, numbness, sleep, motion, strength, and sport tolerance.",
+        kicker: "Rehab expectations",
+        headline: "Aim for a usable neck, not a prettier x-ray.",
+        intro: [
+          "Online claims often promise that a drill, pillow, or traction routine can restore cervical curve. That is too strong for a health-education site: curve changes have many causes, and imaging changes do not always track symptoms.",
+          "A safer target is better pain control, sleep, neck motion, upper-back strength, stable nerve symptoms, and work or sport tolerance. Imaging matters, but it should not become the daily scorecard."
+        ],
+        callout:
+          "Conservative rehab can be valuable without guaranteeing a change in x-ray angle. Living, working, and moving safely often matters more than the curve number.",
+        sections: [
+          {
+            title: "Why curve restoration should not be promised",
+            bullets: [
+              "Curve appearance can be influenced by pain, guarding, x-ray posture, degeneration, trauma, and structural factors.",
+              "Some people have large imaging changes and few symptoms; others have modest imaging findings and significant pain.",
+              "Training may improve control and tolerance, but it cannot guarantee bony alignment or long-term angle change.",
+              "Focusing only on curve shape can miss numbness, weakness, sleep, and function."
+            ]
+          },
+          {
+            title: "Better metrics to track",
+            table: {
+              headers: ["Metric", "How to track", "Why it matters"],
+              rows: [
+                ["Pain and numbness", "0-10 score and whether symptoms spread into fingers", "Shows whether load is too high."],
+                ["Sleep", "Falling asleep, night waking, pillow tolerance", "Neck recovery often shows up in sleep first."],
+                ["Motion", "Turning to blind spots, reading, looking up time", "Closer to real function than one angle."],
+                ["Strength tolerance", "Rows, face pulls, low-load deep neck flexor holds", "Shows whether neck and scapular control are stabilizing."],
+                ["24-hour response", "Same day and next day symptom change", "Guides progression." ]
+              ]
+            }
+          },
+          {
+            title: "What meaningful improvement looks like",
+            body: [
+              "Over 4-8 weeks, fewer pain flares, numbness that no longer spreads, steadier sleep, less work-related rebound, and gradually increasing sport exposure are meaningful changes even without repeat imaging.",
+              "If training increases numbness, reduces strength, or worsens sleep, reduce load or seek evaluation instead of chasing stronger stretching or longer traction."
+            ]
+          }
+        ]
+      },
+      ja: {
+        title: "頸椎カーブは運動で戻る？保存的リハビリで追うべき指標",
+        description:
+          "頸椎前弯の回復を約束しない理由と、痛み、しびれ、睡眠、可動性、筋力、スポーツ耐性を追う実用的な方法を説明します。",
+        kicker: "リハビリの期待値",
+        headline: "画像をきれいにするより、使える首を目指します。",
+        intro: [
+          "オンラインでは、特定の運動、枕、牽引で頸椎カーブが戻るという表現を見かけます。しかしカーブ変化の理由はさまざまで、画像変化と症状改善は必ずしも一致しません。",
+          "より安全な目標は、痛み、睡眠、可動性、背中の筋力、神経症状の安定、仕事やスポーツ耐性の改善です。画像は背景情報ですが、毎日の成績表ではありません。"
+        ],
+        callout:
+          "保存的リハビリの価値は、X線角度の変化を保証することではありません。安全に生活、仕事、運動できることがより重要です。",
+        sections: [
+          {
+            title: "カーブ回復を約束しない理由",
+            bullets: [
+              "カーブは痛み、防御的緊張、撮影姿勢、退行変化、外傷、構造要因に影響されます。",
+              "画像変化が大きくても症状が少ない人、画像が軽くても痛みが強い人がいます。",
+              "運動は制御と耐性を改善する可能性がありますが、骨性配列や長期角度変化は保証できません。",
+              "カーブだけを目標にすると、しびれ、筋力低下、睡眠、機能を見落としやすくなります。"
+            ]
+          },
+          {
+            title: "追跡したい指標",
+            table: {
+              headers: ["指標", "記録方法", "役立つ理由"],
+              rows: [
+                ["痛みとしびれ", "0-10 と指へ広がるか", "負荷が多すぎるか判断しやすい。"],
+                ["睡眠", "入眠、夜間覚醒、枕の耐性", "首の回復は睡眠に先に出やすい。"],
+                ["可動性", "車の死角確認、読書、上を見る時間", "生活機能に近い。"],
+                ["筋力耐性", "ロー、フェイスプル、低負荷の深頸屈筋保持", "首と肩甲帯の制御を見ます。"],
+                ["24時間反応", "当日と翌日の変化", "進めてよいか判断できます。"]
+              ]
+            }
+          },
+          {
+            title: "意味のある改善",
+            body: [
+              "4-8週間で痛みの頻度が減る、しびれが広がらない、睡眠が安定する、仕事後の反跳が減る、スポーツ量を少しずつ増やせるなら、再画像がなくても意味のある変化です。",
+              "運動でしびれが増える、筋力が落ちる、睡眠が悪化する場合は、強いストレッチや長い牽引ではなく負荷調整や評価を優先します。"
+            ]
+          }
+        ]
+      },
+      es: {
+        title: "¿Se puede recuperar la curva cervical? Qué debería medir la rehabilitación",
+        description:
+          "Por qué este sitio no promete restaurar la lordosis cervical y qué medir: dolor, entumecimiento, sueño, movimiento, fuerza y tolerancia deportiva.",
+        kicker: "Expectativas de rehabilitación",
+        headline: "Busca un cuello útil, no una radiografía más bonita.",
+        intro: [
+          "En internet se promete que un ejercicio, almohada o tracción puede restaurar la curva cervical. Es una afirmación demasiado fuerte: la curva cambia por muchas razones y la imagen no siempre sigue a los síntomas.",
+          "Un objetivo más seguro es mejorar dolor, sueño, movimiento, fuerza de espalda alta, estabilidad de síntomas nerviosos y tolerancia al trabajo o deporte. La imagen importa, pero no debería ser la nota diaria."
+        ],
+        callout:
+          "La rehabilitación conservadora puede valer mucho sin garantizar cambios en el ángulo de la radiografía. Vivir, trabajar y moverse con seguridad suele importar más.",
+        sections: [
+          {
+            title: "Por qué no prometemos restaurar la curva",
+            bullets: [
+              "La curva puede verse influida por dolor, defensa muscular, postura de imagen, degeneración, trauma y factores estructurales.",
+              "Algunas personas tienen cambios grandes en imagen y pocos síntomas; otras tienen imagen leve y mucho dolor.",
+              "El entrenamiento puede mejorar control y tolerancia, pero no garantiza alineación ósea o cambio de ángulo a largo plazo.",
+              "Centrarse solo en la curva puede ignorar entumecimiento, debilidad, sueño y función."
+            ]
+          },
+          {
+            title: "Indicadores mejores",
+            table: {
+              headers: ["Indicador", "Cómo medirlo", "Por qué sirve"],
+              rows: [
+                ["Dolor y entumecimiento", "0-10 y si se extiende a dedos", "Muestra si la carga es excesiva."],
+                ["Sueño", "Conciliar, despertares, tolerancia de almohada", "La recuperación cervical suele verse en el sueño."],
+                ["Movimiento", "Mirar puntos ciegos, leer, mirar arriba", "Más cercano a función real que un ángulo."],
+                ["Tolerancia de fuerza", "Remo, face pull, sostén suave de flexores profundos", "Muestra control de cuello y escápulas."],
+                ["Respuesta 24 horas", "Cambio ese día y al siguiente", "Guía la progresión."]
+              ]
+            }
+          },
+          {
+            title: "Qué mejora cuenta",
+            body: [
+              "En 4-8 semanas, menos brotes, entumecimiento que no se extiende, sueño más estable, menos rebote tras trabajo y más tolerancia deportiva son cambios valiosos incluso sin repetir imagen.",
+              "Si entrenar aumenta entumecimiento, baja fuerza o empeora sueño, reduce carga o busca evaluación en vez de perseguir estiramientos más fuertes o tracción más larga."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    slug: "traction-pillow-manipulation-risk-guide",
+    sources: [
+      {
+        label: "AAFP: Neck Pain Initial Evaluation and Management",
+        url: "https://www.aafp.org/pubs/afp/issues/2020/0801/p150.html"
+      },
+      {
+        label: "AAFP: Nonoperative Management of Cervical Radiculopathy",
+        url: "https://www.aafp.org/afp/2016/0501/p746"
+      },
+      {
+        label: "NCCIH: Spinal Manipulation - What You Need To Know",
+        url: "https://www.nccih.nih.gov/health/spinal-manipulation-what-you-need-to-know"
+      },
+      {
+        label: "AAOS OrthoInfo: Cervical Radiculopathy",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/cervical-radiculopathy-pinched-nerve/"
+      }
+    ],
+    translations: {
+      zh: {
+        title: "牵引、枕头、按摩和正骨：颈椎反弓保守治疗的边界",
+        description:
+          "保守解释颈椎牵引、枕头、按摩、手法治疗和正骨的可能作用、风险边界，以及哪些症状不适合自行尝试。",
+        kicker: "治疗边界",
+        headline: "工具可以辅助，但不要把工具当成治愈承诺。",
+        intro: [
+          "颈椎反弓或曲度变直的人常会尝试牵引、矫形枕、按摩、手法治疗或所谓正骨。它们有时能短期减轻不适，但不能被描述成保证恢复曲度或治愈神经压迫的方法。",
+          "更安全的原则是：先排除危险信号，再用低剂量、可停止、可观察的方式尝试，并且把症状反应作为是否继续的依据。"
+        ],
+        callout:
+          "新出现无力、手变笨、走路不稳、双侧麻木、大小便改变、外伤后颈痛或血管样症状时，不要自行牵引或做高速手法。",
+        sections: [
+          {
+            title: "牵引：可能减压，不适合所有人",
+            body: [
+              "部分神经根刺激人群可能从短时间、温和牵引中获得症状缓解，但剂量、角度和适应证很重要。自行加大重量或延长时间，可能让症状更敏感。",
+              "牵引后如果手麻扩散、头晕、恶心、视物异常、无力或疼痛明显加重，应停止并评估。"
+            ]
+          },
+          {
+            title: "枕头：目标是睡眠，不是把骨头顶回去",
+            bullets: [
+              "合适枕头应让睡醒后更轻松，而不是强迫颈部进入极端角度。",
+              "侧睡关注头颈是否与躯干大致成一线；仰睡关注下巴是否被推得太高或太低。",
+              "连续几晚更痛、更麻或更难睡，说明这个高度或形状不合适。"
+            ]
+          },
+          {
+            title: "按摩和手法：短期舒服不等于改变结构",
+            body: [
+              "软组织处理可能帮助放松、降低疼痛敏感度或改善短期活动，但它不应替代神经评估、力量训练和负荷管理。",
+              "高速颈部手法需要特别谨慎。对有神经进展、脊髓线索、明显骨质风险、血管样症状或近期外伤的人，先医疗评估更稳妥。"
+            ]
+          }
+        ]
+      },
+      en: {
+        title: "Traction, Pillows, Massage, and Manipulation: Conservative Care Boundaries",
+        description:
+          "A conservative guide to cervical traction, pillows, massage, manual therapy, and manipulation for cervical curve findings, including when not to self-treat.",
+        kicker: "Treatment boundaries",
+        headline: "Tools can help, but tools are not cure promises.",
+        intro: [
+          "People with cervical kyphosis or a straightened curve often try traction, contour pillows, massage, manual therapy, or manipulation. Some may reduce symptoms short term, but none should be presented as guaranteed curve restoration or nerve cure.",
+          "The safer principle is to screen for red flags, start with low-dose and reversible trials, and let symptom response decide whether to continue."
+        ],
+        callout:
+          "Do not self-traction or seek high-velocity neck manipulation for new weakness, hand clumsiness, gait change, bilateral numbness, bowel/bladder change, post-trauma neck pain, or vascular-type symptoms.",
+        sections: [
+          {
+            title: "Traction: possible relief, not for everyone",
+            body: [
+              "Some people with nerve-root irritation may feel short-term relief from brief, gentle traction, but dose, angle, and fit matter. Increasing force or duration on your own can make symptoms more sensitive.",
+              "Stop and seek evaluation if traction spreads numbness, causes dizziness, nausea, visual symptoms, weakness, or a clear pain increase."
+            ]
+          },
+          {
+            title: "Pillows: the goal is sleep, not forcing bones back",
+            bullets: [
+              "A useful pillow should make waking feel easier, not force the neck into an extreme angle.",
+              "Side sleepers usually need the head and neck roughly aligned with the trunk; back sleepers should avoid the chin being pushed too high or too low.",
+              "If several nights bring more pain, numbness, or poorer sleep, that height or shape is not working."
+            ]
+          },
+          {
+            title: "Massage and manual therapy: comfort is not structural proof",
+            body: [
+              "Soft-tissue work may reduce guarding, pain sensitivity, or short-term stiffness, but it should not replace neurological screening, strength work, and load management.",
+              "High-velocity neck manipulation deserves caution. With progressive nerve signs, spinal-cord clues, bone-risk factors, vascular-type symptoms, or recent trauma, medical evaluation first is the more conservative path."
+            ]
+          }
+        ]
+      },
+      ja: {
+        title: "牽引、枕、マッサージ、手技療法：保存的ケアの境界",
+        description:
+          "頸椎カーブ所見がある人向けに、牽引、枕、マッサージ、手技療法、矯正の可能性とリスク境界を保守的に整理します。",
+        kicker: "治療の境界",
+        headline: "道具は助けになりますが、治癒の約束ではありません。",
+        intro: [
+          "頸椎後弯や前弯減少がある人は、牽引、頸椎枕、マッサージ、手技療法、矯正を試すことがあります。短期的に楽になる場合はありますが、カーブ回復や神経症状の治癒を保証するものではありません。",
+          "安全な考え方は、危険サインを確認し、低用量で中止可能な方法から試し、症状反応で継続を判断することです。"
+        ],
+        callout:
+          "新しい筋力低下、手の不器用さ、歩行変化、両側しびれ、排尿排便変化、外傷後の首痛、血管を疑う症状がある時は、自己牽引や高速手技を避けてください。",
+        sections: [
+          {
+            title: "牽引：楽になる人もいるが全員向けではない",
+            body: [
+              "神経根刺激がある一部の人では、短時間で穏やかな牽引が一時的に症状を軽くすることがあります。ただし角度、量、適応が重要です。自分で力や時間を増やすと過敏になることがあります。",
+              "牽引後にしびれ拡大、めまい、吐き気、視覚症状、筋力低下、明らかな痛み増加があれば中止し評価を受けてください。"
+            ]
+          },
+          {
+            title: "枕：目的は睡眠であり、骨を押し戻すことではない",
+            bullets: [
+              "合う枕は、朝起きた時に楽に感じるもので、首を極端な角度に固定するものではありません。",
+              "横向きでは頭頸部と体幹が大きくずれないこと、仰向けではあごが上がりすぎたり引かれすぎたりしないことを見ます。",
+              "数晩続けて痛み、しびれ、睡眠が悪化するなら、その高さや形は合っていません。"
+            ]
+          },
+          {
+            title: "マッサージと手技：楽さは構造変化の証明ではない",
+            body: [
+              "軟部組織への介入は緊張、痛みの過敏性、短期的なこわばりを下げることがありますが、神経評価、筋力、負荷管理の代わりにはなりません。",
+              "頸部への高速手技は慎重に考えるべきです。進行する神経症状、脊髄サイン、骨のリスク、血管を疑う症状、最近の外傷があれば、先に医療評価が安全です。"
+            ]
+          }
+        ]
+      },
+      es: {
+        title: "Tracción, almohadas, masaje y manipulación: límites del cuidado conservador",
+        description:
+          "Guía prudente sobre tracción cervical, almohadas, masaje, terapia manual y manipulación para hallazgos de curva cervical y cuándo no automanejarse.",
+        kicker: "Límites de tratamiento",
+        headline: "Las herramientas pueden ayudar, pero no son promesas de cura.",
+        intro: [
+          "Quienes tienen cifosis cervical o curva rectificada suelen probar tracción, almohadas contorneadas, masaje, terapia manual o manipulación. Algunas opciones pueden aliviar a corto plazo, pero no deberían prometer restaurar la curva ni curar nervios.",
+          "El principio más seguro es descartar señales de alarma, empezar con pruebas reversibles y de baja dosis, y decidir según la respuesta de síntomas."
+        ],
+        callout:
+          "No hagas autotrácción ni manipulación cervical de alta velocidad si hay debilidad nueva, torpeza de mano, cambio de marcha, entumecimiento bilateral, cambios urinarios/intestinales, dolor tras trauma o síntomas vasculares.",
+        sections: [
+          {
+            title: "Tracción: posible alivio, no para todos",
+            body: [
+              "Algunas personas con irritación de raíz nerviosa pueden notar alivio temporal con tracción breve y suave, pero importan dosis, ángulo e indicación. Aumentar fuerza o tiempo por cuenta propia puede sensibilizar síntomas.",
+              "Detén y busca evaluación si la tracción extiende el entumecimiento, causa mareo, náusea, síntomas visuales, debilidad o aumento claro de dolor."
+            ]
+          },
+          {
+            title: "Almohadas: el objetivo es dormir, no empujar huesos",
+            bullets: [
+              "Una almohada útil debería hacer que despertar sea más fácil, no forzar el cuello a un ángulo extremo.",
+              "De lado, cabeza y cuello deberían alinearse con el tronco; boca arriba, evita mentón demasiado alto o demasiado bajo.",
+              "Si varias noches traen más dolor, entumecimiento o peor sueño, esa altura o forma no funciona."
+            ]
+          },
+          {
+            title: "Masaje y terapia manual: comodidad no prueba cambio estructural",
+            body: [
+              "El trabajo de tejidos blandos puede reducir defensa, sensibilidad al dolor o rigidez breve, pero no reemplaza evaluación neurológica, fuerza y manejo de carga.",
+              "La manipulación cervical de alta velocidad merece cautela. Con signos nerviosos progresivos, pistas medulares, riesgo óseo, síntomas vasculares o trauma reciente, primero evaluación médica."
+            ]
+          }
+        ]
+      }
+    }
+  }
+);
+
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -764,7 +1510,24 @@ function renderHreflang(slug) {
 function renderStructuredData(article, translation, lang) {
   const labels = languages[lang];
   const pageUrl = urlFor(lang, article.slug);
+  const organization = {
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    name: "Cervical Curve Guide",
+    url: baseUrl
+  };
+  const website = {
+    "@type": "WebSite",
+    "@id": `${baseUrl}/#website`,
+    name: "Cervical Curve Guide",
+    url: `${baseUrl}/`,
+    publisher: { "@id": `${baseUrl}/#organization` },
+    inLanguage: Object.values(languages).map((item) => item.htmlLang),
+    isAccessibleForFree: true
+  };
   const graph = [
+    organization,
+    website,
     {
       "@type": "MedicalWebPage",
       "@id": `${pageUrl}#medical-page`,
@@ -777,6 +1540,7 @@ function renderStructuredData(article, translation, lang) {
       isAccessibleForFree: true,
       lastReviewed: reviewDate,
       dateModified: reviewDate,
+      reviewedBy: { "@id": `${baseUrl}/#organization` },
       about: [
         "Cervical kyphosis",
         "Loss of cervical lordosis",
@@ -796,14 +1560,10 @@ function renderStructuredData(article, translation, lang) {
       inLanguage: labels.htmlLang,
       datePublished: reviewDate,
       dateModified: reviewDate,
-      author: {
-        "@type": "Organization",
-        name: "Cervical Curve Guide"
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Cervical Curve Guide"
-      },
+      author: { "@id": `${baseUrl}/#organization` },
+      publisher: { "@id": `${baseUrl}/#organization` },
+      reviewedBy: { "@id": `${baseUrl}/#organization` },
+      citation: article.sources.map((source) => source.url),
       isPartOf: { "@id": `${pageUrl}#medical-page` }
     },
     {
@@ -882,6 +1642,7 @@ function renderArticle(article, lang) {
     <main class="legal-main article-main" id="article-content">
       <article class="legal-article article-page">
         <p class="legal-meta">${escapeHtml(labels.lastReviewed)} · ${escapeHtml(translation.kicker)}</p>
+        <p class="legal-meta">${escapeHtml(labels.reviewStatus)}</p>
         <h1>${escapeHtml(translation.headline)}</h1>
         <div class="article-dek">
           ${renderParagraphs(translation.intro)}
@@ -905,6 +1666,7 @@ function renderArticle(article, lang) {
       <p>${escapeHtml(labels.footer)}</p>
       <nav class="footer-links" aria-label="Footer links">
         <a href="/about.html">About</a>
+        <a href="/authors.html">Authors</a>
         <a href="/editorial-policy.html">Editorial policy</a>
         <a href="/medical-review-policy.html">Medical review</a>
         <a href="/contact.html">Contact</a>

@@ -304,9 +304,9 @@ const content = {
       "sports.copy":
         "Sports rarely fit a simple \"good\" or \"bad\" label. The key is the position, exposure time, impact risk, and how your symptoms respond over the next 24 hours.",
       "guides.eyebrow": "Deep-dive guides",
-      "guides.title": "Two topics deserve their own pages.",
+      "guides.title": "Six topics now have focused guide pages.",
       "guides.copy":
-        "These static guides give search engines and readers focused, source-backed pages on finger numbness patterns and sport-specific neck loading.",
+        "These static guides give readers and search engines focused, source-backed pages on symptoms, imaging language, rehab expectations, treatment boundaries, and sport-specific neck loading.",
       "guides.link": "Read the guide",
       "sources.eyebrow": "References",
       "sources.title": "Source base for this prototype.",
@@ -700,6 +700,34 @@ const content = {
         body:
           "A return-to-sport framework for surf paddling, ski and snowboard impact risk, climbing belay posture, and the 24-hour symptom rule.",
         url: "/en/articles/sports-neck-load-return-guide/"
+      },
+      {
+        tag: "Imaging guide",
+        title: "Cervical kyphosis vs loss of cervical lordosis",
+        body:
+          "Plain-language differences between straightening, loss of lordosis, reversed curve, and cervical kyphosis without turning imaging words into a diagnosis.",
+        url: "/en/articles/cervical-kyphosis-vs-loss-lordosis/"
+      },
+      {
+        tag: "Red flags",
+        title: "Radiculopathy and myelopathy warning signs",
+        body:
+          "A safer way to separate radiating arm pain, finger numbness, weakness, hand clumsiness, and gait changes.",
+        url: "/en/articles/cervical-radiculopathy-myelopathy-red-flags/"
+      },
+      {
+        tag: "Rehab expectations",
+        title: "Can cervical curve be restored?",
+        body:
+          "Why this site does not promise curve restoration, and what to track instead: pain, numbness, sleep, motion, strength, and tolerance.",
+        url: "/en/articles/can-cervical-curve-be-restored/"
+      },
+      {
+        tag: "Treatment boundaries",
+        title: "Traction, pillows, massage, and manipulation",
+        body:
+          "A conservative guide to common tools, what they may help, and when self-treatment is not appropriate.",
+        url: "/en/articles/traction-pillow-manipulation-risk-guide/"
       }
     ],
     sourceNote: "Used for medical framing, symptom education, sport loading, and video curation.",
@@ -783,9 +811,9 @@ const content = {
       "sports.copy":
         "运动很少能简单说成“好”或“坏”。关键是颈部姿势、持续时间、冲击风险，以及接下来 24 小时内症状如何反应。",
       "guides.eyebrow": "深度专题",
-      "guides.title": "两个主题值得单独成页。",
+      "guides.title": "六个高频问题已经单独成页。",
       "guides.copy":
-        "这些静态专题页把手指麻木鉴别和运动负荷回归拆开讲，方便读者深入阅读，也更适合搜索引擎理解。",
+        "这些静态专题页把症状、影像词、康复预期、治疗边界和运动负荷拆开讲，方便读者深入阅读，也更适合搜索引擎理解。",
       "guides.link": "阅读专题",
       "sources.eyebrow": "参考来源",
       "sources.title": "这个原型的资料基础。",
@@ -1160,6 +1188,34 @@ const content = {
         body:
           "解释冲浪划水、滑雪和单板冲击风险、攀岩保护仰头姿势，以及用 24 小时症状规则回归运动。",
         url: "/articles/sports-neck-load-return-guide/"
+      },
+      {
+        tag: "影像解读",
+        title: "颈椎反弓、后凸和曲度变直有什么区别？",
+        body:
+          "把报告里的曲度变直、反弓、后凸和 loss of lordosis 翻译成人话，避免把影像词直接当成疼痛诊断。",
+        url: "/articles/cervical-kyphosis-vs-loss-lordosis/"
+      },
+      {
+        tag: "危险信号",
+        title: "神经根病和脊髓受压哪些症状不能拖？",
+        body:
+          "区分手臂放射痛、手麻、无力、手变笨、走路不稳等线索，说明什么时候应尽快就医。",
+        url: "/articles/cervical-radiculopathy-myelopathy-red-flags/"
+      },
+      {
+        tag: "康复预期",
+        title: "颈椎曲度能练回来吗？",
+        body:
+          "解释为什么本站不承诺恢复曲度，并给出更可靠的追踪指标：疼痛、手麻、睡眠、活动和力量耐受。",
+        url: "/articles/can-cervical-curve-be-restored/"
+      },
+      {
+        tag: "治疗边界",
+        title: "牵引、枕头、按摩和正骨怎么判断？",
+        body:
+          "保守解释常见工具可能帮什么、不能承诺什么，以及哪些症状不适合自行尝试。",
+        url: "/articles/traction-pillow-manipulation-risk-guide/"
       }
     ],
     sourceNote: "用于医学框架、症状教育、运动负荷和视频选择。",
@@ -1243,9 +1299,9 @@ const content = {
       "sports.copy":
         "スポーツは単純に良い悪いで判断しにくいものです。大切なのは姿勢、時間、衝撃リスク、そして次の 24 時間の症状反応です。",
       "guides.eyebrow": "詳しい特集",
-      "guides.title": "単独ページで読むべき二つのテーマ。",
+      "guides.title": "よくある六つの疑問を詳しい特集にしました。",
       "guides.copy":
-        "指のしびれパターンとスポーツ別の首の負荷を、検索にも読者にも分かりやすい静的ページとして整理しました。",
+        "症状、画像用語、リハビリの期待値、治療の境界、スポーツ負荷を、検索にも読者にも分かりやすい静的ページとして整理しました。",
       "guides.link": "特集を読む",
       "sources.eyebrow": "参考文献",
       "sources.title": "このプロトタイプの情報基盤。",
@@ -1620,6 +1676,34 @@ const content = {
         body:
           "パドリング、雪上での衝撃、ビレイ姿勢、24時間ルールを使い、首症状がある時のスポーツ復帰を保守的に考えます。",
         url: "/ja/articles/sports-neck-load-return-guide/"
+      },
+      {
+        tag: "画像の読み方",
+        title: "頸椎後弯と頸椎前弯減少の違い",
+        body:
+          "ストレートネック、前弯減少、逆方向のカーブ、頸椎後弯という画像用語を、不安を煽らず整理します。",
+        url: "/ja/articles/cervical-kyphosis-vs-loss-lordosis/"
+      },
+      {
+        tag: "危険サイン",
+        title: "神経根症と脊髄症で待ってはいけない症状",
+        body:
+          "腕へ走る痛み、指のしびれ、筋力低下、手の不器用さ、歩行変化を安全に整理します。",
+        url: "/ja/articles/cervical-radiculopathy-myelopathy-red-flags/"
+      },
+      {
+        tag: "リハビリの期待値",
+        title: "頸椎カーブは運動で戻る？",
+        body:
+          "カーブ回復を約束しない理由と、痛み、しびれ、睡眠、可動性、筋力、耐性を追う方法を説明します。",
+        url: "/ja/articles/can-cervical-curve-be-restored/"
+      },
+      {
+        tag: "治療の境界",
+        title: "牽引、枕、マッサージ、手技療法の考え方",
+        body:
+          "よく使われる道具や施術が何を助け得るか、どこから自己判断を避けるべきかを整理します。",
+        url: "/ja/articles/traction-pillow-manipulation-risk-guide/"
       }
     ],
     sourceNote: "医学的枠組み、症状教育、スポーツ負荷、動画選定の参考として使用。",
@@ -1703,9 +1787,9 @@ const content = {
       "sports.copy":
         "El deporte rara vez es simplemente bueno o malo. La clave es la posición, el tiempo de exposición, el riesgo de impacto y la respuesta de tus síntomas durante las próximas 24 horas.",
       "guides.eyebrow": "Guías en profundidad",
-      "guides.title": "Dos temas merecen páginas propias.",
+      "guides.title": "Seis preguntas frecuentes tienen guías propias.",
       "guides.copy":
-        "Estas páginas estáticas explican patrones de dedos dormidos y carga deportiva del cuello con más foco para lectores y buscadores.",
+        "Estas páginas estáticas explican síntomas, lenguaje de imagen, expectativas de rehabilitación, límites de tratamiento y carga deportiva con más foco para lectores y buscadores.",
       "guides.link": "Leer la guía",
       "sources.eyebrow": "Referencias",
       "sources.title": "Base de fuentes del prototipo.",
@@ -2095,6 +2179,34 @@ const content = {
         body:
           "Un marco de vuelta al deporte para remada de surf, riesgo de impacto en nieve, postura de aseguramiento y regla de síntomas de 24 horas.",
         url: "/es/articles/sports-neck-load-return-guide/"
+      },
+      {
+        tag: "Guía de imagen",
+        title: "Cifosis cervical vs pérdida de lordosis",
+        body:
+          "Diferencias entre rectificación, pérdida de lordosis, curva invertida y cifosis cervical sin convertir la imagen en diagnóstico.",
+        url: "/es/articles/cervical-kyphosis-vs-loss-lordosis/"
+      },
+      {
+        tag: "Señales de alarma",
+        title: "Radiculopatía y mielopatía: cuándo no esperar",
+        body:
+          "Ordena dolor de brazo, dedos dormidos, debilidad, torpeza de mano y cambios de marcha con un marco más seguro.",
+        url: "/es/articles/cervical-radiculopathy-myelopathy-red-flags/"
+      },
+      {
+        tag: "Expectativas",
+        title: "¿Se puede recuperar la curva cervical?",
+        body:
+          "Por qué no prometemos restaurar la curva y qué medir: dolor, entumecimiento, sueño, movimiento, fuerza y tolerancia.",
+        url: "/es/articles/can-cervical-curve-be-restored/"
+      },
+      {
+        tag: "Límites",
+        title: "Tracción, almohadas, masaje y manipulación",
+        body:
+          "Una guía prudente sobre herramientas comunes, qué podrían ayudar y cuándo no conviene automanejarse.",
+        url: "/es/articles/traction-pillow-manipulation-risk-guide/"
       }
     ],
     sourceNote:
