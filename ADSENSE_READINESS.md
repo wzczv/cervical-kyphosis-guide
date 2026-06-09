@@ -10,10 +10,14 @@ Last updated: 2026-06-09
 - Source-backed health education with conservative wording and red-flag notices.
 - Multilingual content clusters and internal links.
 - GA4 with consent-aware analytics.
+- English-first pillar pages for cervical kyphosis, loss of cervical lordosis, and cervical radiculopathy.
+- Original SVG diagrams with dedicated landing pages, image sitemap entries, and download links.
+- Printable 7-day symptom tracker that adds practical utility beyond article text.
 
 ## Before Applying
 
 - Keep adding original, useful articles until the site has stable impressions and enough depth across clusters.
+- Add a named licensed medical reviewer when available; keep the current editorial-review wording until then.
 - Add `ads.txt` only after a real publisher ID is available.
 - Avoid sticky or interstitial ads on medical content until approval is stable.
 - Keep YouTube videos as references, not thin replacement content.

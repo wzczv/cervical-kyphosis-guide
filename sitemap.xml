@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://cervicalcurveguide.com/</loc>
     <lastmod>2026-06-09</lastmod>
@@ -337,6 +337,54 @@
     <lastmod>2026-06-09</lastmod>
   </url>
   <url>
+    <loc>https://cervicalcurveguide.com/cervical-kyphosis/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/en/cervical-kyphosis/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/ja/cervical-kyphosis/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/es/cervical-kyphosis/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/loss-of-cervical-lordosis/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/en/loss-of-cervical-lordosis/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/ja/loss-of-cervical-lordosis/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/es/loss-of-cervical-lordosis/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/cervical-radiculopathy/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/en/cervical-radiculopathy/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/ja/cervical-radiculopathy/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/es/cervical-radiculopathy/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
     <loc>https://cervicalcurveguide.com/symptoms/</loc>
     <lastmod>2026-06-09</lastmod>
   </url>
@@ -447,6 +495,118 @@
   <url>
     <loc>https://cervicalcurveguide.com/es/videos/</loc>
     <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/printable-neck-symptom-tracker/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/en/printable-neck-symptom-tracker/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/ja/printable-neck-symptom-tracker/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/es/printable-neck-symptom-tracker/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/images/cervical-curve-diagram/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/cervical-curve-diagram.svg</image:loc>
+      <image:title>颈椎曲度图解</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/en/images/cervical-curve-diagram/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/cervical-curve-diagram.svg</image:loc>
+      <image:title>Cervical curve diagram</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/ja/images/cervical-curve-diagram/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/cervical-curve-diagram.svg</image:loc>
+      <image:title>頸椎カーブ図</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/es/images/cervical-curve-diagram/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/cervical-curve-diagram.svg</image:loc>
+      <image:title>Diagrama de curva cervical</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/images/c6-c7-c8-finger-numbness-map/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/c6-c7-c8-finger-numbness-map.svg</image:loc>
+      <image:title>C6 C7 C8 手指麻木地图</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/en/images/c6-c7-c8-finger-numbness-map/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/c6-c7-c8-finger-numbness-map.svg</image:loc>
+      <image:title>C6 C7 C8 finger numbness map</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/ja/images/c6-c7-c8-finger-numbness-map/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/c6-c7-c8-finger-numbness-map.svg</image:loc>
+      <image:title>C6 C7 C8 指のしびれマップ</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/es/images/c6-c7-c8-finger-numbness-map/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/c6-c7-c8-finger-numbness-map.svg</image:loc>
+      <image:title>Mapa C6 C7 C8 de dedos dormidos</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/images/24-hour-neck-symptom-response-chart/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/24-hour-neck-symptom-response-chart.svg</image:loc>
+      <image:title>24 小时颈部症状反应图</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/en/images/24-hour-neck-symptom-response-chart/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/24-hour-neck-symptom-response-chart.svg</image:loc>
+      <image:title>24-hour neck symptom response chart</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/ja/images/24-hour-neck-symptom-response-chart/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/24-hour-neck-symptom-response-chart.svg</image:loc>
+      <image:title>24時間首症状反応チャート</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cervicalcurveguide.com/es/images/24-hour-neck-symptom-response-chart/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <image:image>
+      <image:loc>https://cervicalcurveguide.com/assets/visuals/24-hour-neck-symptom-response-chart.svg</image:loc>
+      <image:title>Gráfico de respuesta cervical 24 h</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cervicalcurveguide.com/about.html</loc>

@@ -20,6 +20,24 @@ window.CCG_GROWTH = {
   "articleCards": {
     "zh": [
       {
+        "tag": "Pillar 页面",
+        "title": "颈椎反弓完整指南：报告词、症状、康复和风险边界",
+        "body": "一个保守、可核查的颈椎反弓总览页，解释影像报告、症状优先级、康复目标、治疗边界和什么时候应就医。",
+        "url": "/cervical-kyphosis/"
+      },
+      {
+        "tag": "Pillar 页面",
+        "title": "颈椎生理曲度变直：含义、症状和保守处理",
+        "body": "解释颈椎生理曲度变直、loss of cervical lordosis、直颈和相关症状的保守判断，不夸大影像词。",
+        "url": "/loss-of-cervical-lordosis/"
+      },
+      {
+        "tag": "Pillar 页面",
+        "title": "颈椎神经根病：手臂痛、手麻、检查和保守康复",
+        "body": "总览颈椎神经根病的常见症状、C5-C8 线索、危险信号、检查选择和保守处理边界。",
+        "url": "/cervical-radiculopathy/"
+      },
+      {
         "tag": "症状专题",
         "title": "颈椎反弓会导致头痛或头晕吗？",
         "body": "很多头痛和头晕不能简单归因于颈椎曲度。更稳妥的做法是区分颈源性线索、前庭问题、偏头痛、血压和神经危险信号。",
@@ -144,9 +162,33 @@ window.CCG_GROWTH = {
         "title": "参考视频索引",
         "body": "把 YouTube 视频按主题归类，并明确它们只是动作参考。",
         "url": "/videos/"
+      },
+      {
+        "tag": "记录表",
+        "title": "7 天颈痛和手麻记录表",
+        "body": "可打印或保存 PDF，帮助就医前整理症状变化。",
+        "url": "/printable-neck-symptom-tracker/"
       }
     ],
     "en": [
+      {
+        "tag": "Pillar guide",
+        "title": "Cervical Kyphosis: Report Meaning, Symptoms, Rehab, and Safety Boundaries",
+        "body": "A conservative, source-backed overview of cervical kyphosis: imaging language, symptom priority, rehab goals, treatment boundaries, and when to seek care.",
+        "url": "/en/cervical-kyphosis/"
+      },
+      {
+        "tag": "Pillar guide",
+        "title": "Loss of Cervical Lordosis: Meaning, Symptoms, and Conservative Care",
+        "body": "A conservative guide to loss of cervical lordosis, straight neck, report language, symptoms, and what to track before assuming the curve is the problem.",
+        "url": "/en/loss-of-cervical-lordosis/"
+      },
+      {
+        "tag": "Pillar guide",
+        "title": "Cervical Radiculopathy: Arm Pain, Finger Numbness, Testing, and Conservative Rehab",
+        "body": "A source-backed overview of cervical radiculopathy: symptoms, C5-C8 clues, red flags, testing choices, and conservative rehab boundaries.",
+        "url": "/en/cervical-radiculopathy/"
+      },
       {
         "tag": "Symptom guide",
         "title": "Can cervical kyphosis cause headache or dizziness?",
@@ -272,9 +314,33 @@ window.CCG_GROWTH = {
         "title": "Reference video index",
         "body": "Curated YouTube references grouped by topic, clearly framed as visual references.",
         "url": "/en/videos/"
+      },
+      {
+        "tag": "Tracker",
+        "title": "7-Day Neck Pain and Numbness Tracker",
+        "body": "Print or save as PDF to organize symptom changes before an appointment.",
+        "url": "/en/printable-neck-symptom-tracker/"
       }
     ],
     "ja": [
+      {
+        "tag": "Pillar ガイド",
+        "title": "頸椎後弯ガイド：画像用語、症状、リハビリ、安全な境界",
+        "body": "頸椎後弯について、画像の読み方、症状の優先度、リハビリ目標、治療道具の限界、受診目安を保守的に整理します。",
+        "url": "/ja/cervical-kyphosis/"
+      },
+      {
+        "tag": "Pillar ガイド",
+        "title": "頸椎前弯減少：意味、症状、保存的ケア",
+        "body": "頸椎前弯減少やストレートネックの報告語を、症状と負荷管理の視点から保守的に整理します。",
+        "url": "/ja/loss-of-cervical-lordosis/"
+      },
+      {
+        "tag": "Pillar ガイド",
+        "title": "頸椎神経根症：腕痛、指のしびれ、検査、保存的リハビリ",
+        "body": "頸椎神経根症の症状、C5-C8の手がかり、危険サイン、検査、保存的ケアの境界を整理します。",
+        "url": "/ja/cervical-radiculopathy/"
+      },
       {
         "tag": "症状特集",
         "title": "頸椎後弯は頭痛やめまいの原因になりますか？",
@@ -400,9 +466,33 @@ window.CCG_GROWTH = {
         "title": "参考動画インデックス",
         "body": "YouTube動画をテーマ別に整理し、動作参考であることを明示します。",
         "url": "/ja/videos/"
+      },
+      {
+        "tag": "記録表",
+        "title": "7日間の首痛・しびれ記録表",
+        "body": "印刷またはPDF保存し、受診前に症状変化を整理します。",
+        "url": "/ja/printable-neck-symptom-tracker/"
       }
     ],
     "es": [
+      {
+        "tag": "Guía pilar",
+        "title": "Cifosis cervical: informe, síntomas, rehabilitación y límites de seguridad",
+        "body": "Resumen prudente y basado en fuentes sobre cifosis cervical: lenguaje de imagen, prioridad de síntomas, metas de rehabilitación y cuándo buscar atención.",
+        "url": "/es/cervical-kyphosis/"
+      },
+      {
+        "tag": "Guía pilar",
+        "title": "Pérdida de lordosis cervical: significado, síntomas y cuidado conservador",
+        "body": "Guía prudente sobre pérdida de lordosis cervical, cuello rectificado, lenguaje de informe, síntomas y seguimiento conservador.",
+        "url": "/es/loss-of-cervical-lordosis/"
+      },
+      {
+        "tag": "Guía pilar",
+        "title": "Radiculopatía cervical: dolor de brazo, dedos dormidos, pruebas y rehabilitación",
+        "body": "Resumen de radiculopatía cervical: síntomas, pistas C5-C8, alarmas, pruebas y límites de rehabilitación conservadora.",
+        "url": "/es/cervical-radiculopathy/"
+      },
       {
         "tag": "Guía de síntomas",
         "title": "¿La cifosis cervical puede causar dolor de cabeza o mareo?",
@@ -528,6 +618,12 @@ window.CCG_GROWTH = {
         "title": "Índice de videos de referencia",
         "body": "Videos de YouTube agrupados por tema y enmarcados como referencia visual.",
         "url": "/es/videos/"
+      },
+      {
+        "tag": "Registro",
+        "title": "Registro de 7 días de cuello y entumecimiento",
+        "body": "Imprime o guarda como PDF para ordenar cambios antes de una cita.",
+        "url": "/es/printable-neck-symptom-tracker/"
       }
     ]
   },

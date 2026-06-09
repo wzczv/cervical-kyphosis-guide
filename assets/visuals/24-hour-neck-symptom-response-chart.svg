@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">24-hour neck symptom response chart</title>
+  <desc id="desc">Educational traffic-light chart for post-exercise neck symptom response.</desc>
+  <rect width="1200" height="700" rx="24" fill="#f6fbfa"/>
+  <text x="600" y="76" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="42" font-weight="700">24-Hour Neck Symptom Response</text>
+  <g transform="translate(170,150)">
+    <rect width="260" height="390" rx="18" fill="#fff" stroke="#d9e5e2" stroke-width="5"/>
+    <circle cx="130" cy="90" r="54" fill="#4d8061"/>
+    <text x="130" y="102" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="800">Green</text>
+    <text x="130" y="190" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="25" font-weight="700">
+      <tspan x="130">Symptoms local, stable or calmer</tspan>
+    </text>
+    <text x="130" y="275" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="23">
+      <tspan x="130">Small progression may be reasonable</tspan>
+    </text>
+  </g>
+<g transform="translate(500,150)">
+    <rect width="260" height="390" rx="18" fill="#fff" stroke="#d9e5e2" stroke-width="5"/>
+    <circle cx="130" cy="90" r="54" fill="#c8902f"/>
+    <text x="130" y="102" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="800">Yellow</text>
+    <text x="130" y="190" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="25" font-weight="700">
+      <tspan x="130">Pain rises or sleep worsens</tspan>
+    </text>
+    <text x="130" y="275" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="23">
+      <tspan x="130">Deload and observe before adding more</tspan>
+    </text>
+  </g>
+<g transform="translate(830,150)">
+    <rect width="260" height="390" rx="18" fill="#fff" stroke="#d9e5e2" stroke-width="5"/>
+    <circle cx="130" cy="90" r="54" fill="#d8644a"/>
+    <text x="130" y="102" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="800">Red</text>
+    <text x="130" y="190" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="25" font-weight="700">
+      <tspan x="130">Weakness, spreading numbness, gait change</tspan>
+    </text>
+    <text x="130" y="275" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="23">
+      <tspan x="130">Stop and seek prompt assessment</tspan>
+    </text>
+  </g>
+  <text x="600" y="660" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="24">Use this as an educational log, not a diagnosis or personal treatment plan.</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Cervical curve diagram</title>
+  <desc id="desc">Comparison of usual cervical lordosis, straightened cervical curve, and reversed or kyphotic cervical curve.</desc>
+  <rect width="1200" height="700" rx="24" fill="#f7fbfa"/>
+  <text x="600" y="80" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="42" font-weight="700">Cervical Curve Comparison</text>
+  <g transform="translate(210,160)">
+    <path d="M 0 0 C 82 92 82 262 0 370" fill="none" stroke="#167a7f" stroke-width="26" stroke-linecap="round"/>
+    <circle cx="28" cy="42" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="22" cy="97" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="16" cy="152" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="10" cy="207" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="4" cy="262" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="-2" cy="317" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/>
+    <text x="0" y="445" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="30" font-weight="700">Usual lordosis</text>
+  </g>
+<g transform="translate(600,160)">
+    <path d="M 0 0 C 18 106 18 258 0 370" fill="none" stroke="#4d8061" stroke-width="26" stroke-linecap="round"/>
+    <circle cx="0" cy="42" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="0" cy="97" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="0" cy="152" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="0" cy="207" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="0" cy="262" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="0" cy="317" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/>
+    <text x="0" y="445" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="30" font-weight="700">Straightened</text>
+  </g>
+<g transform="translate(990,160)">
+    <path d="M 0 0 C -76 92 -76 270 0 370" fill="none" stroke="#d8644a" stroke-width="26" stroke-linecap="round"/>
+    <circle cx="-18" cy="42" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="-25" cy="97" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="-32" cy="152" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="-39" cy="207" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="-46" cy="262" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/><circle cx="-53" cy="317" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/>
+    <text x="0" y="445" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="30" font-weight="700">Reversed / kyphotic</text>
+  </g>
+  <text x="600" y="660" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="24">Educational diagram only; symptoms and clinical exam matter more than curve shape alone.</text>
+</svg>

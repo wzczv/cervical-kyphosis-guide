@@ -1,8 +1,29 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
-const file = process.argv[2];
+const args = process.argv.slice(2);
+const positional = [];
+let writePlan = false;
+let outputFile = "GSC_REFRESH_PLAN.md";
+
+for (let i = 0; i < args.length; i += 1) {
+  const arg = args[i];
+  if (arg === "--write") {
+    writePlan = true;
+    if (args[i + 1] && !args[i + 1].startsWith("-")) {
+      outputFile = args[i + 1];
+      i += 1;
+    }
+  } else if (arg.startsWith("--write=")) {
+    writePlan = true;
+    outputFile = arg.slice("--write=".length) || outputFile;
+  } else {
+    positional.push(arg);
+  }
+}
+
+const file = positional[0];
 if (!file) {
-  console.log("Usage: node scripts/analyze-gsc-export.mjs <search-console-queries-or-pages.csv>");
+  console.log("Usage: node scripts/analyze-gsc-export.mjs <search-console-queries-or-pages.csv> [--write[=GSC_REFRESH_PLAN.md]]");
   process.exit(1);
 }
 
@@ -37,12 +58,27 @@ function parseCsv(text) {
 
 const rows = parseCsv(readFileSync(file, "utf8"));
 const headers = rows.shift().map((item) => item.trim().toLowerCase());
-const index = (name) => headers.findIndex((header) => header === name || header.includes(name));
-const queryIndex = Math.max(index("query"), index("page"));
-const clicksIndex = index("clicks");
-const impressionsIndex = index("impressions");
-const ctrIndex = index("ctr");
-const positionIndex = index("position");
+const index = (names) =>
+  headers.findIndex((header) => names.some((name) => header === name || header.includes(name)));
+const queryIndex = index(["query", "queries", "page", "pages"]);
+const clicksIndex = index(["clicks"]);
+const impressionsIndex = index(["impressions"]);
+const ctrIndex = index(["ctr"]);
+const positionIndex = index(["position"]);
+
+const missing = [
+  ["query/page", queryIndex],
+  ["clicks", clicksIndex],
+  ["impressions", impressionsIndex],
+  ["ctr", ctrIndex],
+  ["position", positionIndex]
+]
+  .filter(([, columnIndex]) => columnIndex < 0)
+  .map(([name]) => name);
+
+if (missing.length) {
+  throw new Error(`Missing expected Search Console columns: ${missing.join(", ")}. Found: ${headers.join(", ")}`);
+}
 
 const data = rows
   .map((row) => ({
@@ -81,3 +117,59 @@ console.log(`Rows analyzed: ${data.length}`);
 printGroup("High impressions, low CTR", highImpressionLowCtr, "Action: improve title/meta, clarify search intent, add stronger intro.");
 printGroup("Positions 8-20", strikingDistance, "Action: add internal links, expand sections, improve topical match.");
 printGroup("Positions 20-50", newLongTail, "Action: consider new long-tail pages or hub sections.");
+
+function escapeTable(value) {
+  return String(value).replace(/\|/g, "\\|");
+}
+
+function markdownTable(rowsToPrint) {
+  if (!rowsToPrint.length) return "_No matching rows in this export._";
+  return [
+    "| Query or page | Clicks | Impressions | CTR | Position | Suggested action |",
+    "| --- | ---: | ---: | ---: | ---: | --- |",
+    ...rowsToPrint.map((row) => {
+      const action =
+        row.position <= 20
+          ? "Refresh title/meta and add internal links from the nearest hub."
+          : "Check whether intent is distinct enough for a new section or article.";
+      return `| ${escapeTable(row.item)} | ${row.clicks} | ${row.impressions} | ${row.ctr}% | ${row.position} | ${action} |`;
+    })
+  ].join("\n");
+}
+
+if (writePlan) {
+  const generatedAt = new Date().toISOString().slice(0, 10);
+  const markdown = `# GSC Refresh Plan
+
+Generated: ${generatedAt}
+Source export: ${file}
+Rows analyzed: ${data.length}
+
+## High Impressions, Low CTR
+
+Action: improve title/meta, clarify search intent in the opening answer, and make the page title match the exact query language.
+
+${markdownTable(highImpressionLowCtr)}
+
+## Positions 8-20
+
+Action: add internal links from hubs and related articles, expand the section that answers the query, and add a concise answer near the top.
+
+${markdownTable(strikingDistance)}
+
+## Positions 20-50
+
+Action: use these as long-tail candidates only when they show a distinct reader intent that is not already answered well.
+
+${markdownTable(newLongTail)}
+
+## Next Sprint Checklist
+
+- Refresh the top 5 high-impression titles and descriptions.
+- Add 2-4 contextual internal links to each position 8-20 page.
+- Turn only clearly distinct position 20-50 intents into new source-backed pages.
+- Rebuild the sitemap and resubmit after meaningful content changes.
+`;
+  writeFileSync(outputFile, markdown);
+  console.log(`\nWrote ${outputFile}`);
+}

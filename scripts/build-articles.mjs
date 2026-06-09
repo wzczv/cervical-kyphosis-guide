@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 const baseUrl = "https://cervicalcurveguide.com";
-const version = "20260609-growth";
+const version = "20260609-pillar";
 const reviewDate = "2026-06-09";
 
 const languages = {

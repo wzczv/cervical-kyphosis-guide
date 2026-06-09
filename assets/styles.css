@@ -1233,6 +1233,78 @@ td:first-child {
   color: var(--muted);
 }
 
+.pillar-toc {
+  background: #f6fbfa;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 14px;
+}
+
+.pillar-toc a {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--teal-dark);
+  font-size: 0.92rem;
+  font-weight: 850;
+  padding: 9px 12px;
+  text-decoration: none;
+}
+
+.pillar-section {
+  scroll-margin-top: 110px;
+}
+
+.visual-download-card img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.image-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.light-button {
+  background: #e9f2f0;
+  border: 1px solid var(--line);
+  color: var(--teal-dark);
+}
+
+.printable-page .print-button {
+  border: 0;
+  cursor: pointer;
+  margin-top: 22px;
+}
+
+.printable-table-wrap {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 22px;
+}
+
+.printable-table {
+  min-width: 980px;
+}
+
+.printable-table th,
+.printable-table td {
+  height: 72px;
+}
+
+.printable-table td:first-child {
+  color: var(--teal-dark);
+  font-weight: 900;
+  text-align: center;
+}
+
 @media (max-width: 980px) {
   .site-header {
     grid-template-columns: 1fr;
@@ -1267,6 +1339,11 @@ td:first-child {
 
   .protocol-card:last-child {
     border-bottom: 0;
+  }
+
+  .pillar-toc {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1354,5 +1431,45 @@ td:first-child {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .ad-slot,
+  .print-button,
+  .article-callout,
+  .image-actions,
+  .pillar-toc {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: #000;
+  }
+
+  .legal-main {
+    padding: 0;
+  }
+
+  .legal-article {
+    border: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .printable-table {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .printable-table th,
+  .printable-table td {
+    border: 1px solid #000;
+    height: 64px;
+    padding: 8px;
   }
 }

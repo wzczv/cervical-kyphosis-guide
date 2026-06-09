@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 const baseUrl = "https://cervicalcurveguide.com";
-const version = "20260609-growth";
+const version = "20260609-pillar";
 const reviewDate = "2026-06-09";
 
 const languages = {
@@ -455,6 +455,251 @@ const extraFaqs = {
   ]
 };
 
+const pillarPages = [
+  {
+    slug: "cervical-kyphosis",
+    sources: [sources.kyphosisReview, sources.lordosisReview, sources.neckPainGuideline],
+    related: [
+      "cervical-kyphosis-vs-loss-lordosis",
+      "can-cervical-curve-be-restored",
+      "when-to-see-doctor-cervical-kyphosis",
+      "office-neck-curve-ergonomics"
+    ],
+    translations: {
+      zh: {
+        kicker: "Pillar 页面",
+        title: "颈椎反弓完整指南：报告词、症状、康复和风险边界",
+        description:
+          "一个保守、可核查的颈椎反弓总览页，解释影像报告、症状优先级、康复目标、治疗边界和什么时候应就医。",
+        intro: [
+          "颈椎反弓或颈椎后凸听起来很吓人，但它不是单独的诊断，也不自动说明疼痛来源。更稳妥的做法，是把影像词、症状、体格检查、工作和运动负荷放在同一个框架里看。",
+          "这页是本站的总入口。它不会承诺把曲度练回去，也不会把某个动作包装成治疗方案；它帮助读者理解哪些问题可以从保守管理开始，哪些症状应该尽快评估。"
+        ],
+        sections: [
+          ["颈椎反弓到底是什么意思", ["通常说的颈椎反弓，是指原本向前的颈椎曲线变直甚至反向。不同报告可能写后凸、反弓、曲度变直或 loss of lordosis。词语不同，严重程度和临床意义也不一定相同。", "影像上的曲线会受拍片姿势、疼痛保护、肌肉紧张和退变影响。单凭一张片子，不应直接推断病因、预后或治疗效果。"]],
+          ["症状比曲线形状更决定优先级", ["如果只是颈部酸痛或僵硬，且没有神经症状，通常先看日常负荷、睡眠、上背力量和活动耐受。", "如果出现手臂放射痛、手麻、无力、手变笨、走路不稳，优先级会明显提高。新出现或进展的神经症状，不适合只靠网上动作处理。"]],
+          ["保守康复真正追踪什么", ["保守康复的目标通常是减轻症状、改善活动、提高力量和负荷耐受，而不是承诺改变影像曲线。更值得记录的是疼痛位置、睡眠、手麻变化、运动后 24 小时反应和工作耐受。", "如果一个练习让症状向手臂远端扩散、第二天明显更差或出现力量下降，它就不是当前合适剂量。"]],
+          ["治疗工具的边界", ["牵引、枕头、按摩和手法可能让部分人短期舒服，但不能承诺复位或恢复曲度。任何工具都应通过症状反应和风险筛查来判断。", "有脊髓相关线索、明显外伤、进行性无力、发热或肿瘤病史时，应先医疗评估，而不是加大自我处理。"]]
+        ]
+      },
+      en: {
+        kicker: "Pillar guide",
+        title: "Cervical Kyphosis: Report Meaning, Symptoms, Rehab, and Safety Boundaries",
+        description:
+          "A conservative, source-backed overview of cervical kyphosis: imaging language, symptom priority, rehab goals, treatment boundaries, and when to seek care.",
+        intro: [
+          "Cervical kyphosis sounds alarming, but it is not a complete diagnosis by itself and it does not automatically prove the source of pain. The safer frame is to read the imaging language alongside symptoms, exam findings, daily load, and sport exposure.",
+          "This is the main hub for the site. It does not promise to restore the curve and it does not turn one exercise into a treatment plan. It helps readers decide what can start with conservative management and what should be assessed promptly."
+        ],
+        sections: [
+          ["What cervical kyphosis means", ["In plain language, cervical kyphosis usually means the normal forward neck curve has flattened or reversed. Reports may use kyphosis, reversed curve, straightening, or loss of lordosis, but those terms do not always mean the same severity or clinical meaning.", "Neck curve appearance can change with positioning, pain guarding, muscle tone, and degenerative findings. One image should not be used alone to decide cause, prognosis, or treatment success."]],
+          ["Symptoms set the priority more than curve shape", ["If symptoms are mainly stiffness or local neck ache without neurological signs, the first questions are often daily load, sleep, upper-back capacity, and movement tolerance.", "Radiating arm pain, finger numbness, weakness, hand clumsiness, or walking changes raise the priority. New or progressive neurological symptoms should not be managed only with online drills."]],
+          ["What conservative rehab should track", ["Conservative rehab usually aims to improve symptoms, motion, strength, and load tolerance rather than guaranteeing a different curve on imaging. Track pain location, sleep, numbness behavior, 24-hour response, and work tolerance.", "If a drill sends symptoms farther down the arm, leaves the next day clearly worse, or changes strength, it is not the right current dose."]],
+          ["Boundaries for treatment tools", ["Traction, pillows, massage, and manual therapy may give short-term comfort for some people, but they should not promise realignment or curve restoration. Every tool needs symptom-response and risk screening.", "Cord-related signs, significant trauma, progressive weakness, fever, or cancer history should move the plan toward medical evaluation before more self-treatment."]]
+        ]
+      },
+      ja: {
+        kicker: "Pillar ガイド",
+        title: "頸椎後弯ガイド：画像用語、症状、リハビリ、安全な境界",
+        description:
+          "頸椎後弯について、画像の読み方、症状の優先度、リハビリ目標、治療道具の限界、受診目安を保守的に整理します。",
+        intro: [
+          "頸椎後弯という言葉は不安を招きますが、それだけで完全な診断になるわけではなく、痛みの原因を証明するものでもありません。",
+          "このページはサイト全体の入口です。カーブ回復を約束せず、どこまで保存的に考え、どこから医療評価を優先するかを整理します。"
+        ],
+        sections: [
+          ["頸椎後弯とは何か", ["通常は首の前弯が減少または逆方向になった状態を指します。ストレート、前弯減少、後弯などの言葉は、必ずしも同じ重症度を意味しません。", "画像の見え方は姿勢、痛み、筋緊張、変性所見で変わります。一枚の画像だけで原因や予後を決めません。"]],
+          ["優先度はカーブより症状", ["局所の首こりや軽い痛みだけなら、日常負荷、睡眠、上背部能力、動きやすさを確認します。", "腕への痛み、指のしびれ、筋力低下、手の不器用さ、歩行変化は優先度が上がります。"]],
+          ["保存的リハビリで追うこと", ["目的は症状、可動性、筋力、負荷耐性の改善であり、画像上のカーブ変化を保証することではありません。", "運動で症状が遠くへ広がる、翌日悪化する、筋力が落ちるなら量が合っていません。"]],
+          ["治療道具の境界", ["牽引、枕、マッサージ、手技は短期的に楽になる人もいますが、整復やカーブ回復を約束するものではありません。", "脊髄サイン、外傷、進行性筋力低下、発熱、がん既往では自己処置より評価が優先です。"]]
+        ]
+      },
+      es: {
+        kicker: "Guía pilar",
+        title: "Cifosis cervical: informe, síntomas, rehabilitación y límites de seguridad",
+        description:
+          "Resumen prudente y basado en fuentes sobre cifosis cervical: lenguaje de imagen, prioridad de síntomas, metas de rehabilitación y cuándo buscar atención.",
+        intro: [
+          "La cifosis cervical puede sonar alarmante, pero no es un diagnóstico completo por sí sola ni prueba automáticamente el origen del dolor.",
+          "Esta página es el hub principal del sitio. No promete restaurar la curva ni convierte un ejercicio en tratamiento; ayuda a decidir qué puede empezar con manejo conservador y qué requiere evaluación."
+        ],
+        sections: [
+          ["Qué significa cifosis cervical", ["En lenguaje simple, suele describir una curva cervical normal que se ha rectificado o invertido. Los informes pueden decir cifosis, curva invertida, rectificación o pérdida de lordosis, sin que todo signifique la misma gravedad.", "La apariencia de la curva cambia con postura, dolor, tono muscular y degeneración. Una imagen no decide sola causa, pronóstico o éxito terapéutico."]],
+          ["Los síntomas fijan la prioridad", ["Si hay rigidez o dolor local sin signos neurológicos, primero se miran carga diaria, sueño, capacidad de espalda alta y tolerancia de movimiento.", "Dolor que baja al brazo, dedos dormidos, debilidad, torpeza de mano o cambios al caminar elevan la prioridad."]],
+          ["Qué mide la rehabilitación conservadora", ["Busca mejorar síntomas, movimiento, fuerza y tolerancia, no garantizar una curva distinta en imagen. Registra dolor, sueño, entumecimiento, respuesta 24 h y tolerancia laboral.", "Si un ejercicio manda síntomas más lejos, empeora al día siguiente o cambia la fuerza, la dosis no encaja."]],
+          ["Límites de herramientas de tratamiento", ["Tracción, almohadas, masaje y terapia manual pueden aliviar a corto plazo, pero no deben prometer realineación ni restauración de curva.", "Signos medulares, trauma, debilidad progresiva, fiebre o cáncer requieren evaluación antes de más autocuidado."]]
+        ]
+      }
+    }
+  },
+  {
+    slug: "loss-of-cervical-lordosis",
+    sources: [sources.lordosisReview, sources.neckPainGuideline, sources.radiculopathy],
+    related: [
+      "cervical-kyphosis-vs-loss-lordosis",
+      "mri-disc-bulge-stenosis-osteophyte",
+      "office-neck-curve-ergonomics",
+      "pillow-height-sleep-position"
+    ],
+    translations: {
+      zh: {
+        kicker: "Pillar 页面",
+        title: "颈椎生理曲度变直：含义、症状和保守处理",
+        description:
+          "解释颈椎生理曲度变直、loss of cervical lordosis、直颈和相关症状的保守判断，不夸大影像词。",
+        intro: ["颈椎生理曲度变直常见于影像报告，但它不是一个自动等于疼痛或严重疾病的结论。", "这页帮助读者把报告词、症状、日常负荷和检查选择放在一起理解。"],
+        sections: [
+          ["报告词不等于疼痛来源", ["曲度变直可以和疼痛、肌肉保护、姿势、拍片位置或退变同时出现。研究并不支持把每个颈痛都简单归因于 lordosis 变少。"]],
+          ["什么时候更值得重视", ["当曲度词伴随手臂放射痛、手麻、无力、手变笨或走路变化时，重点应转向神经系统评估，而不是只纠正姿势。"]],
+          ["保守处理从负荷开始", ["减少长时间同一姿势、改善睡眠和工作环境、建立上背和肩胛力量，比反复追求一个完美颈椎角度更实用。"]],
+          ["如何跟踪变化", ["用 7 天记录表追踪疼痛、睡眠、手麻、工作耐受和运动后反应。影像复查是否需要，应由症状和医生判断决定。"]]
+        ]
+      },
+      en: {
+        kicker: "Pillar guide",
+        title: "Loss of Cervical Lordosis: Meaning, Symptoms, and Conservative Care",
+        description:
+          "A conservative guide to loss of cervical lordosis, straight neck, report language, symptoms, and what to track before assuming the curve is the problem.",
+        intro: ["Loss of cervical lordosis is common report language, but it does not automatically mean the curve is the cause of pain or that the neck is structurally failing.", "This page helps readers connect report wording with symptoms, daily exposure, testing decisions, and conservative care. High-quality search traffic for this topic usually wants reassurance plus clear safety boundaries."],
+        sections: [
+          ["Report language is not the pain source by itself", ["Straightening can appear with pain guarding, muscle tone, positioning, or degenerative findings. Research does not support blaming every neck-pain episode on a smaller lordosis alone.", "A useful report interpretation asks whether the finding matches symptoms, exam, and function. If it does not, the curve term may be background context rather than the main driver."]],
+          ["When the finding deserves more attention", ["The priority changes when straightening appears with radiating arm pain, finger numbness, weakness, hand clumsiness, or walking changes. At that point, the question is nerve root or cord involvement, not cosmetic posture correction.", "Significant trauma, fever, cancer history, or progressive neurological findings should shift the plan to prompt medical assessment."]],
+          ["Conservative care starts with load", ["Reduce long uninterrupted exposure to the same position, improve sleep setup, build upper-back and shoulder-blade capacity, and use gentle motion. The goal is a neck that tolerates life better, not a forced angle.", "Strength training, desk changes, and pillow changes should be judged by symptoms over 24 hours rather than by marketing claims about restoring lordosis."]],
+          ["How to track progress", ["Use a weekly tracker for pain, sleep, numbness, work tolerance, and post-exercise response. Repeating imaging is a clinical decision, not a routine measure of whether rehab is working.", "Meaningful improvement often looks like fewer symptom flares, better sleep, more stable hand symptoms, and higher tolerance for desk work or sport."]]
+        ]
+      },
+      ja: {
+        kicker: "Pillar ガイド",
+        title: "頸椎前弯減少：意味、症状、保存的ケア",
+        description:
+          "頸椎前弯減少やストレートネックの報告語を、症状と負荷管理の視点から保守的に整理します。",
+        intro: ["頸椎前弯減少は画像でよく見られる言葉ですが、それだけで痛みの原因や重症度を決めるものではありません。", "報告語、症状、生活負荷、検査判断をつなげて考えます。"],
+        sections: [
+          ["報告語だけで痛みの原因にしない", ["ストレートは痛みの防御、筋緊張、撮影姿勢、変性所見と一緒に見えることがあります。"]],
+          ["注意が必要な時", ["腕痛、指のしびれ、筋力低下、手の不器用さ、歩行変化があれば神経評価を優先します。"]],
+          ["保存的ケアは負荷から", ["同じ姿勢の連続を減らし、睡眠、作業環境、上背部と肩甲骨の能力を改善します。"]],
+          ["進歩の見方", ["痛み、睡眠、しびれ、仕事耐性、運動後反応を記録します。画像再検査は医療判断です。"]]
+        ]
+      },
+      es: {
+        kicker: "Guía pilar",
+        title: "Pérdida de lordosis cervical: significado, síntomas y cuidado conservador",
+        description:
+          "Guía prudente sobre pérdida de lordosis cervical, cuello rectificado, lenguaje de informe, síntomas y seguimiento conservador.",
+        intro: ["La pérdida de lordosis cervical es un término frecuente en informes, pero no significa automáticamente que la curva cause el dolor.", "Esta página conecta el informe con síntomas, exposición diaria, pruebas y cuidado conservador."],
+        sections: [
+          ["El informe no es la fuente de dolor por sí solo", ["La rectificación puede aparecer con protección por dolor, tono muscular, posición o degeneración. No todo dolor cervical se explica por menos lordosis."]],
+          ["Cuándo merece más atención", ["Dolor al brazo, dedos dormidos, debilidad, torpeza de mano o cambios de marcha cambian la prioridad hacia raíz o médula."]],
+          ["El cuidado conservador empieza por carga", ["Reduce exposición prolongada a la misma postura, mejora sueño y ergonomía, y construye capacidad de espalda alta y escápulas."]],
+          ["Cómo seguir progreso", ["Registra dolor, sueño, entumecimiento, tolerancia laboral y respuesta tras ejercicio. Repetir imagen depende del criterio clínico."]]
+        ]
+      }
+    }
+  },
+  {
+    slug: "cervical-radiculopathy",
+    sources: [sources.radiculopathy, sources.ncbiRadiculopathy, sources.neckPainGuideline],
+    related: [
+      "finger-numbness-nerve-map",
+      "c5-c8-nerve-root-symptoms",
+      "cervical-radiculopathy-myelopathy-red-flags",
+      "cervical-traction-contraindications"
+    ],
+    translations: {
+      zh: {
+        kicker: "Pillar 页面",
+        title: "颈椎神经根病：手臂痛、手麻、检查和保守康复",
+        description:
+          "总览颈椎神经根病的常见症状、C5-C8 线索、危险信号、检查选择和保守处理边界。",
+        intro: ["颈椎神经根病通常指颈部神经根受刺激或受压，症状可能从颈部、肩胛区一路放射到手臂和手指。", "这页强调保守、分层的判断：先排除危险信号，再看症状分布、力量、反射、诱因和 24 小时反应。"],
+        sections: [
+          ["常见症状", ["典型表现包括颈痛、肩胛区痛、手臂放射痛、刺麻、感觉变化、反射或力量改变。不同神经根分布会重叠。"]],
+          ["手指麻木怎么理解", ["拇指/食指可能提示 C6 或正中神经，中指可能提示 C7，小指/无名指可能提示 C8 或尺神经。手指分布只是线索。"]],
+          ["检查和就医", ["进行性无力、手变笨、走路不稳或大小便异常优先就医。MRI 和肌电/神经传导回答的问题不同，应结合医生判断。"]],
+          ["保守康复边界", ["轻度稳定症状可以从教育、活动调整、温和活动、力量和神经滑动开始。症状扩散、力量下降或第二天明显更差时应降量或评估。"]]
+        ]
+      },
+      en: {
+        kicker: "Pillar guide",
+        title: "Cervical Radiculopathy: Arm Pain, Finger Numbness, Testing, and Conservative Rehab",
+        description:
+          "A source-backed overview of cervical radiculopathy: symptoms, C5-C8 clues, red flags, testing choices, and conservative rehab boundaries.",
+        intro: ["Cervical radiculopathy usually means a cervical nerve root is irritated or compressed, with symptoms that may travel from the neck or shoulder blade into the arm and fingers.", "This page gives a conservative triage framework: screen red flags first, then organize distribution, strength, reflexes, triggers, and 24-hour response."],
+        sections: [
+          ["Common symptoms", ["Typical symptoms include neck pain, shoulder-blade pain, radiating arm pain, tingling, sensory change, reflex change, or weakness. The symptom map is helpful, but it is not a diagnosis by itself.", "Some people have more arm pain than neck pain. Others have numbness that overlaps with carpal tunnel, ulnar nerve compression, or thoracic outlet patterns."]],
+          ["How to read finger numbness", ["Thumb and index symptoms can fit C6 or median nerve patterns; middle-finger symptoms can fit C7; ring and little-finger symptoms can fit C8 or the ulnar nerve. Distribution is only one clue.", "A stronger pattern combines finger area with neck movements, wrist or elbow positions, grip change, reflexes, and whether symptoms travel below the elbow."]],
+          ["Testing and when to seek care", ["Progressive weakness, hand clumsiness, gait change, or bowel/bladder symptoms should be checked promptly. MRI and EMG/NCS answer different questions and should be chosen based on the clinical picture.", "Imaging that shows a disc bulge or foraminal stenosis matters most when it matches the side, level, and exam."]],
+          ["Conservative rehab boundaries", ["Stable, non-emergency symptoms often start with education, activity modification, gentle motion, strengthening, and carefully dosed nerve mobility. The goal is calmer symptoms and better tolerance.", "If symptoms spread, strength changes, or the next day is clearly worse, reduce the dose and consider evaluation. Do not use online exercise to push through worsening neurological signs."]]
+        ]
+      },
+      ja: {
+        kicker: "Pillar ガイド",
+        title: "頸椎神経根症：腕痛、指のしびれ、検査、保存的リハビリ",
+        description:
+          "頸椎神経根症の症状、C5-C8の手がかり、危険サイン、検査、保存的ケアの境界を整理します。",
+        intro: ["頸椎神経根症は神経根の刺激や圧迫で、首や肩甲部から腕、指へ症状が広がることがあります。", "危険サインを先に確認し、分布、筋力、反射、誘因、24時間反応を整理します。"],
+        sections: [
+          ["よくある症状", ["首痛、肩甲部痛、腕へ走る痛み、しびれ、感覚変化、反射や筋力変化が見られます。"]],
+          ["指のしびれの読み方", ["親指/人差し指はC6または正中神経、中指はC7、小指/薬指はC8または尺骨神経の手がかりになり得ます。"]],
+          ["検査と受診", ["進行性筋力低下、手の不器用さ、歩行変化、排尿排便異常は早めに相談します。MRIと筋電図は異なる質問に答えます。"]],
+          ["保存的リハビリの境界", ["安定した非緊急症状では教育、活動調整、軽い運動、筋力、神経モビリティから始めます。悪化時は量を下げます。"]]
+        ]
+      },
+      es: {
+        kicker: "Guía pilar",
+        title: "Radiculopatía cervical: dolor de brazo, dedos dormidos, pruebas y rehabilitación",
+        description:
+          "Resumen de radiculopatía cervical: síntomas, pistas C5-C8, alarmas, pruebas y límites de rehabilitación conservadora.",
+        intro: ["La radiculopatía cervical suele implicar irritación o compresión de una raíz nerviosa, con síntomas que pueden viajar del cuello o escápula al brazo y dedos.", "Primero se descartan alarmas; luego se ordenan distribución, fuerza, reflejos, desencadenantes y respuesta de 24 horas."],
+        sections: [
+          ["Síntomas frecuentes", ["Dolor de cuello, dolor escapular, dolor irradiado al brazo, hormigueo, cambios sensitivos, reflejos o fuerza pueden aparecer."]],
+          ["Cómo leer dedos dormidos", ["Pulgar e índice pueden encajar con C6 o mediano; dedo medio con C7; anular y meñique con C8 o cubital. Es solo una pista."]],
+          ["Pruebas y cuándo buscar atención", ["Debilidad progresiva, torpeza de mano, cambios de marcha o síntomas urinarios/intestinales requieren valoración. MRI y EMG/NCS responden preguntas distintas."]],
+          ["Límites de rehabilitación conservadora", ["Síntomas estables no urgentes pueden empezar con educación, modificación de actividad, movimiento suave, fuerza y movilidad neural dosificada. Si se extienden o empeoran, baja dosis y evalúa."]]
+        ]
+      }
+    }
+  }
+];
+
+const visuals = [
+  {
+    slug: "cervical-curve-diagram",
+    file: "cervical-curve-diagram.svg",
+    related: "cervical-kyphosis",
+    labels: {
+      zh: ["颈椎曲度图解", "正常前凸、曲度变直和反弓/后凸的原创对比图。"],
+      en: ["Cervical curve diagram", "Original comparison of usual lordosis, straightened curve, and reversed/kyphotic curve."],
+      ja: ["頸椎カーブ図", "通常の前弯、前弯減少、逆カーブ/後弯のオリジナル比較図。"],
+      es: ["Diagrama de curva cervical", "Comparación original de lordosis habitual, curva rectificada e invertida/cifótica."]
+    }
+  },
+  {
+    slug: "c6-c7-c8-finger-numbness-map",
+    file: "c6-c7-c8-finger-numbness-map.svg",
+    related: "cervical-radiculopathy",
+    labels: {
+      zh: ["C6 C7 C8 手指麻木地图", "原创手指麻木分布图，强调神经根分布会重叠，不能自我诊断。"],
+      en: ["C6 C7 C8 finger numbness map", "Original finger numbness map showing overlapping nerve-root clues, not a self-diagnosis."],
+      ja: ["C6 C7 C8 指のしびれマップ", "神経根の重なりを示すオリジナル図。自己診断用ではありません。"],
+      es: ["Mapa C6 C7 C8 de dedos dormidos", "Mapa original de dedos dormidos con solapamiento de raíces; no es autodiagnóstico."]
+    }
+  },
+  {
+    slug: "24-hour-neck-symptom-response-chart",
+    file: "24-hour-neck-symptom-response-chart.svg",
+    related: "loss-of-cervical-lordosis",
+    labels: {
+      zh: ["24 小时颈部症状反应图", "原创运动后反应决策图，用于判断继续、降量或停止就医。"],
+      en: ["24-hour neck symptom response chart", "Original post-exercise response chart for deciding whether to progress, deload, or stop and seek care."],
+      ja: ["24時間首症状反応チャート", "進める、量を下げる、中止して相談する判断を整理するオリジナル図。"],
+      es: ["Gráfico de respuesta cervical 24 h", "Gráfico original para decidir progresar, descargar o parar y buscar atención."]
+    }
+  }
+];
+
+const printableRoute = "printable-neck-symptom-tracker";
+
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -552,7 +797,7 @@ function renderFooter(lang) {
     </footer>`;
 }
 
-function structuredData({ lang, url, title, description, route, article, breadcrumbs = [] }) {
+function structuredData({ lang, url, title, description, route, article, breadcrumbs = [], extraGraph = [] }) {
   const l = languages[lang];
   const graph = [
     {
@@ -635,10 +880,12 @@ function structuredData({ lang, url, title, description, route, article, breadcr
     }
   }
 
+  graph.push(...extraGraph);
+
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2);
 }
 
-function htmlShell({ lang, route, articleSlug, title, description, content, article, breadcrumbs }) {
+function htmlShell({ lang, route, articleSlug, title, description, content, article, breadcrumbs, extraGraph = [] }) {
   const l = languages[lang];
   const url = articleSlug ? articleUrl(lang, articleSlug) : localizedUrl(lang, route);
   const hrefLangRoute = articleSlug || route;
@@ -672,7 +919,8 @@ function htmlShell({ lang, route, articleSlug, title, description, content, arti
       description,
       route,
       article,
-      breadcrumbs
+      breadcrumbs,
+      extraGraph
     })}</script>
   </head>
   <body>
@@ -902,6 +1150,41 @@ function renderToolsPage(lang) {
             </figure>
           </div>
         </section>
+        <section class="article-section">
+          <h2>${escapeHtml({ zh: "下载和引用", en: "Download and reference", ja: "ダウンロードと参照", es: "Descarga y referencia" }[lang])}</h2>
+          ${renderCardGrid(
+            [
+              ...visuals.map((visual) => ({
+                tag: l.nav.tools,
+                title: visual.labels[lang][0],
+                body: visual.labels[lang][1],
+                url: localizedPath(lang, `images/${visual.slug}`)
+              })),
+              {
+                tag: {
+                  zh: "记录表",
+                  en: "Tracker",
+                  ja: "記録表",
+                  es: "Registro"
+                }[lang],
+                title: {
+                  zh: "7 天颈痛和手麻记录表",
+                  en: "7-Day Neck Pain and Numbness Tracker",
+                  ja: "7日間の首痛・しびれ記録表",
+                  es: "Registro de 7 días de cuello y entumecimiento"
+                }[lang],
+                body: {
+                  zh: "可打印或保存 PDF，帮助就医前整理症状变化。",
+                  en: "Print or save as PDF to organize symptom changes before an appointment.",
+                  ja: "印刷またはPDF保存し、受診前に症状変化を整理します。",
+                  es: "Imprime o guarda como PDF para ordenar cambios antes de una cita."
+                }[lang],
+                url: localizedPath(lang, printableRoute)
+              }
+            ],
+            lang
+          )}
+        </section>
         <section class="article-section tool-panel">
           <h2>${escapeHtml(labels[3])}</h2>
           <form class="response-tool" id="response-tool" data-green="${escapeHtml(labels[8])}" data-yellow="${escapeHtml(labels[9])}" data-red="${escapeHtml(labels[10])}">
@@ -971,6 +1254,288 @@ function renderVideosPage(lang) {
   return htmlShell({ lang, route: "videos", title: meta[1], description: meta[2], content, breadcrumbs: [{ name: meta[1], url: localizedUrl(lang, "videos") }] });
 }
 
+function renderPillarPage(pillar, lang) {
+  const l = languages[lang];
+  const t = pillar.translations[lang];
+  const url = localizedUrl(lang, pillar.slug);
+  const relatedCards = pillar.related
+    .map((slug) => allArticles.find((article) => article.slug === slug))
+    .filter(Boolean)
+    .map((article) => cardForArticle(article, lang));
+  const content = `<main class="legal-main growth-main" id="content">
+      <article class="legal-article growth-page pillar-page">
+        <p class="legal-meta">${escapeHtml(l.updated)} · ${escapeHtml(t.kicker)}</p>
+        <p class="legal-meta">${escapeHtml(l.review)}</p>
+        <h1>${escapeHtml(t.title)}</h1>
+        <div class="article-dek">${paragraphs(t.intro)}</div>
+        <aside class="article-callout">${escapeHtml(l.medicalLabel)} ${escapeHtml(l.redFlag)}</aside>
+        <nav class="pillar-toc" aria-label="Page sections">
+          ${t.sections
+            .map(([heading], index) => `<a href="#section-${index + 1}">${escapeHtml(heading)}</a>`)
+            .join("\n")}
+        </nav>
+        ${t.sections
+          .map(
+            ([heading, body], index) => `<section class="article-section pillar-section" id="section-${index + 1}">
+              <h2>${escapeHtml(heading)}</h2>
+              ${paragraphs(body)}
+            </section>`
+          )
+          .join("\n")}
+        <aside class="ad-slot ad-slot-article" aria-label="${escapeHtml(l.ad)}"><span>${escapeHtml(l.ad)}</span></aside>
+        <section class="article-section article-sources">
+          <h2>${escapeHtml(l.sourceHeading)}</h2>
+          <ul class="source-list">
+            ${pillar.sources
+              .map((source) => `<li><a href="${source.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a></li>`)
+              .join("\n")}
+          </ul>
+        </section>
+        <section class="article-section">
+          <h2>${escapeHtml(l.related)}</h2>
+          ${renderCardGrid(
+            [
+              {
+                tag: l.nav.tools,
+                title: visuals[0].labels[lang][0],
+                body: visuals[0].labels[lang][1],
+                url: localizedPath(lang, `images/${visuals[0].slug}`)
+              },
+              {
+                tag: l.nav.tools,
+                title: {
+                  zh: "7 天颈痛和手麻记录表",
+                  en: "7-day neck pain and numbness tracker",
+                  ja: "7日間の首痛・しびれ記録表",
+                  es: "Registro de 7 días de cuello y entumecimiento"
+                }[lang],
+                body: {
+                  zh: "打印或截图，用同一标准记录症状、睡眠、训练和第二天反应。",
+                  en: "Print or save it to track symptoms, sleep, training, and next-day response consistently.",
+                  ja: "印刷または保存し、症状、睡眠、運動、翌日反応を同じ基準で記録します。",
+                  es: "Imprime o guarda para registrar síntomas, sueño, entrenamiento y respuesta al día siguiente."
+                }[lang],
+                url: localizedPath(lang, printableRoute)
+              },
+              ...relatedCards
+            ],
+            lang
+          )}
+        </section>
+      </article>
+    </main>`;
+  return htmlShell({
+    lang,
+    route: pillar.slug,
+    title: t.title,
+    description: t.description,
+    content,
+    article: { sources: pillar.sources },
+    breadcrumbs: [{ name: t.title, url }]
+  });
+}
+
+function visualSvg(visual) {
+  if (visual.slug === "cervical-curve-diagram") {
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Cervical curve diagram</title>
+  <desc id="desc">Comparison of usual cervical lordosis, straightened cervical curve, and reversed or kyphotic cervical curve.</desc>
+  <rect width="1200" height="700" rx="24" fill="#f7fbfa"/>
+  <text x="600" y="80" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="42" font-weight="700">Cervical Curve Comparison</text>
+  ${[
+    ["Usual lordosis", 210, "M 0 0 C 82 92 82 262 0 370", "#167a7f"],
+    ["Straightened", 600, "M 0 0 C 18 106 18 258 0 370", "#4d8061"],
+    ["Reversed / kyphotic", 990, "M 0 0 C -76 92 -76 270 0 370", "#d8644a"]
+  ]
+    .map(
+      ([label, x, d, color]) => `<g transform="translate(${x},160)">
+    <path d="${d}" fill="none" stroke="${color}" stroke-width="26" stroke-linecap="round"/>
+    ${[0, 1, 2, 3, 4, 5].map((n) => `<circle cx="${x > 800 ? -18 - n * 7 : x > 500 ? 0 : 28 - n * 6}" cy="${42 + n * 55}" r="28" fill="#fff" stroke="#9db8b4" stroke-width="7"/>`).join("")}
+    <text x="0" y="445" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="30" font-weight="700">${label}</text>
+  </g>`
+    )
+    .join("\n")}
+  <text x="600" y="660" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="24">Educational diagram only; symptoms and clinical exam matter more than curve shape alone.</text>
+</svg>`;
+  }
+  if (visual.slug === "c6-c7-c8-finger-numbness-map") {
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">C6 C7 C8 finger numbness map</title>
+  <desc id="desc">Educational finger numbness map showing possible C6 C7 and C8 nerve root clues with overlap.</desc>
+  <rect width="1200" height="700" rx="24" fill="#fff8f4"/>
+  <text x="600" y="78" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="42" font-weight="700">Finger Numbness: C6 / C7 / C8 Clues</text>
+  ${[
+    ["Thumb", "C6", 165, 250, 310, "#167a7f"],
+    ["Index", "C6", 360, 185, 390, "#167a7f"],
+    ["Middle", "C7", 555, 160, 430, "#d8644a"],
+    ["Ring", "C8", 750, 190, 380, "#c8902f"],
+    ["Little", "C8", 935, 260, 300, "#c8902f"]
+  ]
+    .map(
+      ([finger, root, x, y, h, color]) => `<g>
+    <rect x="${x - 58}" y="${y}" width="116" height="${h}" rx="58" fill="${color}" opacity="0.9"/>
+    <text x="${x}" y="${y + 90}" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="44" font-weight="800">${root}</text>
+    <text x="${x}" y="${y + h + 46}" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="28" font-weight="700">${finger}</text>
+  </g>`
+    )
+    .join("\n")}
+  <path d="M260 620 C420 660 740 660 910 620" fill="none" stroke="#9db8b4" stroke-width="34" stroke-linecap="round"/>
+  <text x="600" y="675" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="24">Patterns overlap with carpal tunnel, ulnar nerve, and thoracic outlet symptoms.</text>
+</svg>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">24-hour neck symptom response chart</title>
+  <desc id="desc">Educational traffic-light chart for post-exercise neck symptom response.</desc>
+  <rect width="1200" height="700" rx="24" fill="#f6fbfa"/>
+  <text x="600" y="76" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="42" font-weight="700">24-Hour Neck Symptom Response</text>
+  ${[
+    ["Green", "Symptoms local, stable or calmer", "Small progression may be reasonable", 170, "#4d8061"],
+    ["Yellow", "Pain rises or sleep worsens", "Deload and observe before adding more", 500, "#c8902f"],
+    ["Red", "Weakness, spreading numbness, gait change", "Stop and seek prompt assessment", 830, "#d8644a"]
+  ]
+    .map(
+      ([label, line1, line2, x, color]) => `<g transform="translate(${x},150)">
+    <rect width="260" height="390" rx="18" fill="#fff" stroke="#d9e5e2" stroke-width="5"/>
+    <circle cx="130" cy="90" r="54" fill="${color}"/>
+    <text x="130" y="102" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="800">${label}</text>
+    <text x="130" y="190" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="25" font-weight="700">
+      <tspan x="130">${line1}</tspan>
+    </text>
+    <text x="130" y="275" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="23">
+      <tspan x="130">${line2}</tspan>
+    </text>
+  </g>`
+    )
+    .join("\n")}
+  <text x="600" y="660" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="24">Use this as an educational log, not a diagnosis or personal treatment plan.</text>
+</svg>`;
+}
+
+function writeVisualAssets() {
+  for (const visual of visuals) {
+    writePage(join("assets", "visuals", visual.file), visualSvg(visual));
+  }
+}
+
+function renderVisualPage(visual, lang) {
+  const l = languages[lang];
+  const [title, description] = visual.labels[lang];
+  const route = `images/${visual.slug}`;
+  const url = localizedUrl(lang, route);
+  const imageUrl = `${baseUrl}/assets/visuals/${visual.file}`;
+  const relatedPillar = pillarPages.find((pillar) => pillar.slug === visual.related);
+  const relatedTitle = relatedPillar?.translations[lang]?.title || relatedPillar?.translations.en.title || "Related guide";
+  const content = `<main class="legal-main growth-main" id="content">
+      <article class="legal-article growth-page visual-landing">
+        <p class="legal-meta">${escapeHtml(l.updated)} · ${escapeHtml(l.nav.tools)}</p>
+        <h1>${escapeHtml(title)}</h1>
+        <div class="article-dek">${paragraphs([description, l.redFlag])}</div>
+        <figure class="diagram-card visual-download-card">
+          <img src="/assets/visuals/${visual.file}" alt="${escapeHtml(description)}" width="1200" height="700" loading="eager" />
+        </figure>
+        <div class="image-actions">
+          <a class="button primary" href="/assets/visuals/${visual.file}" download>${escapeHtml({ zh: "下载 SVG", en: "Download SVG", ja: "SVGをダウンロード", es: "Descargar SVG" }[lang])}</a>
+          <a class="button secondary light-button" href="${localizedPath(lang, visual.related)}">${escapeHtml(relatedTitle)}</a>
+        </div>
+        <section class="article-section">
+          <h2>${escapeHtml(l.related)}</h2>
+          ${renderCardGrid(
+            [
+              {
+                tag: l.nav.tools,
+                title: { zh: "24 小时反应记录器", en: "24-hour response tracker", ja: "24時間反応記録", es: "Registro de respuesta 24 h" }[lang],
+                body: { zh: "把图解和记录表一起使用，避免凭感觉加量。", en: "Use diagrams and trackers together before changing load.", ja: "図解と記録表を合わせて使います。", es: "Usa diagramas y registro antes de cambiar carga." }[lang],
+                url: localizedPath(lang, "tools")
+              },
+              {
+                tag: "Pillar",
+                title: relatedTitle,
+                body: relatedPillar?.translations[lang]?.description || relatedPillar?.translations.en.description || "",
+                url: localizedPath(lang, visual.related)
+              }
+            ],
+            lang
+          )}
+        </section>
+      </article>
+    </main>`;
+  return htmlShell({
+    lang,
+    route,
+    title,
+    description,
+    content,
+    breadcrumbs: [{ name: title, url }],
+    extraGraph: [
+      {
+        "@type": "ImageObject",
+        "@id": `${url}#image`,
+        name: title,
+        caption: description,
+        contentUrl: imageUrl,
+        url: imageUrl,
+        inLanguage: l.htmlLang,
+        creditText: "Cervical Curve Guide",
+        license: `${baseUrl}/terms.html`,
+        acquireLicensePage: `${baseUrl}/contact.html`,
+        isPartOf: { "@id": `${url}#medical-page` }
+      }
+    ]
+  });
+}
+
+function renderPrintableTrackerPage(lang) {
+  const l = languages[lang];
+  const meta = {
+    zh: ["可打印记录表", "7 天颈痛和手麻记录表", "打印或保存这张 7 天记录表，用同一标准记录疼痛、手麻、睡眠、诱因、练习和第二天反应。"],
+    en: ["Printable tracker", "7-Day Neck Pain and Numbness Tracker", "Print or save this 7-day tracker to record pain, numbness, sleep, triggers, exercises, and next-day response consistently."],
+    ja: ["印刷用記録表", "7日間の首痛・しびれ記録表", "痛み、しびれ、睡眠、誘因、運動、翌日反応を同じ基準で記録するための7日間表です。"],
+    es: ["Registro imprimible", "Registro de 7 días de cuello y entumecimiento", "Imprime o guarda este registro de 7 días para anotar dolor, entumecimiento, sueño, desencadenantes, ejercicios y respuesta al día siguiente."]
+  }[lang];
+  const headers = {
+    zh: ["日期", "疼痛 0-10", "手麻/手臂痛", "睡眠", "诱因", "做了什么", "第二天反应"],
+    en: ["Date", "Pain 0-10", "Numbness / arm pain", "Sleep", "Trigger", "What changed", "Next-day response"],
+    ja: ["日付", "痛み0-10", "しびれ/腕痛", "睡眠", "誘因", "行ったこと", "翌日反応"],
+    es: ["Fecha", "Dolor 0-10", "Entumecimiento / brazo", "Sueño", "Desencadenante", "Qué cambió", "Respuesta al día siguiente"]
+  }[lang];
+  const content = `<main class="legal-main growth-main" id="content">
+      <article class="legal-article growth-page printable-page">
+        <p class="legal-meta">${escapeHtml(l.updated)} · ${escapeHtml(meta[0])}</p>
+        <h1>${escapeHtml(meta[1])}</h1>
+        <div class="article-dek">${paragraphs([meta[2], l.redFlag])}</div>
+        <button class="button primary print-button" type="button" onclick="window.print()">${escapeHtml({ zh: "打印 / 保存 PDF", en: "Print / Save PDF", ja: "印刷 / PDF保存", es: "Imprimir / Guardar PDF" }[lang])}</button>
+        <div class="table-wrap printable-table-wrap">
+          <table class="printable-table">
+            <thead><tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr></thead>
+            <tbody>
+              ${Array.from({ length: 7 }, (_, index) => `<tr><td>${index + 1}</td>${Array.from({ length: headers.length - 1 }, () => "<td></td>").join("")}</tr>`).join("\n")}
+            </tbody>
+          </table>
+        </div>
+        <section class="article-section">
+          <h2>${escapeHtml(l.related)}</h2>
+          ${renderCardGrid(
+            visuals.map((visual) => ({
+              tag: l.nav.tools,
+              title: visual.labels[lang][0],
+              body: visual.labels[lang][1],
+              url: localizedPath(lang, `images/${visual.slug}`)
+            })),
+            lang
+          )}
+        </section>
+      </article>
+    </main>`;
+  return htmlShell({
+    lang,
+    route: printableRoute,
+    title: meta[1],
+    description: meta[2],
+    content,
+    breadcrumbs: [{ name: meta[1], url: localizedUrl(lang, printableRoute) }]
+  });
+}
+
 function writePage(path, html) {
   mkdirSync(dirname(path), { recursive: true });
   writeFileSync(path, html);
@@ -978,9 +1543,17 @@ function writePage(path, html) {
 
 const allArticles = [...existingArticles, ...newArticles];
 
+writeVisualAssets();
+
 for (const article of newArticles) {
   for (const lang of Object.keys(languages)) {
     writePage(outputArticle(lang, article.slug), renderArticlePage(article, lang));
+  }
+}
+
+for (const pillar of pillarPages) {
+  for (const lang of Object.keys(languages)) {
+    writePage(outputLocalized(lang, pillar.slug), renderPillarPage(pillar, lang));
   }
 }
 
@@ -993,6 +1566,10 @@ for (const route of Object.keys(hubs)) {
 for (const lang of Object.keys(languages)) {
   writePage(outputLocalized(lang, "tools"), renderToolsPage(lang));
   writePage(outputLocalized(lang, "videos"), renderVideosPage(lang));
+  writePage(outputLocalized(lang, printableRoute), renderPrintableTrackerPage(lang));
+  for (const visual of visuals) {
+    writePage(outputLocalized(lang, `images/${visual.slug}`), renderVisualPage(visual, lang));
+  }
 }
 
 const growthData = {
@@ -1001,6 +1578,12 @@ const growthData = {
     Object.keys(languages).map((lang) => [
       lang,
       [
+        ...pillarPages.map((pillar) => ({
+          tag: pillar.translations[lang].kicker,
+          title: pillar.translations[lang].title,
+          body: pillar.translations[lang].description,
+          url: localizedPath(lang, pillar.slug)
+        })),
         ...newArticles.map((article) => cardForArticle(article, lang)),
         ...Object.entries(hubs).map(([route, hub]) => ({
           tag: hub.meta[lang][0],
@@ -1039,6 +1622,27 @@ const growthData = {
             es: "Videos de YouTube agrupados por tema y enmarcados como referencia visual."
           }[lang],
           url: localizedPath(lang, "videos")
+        },
+        {
+          tag: {
+            zh: "记录表",
+            en: "Tracker",
+            ja: "記録表",
+            es: "Registro"
+          }[lang],
+          title: {
+            zh: "7 天颈痛和手麻记录表",
+            en: "7-Day Neck Pain and Numbness Tracker",
+            ja: "7日間の首痛・しびれ記録表",
+            es: "Registro de 7 días de cuello y entumecimiento"
+          }[lang],
+          body: {
+            zh: "可打印或保存 PDF，帮助就医前整理症状变化。",
+            en: "Print or save as PDF to organize symptom changes before an appointment.",
+            ja: "印刷またはPDF保存し、受診前に症状変化を整理します。",
+            es: "Imprime o guarda como PDF para ordenar cambios antes de una cita."
+          }[lang],
+          url: localizedPath(lang, printableRoute)
         }
       ]
     ])
@@ -1065,20 +1669,35 @@ const staticUrls = [
 const sitemapUrls = [
   ...Object.values(languages).map((lang) => lang.home),
   ...allArticles.flatMap((article) => Object.keys(languages).map((lang) => articlePath(lang, article.slug))),
+  ...pillarPages.flatMap((pillar) => Object.keys(languages).map((lang) => localizedPath(lang, pillar.slug))),
   ...Object.keys(hubs).flatMap((route) => Object.keys(languages).map((lang) => localizedPath(lang, route))),
   ...["tools", "videos"].flatMap((route) => Object.keys(languages).map((lang) => localizedPath(lang, route))),
+  ...Object.keys(languages).map((lang) => localizedPath(lang, printableRoute)),
+  ...visuals.flatMap((visual) =>
+    Object.keys(languages).map((lang) => ({
+      path: localizedPath(lang, `images/${visual.slug}`),
+      image: `/assets/visuals/${visual.file}`,
+      title: visual.labels[lang][0]
+    }))
+  ),
   ...staticUrls
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${sitemapUrls
-  .map(
-    (path) => `  <url>
+  .map((entry) => {
+    const path = typeof entry === "string" ? entry : entry.path;
+    const image = typeof entry === "string" ? "" : `
+    <image:image>
+      <image:loc>${baseUrl}${entry.image}</image:loc>
+      <image:title>${escapeHtml(entry.title)}</image:title>
+    </image:image>`;
+    return `  <url>
     <loc>${baseUrl}${path}</loc>
-    <lastmod>${reviewDate}</lastmod>
-  </url>`
-  )
+    <lastmod>${reviewDate}</lastmod>${image}
+  </url>`;
+  })
   .join("\n")}
 </urlset>
 `;
@@ -1086,5 +1705,5 @@ ${sitemapUrls
 writeFileSync("sitemap.xml", sitemap);
 
 console.log(
-  `Generated ${newArticles.length * Object.keys(languages).length} new article pages, ${Object.keys(hubs).length * Object.keys(languages).length} hub pages, tools/videos pages, growth data, and ${sitemapUrls.length} sitemap URLs.`
+  `Generated ${newArticles.length * Object.keys(languages).length} new article pages, ${pillarPages.length * Object.keys(languages).length} pillar pages, ${Object.keys(hubs).length * Object.keys(languages).length} hub pages, visual pages, tools/videos pages, growth data, and ${sitemapUrls.length} sitemap URLs.`
 );
