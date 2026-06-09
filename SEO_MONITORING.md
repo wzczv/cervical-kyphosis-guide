@@ -10,7 +10,7 @@ Last updated: 2026-06-09
 | Google Search Console | Done | Property: `https://cervicalcurveguide.com/` |
 | Google sitemap | Done | GSC Sitemaps: `/sitemap.xml`, status `Success` |
 | Bing Webmaster Tools | Done | Site: `cervicalcurveguide.com`; sitemap resubmitted and currently `Processing` after expansion |
-| IndexNow | Done | Key file: `/16d893c718cadee9837fbde922d08c8f.txt`; API accepted 148 sitemap URLs |
+| IndexNow | Done | Key file: `/16d893c718cadee9837fbde922d08c8f.txt`; API accepted 152 sitemap URLs |
 | GA4 | Done | Property: `Cervical Curve Guide`; measurement ID `G-L8TWWKFELJ` |
 
 ## Daily Search Console Check
@@ -63,6 +63,7 @@ Last updated: 2026-06-09
 | 2026-06-09 | IndexNow API | 120 sitemap URLs | Accepted by IndexNow and Bing IndexNow endpoints | Watch Bing Webmaster Tools processing |
 | 2026-06-09 | Bing Webmaster Tools | Expanded `https://cervicalcurveguide.com/sitemap.xml` with 120 URLs | Submit success toast; row shows Processing and 36 discovered URLs immediately after submit | Recheck for 120 discovered URLs after processing |
 | 2026-06-09 | IndexNow API | 148 sitemap URLs | Accepted by IndexNow and Bing IndexNow endpoints; live sitemap verified with 148 page URLs and 12 image entries | Recheck GSC/Bing discovered URL counts after processing |
+| 2026-06-09 | IndexNow API | 152 sitemap URLs | Accepted by IndexNow and Bing IndexNow endpoints after adding the cervical curve pillar page | Recheck Bing discovery and Google public visibility after processing |
 
 ## Weekly Quality Checks
 
