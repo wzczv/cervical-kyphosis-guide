@@ -273,9 +273,16 @@ const content = {
       "hero.copy":
         "A multilingual guide for understanding reversed or flattened cervical curve findings, conservative rehab, nerve mobility, upper-back strength, and smarter sport participation.",
       "hero.primary": "Start with the rehab map",
+      "hero.secondary": "Open the 7-day tracker",
       "notice.title": "Important:",
       "notice.copy":
         "This site is educational, not a diagnosis or prescription. New weakness, numbness, gait changes, fever, trauma, cancer history, or bowel/bladder symptoms need prompt medical care.",
+      "resource.eyebrow": "Practical starting point",
+      "resource.title": "Track symptoms before changing exercises.",
+      "resource.copy":
+        "Use the printable 7-day tracker to record pain, numbness, sleep, triggers, training changes, and next-day response before you adjust load or talk with a clinician.",
+      "resource.primary": "Open the tracker",
+      "resource.secondary": "Ask a site question",
       "learn.eyebrow": "The core idea",
       "learn.title": "The curve matters, but symptoms matter more.",
       "learn.copy":
@@ -309,7 +316,7 @@ const content = {
         "These static guides give readers and search engines focused, source-backed pages on symptoms, imaging language, rehab expectations, treatment boundaries, and sport-specific neck loading.",
       "guides.link": "Read the guide",
       "sources.eyebrow": "References",
-      "sources.title": "Source base for this prototype.",
+      "sources.title": "Clinical source base for this guide.",
       "sources.copy":
         "The site should keep a visible review date, cite clinician-grade sources, and avoid claiming that exercise can guarantee curve restoration.",
       "faq.eyebrow": "Common questions",
@@ -318,7 +325,7 @@ const content = {
         "These short answers summarize the site's conservative position and point back to the deeper sections above.",
       "ads.label": "Advertisement",
       "footer.copy":
-        "Built as a multilingual educational prototype for conservative cervical curve care.",
+        "A multilingual health-education site for conservative cervical curve care.",
       "footer.disclaimer": "Medical disclaimer",
       "footer.privacy": "Privacy",
       "footer.terms": "Terms",
@@ -780,9 +787,16 @@ const content = {
       "hero.copy":
         "一个多语言健康教育网站，帮助读者理解颈椎反弓或曲度变直、保守康复、神经滑动、背后肌群训练，以及更聪明地回到运动。",
       "hero.primary": "查看康复路径",
+      "hero.secondary": "打开 7 天记录表",
       "notice.title": "重要提醒：",
       "notice.copy":
         "本站只做健康教育，不做诊断和处方。新出现的无力、麻木、走路不稳、发热、外伤、肿瘤病史，或大小便异常，应尽快就医。",
+      "resource.eyebrow": "实用起点",
+      "resource.title": "先记录症状，再调整练习。",
+      "resource.copy":
+        "使用可打印的 7 天记录表，整理疼痛、手麻、睡眠、诱因、训练变化和第二天反应，再决定是否调整负荷或和医生/康复师讨论。",
+      "resource.primary": "打开记录表",
+      "resource.secondary": "咨询站点问题",
       "learn.eyebrow": "核心理解",
       "learn.title": "曲度重要，但症状更重要。",
       "learn.copy":
@@ -816,7 +830,7 @@ const content = {
         "这些静态专题页把症状、影像词、康复预期、治疗边界和运动负荷拆开讲，方便读者深入阅读，也更适合搜索引擎理解。",
       "guides.link": "阅读专题",
       "sources.eyebrow": "参考来源",
-      "sources.title": "这个原型的资料基础。",
+      "sources.title": "这份指南的临床资料基础。",
       "sources.copy":
         "网站应保留明显审校日期，引用临床级资料，并避免承诺“运动一定能恢复曲度”。",
       "faq.eyebrow": "常见问题",
@@ -824,7 +838,7 @@ const content = {
       "faq.copy":
         "这些短问答总结本站的谨慎立场，并把读者引回上方更深入的内容。",
       "ads.label": "广告位",
-      "footer.copy": "一个面向颈椎曲度保守康复的多语言健康教育原型。",
+      "footer.copy": "一个面向颈椎曲度保守康复的多语言健康教育网站。",
       "footer.disclaimer": "医疗免责声明",
       "footer.privacy": "隐私政策",
       "footer.terms": "使用条款",
@@ -1268,9 +1282,16 @@ const content = {
       "hero.copy":
         "頸椎カーブの反転や平坦化、保存的リハビリ、神経の滑走、上背部の筋力、スポーツ復帰を多言語で整理するガイドです。",
       "hero.primary": "リハビリ地図を見る",
+      "hero.secondary": "7日間記録表を開く",
       "notice.title": "重要：",
       "notice.copy":
         "このサイトは教育目的であり、診断や処方ではありません。新しい筋力低下、しびれ、歩行障害、発熱、外傷、がんの既往、排尿排便の異常は早めの医療相談が必要です。",
+      "resource.eyebrow": "実用的な出発点",
+      "resource.title": "運動を変える前に、症状を記録する。",
+      "resource.copy":
+        "印刷できる7日間記録表で、痛み、しびれ、睡眠、誘因、運動量の変化、翌日の反応を整理してから負荷調整や医療相談につなげます。",
+      "resource.primary": "記録表を開く",
+      "resource.secondary": "サイトに質問する",
       "learn.eyebrow": "基本理解",
       "learn.title": "カーブは重要。ただし症状はもっと重要。",
       "learn.copy":
@@ -1304,7 +1325,7 @@ const content = {
         "症状、画像用語、リハビリの期待値、治療の境界、スポーツ負荷を、検索にも読者にも分かりやすい静的ページとして整理しました。",
       "guides.link": "特集を読む",
       "sources.eyebrow": "参考文献",
-      "sources.title": "このプロトタイプの情報基盤。",
+      "sources.title": "このガイドの臨床情報基盤。",
       "sources.copy":
         "サイトにはレビュー日を明記し、臨床レベルの情報源を引用し、運動で必ずカーブが戻るという表現は避けます。",
       "faq.eyebrow": "よくある質問",
@@ -1312,7 +1333,7 @@ const content = {
       "faq.copy":
         "短い回答でこのサイトの慎重な立場をまとめ、詳しいセクションへ戻れるようにしています。",
       "ads.label": "広告枠",
-      "footer.copy": "頸椎カーブの保存的ケアを扱う多言語教育プロトタイプです。",
+      "footer.copy": "頸椎カーブの保存的ケアを扱う多言語ヘルスエデュケーションサイトです。",
       "footer.disclaimer": "医療免責事項",
       "footer.privacy": "プライバシー",
       "footer.terms": "利用規約",
@@ -1756,9 +1777,16 @@ const content = {
       "hero.copy":
         "Una guía multilingüe para entender la curva cervical invertida o rectificada, la rehabilitación conservadora, la movilidad neural, la fuerza de la espalda alta y la vuelta al deporte.",
       "hero.primary": "Ver el mapa de rehabilitación",
+      "hero.secondary": "Abrir registro de 7 días",
       "notice.title": "Importante:",
       "notice.copy":
         "Este sitio es educativo, no diagnóstico ni prescripción. Debilidad nueva, entumecimiento, cambios al caminar, fiebre, traumatismo, antecedente de cáncer o cambios urinarios/intestinales requieren atención médica.",
+      "resource.eyebrow": "Punto de partida práctico",
+      "resource.title": "Registra síntomas antes de cambiar ejercicios.",
+      "resource.copy":
+        "Usa el registro imprimible de 7 días para anotar dolor, entumecimiento, sueño, desencadenantes, cambios de entrenamiento y respuesta al día siguiente antes de ajustar carga o hablar con un clínico.",
+      "resource.primary": "Abrir registro",
+      "resource.secondary": "Hacer una pregunta",
       "learn.eyebrow": "Idea central",
       "learn.title": "La curva importa, pero los síntomas importan más.",
       "learn.copy":
@@ -1792,7 +1820,7 @@ const content = {
         "Estas páginas estáticas explican síntomas, lenguaje de imagen, expectativas de rehabilitación, límites de tratamiento y carga deportiva con más foco para lectores y buscadores.",
       "guides.link": "Leer la guía",
       "sources.eyebrow": "Referencias",
-      "sources.title": "Base de fuentes del prototipo.",
+      "sources.title": "Base clínica de fuentes para esta guía.",
       "sources.copy":
         "El sitio debe mostrar fecha de revisión, citar fuentes clínicas y evitar prometer que el ejercicio restaura la curva con garantía.",
       "faq.eyebrow": "Preguntas frecuentes",
@@ -1801,7 +1829,7 @@ const content = {
         "Estas respuestas resumen la postura conservadora del sitio y enlazan con las secciones más completas.",
       "ads.label": "Publicidad",
       "footer.copy":
-        "Prototipo educativo multilingüe para cuidado conservador de la curva cervical.",
+        "Sitio multilingüe de educación sanitaria sobre el cuidado conservador de la curva cervical.",
       "footer.disclaimer": "Aviso médico",
       "footer.privacy": "Privacidad",
       "footer.terms": "Términos",
@@ -2633,8 +2661,8 @@ function renderArticleCards() {
     body.textContent = item.body;
     const link = document.createElement("a");
     link.href = item.url;
-    link.textContent = active.strings["guides.link"] || "Read";
-    link.setAttribute("aria-label", `${link.textContent}: ${item.title}`);
+    const linkPrefix = active.strings["guides.link"] || "Read";
+    link.textContent = `${linkPrefix}: ${item.title}`;
 
     card.append(tag, title, body, link);
     return card;

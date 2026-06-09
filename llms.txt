@@ -1,0 +1,51 @@
+# Cervical Curve Guide
+
+> Multilingual health education about cervical kyphosis, loss of cervical lordosis, nerve symptoms, conservative rehabilitation, and sport-specific neck loading.
+
+This site is educational and is not medical advice. It does not replace diagnosis, treatment, emergency care, or review by a licensed clinician.
+
+## Primary URLs
+
+- Home: https://cervicalcurveguide.com/
+- English home: https://cervicalcurveguide.com/en/
+- Japanese home: https://cervicalcurveguide.com/ja/
+- Spanish home: https://cervicalcurveguide.com/es/
+- Sitemap: https://cervicalcurveguide.com/sitemap.xml
+
+## Core Topic Hubs
+
+- Cervical kyphosis: https://cervicalcurveguide.com/cervical-kyphosis/
+- Loss of cervical lordosis: https://cervicalcurveguide.com/loss-of-cervical-lordosis/
+- Cervical curve: https://cervicalcurveguide.com/cervical-curve/
+- Symptoms: https://cervicalcurveguide.com/symptoms/
+- Diagnosis: https://cervicalcurveguide.com/diagnosis/
+- Treatments: https://cervicalcurveguide.com/treatments/
+- Exercises: https://cervicalcurveguide.com/exercises/
+- Sports: https://cervicalcurveguide.com/sports/
+- Tools: https://cervicalcurveguide.com/tools/
+- Videos: https://cervicalcurveguide.com/videos/
+
+## High-Intent Articles
+
+- Finger numbness nerve map: https://cervicalcurveguide.com/articles/finger-numbness-nerve-map/
+- Cervical kyphosis vs loss of lordosis: https://cervicalcurveguide.com/articles/cervical-kyphosis-vs-loss-lordosis/
+- Red flags for radiculopathy and myelopathy: https://cervicalcurveguide.com/articles/cervical-radiculopathy-myelopathy-red-flags/
+- Can cervical curve be restored: https://cervicalcurveguide.com/articles/can-cervical-curve-be-restored/
+- Traction, pillow, and manipulation risk guide: https://cervicalcurveguide.com/articles/traction-pillow-manipulation-risk-guide/
+- X-ray, MRI, and EMG test guide: https://cervicalcurveguide.com/articles/xray-mri-emg-what-tests-show/
+
+## Editorial and Trust Pages
+
+- About: https://cervicalcurveguide.com/about.html
+- Authors: https://cervicalcurveguide.com/authors.html
+- Editorial policy: https://cervicalcurveguide.com/editorial-policy.html
+- Medical review policy: https://cervicalcurveguide.com/medical-review-policy.html
+- Medical disclaimer: https://cervicalcurveguide.com/disclaimer.html
+- Contact: https://cervicalcurveguide.com/contact.html
+
+## Content Notes
+
+- Languages: simplified Chinese, English, Japanese, and Spanish.
+- Current medical review status: source-backed editorial content; no named licensed clinician reviewer is claimed unless explicitly stated on a page.
+- Monetization status: no sponsorships, paid placements, affiliate commissions, or advertising in this version.
+- Preferred citation: cite the canonical URL of the specific page and preserve the medical disclaimer boundary.

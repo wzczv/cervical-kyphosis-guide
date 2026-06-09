@@ -11,6 +11,7 @@
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="author" content="Cervical Curve Guide" />
     <meta name="theme-color" content="#f5fbfb" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="canonical" href="https://cervicalcurveguide.com/" />
@@ -42,7 +43,7 @@
     <meta name="twitter:image" content="https://cervicalcurveguide.com/assets/og/zh-home.png" />
     <link rel="preconnect" href="https://i.ytimg.com" />
     <link rel="preconnect" href="https://www.youtube.com" />
-    <link rel="preload" href="assets/hero-cervical-kyphosis.jpg" as="image" />
+    <link rel="preload" href="assets/hero-cervical-kyphosis-720.webp" as="image" type="image/webp" imagesrcset="assets/hero-cervical-kyphosis-720.webp 720w, assets/hero-cervical-kyphosis-1200.webp 1200w, assets/hero-cervical-kyphosis.webp 1672w" imagesizes="100vw" />
     <link rel="stylesheet" href="assets/styles.css?v=20260609-pillar" />
     <script id="structured-data" type="application/ld+json">
       {
@@ -82,7 +83,7 @@
   <body>
     <a class="skip-link" href="#learn" data-i18n="skip.content">跳到正文</a>
     <header class="site-header" data-elevated="false">
-      <a class="brand" href="#top" aria-label="Cervical Curve Guide home">
+      <a class="brand" href="#top">
         <span class="brand-mark" aria-hidden="true">C</span>
         <span data-i18n="brand">颈椎曲度指南</span>
       </a>
@@ -105,15 +106,24 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
+        <picture class="hero-picture">
+        <source
+          type="image/webp"
+          srcset="assets/hero-cervical-kyphosis-720.webp 720w, assets/hero-cervical-kyphosis-1200.webp 1200w, assets/hero-cervical-kyphosis.webp 1672w"
+          sizes="100vw"
+        />
         <img
           class="hero-image"
           src="assets/hero-cervical-kyphosis.jpg"
           alt="Educational illustration of cervical spine alignment and conservative rehabilitation"
+          srcset="assets/hero-cervical-kyphosis-720.jpg 720w, assets/hero-cervical-kyphosis-1200.jpg 1200w, assets/hero-cervical-kyphosis.jpg 1672w"
+          sizes="100vw"
           width="1672"
           height="941"
           decoding="async"
           fetchpriority="high"
         />
+      </picture>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content">
           <p class="eyebrow" data-i18n="hero.eyebrow">有依据的颈椎曲度教育</p>
@@ -123,6 +133,7 @@
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#rehab" data-i18n="hero.primary">查看康复路径</a>
+            <a class="button secondary" href="printable-neck-symptom-tracker/" data-i18n="hero.secondary">打开 7 天记录表</a>
           </div>
         </div>
       </section>
@@ -132,6 +143,20 @@
         <span data-i18n="notice.copy">
           本站只做健康教育，不做诊断和处方。新出现的无力、麻木、走路不稳、发热、外伤、肿瘤病史，或大小便异常，应尽快就医。
         </span>
+      </section>
+
+      <section class="conversion-band" aria-labelledby="resource-title">
+        <div class="conversion-copy">
+          <p class="eyebrow" data-i18n="resource.eyebrow">实用起点</p>
+          <h2 id="resource-title" data-i18n="resource.title">先记录症状，再调整练习。</h2>
+          <p data-i18n="resource.copy">
+            使用可打印的 7 天记录表，整理疼痛、手麻、睡眠、诱因、训练变化和第二天反应，再决定是否调整负荷或和医生/康复师讨论。
+          </p>
+        </div>
+        <div class="conversion-actions">
+          <a class="button primary" href="printable-neck-symptom-tracker/" data-i18n="resource.primary">打开记录表</a>
+          <a class="button quiet" href="contact.html" data-i18n="resource.secondary">咨询站点问题</a>
+        </div>
       </section>
 
       <section class="section" id="learn" aria-labelledby="learn-title">
@@ -247,7 +272,7 @@
       <section class="section muted-section" id="sources" aria-labelledby="sources-title">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="sources.eyebrow">参考来源</p>
-          <h2 id="sources-title" data-i18n="sources.title">这个原型的资料基础。</h2>
+          <h2 id="sources-title" data-i18n="sources.title">这份指南的临床资料基础。</h2>
           <p data-i18n="sources.copy">
             网站应保留明显审校日期，引用临床级资料，并避免承诺“运动一定能恢复曲度”。
           </p>
@@ -258,7 +283,7 @@
 
     <footer class="site-footer">
       <p data-i18n="footer.copy">
-        一个面向颈椎曲度保守康复的多语言健康教育原型。
+        一个面向颈椎曲度保守康复的多语言健康教育网站。
       </p>
       <nav class="footer-links" aria-label="Footer links">
         <a href="disclaimer.html" data-i18n="footer.disclaimer">医疗免责声明</a>

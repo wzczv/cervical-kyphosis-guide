@@ -13,6 +13,9 @@ Last updated: 2026-06-09
 - English-first pillar pages for cervical kyphosis, loss of cervical lordosis, and cervical radiculopathy.
 - Original SVG diagrams with dedicated landing pages, image sitemap entries, and download links.
 - Printable 7-day symptom tracker that adds practical utility beyond article text.
+- Homepage and article CTAs that send readers to the tracker before any ad or affiliate monetization.
+- Responsive WebP/JPG homepage hero assets to reduce image weight.
+- `_headers` prepared for Cloudflare Pages/Netlify-style cache and security headers.
 
 ## Before Applying
 
@@ -22,6 +25,8 @@ Last updated: 2026-06-09
 - Avoid sticky or interstitial ads on medical content until approval is stable.
 - Keep YouTube videos as references, not thin replacement content.
 - Keep medical claims conservative: no guaranteed curve restoration, no diagnosis by finger map, no promised treatment outcome.
+- Add email capture only after the privacy policy, consent copy, and email provider are configured.
+- Add affiliate links only with clear disclosure and only for comfort/support tools, not cure or curve-correction claims.
 
 ## Suggested Initial Ad Layout
 

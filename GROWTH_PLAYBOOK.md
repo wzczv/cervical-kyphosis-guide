@@ -10,6 +10,10 @@ Last updated: 2026-06-09
 - Shortened long English and Spanish title tags while keeping the visible page headings intact.
 - Added practical tool/tracker cards into related-reading sections to strengthen internal links across clusters.
 - Added hero image dimensions and high-priority loading hints on localized homepages to reduce layout shift and improve LCP handling.
+- Added responsive WebP/JPG homepage hero variants with WebP preload and JPG fallback.
+- Added homepage resource CTAs and article-level tracker CTAs that route readers to the printable 7-day tracker.
+- Added `_headers` for Cloudflare Pages/Netlify-style security and cache policy support.
+- Added `llms.txt` for AI/search crawlers and `TRAFFIC_MONETIZATION_ROADMAP.md` for execution tracking.
 - Expanded image sitemap entries for original visual landing pages with both SVG assets and share-card PNGs.
 
 ## Weekly Search Console Loop
@@ -43,6 +47,7 @@ Use useful, non-spammy distribution only:
 - Share original diagrams from `/tools/` on image-friendly channels with a link back to the relevant hub.
 - Link directly to visual landing pages, for example `/images/c6-c7-c8-finger-numbness-map/`, when the discussion is about hand or finger numbness patterns.
 - Offer `/printable-neck-symptom-tracker/` when users need a practical way to prepare for a clinical visit.
+- Use the tracker as the primary early conversion path before adding email capture, ads, or affiliate links.
 - Use UTM tags only for owned posts, for example `?utm_source=reddit&utm_medium=social&utm_campaign=sports-hub`.
 
 ## Refresh Cadence

@@ -577,14 +577,22 @@ const pillarPages = [
         description:
           "A conservative, source-backed overview of cervical kyphosis: imaging language, symptom priority, rehab goals, treatment boundaries, and when to seek care.",
         intro: [
-          "Cervical kyphosis sounds alarming, but it is not a complete diagnosis by itself and it does not automatically prove the source of pain. The safer frame is to read the imaging language alongside symptoms, exam findings, daily load, and sport exposure.",
-          "This is the main hub for the site. It does not promise to restore the curve and it does not turn one exercise into a treatment plan. It helps readers decide what can start with conservative management and what should be assessed promptly."
+          "Cervical kyphosis sounds alarming, but it is not a complete diagnosis by itself and it does not automatically prove the source of pain. The safer frame is to read the imaging language alongside symptoms, neurological signs, daily load, work exposure, and sport history.",
+          "This is the main hub for the site. It does not promise to restore the curve and it does not turn one exercise into a treatment plan. It helps readers understand what the report may mean, which symptoms deserve priority, what conservative care can reasonably track, and when a clinician should be involved."
         ],
         sections: [
-          ["What cervical kyphosis means", ["In plain language, cervical kyphosis usually means the normal forward neck curve has flattened or reversed. Reports may use kyphosis, reversed curve, straightening, or loss of lordosis, but those terms do not always mean the same severity or clinical meaning.", "Neck curve appearance can change with positioning, pain guarding, muscle tone, and degenerative findings. One image should not be used alone to decide cause, prognosis, or treatment success."]],
-          ["Symptoms set the priority more than curve shape", ["If symptoms are mainly stiffness or local neck ache without neurological signs, the first questions are often daily load, sleep, upper-back capacity, and movement tolerance.", "Radiating arm pain, finger numbness, weakness, hand clumsiness, or walking changes raise the priority. New or progressive neurological symptoms should not be managed only with online drills."]],
-          ["What conservative rehab should track", ["Conservative rehab usually aims to improve symptoms, motion, strength, and load tolerance rather than guaranteeing a different curve on imaging. Track pain location, sleep, numbness behavior, 24-hour response, and work tolerance.", "If a drill sends symptoms farther down the arm, leaves the next day clearly worse, or changes strength, it is not the right current dose."]],
-          ["Boundaries for treatment tools", ["Traction, pillows, massage, and manual therapy may give short-term comfort for some people, but they should not promise realignment or curve restoration. Every tool needs symptom-response and risk screening.", "Cord-related signs, significant trauma, progressive weakness, fever, or cancer history should move the plan toward medical evaluation before more self-treatment."]]
+          ["What cervical kyphosis means", ["In plain language, cervical kyphosis usually means the normal forward neck curve has flattened enough to reverse direction or move toward a backward curve. Reports may use kyphosis, reversed curve, straightening, or loss of lordosis, but those terms do not always mean the same severity or the same clinical meaning.", "A report term is a description of shape. It does not automatically explain pain, hand numbness, headaches, dizziness, or sports tolerance. The curve finding becomes more meaningful when it matches the story, exam findings, neurological signs, and how symptoms behave under load."]],
+          ["Cervical kyphosis versus straightening", ["Straightening or loss of cervical lordosis usually means the normal forward curve is reduced or flattened. Cervical kyphosis or reversal suggests the curve is moving in the opposite direction. Many readers see these terms used loosely, which is why the exact report wording should be interpreted carefully.", "The distinction matters, but it is not the whole decision. A mild straightening finding with no neurological symptoms may be managed very differently from a structural kyphosis after trauma, surgery, inflammatory disease, or progressive deformity. Context is what turns imaging language into a clinical question."]],
+          ["Why one image is not the whole diagnosis", ["Neck curve appearance can change with positioning, pain guarding, muscle tone, x-ray technique, and degenerative findings. A person who is in pain may hold the neck differently during imaging. Another person may have a curve finding on a report but little or no functional limitation.", "This is why conservative health education should avoid saying the curve is definitely the cause or that a single treatment can put it back. Imaging is one input. Symptoms, exam, function, and change over time decide whether the finding is background context or the main issue."]],
+          ["Common contexts and causes", ["Cervical kyphosis can appear in several contexts: postural exposure, muscle guarding, degenerative disc or joint changes, old trauma, congenital shape, inflammatory disease, post-surgical change, or structural deformity. These categories should not be blended into one simple internet explanation.", "A desk worker with local stiffness, a surfer with extension-related symptoms, and a person with progressive arm weakness after trauma need different thinking. The same curve word may appear in each case, but the risk level and next step can be very different."]],
+          ["Symptoms set the priority more than curve shape", ["If symptoms are mainly stiffness or local neck ache without neurological signs, the first questions are often daily load, sleep, upper-back capacity, work posture, stress, and movement tolerance. The early plan may focus on reducing irritability and improving capacity.", "Radiating arm pain, finger numbness, weakness, hand clumsiness, or walking changes raise the priority. New or progressive neurological symptoms should not be managed only with online drills. The curve may be relevant, but the neurological pattern decides urgency."]],
+          ["Diagnosis is a workflow, not a label", ["A useful clinical workflow starts with history: onset, trauma, symptom path, weakness, numbness, dizziness, gait change, and what makes symptoms better or worse. Then comes exam: range of motion, neurological screening, strength, reflexes, sensation, coordination, and shoulder or peripheral nerve contributors.", "X-ray can describe alignment. MRI can show discs, stenosis, cord context, and soft-tissue structures. EMG and nerve conduction studies may help when the question is nerve localization. None of these tests is automatically the best test for every reader; the choice depends on the clinical question."]],
+          ["What conservative rehab should track", ["Conservative rehab usually aims to improve symptoms, motion, strength, and load tolerance rather than guaranteeing a different curve on imaging. Track pain location, sleep, numbness behavior, 24-hour response, work tolerance, and sport response. These measures tell you whether the neck is becoming more usable.", "A good plan usually starts below the symptom threshold, then progresses one variable at a time. If a drill sends symptoms farther down the arm, leaves the next day clearly worse, or changes strength, it is not the right current dose. More intensity is not automatically better."]],
+          ["Boundaries for treatment tools", ["Traction, pillows, massage, and manual therapy may give short-term comfort for some people, but they should not promise realignment or curve restoration. A pillow can improve sleep position; it cannot diagnose the cause of numbness. Traction may be considered in selected cases, but it also has contraindications and should not be treated as a universal cure.", "Manual therapy or massage should be judged by symptom response and risk screening. Cord-related signs, significant trauma, progressive weakness, fever, or cancer history should move the plan toward medical evaluation before more self-treatment."]],
+          ["Work, sleep, and sport exposure matter", ["Many readers focus only on the curve and miss the repeated exposures that keep symptoms irritated. Long uninterrupted desk blocks, poor sleep, heavy phone use, repeated driving, overhead work, surf paddling, belaying, snow-sport falls, and heavy bracing in the gym can all change neck load.", "The goal is not to avoid life. It is to make exposure readable and adjustable. Change one variable at a time: break frequency, pillow height, training volume, paddling minutes, belay duration, or lifting load. Then watch the 24-hour response before progressing."]],
+          ["Common mistakes to avoid", ["Do not assume the most dramatic phrase in the report is automatically the most important finding. A report can mention kyphosis, disc changes, or osteophytes without proving which structure is causing symptoms. Matching the report to the side, level, exam, and symptom behavior is what gives it meaning.", "Do not chase curve correction so aggressively that symptoms become less stable. Repeatedly testing the neck, stretching into arm symptoms, using longer traction because the curve looks bad, or ignoring worsening hand symptoms can turn a manageable problem into a confusing one. Conservative care should make the pattern calmer and easier to interpret."]],
+          ["How to use this hub", ["If your main worry is whether the curve can be restored, start with the curve-restoration guide and track function instead of obsessing over x-ray angles. If your main symptom is hand or finger numbness, use the numbness map and red-flag guide before trying nerve exercises. If your question is sport, use the neck-load return guide and the 24-hour rule.", "This page is meant to route you by decision, not by fear. Imaging terms belong in the diagnosis cluster. Numbness and weakness belong in the symptom cluster. Traction, pillows, massage, and manipulation belong in the treatment-boundary cluster. Surfing, skiing, climbing, and lifting belong in the sport-load cluster."]],
+          ["When to seek care promptly", ["Seek prompt evaluation for new or worsening weakness, spreading numbness, hand clumsiness, walking imbalance, bowel or bladder symptoms, fever, cancer history, significant trauma, or severe unrelenting night pain. These are not situations where a curve-correction routine should be the main plan.", "Also seek guidance when symptoms do not match a simple pattern, keep recurring despite sensible load changes, or interfere with work, sleep, grip, or sport participation. A careful evaluation can separate neck-root symptoms from shoulder, wrist, elbow, thoracic outlet, or other medical contributors.", "If you are unsure whether a symptom is neurological, write down what changed, when it started, and whether it is progressing. That record makes the visit more useful and reduces the temptation to keep guessing from the image report alone. Bring medication lists, prior imaging dates, and clear symptom examples."]]
         ]
       },
       ja: {
@@ -1177,7 +1185,7 @@ function renderHreflang(route, isArticle = false) {
 function renderHeader(lang, title) {
   const l = languages[lang];
   return `<header class="site-header">
-      <a class="brand" href="${l.home}" aria-label="Cervical Curve Guide home">
+      <a class="brand" href="${l.home}">
         <span class="brand-mark" aria-hidden="true">C</span>
         <span>Cervical Curve Guide</span>
       </a>
@@ -1195,10 +1203,11 @@ function renderHeader(lang, title) {
         ${Object.entries(languages)
           .map(([code, labels]) => {
             const active = code === lang ? " is-active" : "";
+            const current = code === lang ? ' aria-current="page"' : "";
             const href = title.articleSlug
               ? articlePath(code, title.articleSlug)
               : localizedPath(code, title.route);
-            return `<a class="lang-button${active}" href="${href}" hreflang="${labels.hreflang}" aria-pressed="${code === lang}">${labels.short}</a>`;
+            return `<a class="lang-button${active}" href="${href}" hreflang="${labels.hreflang}"${current}>${labels.short}</a>`;
           })
           .join("\n        ")}
       </div>
@@ -1260,7 +1269,6 @@ function structuredData({ lang, url, title, description, route, article, breadcr
       isAccessibleForFree: true,
       lastReviewed: reviewDate,
       dateModified: reviewDate,
-      reviewedBy: { "@id": `${baseUrl}/#organization` },
       about: pageAbout,
       isPartOf: { "@id": `${baseUrl}/#website` }
     },
@@ -1292,7 +1300,6 @@ function structuredData({ lang, url, title, description, route, article, breadcr
       dateModified: reviewDate,
       author: { "@id": `${baseUrl}/#organization` },
       publisher: { "@id": `${baseUrl}/#organization` },
-      reviewedBy: { "@id": `${baseUrl}/#organization` },
       citation: article.sources.map((source) => source.url),
       isPartOf: { "@id": `${url}#medical-page` }
     });
@@ -1349,6 +1356,7 @@ function htmlShell({ lang, route, articleSlug, title, description, content, arti
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="author" content="Cervical Curve Guide" />
     <meta name="theme-color" content="#f5fbfb" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="${url}" />
     ${renderHreflang(hrefLangRoute, Boolean(articleSlug))}
     <meta property="og:type" content="${articleSlug ? "article" : "website"}" />
@@ -1395,6 +1403,36 @@ function bullets(items) {
   return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
 }
 
+function renderTrackerCta(lang) {
+  const copy = {
+    zh: {
+      title: "把症状先记录 7 天",
+      body: "记录疼痛、手麻、睡眠、诱因和第二天反应，再决定是否调整练习或带去就医讨论。",
+      cta: "打开记录表"
+    },
+    en: {
+      title: "Track symptoms for 7 days first",
+      body: "Record pain, numbness, sleep, triggers, and next-day response before changing exercises or discussing care.",
+      cta: "Open the tracker"
+    },
+    ja: {
+      title: "まず7日間、症状を記録する",
+      body: "痛み、しびれ、睡眠、誘因、翌日の反応を整理してから、運動調整や医療相談につなげます。",
+      cta: "記録表を開く"
+    },
+    es: {
+      title: "Registra síntomas durante 7 días",
+      body: "Anota dolor, entumecimiento, sueño, desencadenantes y respuesta al día siguiente antes de cambiar ejercicios o consultar.",
+      cta: "Abrir registro"
+    }
+  }[lang];
+  return `<aside class="article-callout resource-callout">
+          <strong>${escapeHtml(copy.title)}</strong>
+          <p>${escapeHtml(copy.body)}</p>
+          <a class="button" href="${localizedPath(lang, printableRoute)}">${escapeHtml(copy.cta)}</a>
+        </aside>`;
+}
+
 function cardForArticle(article, lang) {
   if (article.cards) {
     const [tag, title, body] = article.cards[lang];
@@ -1422,14 +1460,20 @@ function getCardsForRoute(lang, route) {
 
 function renderCardGrid(cards, lang) {
   const l = languages[lang];
+  const seen = new Set();
+  const uniqueCards = cards.filter((card) => {
+    if (seen.has(card.url)) return false;
+    seen.add(card.url);
+    return true;
+  });
   return `<div class="article-grid growth-grid">
-    ${cards
+    ${uniqueCards
       .map(
         (card) => `<article class="article-card">
           <span class="tag">${escapeHtml(card.tag)}</span>
           <h3>${escapeHtml(card.title)}</h3>
           <p>${escapeHtml(card.body)}</p>
-          <a href="${card.url}">${escapeHtml(l.read)}</a>
+          <a href="${card.url}">${escapeHtml(`${l.read}: ${card.title}`)}</a>
         </article>`
       )
       .join("\n")}
@@ -1454,6 +1498,7 @@ function renderArticlePage(article, lang) {
           ${paragraphs([description, focus])}
         </div>
         <aside class="article-callout">${escapeHtml(l.medicalLabel)} ${escapeHtml(l.redFlag)}</aside>
+        ${renderTrackerCta(lang)}
         <section class="article-section">
           <h2>${escapeHtml(l.keyHeading)}</h2>
           ${bullets(keyPoints)}
@@ -2009,18 +2054,62 @@ function postProcessOgReferences(entries) {
 }
 
 function postProcessHomePerformance() {
+  const ogLocales = {
+    zh: ["zh_CN", ["en_US", "ja_JP", "es_ES"]],
+    en: ["en_US", ["zh_CN", "ja_JP", "es_ES"]],
+    ja: ["ja_JP", ["zh_CN", "en_US", "es_ES"]],
+    es: ["es_ES", ["zh_CN", "en_US", "ja_JP"]]
+  };
+
   for (const lang of Object.keys(languages)) {
     const file = pathToOutputFile(languages[lang].home);
     if (!existsSync(file)) continue;
     let html = readFileSync(file, "utf8");
+    const assetPrefix = languages[lang].home === "/" ? "assets" : "../assets";
+    const heroSrcset = `${assetPrefix}/hero-cervical-kyphosis-720.jpg 720w, ${assetPrefix}/hero-cervical-kyphosis-1200.jpg 1200w, ${assetPrefix}/hero-cervical-kyphosis.jpg 1672w`;
+    const heroWebpSrcset = `${assetPrefix}/hero-cervical-kyphosis-720.webp 720w, ${assetPrefix}/hero-cervical-kyphosis-1200.webp 1200w, ${assetPrefix}/hero-cervical-kyphosis.webp 1672w`;
+    if (!html.includes('rel="icon"')) {
+      html = html.replace(
+        /(<meta name="theme-color" content="[^"]*" \/>)/,
+        `$1\n    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />`
+      );
+    }
+    const [currentLocale, alternateLocales] = ogLocales[lang];
+    const localeTags = [
+      `    <meta property="og:locale" content="${currentLocale}" />`,
+      ...alternateLocales.map((locale) => `    <meta property="og:locale:alternate" content="${locale}" />`)
+    ].join("\n");
     html = html.replace(
-      /(<img\s+class="hero-image"\s+src="[^"]+"\s+alt="[^"]*")\s*\/>/,
-      `$1
+      /    <meta property="og:locale" content="[^"]+" \/>\n(?:    <meta property="og:locale:alternate" content="[^"]+" \/>\n?)+/,
+      `${localeTags}\n`
+    );
+    html = html.replace(
+      /<link rel="preload" href="(?:\.\.\/)?assets\/hero-cervical-kyphosis(?:-\d+)?\.(?:jpg|webp)" as="image"[^>]*\/>/,
+      `<link rel="preload" href="${assetPrefix}/hero-cervical-kyphosis-720.webp" as="image" type="image/webp" imagesrcset="${heroWebpSrcset}" imagesizes="100vw" />`
+    );
+    const heroAlt =
+      html.match(/<img\s+class="hero-image"[\s\S]*?\salt="([^"]*)"/)?.[1] ||
+      "Educational illustration of cervical spine alignment and conservative rehabilitation";
+    html = html.replace(
+      /(?:<picture class="hero-picture">[\s\S]*?<\/picture>|<img\s+class="hero-image"[\s\S]*?\/>)/,
+      `<picture class="hero-picture">
+        <source
+          type="image/webp"
+          srcset="${heroWebpSrcset}"
+          sizes="100vw"
+        />
+        <img
+          class="hero-image"
+          src="${assetPrefix}/hero-cervical-kyphosis.jpg"
+          alt="${heroAlt}"
+          srcset="${heroSrcset}"
+          sizes="100vw"
           width="1672"
           height="941"
           decoding="async"
           fetchpriority="high"
-        />`
+        />
+      </picture>`
     );
     writeFileSync(file, html);
   }

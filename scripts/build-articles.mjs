@@ -22,13 +22,18 @@ const languages = {
       faq: "问答"
     },
     footer:
-      "一个面向颈椎曲度保守康复的多语言健康教育原型。",
+      "一个面向颈椎曲度保守康复的多语言健康教育网站。",
     lastReviewed: "最后审校：2026 年 6 月 9 日",
     reviewStatus: "编辑审阅：已按保守健康教育标准检查；尚未由具名执业临床人员独立审阅。",
     medicalNoticeLabel: "医疗提醒：",
     adLabel: "广告位",
     medicalNote:
       "本站只做健康教育，不做诊断、处方或复健计划。新出现或加重的无力、麻木扩散、手变笨、走路不稳、大小便异常、发热、肿瘤病史或明显外伤，应尽快就医。",
+    trackerCta: {
+      title: "把症状先记录 7 天",
+      body: "记录疼痛、手麻、睡眠、诱因和第二天反应，再决定是否调整练习或带去就医讨论。",
+      action: "打开记录表"
+    },
     sourceHeading: "参考来源",
     relatedHeading: "继续阅读",
     homeLabel: "返回首页"
@@ -49,7 +54,7 @@ const languages = {
       faq: "FAQ"
     },
     footer:
-      "Built as a multilingual educational prototype for conservative cervical curve care.",
+      "A multilingual health-education site for conservative cervical curve care.",
     lastReviewed: "Last reviewed: June 9, 2026",
     reviewStatus:
       "Editorial review: checked for conservative health-education wording; not yet independently reviewed by a named licensed clinician.",
@@ -57,6 +62,11 @@ const languages = {
     adLabel: "Advertisement",
     medicalNote:
       "This page is educational, not a diagnosis, prescription, or rehabilitation plan. New or worsening weakness, spreading numbness, hand clumsiness, walking changes, bowel/bladder symptoms, fever, cancer history, or significant trauma need prompt medical care.",
+    trackerCta: {
+      title: "Track symptoms for 7 days first",
+      body: "Record pain, numbness, sleep, triggers, and next-day response before changing exercises or discussing care.",
+      action: "Open the tracker"
+    },
     sourceHeading: "References",
     relatedHeading: "Keep reading",
     homeLabel: "Back to home"
@@ -76,7 +86,7 @@ const languages = {
       guides: "特集",
       faq: "FAQ"
     },
-    footer: "頸椎カーブの保存的ケアを扱う多言語教育プロトタイプです。",
+    footer: "頸椎カーブの保存的ケアを扱う多言語ヘルスエデュケーションサイトです。",
     lastReviewed: "最終確認：2026年6月9日",
     reviewStatus:
       "編集レビュー：保守的な健康教育表現として確認済み。現時点では、氏名を表示した有資格臨床家による独立レビューは未完了です。",
@@ -84,6 +94,11 @@ const languages = {
     adLabel: "広告枠",
     medicalNote:
       "このページは教育目的であり、診断、処方、個別のリハビリ計画ではありません。新しい筋力低下、しびれの拡大、手の不器用さ、歩行変化、排尿排便の異常、発熱、がんの既往、大きな外傷がある場合は早めに医療相談をしてください。",
+    trackerCta: {
+      title: "まず7日間、症状を記録する",
+      body: "痛み、しびれ、睡眠、誘因、翌日の反応を整理してから、運動調整や医療相談につなげます。",
+      action: "記録表を開く"
+    },
     sourceHeading: "参考文献",
     relatedHeading: "続けて読む",
     homeLabel: "ホームへ戻る"
@@ -104,7 +119,7 @@ const languages = {
       faq: "FAQ"
     },
     footer:
-      "Prototipo educativo multilingüe para cuidado conservador de la curva cervical.",
+      "Sitio multilingüe de educación sanitaria sobre el cuidado conservador de la curva cervical.",
     lastReviewed: "Última revisión: 9 de junio de 2026",
     reviewStatus:
       "Revisión editorial: comprobado con lenguaje conservador de educación sanitaria; aún no revisado de forma independiente por un profesional clínico identificado.",
@@ -112,6 +127,11 @@ const languages = {
     adLabel: "Publicidad",
     medicalNote:
       "Esta página es educativa; no es diagnóstico, prescripción ni plan de rehabilitación. Debilidad nueva o progresiva, entumecimiento que se extiende, torpeza de la mano, cambios al caminar, síntomas urinarios/intestinales, fiebre, antecedente de cáncer o traumatismo importante requieren atención médica.",
+    trackerCta: {
+      title: "Registra síntomas durante 7 días",
+      body: "Anota dolor, entumecimiento, sueño, desencadenantes y respuesta al día siguiente antes de cambiar ejercicios o consultar.",
+      action: "Abrir registro"
+    },
     sourceHeading: "Referencias",
     relatedHeading: "Seguir leyendo",
     homeLabel: "Volver al inicio"
@@ -212,21 +232,25 @@ const articles = [
         kicker: "Symptom guide",
         headline: "Finger numbness is a clue, not a self-diagnosis.",
         intro: [
-          "After seeing “cervical kyphosis” or “loss of cervical lordosis” on an imaging report, it is easy to blame every hand symptom on the neck. In reality, numbness can come from a cervical nerve root, the wrist, elbow, forearm, thoracic outlet, or more than one site at the same time.",
-          "A safer approach is to combine finger distribution with triggers, weakness, reflexes, and symptom trajectory. Use this map to organize clues before discussing the pattern with a clinician."
+          "After seeing \"cervical kyphosis\" or \"loss of cervical lordosis\" on an imaging report, it is easy to blame every hand symptom on the neck. In reality, numbness can come from a cervical nerve root, the wrist, elbow, forearm, thoracic outlet, or more than one site at the same time.",
+          "Finger distribution matters, but it is only one clue. A safer approach is to combine the numb area with triggers, neck position, wrist or elbow loading, weakness, reflexes, symptom spread, and the speed of change. This map is meant to organize the story before a clinical exam, not replace one.",
+          "Use the page like a triage worksheet: first check for red flags, then map the fingers, then ask what movements reproduce or relieve the symptom. If the pattern is changing, spreading, or affecting strength, the next step is evaluation rather than more online exercises."
         ],
         callout:
           "Do not diagnose the cause from one numb finger. Nerve territories overlap, individual patterns vary, and imaging language alone does not prove the pain source.",
         sections: [
           {
-            title: "Check red flags first",
+            title: "Check urgent signs first",
             body: [
-              "Rapidly spreading numbness, new weakness, dropping objects, handwriting or buttoning changes, walking imbalance, bowel/bladder symptoms, fever, significant trauma, or cancer history should move the issue from self-care to prompt medical evaluation.",
-              "Mild tingling can be monitored, but symptoms that keep worsening, wake you at night, or affect grip and fine hand control deserve earlier assessment."
+              "Rapidly spreading numbness, new or worsening weakness, dropping objects, handwriting or buttoning changes, walking imbalance, bowel or bladder symptoms, fever, significant trauma, or cancer history should move the issue from self-care to prompt medical evaluation. These features can suggest more than a simple posture irritation.",
+              "Mild tingling that is stable and clearly linked to a posture can sometimes be monitored while you reduce triggers. But symptoms that keep worsening, wake you at night, change grip, affect fine hand control, or involve both hands in a new way deserve earlier assessment. The question is not whether the neck is involved; the question is whether a neurological problem is progressing."
             ]
           },
           {
-            title: "Common pattern map",
+            title: "Common pattern map, with overlap",
+            body: [
+              "The table below lists common patterns, not fixed rules. Nerve territories overlap, pain can refer outside the classic map, and peripheral nerve entrapments can imitate cervical radiculopathy. A clinician uses the map together with strength testing, reflexes, sensation, provocative tests, and the full symptom history."
+            ],
             table: {
               headers: ["Possible source", "Common area", "Extra clues"],
               rows: [
@@ -241,7 +265,11 @@ const articles = [
             }
           },
           {
-            title: "Triggers are often more useful than labels",
+            title: "Neck clues versus peripheral nerve clues",
+            body: [
+              "A cervical nerve-root pattern often has a neck-to-arm story. Symptoms may start near the neck or shoulder blade, travel down the arm, and change with neck extension, rotation, coughing, sneezing, or arm position. Some people temporarily feel better with the hand resting on top of the head, although this is not a diagnosis by itself.",
+              "Peripheral nerve patterns often have a local mechanical story. Median nerve symptoms may flare with wrist flexion, keyboard work, cycling, or night positioning. Ulnar nerve symptoms may flare with elbow flexion, leaning on the elbow, handlebars, or gripping. Radial sensory symptoms may relate to tight straps, pressure over the forearm, or wrist position."
+            ],
             bullets: [
               "Does neck extension, turning, coughing, or sneezing send symptoms down the arm? That supports a nerve-root clue.",
               "Is it worse at night, with wrist flexion, keyboard/mouse work, or cycling? Consider carpal tunnel or local peripheral nerve loading.",
@@ -250,10 +278,65 @@ const articles = [
             ]
           },
           {
+            title: "How C6, C7, and C8 are commonly described",
+            body: [
+              "C6 radiculopathy is commonly described around the thumb and index finger side of the hand, sometimes with symptoms along the radial forearm. A clinical exam may look for changes in biceps strength, wrist extension, sensation, and reflexes. C7 is often associated with the middle finger region and may involve triceps strength or reflex changes. C8 often points toward the ring and little finger side, grip changes, or finger flexion weakness.",
+              "These descriptions are useful because they help organize questions. They are not enough to diagnose the problem. A person with carpal tunnel can have thumb, index, and middle-finger numbness without the neck being the main driver. A person with ulnar nerve irritation can have ring and little-finger numbness that looks similar to a lower cervical root pattern."
+            ]
+          },
+          {
+            title: "Peripheral nerve patterns that mimic the neck",
+            body: [
+              "Carpal tunnel syndrome involves the median nerve at the wrist. It often affects the thumb, index, middle, and part of the ring finger, and it can be worse at night. Shaking the hand, changing wrist position, or modifying keyboard and cycling load may change symptoms.",
+              "Ulnar nerve irritation often affects the small finger and ulnar half of the ring finger. It may be provoked by prolonged elbow flexion, leaning on the elbow, or gripping. A radial sensory nerve problem can affect the back of the thumb-side hand and may relate to straps, forearm compression, or wrist position. Thoracic outlet or brachial plexus irritation can feel more diffuse and may worsen with overhead positions, heavy straps, shoulder depression, or prolonged paddling."
+            ]
+          },
+          {
+            title: "Double-crush and mixed patterns",
+            body: [
+              "Sometimes the answer is not either neck or wrist. A nerve can be irritated at more than one site, or a person can have neck-related symptoms plus a separate peripheral nerve problem. This is one reason a simple finger map can be misleading. The same person may notice neck-position sensitivity, night hand numbness, and elbow-pressure symptoms.",
+              "When the story is mixed, the best next step is to document patterns rather than force a single label. Which position starts the symptom? How long does it last? Does it stay in one finger or spread? Is strength normal? Does changing wrist, elbow, shoulder, or neck position alter the symptom? These details help a clinician decide what to examine first."
+            ]
+          },
+          {
+            title: "What a clinician may test",
+            body: [
+              "A clinical exam may compare sensation, reflexes, and muscle strength on both sides. For a suspected cervical root issue, the exam may include neck movement, shoulder and scapular screening, arm position tests, and checks for myelopathy signs. For peripheral nerve questions, the exam may stress the wrist, elbow, forearm, or thoracic outlet region.",
+              "Testing is chosen from the story. MRI can show discs, foraminal narrowing, stenosis, and spinal cord context, but an MRI finding does not automatically prove the symptom source. EMG and nerve conduction studies may help localize nerve involvement, especially when symptoms are persistent, weakness is present, or the pattern could be neck, wrist, elbow, or more than one site."
+            ]
+          },
+          {
+            title: "What to track for seven days",
+            table: {
+              headers: ["Track", "Useful detail", "Why it helps"],
+              rows: [
+                ["Finger area", "Thumb, index, middle, ring, little finger, palm, back of hand", "Shows whether the area is stable or spreading."],
+                ["Side and path", "One hand, both hands, neck-to-arm path, shoulder-blade pain", "Helps separate local hand symptoms from neck-to-arm patterns."],
+                ["Trigger", "Neck turn, wrist bend, elbow flexion, overhead arm, cycling, typing, paddling", "Points toward the structure being loaded."],
+                ["Strength", "Grip, pinch, wrist extension, triceps, finger control", "Weakness changes the urgency of evaluation."],
+                ["Timing", "Night, morning, during work, after sport, next day", "Shows whether exposure dose is driving symptoms."],
+                ["Relief", "Position change, rest, hand on head, wrist neutral, elbow straight", "Relief patterns can guide exam questions."]
+              ]
+            }
+          },
+          {
             title: "Where conservative care has limits",
             body: [
-              "Mild, stable symptoms without weakness may start with reducing triggers, adjusting work and sport exposure, and using gentle motion to establish a baseline. Nerve glides should feel like easy sliding, not aggressive stretching.",
-              "If symptoms spread farther down the arm, strength drops, or the next day is clearly worse, the current drill or dose is not appropriate. Stop increasing load and seek evaluation."
+              "Mild, stable symptoms without weakness may start with reducing triggers, adjusting work and sport exposure, and using gentle motion to establish a baseline. Nerve glides should feel like easy sliding, not aggressive stretching. A good response is usually calmer symptoms or no next-day penalty, not a dramatic sensation during the drill.",
+              "If symptoms spread farther down the arm, strength drops, coordination changes, or the next day is clearly worse, the current drill or dose is not appropriate. Stop increasing load and seek evaluation. Do not try to prove the nerve is safe by stretching it harder."
+            ]
+          },
+          {
+            title: "What not to do with numbness",
+            body: [
+              "Do not repeatedly provoke numbness to see whether it is still there. Constant testing can keep the nervous system irritated and makes the pattern harder to read. Do not use a strong stretch, aggressive massage, or forceful neck manipulation as a way to chase a numb finger, especially when the symptom is new, spreading, or paired with weakness.",
+              "Do not assume a cervical curve report explains everything. The report may be relevant, but carpal tunnel, ulnar nerve irritation, radial sensory nerve irritation, shoulder or thoracic outlet loading, metabolic issues, and other medical conditions can also create hand symptoms. A careful history and exam matter more than matching one finger to one internet chart."
+            ]
+          },
+          {
+            title: "Practical next step",
+            body: [
+              "If symptoms are stable and mild, pick one suspected trigger and reduce it for a week: wrist flexion at night, elbow pressure, long overhead positions, cycling handlebar pressure, or repeated neck extension. Keep the rest of life as steady as possible so the response is readable. If the symptom improves, reintroduce exposure gradually. If it does not improve, spreads, or affects strength, bring the seven-day record to a clinician so the visit starts with evidence instead of memory."
             ]
           }
         ]
@@ -462,14 +545,19 @@ const articles = [
         kicker: "Sport guide",
         headline: "Sport is rarely a simple yes or no.",
         intro: [
-          "Cervical kyphosis or a straightened cervical curve does not automatically mean you must stop every sport. The real questions are exposure time, nerve symptoms, impact risk, and how your neck and arm respond over the next 24 hours.",
-          "This framework is for stable, non-emergency situations. It is not medical clearance after injury and cannot replace individualized evaluation."
+          "Cervical kyphosis or a straightened cervical curve does not automatically mean you must stop every sport. The real questions are exposure time, nerve symptoms, impact risk, fatigue, and how your neck and arm respond over the next 24 hours.",
+          "A sport can be a good part of life and still be a meaningful neck load. Surf paddling holds the neck in repeated extension. Skiing and snowboarding add speed, falls, and fatigue. Climbing can ask the belayer to look up for long blocks of time. Strength training can add axial load, bracing, overhead work, and next-day soreness that may blur the signal.",
+          "This framework is for stable, non-emergency situations. It is not medical clearance after injury and cannot replace individualized evaluation. Use it to decide what to reduce, what to monitor, and when symptoms should stop the session."
         ],
         callout:
           "After a significant head or neck fall, do not use sport as a test if you have hand numbness, weakness, dizziness, walking changes, or worsening neck pain. Get evaluated first.",
         sections: [
           {
             title: "Start with the 24-hour rule",
+            body: [
+              "The 24-hour rule is a simple way to avoid making decisions from adrenaline. During sport, symptoms should stay mild, local, and predictable. That night and the next day should not bring new neurological symptoms, major sleep disruption, or a clear flare. If the neck only feels tired and returns to baseline quickly, the session may be tolerable. If symptoms spread, sharpen, or affect the arm or hand, the dose was too much.",
+              "Progression should be boring. Do not increase duration, intensity, conditions, route difficulty, and equipment challenge at the same time. Pick one variable, change it modestly, and wait for the next-day response."
+            ],
             bullets: [
               "Symptoms during sport should not rise more than about 2/10 or spread farther into the arm or fingers.",
               "That night and the next day should bring no new numbness, weakness, or major sleep disruption.",
@@ -478,10 +566,29 @@ const articles = [
             ]
           },
           {
+            title: "The neck-load framework",
+            body: [
+              "Instead of asking whether a sport is good or bad for cervical kyphosis, break the sport into loads. The neck responds to position, time, force, surprise, and recovery. A slow controlled gym movement is different from a fall on ice. A short paddle-out is different from two hours of prone extension. A single belay is different from an entire project day spent looking overhead.",
+              "This framework also helps you modify the sport without quitting it. Reduce extension time, lower impact risk, shorten sessions, improve rest, change equipment, or rotate roles before assuming the only options are full participation or complete rest."
+            ],
+            table: {
+              headers: ["Load factor", "What to watch", "Examples"],
+              rows: [
+                ["Extension time", "How long the neck is held looking up or forward from prone", "Surf paddling, belaying, looking up a wall."],
+                ["Rotation", "Repeated or end-range turning", "Checking waves, spotting landings, turning to watch a climber."],
+                ["Impact", "Falls, collisions, whiplash-like events, hard landings", "Snowboard edge catch, ski crash, bouldering fall."],
+                ["Axial or bracing load", "Compression, heavy bracing, overhead strain", "Loaded carries, squats, overhead pressing."],
+                ["Fatigue", "Loss of form, delayed reactions, poor judgment", "Last runs of the day, final attempts, long paddle sessions."],
+                ["Recovery", "Sleep, next-day symptoms, training spacing", "Back-to-back sport days versus spaced sessions."]
+              ]
+            }
+          },
+          {
             title: "Surfing: paddling is prolonged prone extension",
             body: [
-              "Surf paddling asks for thoracic and lumbar extension, a raised head, and repeated shoulder work. If thoracic extension or scapular endurance is limited, the neck may take more extension and compression.",
-              "Published surfer's myelopathy cases focus on rare but serious spinal-cord injury in novices after prolonged prone hyperextension, often with leg symptoms. That does not equal ordinary chronic neck pain, but it does remind us that prolonged extension is not a neutral load."
+              "Surf paddling asks for thoracic and lumbar extension, a raised head, repeated shoulder work, and quick decisions in changing water. If thoracic extension or scapular endurance is limited, the neck may take more extension and compression than it can tolerate.",
+              "Published surfer's myelopathy cases focus on rare but serious spinal-cord injury in novices after prolonged prone hyperextension, often with leg symptoms. That does not equal ordinary chronic neck pain or finger numbness, but it does remind us that prolonged extension is not a neutral load. Beginners, returners after time off, and people doing unusually long sessions should treat volume as the first variable to control.",
+              "The practical goal is not to make surfing perfectly ergonomic. It is to avoid stacking too many neck loads: long paddle-outs, poor sleep, heavy gym work the day before, cold water tension, repeated duck dives, and a long drive home."
             ],
             bullets: [
               "During a flare, favor more board volume, shorter sessions, and calmer conditions.",
@@ -492,8 +599,9 @@ const articles = [
           {
             title: "Skiing and snowboarding: falls and fatigue matter most",
             body: [
-              "For ski and snowboard participation, the main concern is not posture aesthetics. It is high-speed falls, collisions, jump failure, and fatigue-driven decisions. Reviews describe multiple spinal injury mechanisms in alpine winter sports; severe cord injury is uncommon but can involve the cervical spine.",
-              "Return criteria should be conservative: near-full neck motion, stable arm strength, and no new neurological symptoms before speed and difficulty are progressed."
+              "For ski and snowboard participation, the main concern is not posture aesthetics. It is high-speed falls, collisions, jump failure, variable snow, poor visibility, and fatigue-driven decisions. Reviews describe multiple spinal injury mechanisms in alpine winter sports; severe cord injury is uncommon but can involve the cervical spine.",
+              "Return criteria should be conservative: near-full neck motion, stable arm strength, no new neurological symptoms, and the ability to turn, look uphill, and recover from small slips without a flare. A helmet is important for head protection, but it does not make the cervical spine immune to force.",
+              "The riskiest decision is often continuing when tired. Many people can manage the first hour well, then lose form and reaction speed later in the day. Treat fatigue as a medical variable, not a character test."
             ],
             bullets: [
               "After lunch, long breaks, or fatigue, restart on easier terrain.",
@@ -504,13 +612,60 @@ const articles = [
           {
             title: "Climbing: the belayer's neck often takes the load",
             body: [
-              "Climbing itself is intermittent, but belaying can hold the neck in extension while watching a partner overhead. Sustained upward gaze can load joints, muscles, and neural tissues.",
-              "Belay glasses, stance changes, and rotating belayers may reduce load more directly than another neck stretch, as long as safety checks remain intact and the device is familiar."
+              "Climbing itself is intermittent, but belaying can hold the neck in extension while watching a partner overhead. Sustained upward gaze can load joints, muscles, and neural tissues, especially during long sessions, projecting, top-rope laps, or busy gym evenings where one person belays repeatedly.",
+              "Belay glasses, stance changes, and rotating belayers may reduce load more directly than another neck stretch, as long as safety checks remain intact and the device is familiar. The goal is not to look away from the climber; it is to reduce unnecessary end-range extension while maintaining good belay practice.",
+              "A useful test is to record belay minutes separately from climbing grade. If symptoms flare on days when you barely climbed but belayed a lot, the exposure is probably gaze time rather than pulling strength."
             ],
             bullets: [
               "On long routes or project days, consider rotating belayers every 15-20 minutes.",
               "Track belay time separately from climbing difficulty.",
               "During flares, reduce sustained upward gaze with shorter routes, partner swaps, or lower-risk bouldering choices."
+            ]
+          },
+          {
+            title: "Strength training with a neck curve finding",
+            body: [
+              "Strength training is not automatically off-limits. It can help build shoulder-blade, trunk, and upper-back capacity that reduces how much the neck has to guard. The problem is usually not lifting itself; it is poor dose selection, heavy bracing before symptoms are stable, or choosing exercises that repeatedly reproduce arm symptoms.",
+              "During a flare, keep the neck neutral and the set easy enough that symptoms stay local. Rows, carries, supported presses, landmine variations, cable work, and lower-body training may be easier to dose than heavy overhead pressing or high-bar loading. As symptoms settle, progress one variable at a time: load, range, volume, tempo, or complexity."
+            ],
+            bullets: [
+              "Stop a set if tingling spreads, grip changes, or strength suddenly drops.",
+              "Do not use neck pain as proof that a strengthening drill is working.",
+              "Separate ordinary muscle soreness from nerve symptoms that travel, spread, or linger into the next day.",
+              "Keep at least one recovery day between new or heavier neck-loading sessions until the pattern is predictable."
+            ]
+          },
+          {
+            title: "A staged return-to-sport progression",
+            table: {
+              headers: ["Stage", "Goal", "Examples"],
+              rows: [
+                ["Baseline", "Symptoms stable and no red flags", "Walking, daily tasks, gentle mobility, seven-day symptom log."],
+                ["Capacity", "Build tolerance without sport chaos", "Thoracic mobility, scapular strength, low-load neck endurance, easy cardio."],
+                ["Specific exposure", "Add the sport position in small doses", "Short paddles, brief belay blocks, easy groomers, controlled gym sets."],
+                ["Low-risk sessions", "Return with fewer variables", "Calm surf, easy terrain, shorter routes, lighter loads, longer rests."],
+                ["Normal participation", "Progress only if next-day response stays stable", "Increase one variable at a time and keep stop rules active."]
+              ]
+            }
+          },
+          {
+            title: "Stop rules",
+            body: [
+              "Stop the session if symptoms spread farther into the arm or hand, new weakness appears, coordination changes, headache or dizziness escalates after impact, or neck pain rises sharply and does not settle with rest. Stop for the day after a head or neck fall with neurological symptoms, even if you feel tempted to finish the session.",
+              "A stop rule is not failure. It is data. The next session can be shorter, easier, better rested, or moved to a lower-risk environment. Repeated stop-rule failures mean the plan needs clinical input."
+            ]
+          },
+          {
+            title: "How to restart after a flare",
+            body: [
+              "Wait until symptoms return close to baseline, then restart below the dose that caused the flare. A practical reset is 50-70% of the previous duration or intensity, with easier conditions and no new equipment variables. If the flare came from impact, treat the restart more cautiously than a simple muscle-soreness day.",
+              "Do not make up for missed training immediately. Stack two or three stable sessions first, then progress one variable. If the same sport exposure repeatedly triggers arm symptoms or sleep disruption, the plan needs a different modification or clinical guidance."
+            ]
+          },
+          {
+            title: "What to record after sport",
+            body: [
+              "A simple log turns vague fear into a pattern. Record the sport, duration, conditions, falls or impacts, neck positions, arm symptoms, sleep that night, and next-day response. For surfing, include paddle minutes and duck dives. For snow sports, include terrain, speed, visibility, and fatigue. For climbing, separate climbing time from belay time. For lifting, record exercises, load, sets, and whether symptoms traveled."
             ]
           }
         ]
@@ -1078,39 +1233,106 @@ articles.push(
         kicker: "Rehab expectations",
         headline: "Aim for a usable neck, not a prettier x-ray.",
         intro: [
-          "Online claims often promise that a drill, pillow, or traction routine can restore cervical curve. That is too strong for a health-education site: curve changes have many causes, and imaging changes do not always track symptoms.",
-          "A safer target is better pain control, sleep, neck motion, upper-back strength, stable nerve symptoms, and work or sport tolerance. Imaging matters, but it should not become the daily scorecard."
+          "Online claims often promise that a drill, pillow, posture routine, or traction device can restore cervical curve. That is too strong for a health-education site. A flattened or reversed curve can reflect many different situations: pain-related muscle guarding, the position used during the x-ray, long-term degenerative change, trauma, structural deformity, or simply variation between people.",
+          "A safer target is better pain control, sleep, neck motion, upper-back strength, stable nerve symptoms, and work or sport tolerance. Imaging matters because it can show alignment, degeneration, trauma clues, and surgical red flags, but it should not become the daily scorecard for whether your neck is getting better.",
+          "This guide explains what curve restoration can and cannot mean, how to judge conservative rehab without chasing a single x-ray angle, and when the curve finding should be checked by a clinician rather than managed with online exercises."
         ],
         callout:
           "Conservative rehab can be valuable without guaranteeing a change in x-ray angle. Living, working, and moving safely often matters more than the curve number.",
         sections: [
           {
-            title: "Why curve restoration should not be promised",
-            bullets: [
-              "Curve appearance can be influenced by pain, guarding, x-ray posture, degeneration, trauma, and structural factors.",
-              "Some people have large imaging changes and few symptoms; others have modest imaging findings and significant pain.",
-              "Training may improve control and tolerance, but it cannot guarantee bony alignment or long-term angle change.",
-              "Focusing only on curve shape can miss numbness, weakness, sleep, and function."
+            title: "The short answer",
+            body: [
+              "A cervical curve can sometimes look better when pain settles, posture is less guarded, and the person can tolerate more normal movement. Some people may also show measurable radiographic changes after specific care. But for a general education site, the important word is \"guarantee\". No exercise, pillow, traction routine, or posture cue should be presented as a reliable way to restore cervical lordosis for every reader.",
+              "That cautious answer is not pessimistic. It protects the reader from false certainty. A neck can become less painful, less reactive, stronger, and more usable even if the x-ray curve does not become textbook-perfect. The opposite can also happen: an image may look acceptable while the person still has nerve symptoms, poor sleep, or limited function."
             ]
           },
           {
-            title: "Better metrics to track",
+            title: "What \"restored\" can mean",
+            body: [
+              "People often use one word, restored, to mean several different outcomes. One person means a normal-looking lordotic curve on x-ray. Another means the ability to work at a desk without a flare. Another means surfing, lifting, or driving without symptoms spreading into the arm. These goals should not be treated as the same thing.",
+              "A radiographic angle is a structural measurement. It can be useful, especially when deformity, trauma, surgery, or progressive change is being monitored. Daily rehab progress is usually better judged through symptoms and function: pain frequency, numbness behavior, sleep quality, neck motion, strength tolerance, and how the neck responds the next day after activity."
+            ],
             table: {
-              headers: ["Metric", "How to track", "Why it matters"],
+              headers: ["Goal", "What it means", "How to judge it"],
               rows: [
-                ["Pain and numbness", "0-10 score and whether symptoms spread into fingers", "Shows whether load is too high."],
-                ["Sleep", "Falling asleep, night waking, pillow tolerance", "Neck recovery often shows up in sleep first."],
-                ["Motion", "Turning to blind spots, reading, looking up time", "Closer to real function than one angle."],
-                ["Strength tolerance", "Rows, face pulls, low-load deep neck flexor holds", "Shows whether neck and scapular control are stabilizing."],
-                ["24-hour response", "Same day and next day symptom change", "Guides progression." ]
+                ["Radiographic change", "The curve angle or alignment looks different on imaging", "Repeat imaging only when clinically justified by a clinician."],
+                ["Symptom improvement", "Pain, tingling, headache, or irritability is less frequent or less intense", "Track weekly symptom scores and whether symptoms spread."],
+                ["Functional improvement", "Work, sleep, driving, exercise, or sport becomes easier", "Track real tasks and next-day response."],
+                ["Neurological stability", "Numbness, weakness, reflex changes, or coordination problems are not progressing", "Use clinical evaluation when symptoms are new, worsening, or unclear."]
               ]
             }
           },
           {
+            title: "Why curve appearance can change",
+            body: [
+              "A single x-ray is a snapshot, not a complete biography of the neck. The apparent curve can be affected by how the person was positioned, whether pain caused guarding, whether the image was taken standing or seated, and how the angle was measured. That is one reason two reports can use slightly different language for similar-looking findings.",
+              "There are also structural reasons a curve may be flattened or reversed. Degenerative disc changes, facet joint changes, old injury, congenital shape, inflammatory conditions, or post-surgical changes can all affect alignment. In those settings, an aggressive promise to \"put the curve back\" is especially misleading."
+            ]
+          },
+          {
+            title: "Better metrics to track during rehab",
+            table: {
+              headers: ["Metric", "How to track", "Why it matters"],
+              rows: [
+                ["Pain and numbness", "0-10 score, location, and whether symptoms spread into the arm or fingers", "Shows whether load, posture, or exercise dose is too irritating."],
+                ["Sleep", "Time to fall asleep, night waking, pillow tolerance, morning symptoms", "Neck recovery often shows up in sleep before it shows up on imaging."],
+                ["Motion", "Turning to blind spots, reading tolerance, looking up time, comfortable rotation", "Closer to real function than one isolated curve angle."],
+                ["Strength tolerance", "Rows, carries, light presses, deep neck flexor holds, and shoulder-blade work", "Shows whether neck, thoracic, and scapular control are becoming more resilient."],
+                ["Nerve behavior", "Finger numbness area, weakness, grip changes, hand clumsiness, symptom spread", "Progressive neurological signs need evaluation, not more repetitions."],
+                ["24-hour response", "Same-day and next-day symptom change after work, training, or rehab", "Guides progression better than a single good or bad session."]
+              ]
+            }
+          },
+          {
+            title: "What conservative care can reasonably target",
+            body: [
+              "For non-emergency, stable symptoms, conservative care usually works best as load management rather than curve chasing. The first goal is to calm irritability: reduce positions that repeatedly flare symptoms, improve sleep setup, and avoid testing the neck all day. Once symptoms are less reactive, gentle mobility, thoracic movement, shoulder-blade strength, and low-load neck endurance can be introduced gradually.",
+              "This does not require harsh stretching or long traction sessions. A useful plan should make the next day easier, not prove how much discomfort you can tolerate. If a drill repeatedly sends symptoms farther into the hand, increases headache or dizziness, or makes sleep worse, the dose or exercise choice is probably wrong for that moment."
+            ],
+            bullets: [
+              "Start with symptom calming and clearer baselines.",
+              "Build tolerable motion before chasing end range.",
+              "Train upper-back and shoulder-blade capacity so the neck does less isolated work.",
+              "Use a 24-hour response rule before progressing volume, load, or sport exposure.",
+              "Keep medical evaluation in the loop when symptoms are neurological, progressive, or trauma-related."
+            ]
+          },
+          {
             title: "What meaningful improvement looks like",
             body: [
-              "Over 4-8 weeks, fewer pain flares, numbness that no longer spreads, steadier sleep, less work-related rebound, and gradually increasing sport exposure are meaningful changes even without repeat imaging.",
-              "If training increases numbness, reduces strength, or worsens sleep, reduce load or seek evaluation instead of chasing stronger stretching or longer traction."
+              "Over 4-8 weeks, fewer pain flares, numbness that no longer spreads, steadier sleep, less work-related rebound, and gradually increasing sport exposure are meaningful changes even without repeat imaging. A person who can turn the head more comfortably while driving, sleep through the night more often, and return to graded training has made real progress.",
+              "Improvement is also about predictability. If you know which desk positions, pillow setups, lifts, or sport exposures trigger symptoms, you can adjust them instead of guessing. The goal is not to live carefully forever. The goal is to build enough capacity that normal life and preferred activities become less threatening to the neck."
+            ]
+          },
+          {
+            title: "When the curve finding deserves clinical attention",
+            body: [
+              "Most people searching this topic are worried but not in an emergency. Still, some situations should not be handled as a posture project. New or worsening arm weakness, spreading numbness, hand clumsiness, walking imbalance, bowel or bladder symptoms, fever, cancer history, significant trauma, or severe unrelenting night pain should be checked promptly.",
+              "A clinician may consider x-ray, MRI, electrodiagnostic testing, medication guidance, physical therapy, injections, or surgical referral depending on the story and exam. The point is not that every curve finding is dangerous. The point is that curve shape should be interpreted with symptoms, neurological findings, and the person's full medical context."
+            ]
+          },
+          {
+            title: "Should you repeat imaging to check the curve?",
+            body: [
+              "For many non-emergency cases, repeating x-rays just to see whether the curve looks better is not the first measure of progress. Imaging exposes the person to cost, anxiety, and in the case of x-ray, radiation, so it should answer a clinical question rather than satisfy daily reassurance. A clinician may want follow-up imaging when symptoms change, trauma occurred, deformity is being monitored, surgery is being considered, or the first study raised a specific concern.",
+              "If symptoms are improving, strength is stable, numbness is not spreading, sleep is better, and activity tolerance is increasing, those are meaningful data points. If symptoms are worsening or neurological signs appear, the next step is not simply a progress x-ray; it is clinical evaluation to decide which test, if any, fits the problem."
+            ]
+          },
+          {
+            title: "Common myths about curve restoration",
+            bullets: [
+              "Myth: One stretch can restore lordosis. Reality: a single drill may change comfort or mobility, but it should not be sold as a universal structural correction.",
+              "Myth: A special pillow can fix the curve. Reality: a pillow can improve sleep position for some people, but it cannot diagnose or reliably remodel the cervical spine.",
+              "Myth: Traction always restores alignment. Reality: traction may help selected symptoms under appropriate guidance, but it also has contraindications and should not be treated as a cure.",
+              "Myth: A bad curve means permanent damage. Reality: imaging language can sound alarming, but symptoms, exam findings, and function determine what matters most.",
+              "Myth: A normal curve means the neck is fine. Reality: people can have pain or nerve symptoms even when alignment looks ordinary."
+            ]
+          },
+          {
+            title: "Practical next step",
+            body: [
+              "Before changing several things at once, track one week of symptoms. Record sleep, desk exposure, exercise, sport, pain location, numbness, and next-day response. Then change one variable: pillow height, work breaks, exercise dose, or training volume. If the response is better for several sessions, progress slowly. If symptoms spread or strength changes, stop treating the problem as a simple curve issue and seek evaluation."
             ]
           }
         ]
@@ -1410,6 +1632,15 @@ function renderParagraphs(paragraphs) {
   return paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n");
 }
 
+function renderTrackerCta(lang) {
+  const labels = languages[lang];
+  return `<aside class="article-callout resource-callout">
+          <strong>${escapeHtml(labels.trackerCta.title)}</strong>
+          <p>${escapeHtml(labels.trackerCta.body)}</p>
+          <a class="button" href="${routePath(lang, "printable-neck-symptom-tracker")}">${escapeHtml(labels.trackerCta.action)}</a>
+        </aside>`;
+}
+
 function renderBullets(items) {
   return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
 }
@@ -1445,7 +1676,7 @@ function renderSections(sections) {
         .join("\n");
       return `<section class="article-section">
             <h2>${escapeHtml(section.title)}</h2>
-            ${body}
+${body}
           </section>`;
     })
     .join("\n");
@@ -1496,8 +1727,8 @@ function renderLanguageLinks(activeLang, slug) {
   return Object.entries(languages)
     .map(([lang, labels]) => {
       const active = lang === activeLang ? " is-active" : "";
-      const pressed = lang === activeLang ? "true" : "false";
-      return `<a class="lang-button${active}" href="${pathFor(lang, slug)}" hreflang="${labels.hreflang}" aria-pressed="${pressed}">${labels.short}</a>`;
+      const current = lang === activeLang ? ' aria-current="page"' : "";
+      return `<a class="lang-button${active}" href="${pathFor(lang, slug)}" hreflang="${labels.hreflang}"${current}>${labels.short}</a>`;
     })
     .join("\n");
 }
@@ -1545,7 +1776,6 @@ function renderStructuredData(article, translation, lang) {
       isAccessibleForFree: true,
       lastReviewed: reviewDate,
       dateModified: reviewDate,
-      reviewedBy: { "@id": `${baseUrl}/#organization` },
       about: [
         "Cervical kyphosis",
         "Loss of cervical lordosis",
@@ -1567,7 +1797,6 @@ function renderStructuredData(article, translation, lang) {
       dateModified: reviewDate,
       author: { "@id": `${baseUrl}/#organization` },
       publisher: { "@id": `${baseUrl}/#organization` },
-      reviewedBy: { "@id": `${baseUrl}/#organization` },
       citation: article.sources.map((source) => source.url),
       isPartOf: { "@id": `${pageUrl}#medical-page` }
     },
@@ -1615,6 +1844,7 @@ function renderArticle(article, lang) {
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="author" content="Cervical Curve Guide" />
     <meta name="theme-color" content="#f5fbfb" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="${pageUrl}" />
     ${renderHreflang(article.slug)}
     <meta property="og:type" content="article" />
@@ -1633,7 +1863,7 @@ function renderArticle(article, lang) {
   <body>
     <a class="skip-link" href="#article-content">${labels.nav.guides}</a>
     <header class="site-header">
-      <a class="brand" href="${labels.home}" aria-label="Cervical Curve Guide home">
+      <a class="brand" href="${labels.home}">
         <span class="brand-mark" aria-hidden="true">C</span>
         <span>Cervical Curve Guide</span>
       </a>
@@ -1655,6 +1885,7 @@ function renderArticle(article, lang) {
         <aside class="article-callout">
           ${escapeHtml(translation.callout)}
         </aside>
+        ${renderTrackerCta(lang)}
         ${renderSections(translation.sections)}
         <aside class="ad-slot ad-slot-article" aria-label="Advertisement">
           <span>${escapeHtml(labels.adLabel)}</span>

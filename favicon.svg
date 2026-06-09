@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cervical Curve Guide">
+  <rect width="64" height="64" rx="14" fill="#167a7f"/>
+  <path d="M37 12c-10 8-10 25 0 40" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  <path d="M27 13c8 9 8 25 0 38" fill="none" stroke="#ffb199" stroke-width="5" stroke-linecap="round"/>
+</svg>
