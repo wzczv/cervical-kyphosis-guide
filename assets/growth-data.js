@@ -23,157 +23,157 @@ window.CCG_GROWTH = {
         "tag": "Pillar 页面",
         "title": "颈椎曲度：正常颈曲、变直、反弓和保守处理",
         "body": "解释 cervical curve、正常颈椎前凸、颈椎曲度变直、loss of cervical lordosis 和反弓的区别，以及哪些症状需要优先就医。",
-        "url": "/cervical-curve/"
+        "url": "/zh/cervical-curve/"
       },
       {
         "tag": "Pillar 页面",
         "title": "颈椎反弓完整指南：报告词、症状、康复和风险边界",
         "body": "一个保守、可核查的颈椎反弓总览页，解释影像报告、症状优先级、康复目标、治疗边界和什么时候应就医。",
-        "url": "/cervical-kyphosis/"
+        "url": "/zh/cervical-kyphosis/"
       },
       {
         "tag": "Pillar 页面",
         "title": "颈椎生理曲度变直：含义、症状和保守处理",
         "body": "解释颈椎生理曲度变直、loss of cervical lordosis、直颈和相关症状的保守判断，不夸大影像词。",
-        "url": "/loss-of-cervical-lordosis/"
+        "url": "/zh/loss-of-cervical-lordosis/"
       },
       {
         "tag": "Pillar 页面",
         "title": "颈椎神经根病：手臂痛、手麻、检查和保守康复",
         "body": "总览颈椎神经根病的常见症状、C5-C8 线索、危险信号、检查选择和保守处理边界。",
-        "url": "/cervical-radiculopathy/"
+        "url": "/zh/cervical-radiculopathy/"
       },
       {
         "tag": "症状专题",
         "title": "颈椎反弓会导致头痛或头晕吗？",
         "body": "很多头痛和头晕不能简单归因于颈椎曲度。更稳妥的做法是区分颈源性线索、前庭问题、偏头痛、血压和神经危险信号。",
-        "url": "/articles/headache-dizziness-neck-curve/"
+        "url": "/zh/articles/headache-dizziness-neck-curve/"
       },
       {
         "tag": "症状专题",
         "title": "早上醒来手麻：颈椎、腕管还是尺神经？",
         "body": "晨起手麻常和夜间手腕、肘部、肩带或颈部姿势有关。关键不是马上贴诊断，而是看哪种姿势最能重复诱发或缓解。",
-        "url": "/articles/morning-hand-numbness-differential/"
+        "url": "/zh/articles/morning-hand-numbness-differential/"
       },
       {
         "tag": "症状专题",
         "title": "C5、C6、C7、C8 神经根症状怎么区分？",
         "body": "颈椎神经根模式能帮助整理线索，但感觉区域会重叠。不要只凭一根手指麻就自行判断节段。",
-        "url": "/articles/c5-c8-nerve-root-symptoms/"
+        "url": "/zh/articles/c5-c8-nerve-root-symptoms/"
       },
       {
         "tag": "影像解读",
         "title": "MRI 报告里的突出、膨出、椎管狭窄和骨赘是什么意思？",
         "body": "这些词描述结构变化，不自动等于症状来源。真正要问的是它们是否压迫神经根或脊髓，以及是否和你的症状侧别、节段和体征相符。",
-        "url": "/articles/mri-disc-bulge-stenosis-osteophyte/"
+        "url": "/zh/articles/mri-disc-bulge-stenosis-osteophyte/"
       },
       {
         "tag": "影像解读",
         "title": "X 光、MRI、肌电图分别能说明什么？",
         "body": "X 光更适合看排列和骨性结构，MRI 更适合看椎间盘、神经根和脊髓，肌电/神经传导更适合帮助区分神经根和周围神经。",
-        "url": "/articles/xray-mri-emg-what-tests-show/"
+        "url": "/zh/articles/xray-mri-emg-what-tests-show/"
       },
       {
         "tag": "就医指南",
         "title": "颈椎反弓什么时候该看骨科、神经科或康复科？",
         "body": "如果只是报告写了曲度变直但症状轻微稳定，通常不需要恐慌。真正决定就医优先级的是神经症状、外伤、发热、肿瘤病史和功能下降。",
-        "url": "/articles/when-to-see-doctor-cervical-kyphosis/"
+        "url": "/zh/articles/when-to-see-doctor-cervical-kyphosis/"
       },
       {
         "tag": "练习专题",
         "title": "低头族和办公室颈椎反弓：怎么调整才实际？",
         "body": "办公调整的目标不是保持一个完美姿势，而是减少持续时间太长的同一种负荷。屏幕、键盘、休息节奏和上背力量要一起处理。",
-        "url": "/articles/office-neck-curve-ergonomics/"
+        "url": "/zh/articles/office-neck-curve-ergonomics/"
       },
       {
         "tag": "练习专题",
         "title": "颈椎曲度变直还能做力量训练吗？",
         "body": "很多人可以继续力量训练，但需要把颈部症状反应、动作选择和训练量放在第一位。关键不是怕所有重量，而是避免用训练硬顶神经症状。",
-        "url": "/articles/strength-training-with-cervical-kyphosis/"
+        "url": "/zh/articles/strength-training-with-cervical-kyphosis/"
       },
       {
         "tag": "睡眠专题",
         "title": "颈椎反弓枕头怎么选？高度、睡姿和误区",
         "body": "枕头的目标是让睡眠更稳定，不是把骨头顶回去。合适高度取决于睡姿、肩宽、床垫和症状反应。",
-        "url": "/articles/pillow-height-sleep-position/"
+        "url": "/zh/articles/pillow-height-sleep-position/"
       },
       {
         "tag": "治疗边界",
         "title": "颈椎牵引适合谁？禁忌和风险怎么判断",
         "body": "牵引可能短期减轻某些神经根症状，但不适合所有人，也不应作为自我硬拉。剂量、角度、症状反应和禁忌都很重要。",
-        "url": "/articles/cervical-traction-contraindications/"
+        "url": "/zh/articles/cervical-traction-contraindications/"
       },
       {
         "tag": "治疗边界",
         "title": "按摩、推拿、正骨后舒服，是否代表颈椎变好了？",
         "body": "短期舒服可以来自肌肉张力下降、疼痛调制或放松，但不证明结构已经改变。颈部高速手法尤其需要谨慎看待风险和适应证。",
-        "url": "/articles/massage-manipulation-safety/"
+        "url": "/zh/articles/massage-manipulation-safety/"
       },
       {
         "tag": "冲浪专题",
         "title": "冲浪划水为什么容易让颈椎不舒服？",
         "body": "趴板划水要求胸椎伸展、肩部反复用力和头颈抬起。胸椎不够伸展或肩部疲劳时，颈椎更容易代偿。",
-        "url": "/articles/surfing-neck-pain-paddling/"
+        "url": "/zh/articles/surfing-neck-pain-paddling/"
       },
       {
         "tag": "雪上运动",
         "title": "滑雪/单板摔倒后颈痛：什么时候不能继续滑？",
         "body": "雪上运动的重点风险是速度、摔倒、旋转和碰撞，而不只是姿势。摔倒后有头颈外伤、手麻、无力、头晕或意识问题，不应继续当天运动。",
-        "url": "/articles/ski-snowboard-neck-pain-after-fall/"
+        "url": "/zh/articles/ski-snowboard-neck-pain-after-fall/"
       },
       {
         "tag": "攀岩专题",
         "title": "攀岩保护者颈痛：不是只有攀爬才算负荷",
         "body": "很多攀岩者攀爬时还好，保护时更容易颈痛，因为长时间仰头观察会让颈椎持续伸展。保护量也应该像训练量一样记录。",
-        "url": "/articles/climbing-belay-neck-pain/"
+        "url": "/zh/articles/climbing-belay-neck-pain/"
       },
       {
         "tag": "症状中心",
         "title": "手麻、手臂痛、头痛头晕和危险信号",
         "body": "从症状进入，而不是从影像恐慌开始。这里整理手指麻木、神经根、脊髓危险信号、晨起手麻和头痛头晕的保守判断路径。",
-        "url": "/symptoms/"
+        "url": "/zh/symptoms/"
       },
       {
         "tag": "影像中心",
         "title": "读懂报告词，不把影像当诊断",
         "body": "曲度变直、反弓、突出、狭窄、骨赘和检查选择都需要和症状、体格检查及下一步决策放在一起看。",
-        "url": "/diagnosis/"
+        "url": "/zh/diagnosis/"
       },
       {
         "tag": "练习中心",
         "title": "办公室、睡眠、力量训练和康复预期",
         "body": "练习不是强行改变曲度，而是改善症状耐受、活动、力量、睡眠和回到生活运动的能力。",
-        "url": "/exercises/"
+        "url": "/zh/exercises/"
       },
       {
         "tag": "治疗中心",
         "title": "牵引、枕头、按摩和手法的保守边界",
         "body": "常见工具可以帮助某些症状，但不能承诺复位或恢复曲度。重点是适应证、禁忌、剂量和反应。",
-        "url": "/treatments/"
+        "url": "/zh/treatments/"
       },
       {
         "tag": "运动中心",
         "title": "冲浪、滑雪/单板和攀岩的颈椎负荷",
         "body": "运动不是简单能不能做，而是姿势、持续时间、冲击风险和 24 小时症状反应的组合。",
-        "url": "/sports/"
+        "url": "/zh/sports/"
       },
       {
         "tag": "工具",
         "title": "原创图解和 24 小时反应记录器",
         "body": "用站内图解整理手麻分布、曲度术语和运动后症状反应。",
-        "url": "/tools/"
+        "url": "/zh/tools/"
       },
       {
         "tag": "视频",
         "title": "参考视频索引",
         "body": "把 YouTube 视频按主题归类，并明确它们只是动作参考。",
-        "url": "/videos/"
+        "url": "/zh/videos/"
       },
       {
         "tag": "记录表",
         "title": "7 天颈痛和手麻记录表",
         "body": "可打印或保存 PDF，帮助就医前整理症状变化。",
-        "url": "/printable-neck-symptom-tracker/"
+        "url": "/zh/printable-neck-symptom-tracker/"
       }
     ],
     "en": [
@@ -181,157 +181,157 @@ window.CCG_GROWTH = {
         "tag": "Pillar guide",
         "title": "Cervical Curve: Normal Neck Curve, Straightening, and Loss of Lordosis",
         "body": "A plain-language guide to the cervical curve, normal neck lordosis, straightening, reversed curve, symptoms, conservative care, and when to seek medical evaluation.",
-        "url": "/en/cervical-curve/"
+        "url": "/cervical-curve/"
       },
       {
         "tag": "Pillar guide",
         "title": "Cervical Kyphosis: Report Meaning, Symptoms, Rehab, and Safety Boundaries",
         "body": "A conservative, source-backed overview of cervical kyphosis: imaging language, symptom priority, rehab goals, treatment boundaries, and when to seek care.",
-        "url": "/en/cervical-kyphosis/"
+        "url": "/cervical-kyphosis/"
       },
       {
         "tag": "Pillar guide",
         "title": "Loss of Cervical Lordosis: Meaning, Symptoms, and Conservative Care",
         "body": "A conservative guide to loss of cervical lordosis, straight neck, report language, symptoms, and what to track before assuming the curve is the problem.",
-        "url": "/en/loss-of-cervical-lordosis/"
+        "url": "/loss-of-cervical-lordosis/"
       },
       {
         "tag": "Pillar guide",
         "title": "Cervical Radiculopathy: Arm Pain, Finger Numbness, Testing, and Conservative Rehab",
         "body": "A source-backed overview of cervical radiculopathy: symptoms, C5-C8 clues, red flags, testing choices, and conservative rehab boundaries.",
-        "url": "/en/cervical-radiculopathy/"
+        "url": "/cervical-radiculopathy/"
       },
       {
         "tag": "Symptom guide",
         "title": "Can cervical kyphosis cause headache or dizziness?",
         "body": "Headache and dizziness should not be automatically blamed on curve findings. A safer approach separates neck-related clues from vestibular, migraine, blood-pressure, and neurological red flags.",
-        "url": "/en/articles/headache-dizziness-neck-curve/"
+        "url": "/articles/headache-dizziness-neck-curve/"
       },
       {
         "tag": "Symptom guide",
         "title": "Waking with numb hands: neck, carpal tunnel, or ulnar nerve?",
         "body": "Morning hand numbness often reflects overnight wrist, elbow, shoulder-girdle, or neck position. The useful question is which posture reliably reproduces or relieves it.",
-        "url": "/en/articles/morning-hand-numbness-differential/"
+        "url": "/articles/morning-hand-numbness-differential/"
       },
       {
         "tag": "Symptom guide",
         "title": "C5, C6, C7, and C8 nerve-root symptoms",
         "body": "Cervical root patterns help organize clues, but sensory territories overlap. A single numb finger should not be used to self-label a spinal level.",
-        "url": "/en/articles/c5-c8-nerve-root-symptoms/"
+        "url": "/articles/c5-c8-nerve-root-symptoms/"
       },
       {
         "tag": "Imaging guide",
         "title": "MRI report terms: disc bulge, herniation, stenosis, and osteophytes",
         "body": "These terms describe structure, not automatic symptom sources. The key question is whether they affect a nerve root or the spinal cord and match your side, level, and exam.",
-        "url": "/en/articles/mri-disc-bulge-stenosis-osteophyte/"
+        "url": "/articles/mri-disc-bulge-stenosis-osteophyte/"
       },
       {
         "tag": "Imaging guide",
         "title": "X-ray, MRI, and EMG/NCS: what each test can show",
         "body": "X-ray is better for alignment and bone structure, MRI for discs, nerve roots, and cord, and EMG/NCS for helping separate root and peripheral nerve problems.",
-        "url": "/en/articles/xray-mri-emg-what-tests-show/"
+        "url": "/articles/xray-mri-emg-what-tests-show/"
       },
       {
         "tag": "Care guide",
         "title": "When should cervical kyphosis be checked by orthopedics, neurology, or rehab?",
         "body": "A report mentioning straightening or kyphosis with mild stable symptoms usually does not require panic. Priority comes from nerve symptoms, trauma, fever, cancer history, and functional decline.",
-        "url": "/en/articles/when-to-see-doctor-cervical-kyphosis/"
+        "url": "/articles/when-to-see-doctor-cervical-kyphosis/"
       },
       {
         "tag": "Exercise guide",
         "title": "Desk work and cervical curve changes: practical ergonomics",
         "body": "The goal is not one perfect posture. It is reducing long exposure to the same load by adjusting screen, keyboard, break rhythm, and upper-back capacity together.",
-        "url": "/en/articles/office-neck-curve-ergonomics/"
+        "url": "/articles/office-neck-curve-ergonomics/"
       },
       {
         "tag": "Exercise guide",
         "title": "Can you strength train with a straightened cervical curve?",
         "body": "Many people can keep strength training, but symptom response, exercise selection, and volume come first. The point is not to fear all load, but to avoid pushing through nerve symptoms.",
-        "url": "/en/articles/strength-training-with-cervical-kyphosis/"
+        "url": "/articles/strength-training-with-cervical-kyphosis/"
       },
       {
         "tag": "Sleep guide",
         "title": "Pillow height and sleep position for cervical kyphosis or straight neck",
         "body": "The goal of a pillow is better sleep, not pushing bones back. The right height depends on sleep position, shoulder width, mattress, and symptom response.",
-        "url": "/en/articles/pillow-height-sleep-position/"
+        "url": "/articles/pillow-height-sleep-position/"
       },
       {
         "tag": "Treatment boundaries",
         "title": "Cervical traction: who may fit, contraindications, and risks",
         "body": "Traction may give short-term relief for some nerve-root symptoms, but it is not for everyone and should not be treated as forceful self-pulling. Dose, angle, response, and contraindications matter.",
-        "url": "/en/articles/cervical-traction-contraindications/"
+        "url": "/articles/cervical-traction-contraindications/"
       },
       {
         "tag": "Treatment boundaries",
         "title": "Massage and manipulation: does feeling better mean the neck changed?",
         "body": "Short-term relief may come from lower muscle tone, pain modulation, or relaxation, but it does not prove structural change. High-velocity neck manipulation deserves careful risk screening.",
-        "url": "/en/articles/massage-manipulation-safety/"
+        "url": "/articles/massage-manipulation-safety/"
       },
       {
         "tag": "Surf guide",
         "title": "Why surf paddling can irritate the neck",
         "body": "Prone paddling asks for thoracic extension, repeated shoulder work, and a raised head. If thoracic extension or shoulder endurance is limited, the neck often compensates.",
-        "url": "/en/articles/surfing-neck-pain-paddling/"
+        "url": "/articles/surfing-neck-pain-paddling/"
       },
       {
         "tag": "Snow sports",
         "title": "Neck pain after a ski or snowboard fall: when to stop",
         "body": "The main snow-sport risk is speed, falls, rotation, and collision, not posture alone. Neck trauma with hand numbness, weakness, dizziness, or altered awareness is not a ski-through situation.",
-        "url": "/en/articles/ski-snowboard-neck-pain-after-fall/"
+        "url": "/articles/ski-snowboard-neck-pain-after-fall/"
       },
       {
         "tag": "Climbing guide",
         "title": "Belayer neck pain: belaying is load too",
         "body": "Many climbers tolerate climbing but flare while belaying because prolonged upward gaze keeps the cervical spine extended. Belay volume should be tracked like training volume.",
-        "url": "/en/articles/climbing-belay-neck-pain/"
+        "url": "/articles/climbing-belay-neck-pain/"
       },
       {
         "tag": "Symptom hub",
         "title": "Hand numbness, arm pain, headache, dizziness, and red flags",
         "body": "Start from symptoms instead of imaging fear. This hub organizes finger numbness, nerve roots, cord warning signs, waking numb, headache, and dizziness.",
-        "url": "/en/symptoms/"
+        "url": "/symptoms/"
       },
       {
         "tag": "Imaging hub",
         "title": "Read report terms without turning imaging into a diagnosis",
         "body": "Straightening, kyphosis, bulge, stenosis, osteophytes, and test choices should be interpreted with symptoms, exam, and next decisions.",
-        "url": "/en/diagnosis/"
+        "url": "/diagnosis/"
       },
       {
         "tag": "Exercise hub",
         "title": "Desk work, sleep, strength training, and rehab expectations",
         "body": "Exercise is not about forcing curve change. It is about symptom tolerance, motion, strength, sleep, and returning to life and sport.",
-        "url": "/en/exercises/"
+        "url": "/exercises/"
       },
       {
         "tag": "Treatment hub",
         "title": "Conservative boundaries for traction, pillows, massage, and manipulation",
         "body": "Common tools may help some symptoms, but they should not promise realignment or curve restoration. Indications, contraindications, dose, and response matter.",
-        "url": "/en/treatments/"
+        "url": "/treatments/"
       },
       {
         "tag": "Sport hub",
         "title": "Neck loading in surfing, skiing, snowboarding, and climbing",
         "body": "Sport is not a simple yes/no. It is position, duration, impact risk, and 24-hour symptom response together.",
-        "url": "/en/sports/"
+        "url": "/sports/"
       },
       {
         "tag": "Tools",
         "title": "Original diagrams and a 24-hour response tracker",
         "body": "Use on-site visuals to organize numbness patterns, curve language, and post-exercise response.",
-        "url": "/en/tools/"
+        "url": "/tools/"
       },
       {
         "tag": "Videos",
         "title": "Reference video index",
         "body": "Curated YouTube references grouped by topic, clearly framed as visual references.",
-        "url": "/en/videos/"
+        "url": "/videos/"
       },
       {
         "tag": "Tracker",
         "title": "7-Day Neck Pain and Numbness Tracker",
         "body": "Print or save as PDF to organize symptom changes before an appointment.",
-        "url": "/en/printable-neck-symptom-tracker/"
+        "url": "/printable-neck-symptom-tracker/"
       }
     ],
     "ja": [

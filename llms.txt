@@ -6,33 +6,33 @@ This site is educational and is not medical advice. It does not replace diagnosi
 
 ## Primary URLs
 
-- Home: https://cervicalcurveguide.com/
-- English home: https://cervicalcurveguide.com/en/
+- Home: https://cervicalcurveguide.com/zh/
+- English home: https://cervicalcurveguide.com/
 - Japanese home: https://cervicalcurveguide.com/ja/
 - Spanish home: https://cervicalcurveguide.com/es/
 - Sitemap: https://cervicalcurveguide.com/sitemap.xml
 
 ## Core Topic Hubs
 
-- Cervical kyphosis: https://cervicalcurveguide.com/cervical-kyphosis/
-- Loss of cervical lordosis: https://cervicalcurveguide.com/loss-of-cervical-lordosis/
-- Cervical curve: https://cervicalcurveguide.com/cervical-curve/
-- Symptoms: https://cervicalcurveguide.com/symptoms/
-- Diagnosis: https://cervicalcurveguide.com/diagnosis/
-- Treatments: https://cervicalcurveguide.com/treatments/
-- Exercises: https://cervicalcurveguide.com/exercises/
-- Sports: https://cervicalcurveguide.com/sports/
-- Tools: https://cervicalcurveguide.com/tools/
-- Videos: https://cervicalcurveguide.com/videos/
+- Cervical kyphosis: https://cervicalcurveguide.com/zh/cervical-kyphosis/
+- Loss of cervical lordosis: https://cervicalcurveguide.com/zh/loss-of-cervical-lordosis/
+- Cervical curve: https://cervicalcurveguide.com/zh/cervical-curve/
+- Symptoms: https://cervicalcurveguide.com/zh/symptoms/
+- Diagnosis: https://cervicalcurveguide.com/zh/diagnosis/
+- Treatments: https://cervicalcurveguide.com/zh/treatments/
+- Exercises: https://cervicalcurveguide.com/zh/exercises/
+- Sports: https://cervicalcurveguide.com/zh/sports/
+- Tools: https://cervicalcurveguide.com/zh/tools/
+- Videos: https://cervicalcurveguide.com/zh/videos/
 
 ## High-Intent Articles
 
-- Finger numbness nerve map: https://cervicalcurveguide.com/articles/finger-numbness-nerve-map/
-- Cervical kyphosis vs loss of lordosis: https://cervicalcurveguide.com/articles/cervical-kyphosis-vs-loss-lordosis/
-- Red flags for radiculopathy and myelopathy: https://cervicalcurveguide.com/articles/cervical-radiculopathy-myelopathy-red-flags/
-- Can cervical curve be restored: https://cervicalcurveguide.com/articles/can-cervical-curve-be-restored/
-- Traction, pillow, and manipulation risk guide: https://cervicalcurveguide.com/articles/traction-pillow-manipulation-risk-guide/
-- X-ray, MRI, and EMG test guide: https://cervicalcurveguide.com/articles/xray-mri-emg-what-tests-show/
+- Finger numbness nerve map: https://cervicalcurveguide.com/zh/articles/finger-numbness-nerve-map/
+- Cervical kyphosis vs loss of lordosis: https://cervicalcurveguide.com/zh/articles/cervical-kyphosis-vs-loss-lordosis/
+- Red flags for radiculopathy and myelopathy: https://cervicalcurveguide.com/zh/articles/cervical-radiculopathy-myelopathy-red-flags/
+- Can cervical curve be restored: https://cervicalcurveguide.com/zh/articles/can-cervical-curve-be-restored/
+- Traction, pillow, and manipulation risk guide: https://cervicalcurveguide.com/zh/articles/traction-pillow-manipulation-risk-guide/
+- X-ray, MRI, and EMG test guide: https://cervicalcurveguide.com/zh/articles/xray-mri-emg-what-tests-show/
 
 ## Editorial and Trust Pages
 

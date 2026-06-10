@@ -34,14 +34,14 @@ const commonVideos = [
 const supportedLanguages = ["zh", "en", "ja", "es"];
 const siteBaseUrl = "https://cervicalcurveguide.com/";
 const languageUrls = {
-  zh: siteBaseUrl,
-  en: `${siteBaseUrl}en/`,
+  en: siteBaseUrl,
+  zh: `${siteBaseUrl}zh/`,
   ja: `${siteBaseUrl}ja/`,
   es: `${siteBaseUrl}es/`
 };
 const languagePaths = {
-  zh: "/",
-  en: "/en/",
+  en: "/",
+  zh: "/zh/",
   ja: "/ja/",
   es: "/es/"
 };
@@ -699,42 +699,42 @@ const content = {
         title: "Finger numbness map: cervical root or peripheral nerve?",
         body:
           "A conservative guide to thumb, index, middle, ring, and little-finger numbness patterns, including cervical roots, carpal tunnel, ulnar nerve, radial nerve, and thoracic outlet clues.",
-        url: "/en/articles/finger-numbness-nerve-map/"
+        url: "/articles/finger-numbness-nerve-map/"
       },
       {
         tag: "Sport guide",
         title: "Can you surf, ski, snowboard, or climb with cervical kyphosis?",
         body:
           "A return-to-sport framework for surf paddling, ski and snowboard impact risk, climbing belay posture, and the 24-hour symptom rule.",
-        url: "/en/articles/sports-neck-load-return-guide/"
+        url: "/articles/sports-neck-load-return-guide/"
       },
       {
         tag: "Imaging guide",
         title: "Cervical kyphosis vs loss of cervical lordosis",
         body:
           "Plain-language differences between straightening, loss of lordosis, reversed curve, and cervical kyphosis without turning imaging words into a diagnosis.",
-        url: "/en/articles/cervical-kyphosis-vs-loss-lordosis/"
+        url: "/articles/cervical-kyphosis-vs-loss-lordosis/"
       },
       {
         tag: "Red flags",
         title: "Radiculopathy and myelopathy warning signs",
         body:
           "A safer way to separate radiating arm pain, finger numbness, weakness, hand clumsiness, and gait changes.",
-        url: "/en/articles/cervical-radiculopathy-myelopathy-red-flags/"
+        url: "/articles/cervical-radiculopathy-myelopathy-red-flags/"
       },
       {
         tag: "Rehab expectations",
         title: "Can cervical curve be restored?",
         body:
           "Why this site does not promise curve restoration, and what to track instead: pain, numbness, sleep, motion, strength, and tolerance.",
-        url: "/en/articles/can-cervical-curve-be-restored/"
+        url: "/articles/can-cervical-curve-be-restored/"
       },
       {
         tag: "Treatment boundaries",
         title: "Traction, pillows, massage, and manipulation",
         body:
           "A conservative guide to common tools, what they may help, and when self-treatment is not appropriate.",
-        url: "/en/articles/traction-pillow-manipulation-risk-guide/"
+        url: "/articles/traction-pillow-manipulation-risk-guide/"
       }
     ],
     sourceNote: "Used for medical framing, symptom education, sport loading, and video curation.",
@@ -1194,42 +1194,42 @@ const content = {
         title: "手指麻木地图：颈椎神经根还是周围神经？",
         body:
           "保守梳理拇指、食指、中指、无名指、小指麻木对应的颈椎神经根、腕管、尺神经、桡神经和胸廓出口线索。",
-        url: "/articles/finger-numbness-nerve-map/"
+        url: "/zh/articles/finger-numbness-nerve-map/"
       },
       {
         tag: "运动专题",
         title: "颈椎反弓还能冲浪、滑雪/单板或攀岩吗？",
         body:
           "解释冲浪划水、滑雪和单板冲击风险、攀岩保护仰头姿势，以及用 24 小时症状规则回归运动。",
-        url: "/articles/sports-neck-load-return-guide/"
+        url: "/zh/articles/sports-neck-load-return-guide/"
       },
       {
         tag: "影像解读",
         title: "颈椎反弓、后凸和曲度变直有什么区别？",
         body:
           "把报告里的曲度变直、反弓、后凸和 loss of lordosis 翻译成人话，避免把影像词直接当成疼痛诊断。",
-        url: "/articles/cervical-kyphosis-vs-loss-lordosis/"
+        url: "/zh/articles/cervical-kyphosis-vs-loss-lordosis/"
       },
       {
         tag: "危险信号",
         title: "神经根病和脊髓受压哪些症状不能拖？",
         body:
           "区分手臂放射痛、手麻、无力、手变笨、走路不稳等线索，说明什么时候应尽快就医。",
-        url: "/articles/cervical-radiculopathy-myelopathy-red-flags/"
+        url: "/zh/articles/cervical-radiculopathy-myelopathy-red-flags/"
       },
       {
         tag: "康复预期",
         title: "颈椎曲度能练回来吗？",
         body:
           "解释为什么本站不承诺恢复曲度，并给出更可靠的追踪指标：疼痛、手麻、睡眠、活动和力量耐受。",
-        url: "/articles/can-cervical-curve-be-restored/"
+        url: "/zh/articles/can-cervical-curve-be-restored/"
       },
       {
         tag: "治疗边界",
         title: "牵引、枕头、按摩和正骨怎么判断？",
         body:
           "保守解释常见工具可能帮什么、不能承诺什么，以及哪些症状不适合自行尝试。",
-        url: "/articles/traction-pillow-manipulation-risk-guide/"
+        url: "/zh/articles/traction-pillow-manipulation-risk-guide/"
       }
     ],
     sourceNote: "用于医学框架、症状教育、运动负荷和视频选择。",
@@ -2278,20 +2278,11 @@ function isSupportedLanguage(lang) {
 }
 
 function getInitialLanguage() {
+  // Language is determined by URL. Root namespace ("/", "/articles/...") is English.
+  // Localized content lives under /zh/, /ja/, /es/.
   const pathLang = window.location.pathname.split("/").filter(Boolean)[0];
-  if (isSupportedLanguage(pathLang)) return pathLang;
-
-  const params = new URLSearchParams(window.location.search);
-  const urlLang = params.get("lang");
-  if (isSupportedLanguage(urlLang)) return urlLang;
-
-  const isRootPage = window.location.pathname === "/" || window.location.pathname.endsWith("/index.html");
-  if (isRootPage) return "zh";
-
-  const savedLang = localStorage.getItem("ccg_lang");
-  if (isSupportedLanguage(savedLang)) return savedLang;
-
-  return "zh";
+  if (pathLang === "zh" || pathLang === "ja" || pathLang === "es") return pathLang;
+  return "en";
 }
 
 function getCanonicalUrl(lang = state.lang) {
