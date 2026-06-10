@@ -173,6 +173,57 @@ const languages = {
   }
 };
 
+// ---------------------------------------------------------------------------
+// SAFETY GUARD — added 2026-06-10. DO NOT REMOVE without reading this.
+// This generator is PRE-migration: it routes zh at "/" and en at "/en/".
+// The LIVE site was migrated to English-default (en at "/", zh at "/zh/") and
+// then hand-edited (expanded articles, thickened EN/JA hub pages, a static
+// ja homepage #overview section, /en/ redirect stubs). None of that lives in
+// this generator. Running it as-is would regenerate ~134 files, REVERT the
+// migration, and OVERWRITE all of that hand-written content.
+// The guard aborts when it detects the live tree is already English-default
+// but this config is still pre-migration. To genuinely revive the generator,
+// reconcile it first (swap prefixes + port the post-migration content), then
+// diff a sandbox rebuild against the live tree until it matches.
+// Escape hatch (only if you intentionally want the old pre-migration output):
+//   node scripts/build-growth.mjs --force-prerevert
+// ---------------------------------------------------------------------------
+{
+  const liveIsEnglishDefault =
+    existsSync("zh/index.html") || existsSync("zh/symptoms/index.html");
+  const generatorIsPreMigration =
+    languages.zh.prefix === "" && languages.en.prefix === "/en";
+  if (
+    liveIsEnglishDefault &&
+    generatorIsPreMigration &&
+    !process.argv.includes("--force-prerevert")
+  ) {
+    console.error(
+      [
+        "",
+        "✋ build-growth.mjs ABORTED — it is OUT OF SYNC with the live site.",
+        "",
+        "The live site is English-default (en at '/', zh at '/zh/'), but this",
+        "generator still routes zh at '/' and en at '/en/'. Running it would:",
+        "  • revert the English-default migration (~134 files), and",
+        "  • overwrite the hand-written hub/article/ja content (2026-06-10).",
+        "",
+        "Before using this generator again, reconcile it with the live tree:",
+        "  1) swap language prefixes  (en -> prefix '', home '/';  zh -> '/zh', '/zh/')",
+        "  2) port post-migration hand edits into the generator's data",
+        "     (expanded articles, thickened EN/JA hubs, ja homepage #overview,",
+        "      prerendered homepages, /en/ redirect stubs)",
+        "  3) rebuild in a sandbox copy and diff against the live tree until equal",
+        "",
+        "Intentionally want the OLD pre-migration output? Re-run with:",
+        "  node scripts/build-growth.mjs --force-prerevert",
+        ""
+      ].join("\n")
+    );
+    process.exit(1);
+  }
+}
+
 const sources = {
   radiculopathy: {
     label: "AAOS OrthoInfo: Cervical Radiculopathy",
