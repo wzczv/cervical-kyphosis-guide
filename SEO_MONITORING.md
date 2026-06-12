@@ -1,6 +1,6 @@
 # Cervical Curve Guide SEO Monitoring
 
-Last updated: 2026-06-09
+Last updated: 2026-06-12
 
 ## Current Verified Setup
 
@@ -8,9 +8,9 @@ Last updated: 2026-06-09
 | --- | --- | --- |
 | HTTPS | Done | `https://cervicalcurveguide.com/` returns 200; `http://` redirects to HTTPS |
 | Google Search Console | Done | Property: `https://cervicalcurveguide.com/` |
-| Google sitemap | Done | GSC Sitemaps: `/sitemap.xml`, status `Success`; discovered URLs updated to 152 on 2026-06-10 |
-| Bing Webmaster Tools | Done | Site: `cervicalcurveguide.com`; sitemap status `Success`, 120 discovered URLs on 2026-06-10; still lagging current 152-URL sitemap |
-| IndexNow | Done | Key file: `/16d893c718cadee9837fbde922d08c8f.txt`; API accepted 152 sitemap URLs |
+| Google sitemap | Done | GSC Sitemaps: `/sitemap.xml`, status `Success`; discovered URLs updated to 180 on 2026-06-12 |
+| Bing Webmaster Tools | Done | Site: `cervicalcurveguide.com`; sitemap status `Success`, 120 discovered URLs on 2026-06-12; still lagging current 180-URL sitemap |
+| IndexNow | Done | Key file: `/16d893c718cadee9837fbde922d08c8f.txt`; Bing IndexNow UI shows 180 self-submitted URLs at 2026-06-12 12:06 |
 | GA4 | Done | Property: `Cervical Curve Guide`; measurement ID `G-L8TWWKFELJ` |
 
 ## Daily Search Console Check
@@ -19,6 +19,7 @@ Last updated: 2026-06-09
 | --- | --- | ---: | ---: | --- | --- | --- |
 | 2026-06-09 | Success | 36 visible in GSC after resubmitting expanded 120-URL sitemap; processing may lag | Homepage URL Inspection says indexed; priority article pages requested and pending | Page indexing report still processing; new URLs may need crawl/index time | Homepage plus 5 priority article URLs checked/requested | Public Google `site:` visibility may lag behind URL Inspection; Bing sitemap resubmitted and processing 36 at latest check |
 | 2026-06-10 | Success | 152 visible in GSC sitemap report | Homepage and 5 priority article URL Inspection checks show indexed/on Google | Page indexing overview still says processing data; full coverage totals may lag | Homepage plus 5 priority article URLs checked | Public Google `site:cervicalcurveguide.com` shows homepage and multiple hub/language pages; Bing sitemap is Success but still shows 120 discovered URLs |
+| 2026-06-12 | Success | 180 visible in GSC sitemap report | Homepage and 5 priority article URL Inspection checks show indexed/on Google | No issue observed in sampled URLs; broad coverage totals can still lag after content expansion | Homepage plus 5 priority article URLs checked | Public Google `site:cervicalcurveguide.com` shows homepage plus diagnosis, symptoms, sports, exercises, multilingual pages; Bing sitemap remains Success/120, but IndexNow lists 180 submitted URLs |
 
 ## Key Queries To Track Weekly
 
@@ -67,6 +68,9 @@ Last updated: 2026-06-09
 | 2026-06-09 | IndexNow API | 152 sitemap URLs | Accepted by IndexNow and Bing IndexNow endpoints after adding the cervical curve pillar page | Recheck Bing discovery and Google public visibility after processing |
 | 2026-06-10 | Google Search Console | `https://cervicalcurveguide.com/sitemap.xml` | Success; discovered URLs updated to 152; last read 2026-06-10 | Recheck full Page Indexing report after processing completes |
 | 2026-06-10 | Bing Webmaster Tools | `https://cervicalcurveguide.com/sitemap.xml` | Success; 120 URLs discovered; last submit/crawl shown as 2026-06-09 | Recheck for 152 discovered URLs in the 72-hour window |
+| 2026-06-12 | Google Search Console | `https://cervicalcurveguide.com/sitemap.xml` | Success; discovered URLs updated to 180; last read 2026-06-12 | Continue normal weekly monitoring |
+| 2026-06-12 | Bing Webmaster Tools | `https://cervicalcurveguide.com/sitemap.xml` | Success; 120 URLs discovered; last submit/crawl still shown as 2026-06-09 | Bing sitemap discovery is lagging current 180-URL sitemap |
+| 2026-06-12 | Bing IndexNow | 180 URLs visible in IndexNow list | UI shows self-submitted URLs today at 12:06 and 360 submitted in the last 13 hours | Let Bing sitemap discovery catch up; IndexNow submission itself is visible |
 
 ## Weekly Quality Checks
 
