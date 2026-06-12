@@ -6,7 +6,7 @@ Timezone: Asia/Shanghai
 ## Current Baseline
 
 - Domain: `cervicalcurveguide.com`
-- Live sitemap: `152` page URLs.
+- Live sitemap: `180` page URLs after the 2026-06-12 long-tail sprint.
 - GA4 property: `Cervical Curve Guide`
 - GA4 latest check on 2026-06-09: last 7 days active users `0`, events `0`, new users `0`; realtime active users `0`.
 - GSC latest check on 2026-06-09: Performance report says data is still processing; table has no clicks or impressions yet.
@@ -109,7 +109,12 @@ Check these first in URL Inspection and in the Pages/Performance reports:
 7. `https://cervicalcurveguide.com/articles/cervical-kyphosis-vs-loss-lordosis/`
 8. `https://cervicalcurveguide.com/printable-neck-symptom-tracker/`
 9. `https://cervicalcurveguide.com/tools/`
-10. `https://cervicalcurveguide.com/en/cervical-curve/`
+10. `https://cervicalcurveguide.com/articles/is-loss-of-cervical-lordosis-serious/`
+11. `https://cervicalcurveguide.com/articles/mild-cervical-kyphosis-symptoms/`
+12. `https://cervicalcurveguide.com/articles/can-cervical-kyphosis-cause-hand-numbness/`
+13. `https://cervicalcurveguide.com/articles/normal-cervical-lordosis-vs-straight-neck/`
+14. `https://cervicalcurveguide.com/articles/cervical-kyphosis-exercises-to-avoid/`
+15. `https://cervicalcurveguide.com/articles/c6-c7-numbness-thumb-index-middle-finger/`
 
 ## First 7-Day Plan
 
@@ -182,6 +187,10 @@ Every week:
 | Date | GSC clicks | GSC impressions | Avg position | Indexed pages | Sitemap discovered URLs | GA4 7-day users | GA4 realtime self-test | Notes | Next action |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
 | 2026-06-09 | 0 | 0 | n/a | Homepage eligible/indexed; report still processing | 36 visible in previous GSC note; live sitemap has 152 URLs | 0 | Not yet confirmed by self-test | GSC Performance still processing; GA4 shows no data | Recheck on 2026-06-10 |
+| 2026-06-10 | 0 | 0 | n/a | Processing; counts unavailable | 152 | 2 | Realtime active users 0 | GSC Performance and Pages still processing; sitemap `/sitemap.xml` was read on 2026-06-10 and is successful. GA4 now shows Direct 6 sessions and Organic Search 2 sessions in the early traffic data. | Recheck GSC tomorrow; if still no Performance data, inspect the top 5 priority URLs. |
+| 2026-06-10 follow-up | 0 | 0 | n/a | Public priority URLs return 200 with indexable canonicals; old `/en/` URLs are noindex meta-refresh fallbacks | 156 live sitemap URLs; local sitemap files all exist | 2 | Front-end consent logic passed; GA4 dashboard realtime still needs logged-in confirmation | Top priority URLs are reachable, indexable, and load analytics script. Added Cloudflare Pages `_redirects` and Netlify forced 301 rules for old `/en/*` paths. | Confirm GA4 realtime in the logged-in dashboard, then execute D1 no-link community warm-up comments. |
+| 2026-06-11 | 0 | 0 | n/a | Processing; counts unavailable | 156 | 4 | Realtime active users 0 | GSC Performance now loads but still has 0 clicks and 0 impressions; Pages report is still processing. GA4 shows 73 events, 15 sessions, Direct 8 sessions, and Organic Search 7 sessions in the last 7 days. | Continue daily GSC watch; if GSC remains 0 on 2026-06-12, start the discovery-seed actions in the plan. |
+| 2026-06-12 | 2 | 22 | 59 | Processing; counts unavailable | 180 after local build | 4 | Realtime active users 0 | GSC Performance is now live: 2 clicks, 22 impressions, 9.1% CTR, average position 59, and 14 query rows. Early query impressions include `cervical kyphosis symptoms`, `normal cervical curvature`, `cervical lordosis 中文`, and `loss of normal cervical lordosis`. GA4 remains at 4 active users, 73 events, Direct 8 sessions, and Organic Search 7 sessions over the last 7 days. | Early-query optimization executed on canonical English URLs and second long-tail sprint generated 6 new article topics across 4 languages: loss of lordosis serious, mild kyphosis symptoms, hand numbness, normal lordosis vs straight neck, exercises to avoid, and C6/C7 finger numbness. Next: deploy, submit the 6 new English URLs in GSC, then publish only high-fit external seed answers/pins. |
 
 ## What Not To Do Yet
 

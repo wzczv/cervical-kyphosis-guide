@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500" role="img" aria-label="Is A Neck Exercise Helping?">
+  <rect width="1000" height="1500" fill="#f7fbfa"/>
+  <rect x="58" y="54" width="884" height="1392" rx="36" fill="#ffffff" stroke="#d9e5e2" stroke-width="4"/>
+  <text x="500" y="162" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="48" font-weight="800"><tspan x="500">Is A Neck Exercise Helping?</tspan></text>
+  <text x="500" y="282" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="29" font-weight="600"><tspan x="500">Use a 24-hour symptom response chart before</tspan><tspan x="500" dy="40">adding more load.</tspan></text>
+  <rect x="90" y="420" width="820" height="520" rx="28" fill="#f7fbfa" stroke="#d9e5e2" stroke-width="3"/>
+  <text x="500" y="494" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="34" font-weight="800">24-Hour Neck Symptom Response</text>
+  <g transform="translate(132 550)">
+    <rect width="220" height="290" rx="24" fill="#ffffff" stroke="#d9e5e2" stroke-width="4"/>
+    <circle cx="110" cy="70" r="44" fill="#4d8061"/>
+    <text x="110" y="82" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="800">Green</text>
+    <text x="110" y="154" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="23" font-weight="800"><tspan x="110">Local or stable</tspan><tspan x="110" dy="32">symptoms</tspan></text>
+    <text x="110" y="240" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="20"><tspan x="110">Progress slowly</tspan></text>
+  </g>
+  <g transform="translate(390 550)">
+    <rect width="220" height="290" rx="24" fill="#ffffff" stroke="#d9e5e2" stroke-width="4"/>
+    <circle cx="110" cy="70" r="44" fill="#c8902f"/>
+    <text x="110" y="82" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="800">Yellow</text>
+    <text x="110" y="154" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="23" font-weight="800"><tspan x="110">Pain or sleep</tspan><tspan x="110" dy="32">gets worse</tspan></text>
+    <text x="110" y="240" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="20"><tspan x="110">Deload and watch</tspan></text>
+  </g>
+  <g transform="translate(648 550)">
+    <rect width="220" height="290" rx="24" fill="#ffffff" stroke="#d9e5e2" stroke-width="4"/>
+    <circle cx="110" cy="70" r="44" fill="#d8644a"/>
+    <text x="110" y="82" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="800">Red</text>
+    <text x="110" y="154" text-anchor="middle" fill="#162026" font-family="Arial, sans-serif" font-size="23" font-weight="800"><tspan x="110">Weakness or</tspan><tspan x="110" dy="32">numbness</tspan></text>
+    <text x="110" y="240" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="20"><tspan x="110">Stop and assess</tspan></text>
+  </g>
+  <text x="500" y="898" text-anchor="middle" fill="#5b6a72" font-family="Arial, sans-serif" font-size="22">Educational log only; not medical advice.</text>
+  <rect x="150" y="1018" width="700" height="164" rx="28" fill="#162026"/>
+  <text x="500" y="1084" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="38" font-weight="800">Save this visual guide</text>
+  <text x="500" y="1136" text-anchor="middle" fill="#d9e5e2" font-family="Arial, sans-serif" font-size="27">Educational only, not a diagnosis</text>
+  <text x="500" y="1282" text-anchor="middle" fill="#167a7f" font-family="Arial, sans-serif" font-size="31" font-weight="800">cervicalcurveguide.com</text>
+  <text x="500" y="1334" text-anchor="middle" fill="#167a7f" font-family="Arial, sans-serif" font-size="25" font-weight="700">/images/24-hour-neck-symptom-response-chart/</text>
+</svg>

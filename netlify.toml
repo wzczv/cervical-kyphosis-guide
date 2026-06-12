@@ -1,0 +1,20 @@
+# Permanent redirects for the old English prefix after English became root.
+# These are forced because the legacy /en fallback files still exist in the tree.
+
+[[redirects]]
+  from = "/en"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/*"
+  to = "/:splat"
+  status = 301
+  force = true

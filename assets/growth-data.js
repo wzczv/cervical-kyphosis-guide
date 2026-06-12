@@ -128,6 +128,42 @@ window.CCG_GROWTH = {
         "url": "/zh/articles/climbing-belay-neck-pain/"
       },
       {
+        "tag": "影像解释",
+        "title": "颈椎生理曲度变直严重吗？",
+        "body": "把 loss of cervical lordosis 当作影像描述来读，而不是直接当成严重诊断。真正改变优先级的是外伤、神经症状、功能下降和体格检查。",
+        "url": "/zh/articles/is-loss-of-cervical-lordosis-serious/"
+      },
+      {
+        "tag": "影像解释",
+        "title": "轻度颈椎反弓会有什么症状？",
+        "body": "轻度 cervical kyphosis 报告词不等于症状一定轻，也不等于一定严重。需要把局部颈痛、手臂症状、红旗和 24 小时反应分开看。",
+        "url": "/zh/articles/mild-cervical-kyphosis-symptoms/"
+      },
+      {
+        "tag": "症状专题",
+        "title": "颈椎反弓会导致手麻吗？",
+        "body": "手麻可能和颈神经根、椎间孔狭窄、椎间盘问题、腕管或尺神经有关。单靠颈椎反弓这个词，不能证明手麻来源。",
+        "url": "/zh/articles/can-cervical-kyphosis-cause-hand-numbness/"
+      },
+      {
+        "tag": "影像解释",
+        "title": "正常颈椎前凸 vs 颈椎变直：报告怎么读",
+        "body": "区分 normal cervical lordosis、straight neck、loss of lordosis 和 reversed curve，避免只凭一个词判断好坏。",
+        "url": "/zh/articles/normal-cervical-lordosis-vs-straight-neck/"
+      },
+      {
+        "tag": "练习边界",
+        "title": "颈椎反弓哪些练习先别硬做？",
+        "body": "没有一种动作对所有颈椎反弓都永远禁止，但症状加重、神经症状、外伤或不稳定风险出现时，某些拉伸、牵引和高负荷动作不适合硬扛。",
+        "url": "/zh/articles/cervical-kyphosis-exercises-to-avoid/"
+      },
+      {
+        "tag": "症状专题",
+        "title": "拇指、食指、中指麻：C6、C7 还是腕管？",
+        "body": "拇指、食指和中指麻木可能让人想到 C6/C7 神经根，也可能和腕管、尺神经或其他周围神经问题重叠。分布只是线索，不是诊断。",
+        "url": "/zh/articles/c6-c7-numbness-thumb-index-middle-finger/"
+      },
+      {
         "tag": "症状中心",
         "title": "手麻、手臂痛、头痛头晕和危险信号",
         "body": "从症状进入，而不是从影像恐慌开始。这里整理手指麻木、神经根、脊髓危险信号、晨起手麻和头痛头晕的保守判断路径。",
@@ -284,6 +320,42 @@ window.CCG_GROWTH = {
         "title": "Belayer neck pain: belaying is load too",
         "body": "Many climbers tolerate climbing but flare while belaying because prolonged upward gaze keeps the cervical spine extended. Belay volume should be tracked like training volume.",
         "url": "/articles/climbing-belay-neck-pain/"
+      },
+      {
+        "tag": "Imaging explainer",
+        "title": "Is loss of cervical lordosis serious?",
+        "body": "How to read loss of normal cervical lordosis without panic: when it is an imaging description, when symptoms matter, and what to track next.",
+        "url": "/articles/is-loss-of-cervical-lordosis-serious/"
+      },
+      {
+        "tag": "Imaging explainer",
+        "title": "Mild cervical kyphosis symptoms: what to watch",
+        "body": "A conservative guide to mild cervical kyphosis symptoms, from local neck stiffness to arm pain, finger numbness, weakness, and red flags.",
+        "url": "/articles/mild-cervical-kyphosis-symptoms/"
+      },
+      {
+        "tag": "Symptom guide",
+        "title": "Can cervical kyphosis cause hand numbness?",
+        "body": "Cervical kyphosis can coexist with nerve-root irritation, foraminal narrowing, disc findings, carpal tunnel, or ulnar nerve irritation, but the curve word alone does not prove the source of numbness.",
+        "url": "/articles/can-cervical-kyphosis-cause-hand-numbness/"
+      },
+      {
+        "tag": "Imaging explainer",
+        "title": "Normal cervical lordosis vs straight neck: how to read the wording",
+        "body": "A plain-language comparison of normal cervical lordosis, straight neck, loss of lordosis, and reversed cervical curve.",
+        "url": "/articles/normal-cervical-lordosis-vs-straight-neck/"
+      },
+      {
+        "tag": "Exercise boundaries",
+        "title": "Cervical kyphosis exercises to avoid: what not to force",
+        "body": "There is no single exercise that every person with cervical kyphosis must avoid forever, but symptom-provoking stretches, traction, and heavy loading should be treated carefully.",
+        "url": "/articles/cervical-kyphosis-exercises-to-avoid/"
+      },
+      {
+        "tag": "Symptom guide",
+        "title": "C6 C7 numbness in the thumb, index, or middle finger",
+        "body": "Thumb, index, and middle-finger numbness may suggest C6 or C7 nerve-root clues, but it can also overlap with carpal tunnel, ulnar nerve, or other peripheral nerve patterns.",
+        "url": "/articles/c6-c7-numbness-thumb-index-middle-finger/"
       },
       {
         "tag": "Symptom hub",
@@ -444,6 +516,42 @@ window.CCG_GROWTH = {
         "url": "/ja/articles/climbing-belay-neck-pain/"
       },
       {
+        "tag": "画像解説",
+        "title": "頸椎前弯消失は重い状態？",
+        "body": "前弯消失という画像表現を、すぐ重症診断として読まないための整理です。外傷、神経症状、機能低下、診察所見が優先度を変えます。",
+        "url": "/ja/articles/is-loss-of-cervical-lordosis-serious/"
+      },
+      {
+        "tag": "画像解説",
+        "title": "軽度頸椎後弯の症状：何を見る？",
+        "body": "軽度頸椎後弯の症状を、局所のこわばり、腕痛、指のしびれ、筋力低下、危険サインに分けて整理します。",
+        "url": "/ja/articles/mild-cervical-kyphosis-symptoms/"
+      },
+      {
+        "tag": "症状ガイド",
+        "title": "頸椎後弯で手がしびれる？",
+        "body": "頸椎後弯は神経根刺激、椎間孔狭窄、椎間板所見、手根管、尺骨神経刺激と同時に見られることがありますが、カーブ語だけで原因は証明できません。",
+        "url": "/ja/articles/can-cervical-kyphosis-cause-hand-numbness/"
+      },
+      {
+        "tag": "画像解説",
+        "title": "正常頸椎前弯 vs ストレートネック：用語の読み方",
+        "body": "正常頸椎前弯、ストレートネック、前弯消失、逆カーブをやさしく比較します。",
+        "url": "/ja/articles/normal-cervical-lordosis-vs-straight-neck/"
+      },
+      {
+        "tag": "運動の境界",
+        "title": "頸椎後弯で無理しない方がよい運動",
+        "body": "全員が永遠に避ける一つの運動はありませんが、症状を悪化させるストレッチ、牽引、高負荷は慎重に扱います。",
+        "url": "/ja/articles/cervical-kyphosis-exercises-to-avoid/"
+      },
+      {
+        "tag": "症状ガイド",
+        "title": "親指・人差し指・中指のしびれ：C6/C7？手根管？",
+        "body": "親指、人差し指、中指のしびれはC6/C7神経根を考える手がかりになりますが、手根管、尺骨神経、他の末梢神経とも重なります。",
+        "url": "/ja/articles/c6-c7-numbness-thumb-index-middle-finger/"
+      },
+      {
         "tag": "症状ハブ",
         "title": "手のしびれ、腕痛、頭痛、めまい、危険サイン",
         "body": "画像への不安からではなく症状から入ります。指のしびれ、神経根、脊髄サイン、朝のしびれ、頭痛、めまいを整理します。",
@@ -600,6 +708,42 @@ window.CCG_GROWTH = {
         "title": "Dolor de cuello del asegurador: asegurar también carga",
         "body": "Muchos escaladores toleran escalar pero se irritan asegurando porque mirar arriba mantiene extensión cervical. El volumen de asegurar también debe registrarse.",
         "url": "/es/articles/climbing-belay-neck-pain/"
+      },
+      {
+        "tag": "Explicador de imagen",
+        "title": "¿La pérdida de lordosis cervical es grave?",
+        "body": "Cómo leer pérdida de lordosis cervical normal sin pánico: cuándo es una descripción de imagen, cuándo importan síntomas y qué seguir.",
+        "url": "/es/articles/is-loss-of-cervical-lordosis-serious/"
+      },
+      {
+        "tag": "Explicador de imagen",
+        "title": "Síntomas de cifosis cervical leve: qué vigilar",
+        "body": "Guía conservadora sobre síntomas de cifosis cervical leve: rigidez local, dolor de brazo, dedos dormidos, debilidad y alarmas.",
+        "url": "/es/articles/mild-cervical-kyphosis-symptoms/"
+      },
+      {
+        "tag": "Guía de síntomas",
+        "title": "¿La cifosis cervical puede causar manos dormidas?",
+        "body": "Puede coexistir con irritación de raíz nerviosa, estrechamiento foraminal, hallazgos discales, túnel carpiano o nervio cubital, pero la palabra de curva no prueba la fuente.",
+        "url": "/es/articles/can-cervical-kyphosis-cause-hand-numbness/"
+      },
+      {
+        "tag": "Explicador de imagen",
+        "title": "Lordosis cervical normal vs cuello recto: cómo leerlo",
+        "body": "Comparación sencilla de lordosis cervical normal, cuello recto, pérdida de lordosis y curva cervical invertida.",
+        "url": "/es/articles/normal-cervical-lordosis-vs-straight-neck/"
+      },
+      {
+        "tag": "Límites de ejercicio",
+        "title": "Ejercicios a evitar con cifosis cervical: qué no forzar",
+        "body": "No hay un ejercicio que todos deban evitar para siempre, pero estiramientos, tracción y cargas que provocan síntomas deben manejarse con cuidado.",
+        "url": "/es/articles/cervical-kyphosis-exercises-to-avoid/"
+      },
+      {
+        "tag": "Guía de síntomas",
+        "title": "Entumecimiento C6 C7 en pulgar, índice o dedo medio",
+        "body": "Pulgar, índice y dedo medio dormidos pueden sugerir pistas de C6 o C7, pero también se superponen con túnel carpiano, nervio cubital u otros nervios.",
+        "url": "/es/articles/c6-c7-numbness-thumb-index-middle-finger/"
       },
       {
         "tag": "Hub de síntomas",

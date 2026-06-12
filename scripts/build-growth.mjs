@@ -5,13 +5,19 @@ import { dirname, join } from "node:path";
 const baseUrl = "https://cervicalcurveguide.com";
 const version = "20260609-pillar";
 const reviewDate = "2026-06-09";
+const sitemapLastmod = "2026-06-12";
+const generatedHtmlFiles = new Set();
+const skippedExistingHtmlFiles = new Set();
+const overwriteExistingHtml = process.argv.includes("--overwrite-existing");
+const overwriteTrafficSprintHtml = process.argv.includes("--overwrite-traffic-sprint");
+const trafficSprintHtmlFiles = new Set();
 
 const languages = {
   zh: {
     htmlLang: "zh-Hans",
     hreflang: "zh-Hans",
-    prefix: "",
-    home: "/",
+    prefix: "/zh",
+    home: "/zh/",
     short: "中文",
     label: "中文",
     read: "继续阅读",
@@ -51,8 +57,8 @@ const languages = {
   en: {
     htmlLang: "en",
     hreflang: "en",
-    prefix: "/en",
-    home: "/en/",
+    prefix: "",
+    home: "/",
     short: "EN",
     label: "English",
     read: "Read more",
@@ -175,12 +181,12 @@ const languages = {
 
 // ---------------------------------------------------------------------------
 // SAFETY GUARD — added 2026-06-10. DO NOT REMOVE without reading this.
-// This generator is PRE-migration: it routes zh at "/" and en at "/en/".
-// The LIVE site was migrated to English-default (en at "/", zh at "/zh/") and
-// then hand-edited (expanded articles, thickened EN/JA hub pages, a static
-// ja homepage #overview section, /en/ redirect stubs). None of that lives in
-// this generator. Running it as-is would regenerate ~134 files, REVERT the
-// migration, and OVERWRITE all of that hand-written content.
+// This guard catches the old PRE-migration routing shape: zh at "/" and en at
+// "/en/". The LIVE site was migrated to English-default (en at "/", zh at
+// "/zh/") and then hand-edited (expanded articles, thickened EN/JA hub pages,
+// a static ja homepage #overview section, /en/ redirect stubs). If this config
+// ever drifts back to the old routing, running it would regenerate ~134 files,
+// REVERT the migration, and OVERWRITE that hand-written content.
 // The guard aborts when it detects the live tree is already English-default
 // but this config is still pre-migration. To genuinely revive the generator,
 // reconcile it first (swap prefixes + port the post-migration content), then
@@ -302,6 +308,16 @@ const existingArticles = [
       en: ["Sport guide", "Can you surf, ski, snowboard, or climb with cervical kyphosis?", "A return-to-sport framework for paddling, snow impact risk, belay posture, and symptom response."],
       ja: ["スポーツ特集", "頸椎後弯でもサーフィン、スキー、スノーボード、クライミングはできる？", "パドリング、雪上衝撃、ビレイ姿勢を24時間ルールで整理します。"],
       es: ["Guía deportiva", "¿Puedes surfear, esquiar, hacer snowboard o escalar con cifosis cervical?", "Marco de vuelta al deporte para remada, nieve, aseguramiento y respuesta de síntomas."]
+    }
+  },
+  {
+    slug: "surfing-cervical-kyphosis-rehab-experience",
+    category: "sports",
+    cards: {
+      zh: ["亲历记录", "颈椎反弓 + 冲浪：我亲历的康复动作清单", "第一人称记录：哪些动作帮到我，哪些反而让右手更麻，以及如何用 24 小时反应回到划水。"],
+      en: ["Personal experience", "Cervical kyphosis + surfing: my rehab exercise list", "A first-person note on drills that helped, drills that made hand numbness worse, and a thoracic-led return-to-surf framework."],
+      ja: ["体験記", "頸椎後弯とサーフィン：私のリハビリ運動リスト", "役立った運動、手のしびれが悪化した運動、24時間反応でサーフィンへ戻る考え方。"],
+      es: ["Experiencia", "Cifosis cervical y surf: mi lista de ejercicios", "Nota personal sobre ejercicios que ayudaron, los que empeoraron la mano dormida y un retorno al surf guiado por la respuesta de 24 horas."]
     }
   },
   {
@@ -433,8 +449,173 @@ const newArticles = [
   })
 ];
 
-function topic(slug, category, sourceList, translations) {
-  return { slug, category, sources: sourceList, translations };
+const trafficSprintArticles = [
+  topic("is-loss-of-cervical-lordosis-serious", "diagnosis", [sources.lordosisReview, sources.neckPainGuideline, sources.spineBasics], {
+    zh: ["影像解释", "颈椎生理曲度变直严重吗？", "把 loss of cervical lordosis 当作影像描述来读，而不是直接当成严重诊断。真正改变优先级的是外伤、神经症状、功能下降和体格检查。", "曲度变直可以和疼痛保护、姿势、拍片体位或退变相关；是否严重取决于症状是否进展、有没有无力麻木扩散、手变笨或走路变化。", ["报告词本身不是严重程度。", "红旗症状比曲度形状更重要。", "先记录症状和功能，再谈曲度。"]],
+    en: ["Imaging explainer", "Is loss of cervical lordosis serious?", "How to read loss of normal cervical lordosis without panic: when it is an imaging description, when symptoms matter, and what to track next.", "Loss of lordosis can be a posture, guarding, positioning, or degenerative finding. The priority changes when trauma, progressive neurological symptoms, cord signs, or function loss are present.", ["Report wording alone is not a severity score.", "Red flags outrank curve shape.", "Track symptoms and function before chasing curve correction."]],
+    ja: ["画像解説", "頸椎前弯消失は重い状態？", "前弯消失という画像表現を、すぐ重症診断として読まないための整理です。外傷、神経症状、機能低下、診察所見が優先度を変えます。", "前弯消失は姿勢、防御性筋緊張、撮影姿勢、加齢変化と関連することがあります。進行するしびれや筋力低下、手の不器用さ、歩行変化が重要です。", ["報告語だけでは重症度は決まらない。", "危険サインはカーブ形状より優先。", "カーブ修正より症状と機能を記録する。"]],
+    es: ["Explicador de imagen", "¿La pérdida de lordosis cervical es grave?", "Cómo leer pérdida de lordosis cervical normal sin pánico: cuándo es una descripción de imagen, cuándo importan síntomas y qué seguir.", "Puede relacionarse con postura, protección por dolor, posición de la radiografía o cambios degenerativos. La prioridad cambia con trauma, síntomas neurológicos progresivos, signos medulares o pérdida funcional.", ["La frase del informe no es una escala de gravedad.", "Las alarmas pesan más que la forma de la curva.", "Registra síntomas y función antes de perseguir la curva."]]
+  }, {
+    zh: [
+      ["什么时候通常不算紧急", ["单独一句 loss of normal cervical lordosis、颈椎曲度变直或 straight neck，通常只是描述这张片子上的排列。它不能单独证明疼痛来源、永久损伤或必须立刻做强刺激治疗。", { html: `如果主要问题是曲度形状本身，先看 <a href="${localizedPath("zh", "images/cervical-curve-diagram")}">颈椎曲度图解</a> 和 <a href="${localizedPath("zh", "cervical-curve")}">颈椎曲度指南</a>，再把报告词和症状放在一起读。` }]],
+      ["什么时候需要更快评估", ["当报告词伴随外伤、进行性手臂痛、麻木扩散、真实无力、手变笨、走路不稳、大小便异常、发热、肿瘤病史或疼痛持续加重时，优先级会改变。", { html: `这些情况更适合参考 <a href="${articlePath("zh", "cervical-radiculopathy-myelopathy-red-flags")}">神经根病和脊髓受压红旗指南</a>，而不是继续加码网上姿势练习。` }]],
+      ["下一步怎么做", ["记录能观察到的内容：疼痛位置、手臂或手指症状、睡眠、工作耐受、运动后反应、握力、平衡，以及 24 小时内症状是变稳还是累积。这个模式比反复盯着报告词更能指导下一步。"]]
+    ],
+    en: [
+      ["When it is usually less urgent", ["A single report phrase such as loss of normal cervical lordosis, straightened cervical curve, or straight neck often describes alignment on that image. It does not prove the pain source, permanent damage, or the need for aggressive treatment.", { html: `If your main question is the shape itself, compare it with the <a href="${localizedPath("en", "images/cervical-curve-diagram")}">normal cervical curve diagram</a> and the broader <a href="${localizedPath("en", "cervical-curve")}">cervical curve guide</a>.` }]],
+      ["When it deserves faster assessment", ["The report becomes more important when it travels with trauma, progressive arm pain, spreading numbness, real weakness, hand clumsiness, walking changes, bowel or bladder symptoms, fever, cancer history, or pain that is worsening instead of settling.", { html: `Those patterns belong with the <a href="${articlePath("en", "cervical-radiculopathy-myelopathy-red-flags")}">radiculopathy and myelopathy red flag guide</a>, not with more online posture drills.` }]],
+      ["What to do next", ["Track what you can actually observe: pain location, arm or finger symptoms, sleep, work tolerance, exercise response, grip, balance, and whether symptoms calm or accumulate over 24 hours. That pattern is more actionable than repeating the phrase from the report."]]
+    ],
+    ja: [
+      ["急ぎではないことが多い場合", ["loss of normal cervical lordosis、ストレートネック、前弯減少という一文だけなら、その画像での配列を表していることが多いです。それだけで痛みの原因、永久的な損傷、強い治療の必要性は決まりません。", { html: `形そのものが不安なら、まず <a href="${localizedPath("ja", "images/cervical-curve-diagram")}">頸椎カーブ図</a> と <a href="${localizedPath("ja", "cervical-curve")}">頸椎カーブガイド</a> で症状と一緒に確認します。` }]],
+      ["早めの評価が必要な場合", ["外傷、進行する腕痛、しびれの拡大、明らかな筋力低下、手の不器用さ、歩行変化、排尿排便異常、発熱、がんの既往、悪化し続ける痛みがある時は優先度が変わります。", { html: `そのようなパターンは、姿勢運動を増やすより <a href="${articlePath("ja", "cervical-radiculopathy-myelopathy-red-flags")}">神経根症・脊髄症の危険サイン</a> として扱います。` }]],
+      ["次に記録すること", ["痛みの場所、腕や指の症状、睡眠、仕事耐性、運動反応、握力、バランス、24時間で落ち着くか蓄積するかを記録します。報告語を繰り返すより、次の判断に役立ちます。"]]
+    ],
+    es: [
+      ["Cuándo suele ser menos urgente", ["Una frase aislada como pérdida de lordosis cervical normal, cuello rectificado o straight neck suele describir la alineación en esa imagen. No prueba por sí sola la fuente del dolor, daño permanente ni necesidad de tratamiento agresivo.", { html: `Si la duda principal es la forma, compárala con el <a href="${localizedPath("es", "images/cervical-curve-diagram")}">diagrama de curva cervical</a> y la <a href="${localizedPath("es", "cervical-curve")}">guía de curva cervical</a>.` }]],
+      ["Cuándo merece evaluación más rápida", ["La prioridad cambia si aparece con trauma, dolor de brazo progresivo, entumecimiento que se extiende, debilidad real, torpeza de mano, cambios al caminar, síntomas urinarios o intestinales, fiebre, antecedente de cáncer o dolor que sigue empeorando.", { html: `Esos patrones encajan mejor con la <a href="${articlePath("es", "cervical-radiculopathy-myelopathy-red-flags")}">guía de alarmas de radiculopatía y mielopatía</a> que con más ejercicios posturales en línea.` }]],
+      ["Qué hacer después", ["Registra lo observable: ubicación del dolor, síntomas de brazo o dedos, sueño, tolerancia al trabajo, respuesta al ejercicio, agarre, equilibrio y si los síntomas se calman o se acumulan en 24 horas. Ese patrón orienta más que repetir la frase del informe."]]
+    ]
+  }),
+  topic("mild-cervical-kyphosis-symptoms", "diagnosis", [sources.clevelandKyphosis, sources.kyphosisReview, sources.neckPainGuideline], {
+    zh: ["影像解释", "轻度颈椎反弓会有什么症状？", "轻度 cervical kyphosis 报告词不等于症状一定轻，也不等于一定严重。需要把局部颈痛、手臂症状、红旗和 24 小时反应分开看。", "局部僵硬、疲劳、头痛和姿势敏感可以出现；手麻、无力、手变笨、走路问题或外伤后加重会改变处理优先级。", ["轻度影像不自动等于轻度症状。", "手臂和手指症状要单独筛查。", "下一步看进展和功能，而不是只看曲度词。"]],
+    en: ["Imaging explainer", "Mild cervical kyphosis symptoms: what to watch", "A conservative guide to mild cervical kyphosis symptoms, from local neck stiffness to arm pain, finger numbness, weakness, and red flags.", "Mild wording on a report does not always mean mild symptoms, and serious-sounding wording does not automatically mean an emergency. Symptom behavior decides the next step.", ["Mild imaging does not automatically mean mild symptoms.", "Arm and finger symptoms need their own screen.", "Progression and function matter more than the curve word alone."]],
+    ja: ["画像解説", "軽度頸椎後弯の症状：何を見る？", "軽度頸椎後弯の症状を、局所のこわばり、腕痛、指のしびれ、筋力低下、危険サインに分けて整理します。", "軽度という報告語は症状も軽いという意味ではありません。逆に強い言葉だけで緊急とは限りません。症状の変化が次の判断を決めます。", ["軽度画像=軽度症状とは限らない。", "腕や指の症状は別に確認する。", "曲度語より進行と機能を見る。"]],
+    es: ["Explicador de imagen", "Síntomas de cifosis cervical leve: qué vigilar", "Guía conservadora sobre síntomas de cifosis cervical leve: rigidez local, dolor de brazo, dedos dormidos, debilidad y alarmas.", "La palabra leve en un informe no siempre significa síntomas leves, y una frase seria no siempre significa urgencia. El comportamiento de los síntomas guía el siguiente paso.", ["Imagen leve no siempre significa síntomas leves.", "Síntomas de brazo y dedos necesitan cribado propio.", "Progresión y función importan más que la frase de curva."]]
+  }, {
+    zh: [
+      ["局部症状怎么读", ["局部颈部僵硬、上背疲劳、头痛和姿势敏感，可以出现在很多非急性的颈痛模式里。真正有用的问题是：症状是在稳定、改善，还是在日常负荷下逐渐累积。"]],
+      ["手臂或手指症状要单独看", [{ html: `放射性手臂痛、刺麻、麻木、无力、握力变化或手指症状，应结合 <a href="${localizedPath("zh", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 手指麻木地图</a> 和 <a href="${articlePath("zh", "cervical-radiculopathy-myelopathy-red-flags")}">红旗指南</a> 整理。曲度可能相关，但神经模式更决定优先级。` }]],
+      ["什么时候先降量", ["当症状扩散、力量下降、步态变化，或睡眠一晚比一晚差时，不要继续叠加拉伸或牵引。这和处理稳定的局部僵硬是完全不同的决策。"]]
+    ],
+    en: [
+      ["Local symptoms", ["Local neck stiffness, upper-back fatigue, headache, and position sensitivity can fit many non-emergency neck pain patterns. The useful question is whether symptoms are stable, improving, or accumulating with normal daily load."]],
+      ["Arm or finger symptoms", [{ html: `Radiating arm pain, tingling, numbness, weakness, grip change, or finger symptoms should be organized with the <a href="${localizedPath("en", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 finger numbness map</a> and the <a href="${articlePath("en", "cervical-radiculopathy-myelopathy-red-flags")}">red flag guide</a>. The curve may be relevant, but the neurological pattern decides urgency.` }]],
+      ["When to slow down", ["Do not keep adding stretches or traction when symptoms spread, strength drops, gait changes, or sleep is worsening night after night. That is a different decision than managing stable local stiffness."]]
+    ],
+    ja: [
+      ["局所症状の読み方", ["首のこわばり、上背部の疲れ、頭痛、姿勢で変わる痛みは、緊急ではない首痛パターンにも見られます。大切なのは、症状が安定しているか、改善しているか、日常負荷で蓄積しているかです。"]],
+      ["腕や指の症状は別に確認する", [{ html: `腕へ走る痛み、しびれ、感覚変化、筋力低下、握力変化、指の症状は <a href="${localizedPath("ja", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 指のしびれマップ</a> と <a href="${articlePath("ja", "cervical-radiculopathy-myelopathy-red-flags")}">危険サインガイド</a> で整理します。カーブより神経パターンが優先度を決めます。` }]],
+      ["量を下げる時", ["症状が広がる、筋力が落ちる、歩き方が変わる、睡眠が連日悪化する時は、ストレッチや牽引を増やしません。安定した局所のこわばりとは別の判断です。"]]
+    ],
+    es: [
+      ["Síntomas locales", ["Rigidez local del cuello, fatiga de espalda alta, dolor de cabeza y sensibilidad a la postura pueden encajar con muchos patrones no urgentes. La pregunta útil es si los síntomas están estables, mejoran o se acumulan con la carga diaria."]],
+      ["Síntomas de brazo o dedos", [{ html: `Dolor irradiado, hormigueo, entumecimiento, debilidad, cambio de agarre o síntomas de dedos se organizan mejor con el <a href="${localizedPath("es", "images/c6-c7-c8-finger-numbness-map")}">mapa C6 C7 C8</a> y la <a href="${articlePath("es", "cervical-radiculopathy-myelopathy-red-flags")}">guía de alarmas</a>. La curva puede importar, pero el patrón neurológico decide urgencia.` }]],
+      ["Cuándo bajar la carga", ["No sigas añadiendo estiramientos o tracción si los síntomas se extienden, baja la fuerza, cambia la marcha o el sueño empeora noche tras noche. No es la misma decisión que manejar rigidez local estable."]]
+    ]
+  }),
+  topic("can-cervical-kyphosis-cause-hand-numbness", "symptoms", [sources.radiculopathy, sources.ncbiRadiculopathy, sources.neckPainGuideline, sources.carpal], {
+    zh: ["症状专题", "颈椎反弓会导致手麻吗？", "手麻可能和颈神经根、椎间孔狭窄、椎间盘问题、腕管或尺神经有关。单靠颈椎反弓这个词，不能证明手麻来源。", "更可靠的线索是麻木区域、颈部动作是否诱发、咳嗽喷嚏是否加重、腕肘姿势、握力和症状是否进展。", ["曲度词不能单独解释手麻。", "颈源性和周围神经问题会重叠。", "无力或麻木扩散需要更快评估。"]],
+    en: ["Symptom guide", "Can cervical kyphosis cause hand numbness?", "Cervical kyphosis can coexist with nerve-root irritation, foraminal narrowing, disc findings, carpal tunnel, or ulnar nerve irritation, but the curve word alone does not prove the source of numbness.", "The useful clues are the numb area, neck-position triggers, cough or sneeze response, wrist and elbow position, grip change, and whether symptoms are progressing.", ["Curve wording alone cannot explain hand numbness.", "Neck and peripheral nerve patterns can overlap.", "Weakness or spreading numbness deserves faster assessment."]],
+    ja: ["症状ガイド", "頸椎後弯で手がしびれる？", "頸椎後弯は神経根刺激、椎間孔狭窄、椎間板所見、手根管、尺骨神経刺激と同時に見られることがありますが、カーブ語だけで原因は証明できません。", "しびれる場所、首の動き、咳やくしゃみ、手首や肘の姿勢、握力、進行の有無を合わせて見ます。", ["カーブ語だけで手のしびれは説明できない。", "首と末梢神経のパターンは重なる。", "筋力低下やしびれ拡大は早めに評価。"]],
+    es: ["Guía de síntomas", "¿La cifosis cervical puede causar manos dormidas?", "Puede coexistir con irritación de raíz nerviosa, estrechamiento foraminal, hallazgos discales, túnel carpiano o nervio cubital, pero la palabra de curva no prueba la fuente.", "Las pistas útiles son zona dormida, desencadenantes con el cuello, tos o estornudo, posición de muñeca/codo, agarre y progresión.", ["La curva sola no explica la mano dormida.", "Cuello y nervios periféricos se pueden superponer.", "Debilidad o entumecimiento que se extiende requiere evaluación."]]
+  }, {
+    zh: [
+      ["颈椎什么时候可能参与", ["如果手麻和颈部姿势相关，从颈部或肩胛区往手臂走，咳嗽或喷嚏会加重，或伴随相应无力、反射变化，就更需要考虑颈部神经根参与。"]],
+      ["为什么曲度本身不够", ["反弓或变直可以出现在影像上，但并不能证明某根神经被压迫。更可靠的判断需要症状、体格检查、影像和时间变化指向同一方向。"]],
+      ["先画分布，再筛风险", [{ html: `先用 <a href="${localizedPath("zh", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 手指麻木地图</a> 整理区域；如果有无力、手变笨、走路变化或麻木扩散，再看 <a href="${articlePath("zh", "cervical-radiculopathy-myelopathy-red-flags")}">红旗指南</a>。` }]]
+    ],
+    en: [
+      ["How the neck can be involved", ["Hand numbness becomes more suspicious for a neck contribution when it is linked to neck position, travels from the neck or shoulder blade into the arm, worsens with coughing or sneezing, or appears with matching weakness or reflex change."]],
+      ["Why the curve is not enough", ["A reversed or straightened curve can appear on an image without proving that a nerve is compressed. The diagnosis depends on whether symptoms, exam, imaging, and timing point in the same direction."]],
+      ["Map the pattern, then screen risk", [{ html: `Use the <a href="${localizedPath("en", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 finger numbness map</a> to organize the distribution, then use the <a href="${articlePath("en", "cervical-radiculopathy-myelopathy-red-flags")}">red flag guide</a> if there is weakness, hand clumsiness, walking change, or spreading numbness.` }]]
+    ],
+    ja: [
+      ["首が関わる可能性", ["手のしびれが首の姿勢で変わる、首や肩甲部から腕へ走る、咳やくしゃみで悪化する、対応する筋力低下や反射変化を伴う場合は、頸椎神経根の関与を考えます。"]],
+      ["カーブだけでは不十分", ["逆カーブやストレート化が画像にあっても、それだけで神経圧迫は証明できません。症状、診察、画像、経過が同じ方向を示すかが重要です。"]],
+      ["分布を整理し、リスクを確認", [{ html: `<a href="${localizedPath("ja", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 指のしびれマップ</a> で分布を整理し、筋力低下、手の不器用さ、歩行変化、しびれ拡大があれば <a href="${articlePath("ja", "cervical-radiculopathy-myelopathy-red-flags")}">危険サインガイド</a> を確認します。` }]]
+    ],
+    es: [
+      ["Cómo puede participar el cuello", ["La mano dormida sugiere más participación cervical si cambia con la posición del cuello, viaja desde cuello o escápula al brazo, empeora con tos o estornudo, o aparece con debilidad o reflejos concordantes."]],
+      ["Por qué la curva no basta", ["Una curva invertida o rectificada puede verse en imagen sin probar que un nervio esté comprimido. El diagnóstico depende de que síntomas, exploración, imagen y tiempo apunten en la misma dirección."]],
+      ["Mapa primero, riesgo después", [{ html: `Usa el <a href="${localizedPath("es", "images/c6-c7-c8-finger-numbness-map")}">mapa C6 C7 C8</a> para ordenar la distribución; si hay debilidad, torpeza de mano, cambios al caminar o entumecimiento que se extiende, revisa la <a href="${articlePath("es", "cervical-radiculopathy-myelopathy-red-flags")}">guía de alarmas</a>.` }]]
+    ]
+  }),
+  topic("normal-cervical-lordosis-vs-straight-neck", "diagnosis", [sources.spineBasics, sources.curvesOfSpine, sources.lordosisReview], {
+    zh: ["影像解释", "正常颈椎前凸 vs 颈椎变直：报告怎么读", "区分 normal cervical lordosis、straight neck、loss of lordosis 和 reversed curve，避免只凭一个词判断好坏。", "正常颈曲通常是侧面温和前凸；变直或反向需要结合体位、疼痛保护、症状、神经体征和功能变化。", ["正常曲度是整体脊柱曲线的一部分。", "变直不等于自动严重。", "反向曲度也要和症状一起读。"]],
+    en: ["Imaging explainer", "Normal cervical lordosis vs straight neck: how to read the wording", "A plain-language comparison of normal cervical lordosis, straight neck, loss of lordosis, and reversed cervical curve.", "Normal cervical lordosis is usually a gentle forward curve from the side. Straightening or reversal should be interpreted with position, pain guarding, symptoms, neurological signs, and function.", ["Normal lordosis is part of the spine's overall curves.", "Straight neck is not automatically severe.", "A reversed curve still needs symptom context."]],
+    ja: ["画像解説", "正常頸椎前弯 vs ストレートネック：用語の読み方", "正常頸椎前弯、ストレートネック、前弯消失、逆カーブをやさしく比較します。", "正常前弯は側面から見るゆるやかな前向きカーブです。直線化や逆カーブは姿勢、疼痛防御、症状、神経所見、機能と合わせて読みます。", ["正常前弯は脊柱全体のカーブの一部。", "ストレートネックは自動的に重症ではない。", "逆カーブも症状文脈が必要。"]],
+    es: ["Explicador de imagen", "Lordosis cervical normal vs cuello recto: cómo leerlo", "Comparación sencilla de lordosis cervical normal, cuello recto, pérdida de lordosis y curva cervical invertida.", "La lordosis normal suele ser una curva suave hacia delante vista de lado. La rectificación o inversión se interpreta con posición, protección por dolor, síntomas, signos neurológicos y función.", ["La lordosis normal forma parte de las curvas de la columna.", "Cuello recto no es automáticamente grave.", "Una curva invertida también necesita contexto."]]
+  }, {
+    zh: [
+      ["四个常见报告词", ["Normal cervical lordosis 表示这张影像上颈部有通常的温和前凸。Straight neck 和 loss of lordosis 多数表示前凸减少或变平；reversed cervical curve 表示部分曲线方向相反。"]],
+      ["为什么不同报告说法会变", ["拍片体位、测量方式、肌肉保护、疼痛、年龄和退变都可能影响报告措辞。所以同一个人不同时间或机构的报告，可能出现不同语言。"]],
+      ["配合图解一起读", [{ html: `想快速对照，可以看 <a href="${localizedPath("zh", "images/cervical-curve-diagram")}">颈椎曲度图解</a>。如果需要完整判断路径，再读 <a href="${localizedPath("zh", "cervical-curve")}">颈椎曲度指南</a>。` }]]
+    ],
+    en: [
+      ["The four common phrases", ["Normal cervical lordosis means the neck has the usual gentle forward curve on that image. Straight neck and loss of lordosis usually mean the curve appears reduced or flattened. Reversed cervical curve means part of the curve bends the other way."]],
+      ["Why wording varies", ["Different imaging positions, measurement methods, muscle guarding, pain, age, and degenerative changes can all change the wording. This is why the same person can see different language across reports."]],
+      ["Use the visual comparison", [{ html: `For a quick side-by-side view, use the <a href="${localizedPath("en", "images/cervical-curve-diagram")}">normal cervical curve diagram</a>. For the broader decision path, read the <a href="${localizedPath("en", "cervical-curve")}">cervical curve guide</a>.` }]]
+    ],
+    ja: [
+      ["よくある4つの表現", ["Normal cervical lordosis は、その画像で通常のゆるやかな前弯があることを示します。ストレートネックや前弯減少はカーブが小さいこと、逆カーブは一部が反対方向へ曲がることを示します。"]],
+      ["表現が変わる理由", ["撮影姿勢、測定方法、筋緊張、痛み、年齢、変性所見で報告語は変わります。同じ人でも別の検査で違う表現が出ることがあります。"]],
+      ["図解と一緒に読む", [{ html: `横並びで確認するなら <a href="${localizedPath("ja", "images/cervical-curve-diagram")}">頸椎カーブ図</a> を使います。全体の判断は <a href="${localizedPath("ja", "cervical-curve")}">頸椎カーブガイド</a> で確認できます。` }]]
+    ],
+    es: [
+      ["Las cuatro frases frecuentes", ["Lordosis cervical normal significa que el cuello muestra la curva suave habitual en esa imagen. Cuello recto y pérdida de lordosis suelen indicar curva reducida o aplanada. Curva invertida significa que parte se dobla en sentido contrario."]],
+      ["Por qué cambia el lenguaje", ["Posición durante la imagen, método de medición, protección muscular, dolor, edad y degeneración pueden cambiar la frase del informe. La misma persona puede recibir wording distinto en pruebas diferentes."]],
+      ["Usa la comparación visual", [{ html: `Para una vista rápida, usa el <a href="${localizedPath("es", "images/cervical-curve-diagram")}">diagrama de curva cervical</a>. Para la ruta completa, lee la <a href="${localizedPath("es", "cervical-curve")}">guía de curva cervical</a>.` }]]
+    ]
+  }),
+  topic("cervical-kyphosis-exercises-to-avoid", "exercises", [sources.neckPainGuideline, sources.returnSport, sources.radiculopathy], {
+    zh: ["练习边界", "颈椎反弓哪些练习先别硬做？", "没有一种动作对所有颈椎反弓都永远禁止，但症状加重、神经症状、外伤或不稳定风险出现时，某些拉伸、牵引和高负荷动作不适合硬扛。", "先避开会让疼痛扩散、手麻加重、无力明显、头晕或第二天反应持续变差的动作。", ["不要用疼痛硬测试颈椎。", "神经症状加重是停止信号。", "练习选择要看 24 小时反应。"]],
+    en: ["Exercise boundaries", "Cervical kyphosis exercises to avoid: what not to force", "There is no single exercise that every person with cervical kyphosis must avoid forever, but symptom-provoking stretches, traction, and heavy loading should be treated carefully.", "Avoid forcing movements that spread pain, worsen numbness, create weakness, trigger dizziness, or leave a worse next-day response.", ["Do not use pain to stress-test the neck.", "Worsening nerve symptoms are a stop sign.", "Choose exercises by the 24-hour response."]],
+    ja: ["運動の境界", "頸椎後弯で無理しない方がよい運動", "全員が永遠に避ける一つの運動はありませんが、症状を悪化させるストレッチ、牽引、高負荷は慎重に扱います。", "痛みの拡大、しびれ悪化、筋力低下、めまい、翌日の悪化が出る動きは無理に続けません。", ["痛みで首をテストしない。", "神経症状悪化は中止サイン。", "24時間反応で運動を選ぶ。"]],
+    es: ["Límites de ejercicio", "Ejercicios a evitar con cifosis cervical: qué no forzar", "No hay un ejercicio que todos deban evitar para siempre, pero estiramientos, tracción y cargas que provocan síntomas deben manejarse con cuidado.", "Evita forzar movimientos que extiendan dolor, empeoren entumecimiento, creen debilidad, disparen mareo o dejen peor respuesta al día siguiente.", ["No uses dolor para probar el cuello.", "Empeorar síntomas nerviosos es señal de parar.", "Elige ejercicios por la respuesta de 24 horas."]]
+  }, {
+    zh: [
+      ["不要硬推末端角度", ["强力末端拉伸、反复负重后仰或低头、以及让症状扩散的长时间保持，都不是好的自我测试。温和动作很快稳定下来，和硬扛一个姿势证明自己能忍，是两回事。"]],
+      ["牵引和神经张力动作要谨慎", [{ html: `牵引和神经滑动不一定错，但如果麻木、无力、头晕或第二天反应加重，就应该停止尝试。可以配合 <a href="${articlePath("zh", "cervical-traction-contraindications")}">颈椎牵引禁忌指南</a> 和 <a href="${localizedPath("zh", "images/24-hour-neck-symptom-response-chart")}">24 小时反应图</a> 判断。` }]],
+      ["相对安全的进阶标准", ["更合适的动作通常会让症状在 24 小时内相同或更平稳，不会让症状往手臂远端扩散，也不会降低力量、平衡或睡眠。"]]
+    ],
+    en: [
+      ["Do not force end-range positions", ["Aggressive end-range stretching, repeated loaded neck extension or flexion, and long holds that create spreading symptoms are poor self-tests. A gentle movement that settles quickly is different from forcing a position to prove toughness."]],
+      ["Be careful with traction and nerve tensioning", [{ html: `Traction and nerve glides are not automatically wrong, but worsening numbness, weakness, dizziness, or next-day escalation should stop the experiment. Pair this page with the <a href="${articlePath("en", "cervical-traction-contraindications")}">cervical traction contraindications guide</a> and the <a href="${localizedPath("en", "images/24-hour-neck-symptom-response-chart")}">24-hour response chart</a>.` }]],
+      ["Green-light criteria", ["Better choices usually leave symptoms the same or calmer within 24 hours, do not spread symptoms farther down the arm, and do not reduce strength, balance, or sleep."]]
+    ],
+    ja: [
+      ["末端姿勢を無理に押さない", ["強い末端ストレッチ、負荷をかけた首の伸展や屈曲、症状が広がる長い保持は自己テストとして不向きです。すぐ落ち着く軽い動きと、無理に耐える姿勢は違います。"]],
+      ["牽引と神経テンションに注意", [{ html: `牽引や神経グライドは自動的に悪いわけではありませんが、しびれ、筋力低下、めまい、翌日の悪化があれば中止します。<a href="${articlePath("ja", "cervical-traction-contraindications")}">頸椎牽引の禁忌ガイド</a> と <a href="${localizedPath("ja", "images/24-hour-neck-symptom-response-chart")}">24時間反応チャート</a> を併用します。` }]],
+      ["進めてもよい目安", ["よい選択は、多くの場合24時間以内に症状が同じか落ち着き、腕の遠くへ広がらず、筋力、バランス、睡眠を悪化させません。"]]
+    ],
+    es: [
+      ["No fuerces posiciones finales", ["Estiramientos agresivos al final del rango, extensión o flexión cervical cargada repetida, y mantenimientos largos que extienden síntomas son malos autotests. Un movimiento suave que se calma rápido no es lo mismo que forzar para demostrar tolerancia."]],
+      ["Cuidado con tracción y tensión neural", [{ html: `Tracción y deslizamientos neurales no son automáticamente incorrectos, pero empeorar entumecimiento, debilidad, mareo o respuesta al día siguiente debe detener el experimento. Combínalo con la <a href="${articlePath("es", "cervical-traction-contraindications")}">guía de contraindicaciones de tracción cervical</a> y el <a href="${localizedPath("es", "images/24-hour-neck-symptom-response-chart")}">gráfico de respuesta 24 h</a>.` }]],
+      ["Criterios de luz verde", ["Las mejores opciones suelen dejar los síntomas igual o más calmados en 24 horas, no los extienden por el brazo y no reducen fuerza, equilibrio ni sueño."]]
+    ]
+  }),
+  topic("c6-c7-numbness-thumb-index-middle-finger", "symptoms", [sources.radiculopathy, sources.ncbiRadiculopathy, sources.carpal, sources.ulnar], {
+    zh: ["症状专题", "拇指、食指、中指麻：C6、C7 还是腕管？", "拇指、食指和中指麻木可能让人想到 C6/C7 神经根，也可能和腕管、尺神经或其他周围神经问题重叠。分布只是线索，不是诊断。", "把手指区域、颈部诱发、手腕姿势、夜间症状、握力和症状进展放在一起看，才更有意义。", ["拇指食指常让人想到 C6 或正中神经。", "中指常被拿来观察 C7 线索。", "分布图不能代替检查。"]],
+    en: ["Symptom guide", "C6 C7 numbness in the thumb, index, or middle finger", "Thumb, index, and middle-finger numbness may suggest C6 or C7 nerve-root clues, but it can also overlap with carpal tunnel, ulnar nerve, or other peripheral nerve patterns.", "Finger distribution is only a clue. It is more useful when combined with neck triggers, wrist position, night symptoms, grip change, and progression.", ["Thumb and index symptoms can point toward C6 or the median nerve.", "Middle-finger symptoms are often discussed with C7 clues.", "A distribution map does not replace an exam."]],
+    ja: ["症状ガイド", "親指・人差し指・中指のしびれ：C6/C7？手根管？", "親指、人差し指、中指のしびれはC6/C7神経根を考える手がかりになりますが、手根管、尺骨神経、他の末梢神経とも重なります。", "指の分布は手がかりです。首の誘発、手首姿勢、夜間症状、握力、進行と合わせて見ます。", ["親指と人差し指はC6や正中神経の手がかり。", "中指はC7の手がかりとして語られる。", "分布図は診察の代わりではない。"]],
+    es: ["Guía de síntomas", "Entumecimiento C6 C7 en pulgar, índice o dedo medio", "Pulgar, índice y dedo medio dormidos pueden sugerir pistas de C6 o C7, pero también se superponen con túnel carpiano, nervio cubital u otros nervios.", "La distribución por dedos es solo una pista. Sirve más al combinarla con desencadenantes del cuello, muñeca, síntomas nocturnos, agarre y progresión.", ["Pulgar e índice pueden apuntar a C6 o nervio mediano.", "El dedo medio suele discutirse con C7.", "Un mapa no sustituye un examen."]]
+  }, {
+    zh: [
+      ["这种分布可能提示什么", ["拇指和食指症状常被拿来讨论 C6 或正中神经模式。中指症状常被拿来观察 C7 线索。但真实症状不一定严格按照教科书边界走。"]],
+      ["颈部线索 vs 手腕线索", ["颈部相关线索包括症状从颈部或肩胛区往手臂走、随颈部姿势变化、咳嗽或喷嚏加重。手腕相关线索包括夜间麻木、甩手缓解、和手腕姿势或重复抓握相关。"]],
+      ["保守使用分布图", [{ html: `把 <a href="${localizedPath("zh", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 手指麻木地图</a> 当作讨论工具，再结合 <a href="${articlePath("zh", "can-cervical-kyphosis-cause-hand-numbness")}">颈椎反弓和手麻指南</a> 判断曲度报告是否真的相关。` }]]
+    ],
+    en: [
+      ["What the pattern can suggest", ["Thumb and index symptoms are often discussed with C6 or median-nerve patterns. Middle-finger symptoms are often discussed with C7. But real symptoms do not always respect textbook borders."]],
+      ["Neck clues vs wrist clues", ["Neck-related clues include symptoms that travel from the neck or shoulder blade into the arm, change with neck position, or worsen with coughing or sneezing. Wrist-related clues include night numbness, shaking the hand for relief, and symptoms linked to wrist position or repetitive gripping."]],
+      ["Use the map conservatively", [{ html: `Use the <a href="${localizedPath("en", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 finger numbness map</a> as a discussion aid, then check the broader <a href="${articlePath("en", "can-cervical-kyphosis-cause-hand-numbness")}">hand numbness and cervical kyphosis guide</a> if the curve report is part of your concern.` }]]
+    ],
+    ja: [
+      ["分布が示す可能性", ["親指と人差し指はC6または正中神経パターンとして語られることがあります。中指はC7の手がかりとして使われます。ただし実際の症状は教科書通りに分かれるとは限りません。"]],
+      ["首の手がかりと手首の手がかり", ["首由来の手がかりは、首や肩甲部から腕へ走る、首の姿勢で変わる、咳やくしゃみで悪化することです。手首由来では夜間のしびれ、手を振ると楽、手首姿勢や反復把持との関連を見ます。"]],
+      ["マップを保守的に使う", [{ html: `<a href="${localizedPath("ja", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 指のしびれマップ</a> は相談用の材料です。カーブ報告が気になる場合は <a href="${articlePath("ja", "can-cervical-kyphosis-cause-hand-numbness")}">頸椎後弯と手のしびれガイド</a> も確認します。` }]]
+    ],
+    es: [
+      ["Qué puede sugerir el patrón", ["Pulgar e índice se discuten a menudo con C6 o nervio mediano. El dedo medio suele discutirse con C7. Pero los síntomas reales no siempre respetan fronteras de libro."]],
+      ["Pistas del cuello vs muñeca", ["Pistas cervicales: síntomas que viajan de cuello o escápula al brazo, cambian con posición cervical o empeoran con tos/estornudo. Pistas de muñeca: entumecimiento nocturno, sacudir la mano ayuda, o relación con postura de muñeca y agarre repetitivo."]],
+      ["Usa el mapa con prudencia", [{ html: `Usa el <a href="${localizedPath("es", "images/c6-c7-c8-finger-numbness-map")}">mapa C6 C7 C8</a> como ayuda de conversación, y revisa la <a href="${articlePath("es", "can-cervical-kyphosis-cause-hand-numbness")}">guía de mano dormida y cifosis cervical</a> si el informe de curva es parte de la preocupación.` }]]
+    ]
+  })
+];
+
+function topic(slug, category, sourceList, translations, sections = null) {
+  return sections ? { slug, category, sources: sourceList, translations, sections } : { slug, category, sources: sourceList, translations };
 }
 
 const hubs = {
@@ -557,6 +738,7 @@ const pillarPages = [
         ],
         sections: [
           ["What the cervical curve is", ["Viewed from the side, the cervical spine normally has a gentle lordotic curve as part of the spine's overall curves. It helps distribute load through the neck and supports everyday motion.", "A single angle is not the whole story. Measurement method, posture during imaging, symptoms, function, and neurological signs all matter when interpreting the curve."]],
+          ["Normal cervical curvature and the normal C-spine curve", ["Searches for normal cervical curvature, normal neck curve, normal C-spine curve, and normal lordotic curve usually point to the same basic question: what should the side-view neck curve look like, and when does a report wording matter?", "A normal cervical curve is generally a gentle forward lordosis, but normal is not only a number. Imaging position, pain guarding, age, symptoms, neurological exam, and function decide whether the curve is just a finding or part of the current problem.", { html: `If a report says <a href="${articlePath("en", "cervical-kyphosis-vs-loss-lordosis")}">loss of normal cervical lordosis, straightening, reversed curve, or mild cervical kyphosis</a>, compare the wording with symptoms and the <a href="${localizedPath("en", "images/cervical-curve-diagram")}">normal cervical curve diagram</a> before assuming permanent damage. The dedicated <a href="${localizedPath("en", "loss-of-cervical-lordosis")}">loss of cervical lordosis guide</a> explains what to track next.` }]],
           ["Straightening, loss of lordosis, and reversed curve", ["Straightening or loss of cervical lordosis usually means the normal lordotic curve is reduced or flattened. A reversed curve or cervical kyphosis suggests the curve may bend in the opposite direction.", "These are imaging descriptions, not complete diagnoses. Positioning, pain guarding, muscle tone, and degenerative findings can all change how the neck curve appears on an image."]],
           ["When the curve finding deserves more attention", ["Local stiffness or mild neck ache usually starts with daily load, sleep setup, workstation exposure, upper-back capacity, and movement tolerance.", "Radiating arm pain, finger numbness, weakness, hand clumsiness, walking changes, or bowel/bladder symptoms matter more than whether the curve looks ideal. New or progressive neurological symptoms should be assessed promptly."]],
           ["What conservative care can track", ["Conservative care should not promise to force the curve back to a specific angle. More useful goals are less pain, better sleep, steadier numbness, improved motion, and higher work or sport tolerance.", "Track the 24-hour response. If a drill sends symptoms farther down the arm, leaves the next day clearly worse, or changes strength, reduce the dose or stop and consider professional evaluation."]]
@@ -634,6 +816,7 @@ const pillarPages = [
         sections: [
           ["What cervical kyphosis means", ["In plain language, cervical kyphosis usually means the normal forward neck curve has flattened enough to reverse direction or move toward a backward curve. Reports may use kyphosis, reversed curve, straightening, or loss of lordosis, but those terms do not always mean the same severity or the same clinical meaning.", "A report term is a description of shape. It does not automatically explain pain, hand numbness, headaches, dizziness, or sports tolerance. The curve finding becomes more meaningful when it matches the story, exam findings, neurological signs, and how symptoms behave under load."]],
           ["Cervical kyphosis versus straightening", ["Straightening or loss of cervical lordosis usually means the normal forward curve is reduced or flattened. Cervical kyphosis or reversal suggests the curve is moving in the opposite direction. Many readers see these terms used loosely, which is why the exact report wording should be interpreted carefully.", "The distinction matters, but it is not the whole decision. A mild straightening finding with no neurological symptoms may be managed very differently from a structural kyphosis after trauma, surgery, inflammatory disease, or progressive deformity. Context is what turns imaging language into a clinical question."]],
+          ["Mild cervical kyphosis symptoms to watch", ["Mild cervical kyphosis on a report does not automatically mean severe disease. The more useful screen is whether symptoms are local and stable, or whether they include arm pain, finger numbness, weakness, hand clumsiness, walking changes, or worsening night pain.", "For many readers, cervical kyphosis symptoms overlap with neck stiffness, upper-back fatigue, headache, work-position sensitivity, or sport tolerance. The symptoms that change the next step are progressive neurological signs, trauma-related symptoms, or function loss that keeps worsening despite sensible load changes.", { html: `If the main concern is the report language, compare it with <a href="${articlePath("en", "cervical-kyphosis-vs-loss-lordosis")}">cervical kyphosis vs loss of normal cervical lordosis</a>. If the main issue is hand or finger numbness, use the <a href="${localizedPath("en", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 finger numbness map</a> and the <a href="${articlePath("en", "cervical-radiculopathy-myelopathy-red-flags")}">red flag guide</a> before trying more exercises.` }]],
           ["Why one image is not the whole diagnosis", ["Neck curve appearance can change with positioning, pain guarding, muscle tone, x-ray technique, and degenerative findings. A person who is in pain may hold the neck differently during imaging. Another person may have a curve finding on a report but little or no functional limitation.", "This is why conservative health education should avoid saying the curve is definitely the cause or that a single treatment can put it back. Imaging is one input. Symptoms, exam, function, and change over time decide whether the finding is background context or the main issue."]],
           ["Common contexts and causes", ["Cervical kyphosis can appear in several contexts: postural exposure, muscle guarding, degenerative disc or joint changes, old trauma, congenital shape, inflammatory disease, post-surgical change, or structural deformity. These categories should not be blended into one simple internet explanation.", "A desk worker with local stiffness, a surfer with extension-related symptoms, and a person with progressive arm weakness after trauma need different thinking. The same curve word may appear in each case, but the risk level and next step can be very different."]],
           ["Symptoms set the priority more than curve shape", ["If symptoms are mainly stiffness or local neck ache without neurological signs, the first questions are often daily load, sleep, upper-back capacity, work posture, stress, and movement tolerance. The early plan may focus on reducing irritability and improving capacity.", "Radiating arm pain, finger numbness, weakness, hand clumsiness, or walking changes raise the priority. New or progressive neurological symptoms should not be managed only with online drills. The curve may be relevant, but the neurological pattern decides urgency."]],
@@ -827,7 +1010,7 @@ const visuals = [
     related: "cervical-curve",
     labels: {
       zh: ["颈椎曲度图解", "原创图解对比正常前凸、颈椎曲度变直和反弓/后凸，帮助读者先理解报告词，再结合症状、功能和检查线索判断下一步。"],
-      en: ["Cervical curve diagram", "Original visual comparing usual lordosis, straightened cervical curve, and reversed or kyphotic alignment so readers can interpret report language with symptoms."],
+      en: ["Normal cervical curve diagram", "Original visual comparing normal cervical curvature, a straightened cervical curve, loss of normal cervical lordosis, and reversed or kyphotic alignment so readers can interpret report language with symptoms."],
       ja: ["頸椎カーブ図", "通常の前弯、前弯減少、逆カーブ/後弯を比較するオリジナル図です。画像用語を症状や機能と合わせて読むための入口になります。"],
       es: ["Diagrama de curva cervical", "Visual original que compara lordosis habitual, curva rectificada e invertida/cifótica para leer el informe junto con síntomas y función."]
     }
@@ -838,7 +1021,7 @@ const visuals = [
     related: "cervical-radiculopathy",
     labels: {
       zh: ["C6 C7 C8 手指麻木地图", "原创手指麻木分布图，整理 C6、C7、C8 神经根与腕管、尺神经等常见重叠线索，强调它只适合记录和讨论，不能自我诊断。"],
-      en: ["C6 C7 C8 finger numbness map", "Original finger numbness map showing overlapping C6, C7, C8, carpal tunnel, and ulnar-nerve clues. Use it for discussion, not self-diagnosis."],
+      en: ["C6 C7 C8 finger numbness map", "Original finger numbness map showing overlapping C6, C7, C8, carpal tunnel, and ulnar-nerve clues for cervical radiculopathy discussions. Use it for discussion, not self-diagnosis."],
       ja: ["C6 C7 C8 指のしびれマップ", "C6、C7、C8神経根と手根管、尺骨神経などの重なりを整理するオリジナル図です。自己診断ではなく相談の材料です。"],
       es: ["Mapa C6 C7 C8 de dedos dormidos", "Mapa original de dedos dormidos que muestra solapamientos entre C6, C7, C8, túnel carpiano y nervio cubital; no es autodiagnóstico."]
     }
@@ -861,7 +1044,7 @@ const printableRoute = "printable-neck-symptom-tracker";
 const specialPageMeta = {
   tools: {
     zh: ["工具和原创图解", "手麻地图、颈椎曲度图解和 24 小时反应记录器", "使用原创神经分布图、颈椎曲度图解和 24 小时反应记录器，整理手麻、颈痛、运动后反应和就医前要记录的线索。"],
-    en: ["Tools and original visuals", "Nerve maps, curve diagrams, and a 24-hour response tracker", "Use original nerve maps, cervical curve diagrams, and a 24-hour response tracker to organize numbness, neck pain, exercise response, and appointment notes."],
+    en: ["Tools and original visuals", "Nerve maps, normal cervical curve diagrams, and a 24-hour response tracker", "Use original nerve maps, normal cervical curvature diagrams, and a 24-hour response tracker to organize numbness, neck pain, exercise response, and appointment notes."],
     ja: ["ツールと図解", "しびれマップ、頸椎カーブ図、24時間反応記録", "オリジナルの神経マップ、頸椎カーブ図、24時間反応記録で、しびれ、首痛、運動後反応、受診前メモを整理します。"],
     es: ["Herramientas y visuales", "Mapas nerviosos, diagramas y registro 24 h", "Usa mapas nerviosos, diagramas de curva cervical y un registro de 24 horas para ordenar entumecimiento, dolor cervical y respuesta al ejercicio."]
   },
@@ -1041,7 +1224,14 @@ function pathToOutputFile(path) {
 }
 
 function ogAssetId(lang, path) {
-  const normalized = path === "/" ? "home" : path.replace(/^\/|\/$/g, "").replace(/\//g, "-");
+  let assetPath = path;
+  if (lang === "en" && !assetPath.startsWith("/en/")) {
+    assetPath = assetPath === "/" ? "/en/" : `/en${assetPath}`;
+  }
+  if (lang === "zh" && assetPath.startsWith("/zh/")) {
+    assetPath = assetPath.replace(/^\/zh(?=\/|$)/, "") || "/";
+  }
+  const normalized = assetPath === "/" ? "home" : assetPath.replace(/^\/|\/$/g, "").replace(/\//g, "-");
   return `${lang}-${normalized}`.replace(/[^a-z0-9-]/gi, "-").replace(/-+/g, "-").toLowerCase();
 }
 
@@ -1236,7 +1426,7 @@ function convertSvgToPng(svgPath, pngPath) {
 function renderHreflang(route, isArticle = false) {
   const toUrl = (lang) => (isArticle ? articleUrl(lang, route) : localizedUrl(lang, route));
   return [
-    `<link rel="alternate" hreflang="x-default" href="${toUrl("zh")}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${toUrl("en")}" />`,
     ...Object.entries(languages).map(
       ([lang, labels]) => `<link rel="alternate" hreflang="${labels.hreflang}" href="${toUrl(lang)}" />`
     )
@@ -1457,7 +1647,7 @@ function htmlShell({ lang, route, articleSlug, title, description, content, arti
 }
 
 function paragraphs(items) {
-  return items.map((item) => `<p>${escapeHtml(item)}</p>`).join("\n");
+  return items.map((item) => (item && typeof item === "object" && item.html ? `<p>${item.html}</p>` : `<p>${escapeHtml(item)}</p>`)).join("\n");
 }
 
 function bullets(items) {
@@ -1544,6 +1734,7 @@ function renderCardGrid(cards, lang) {
 function renderArticlePage(article, lang) {
   const l = languages[lang];
   const [kicker, title, description, focus, keyPoints] = article.translations[lang];
+  const extraSections = article.sections?.[lang] || [];
   const faqs = pageFaqs(lang, article.category);
   const relatedCards = allArticles
     .filter((item) => item.slug !== article.slug && item.category === article.category)
@@ -1564,6 +1755,14 @@ function renderArticlePage(article, lang) {
           <h2>${escapeHtml(l.keyHeading)}</h2>
           ${bullets(keyPoints)}
         </section>
+        ${extraSections
+          .map(
+            ([heading, body]) => `<section class="article-section">
+          <h2>${escapeHtml(heading)}</h2>
+          ${paragraphs(body)}
+        </section>`
+          )
+          .join("\n")}
         <section class="article-section">
           <h2>${escapeHtml(l.trackHeading)}</h2>
           <p>${escapeHtml(l.track)}</p>
@@ -1646,6 +1845,15 @@ function renderHubPage(route, lang) {
   });
 }
 
+function renderToolChooserSection(lang) {
+  if (lang !== "en") return "";
+  return `<section class="article-section">
+          <h2>Choose the right tool first</h2>
+          <p>If the question is normal cervical curvature, normal C-spine curve, loss of normal cervical lordosis, or mild cervical kyphosis, start with the <a href="${localizedPath(lang, "images/cervical-curve-diagram")}">normal cervical curve diagram</a>.</p>
+          <p>If the question is finger numbness, arm pain, C6, C7, C8, carpal tunnel, or ulnar nerve overlap, start with the <a href="${localizedPath(lang, "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 finger numbness map</a>. If the question is whether an exercise, pillow, or training change is helping, use the <a href="${localizedPath(lang, "images/24-hour-neck-symptom-response-chart")}">24-hour neck symptom response chart</a> and the printable tracker.</p>
+        </section>`;
+}
+
 function renderToolsPage(lang) {
   const l = languages[lang];
   const meta = specialPageMeta.tools[lang];
@@ -1661,6 +1869,7 @@ function renderToolsPage(lang) {
         <p class="legal-meta">${escapeHtml(l.updated)}</p>
         <h1>${escapeHtml(meta[1])}</h1>
         <div class="article-dek">${paragraphs([meta[2]])}</div>
+        ${renderToolChooserSection(lang)}
         <section class="article-section visual-section">
           <h2>${escapeHtml(meta[0])}</h2>
           <div class="visual-grid">
@@ -2040,7 +2249,7 @@ function buildOgEntries() {
       kind: "diagnosis"
     });
 
-    for (const article of allArticles) {
+    for (const article of generatedArticles) {
       const data = article.translations?.[lang] || article.cards?.[lang];
       if (!data) continue;
       const [, title, description] = data;
@@ -2103,7 +2312,7 @@ function postProcessOgReferences(entries) {
   for (const [path, entry] of byPath) {
     const imageUrl = `${baseUrl}${entry.pngPath}`;
     const file = pathToOutputFile(path);
-    if (!existsSync(file)) continue;
+    if (!existsSync(file) || !generatedHtmlFiles.has(file)) continue;
     let html = readFileSync(file, "utf8");
     html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(titleTag(entry.title))}</title>`);
     html = html.replace(/\n\s*<meta property="og:image:(?:width|height)" content="[^"]*" \/>/g, "");
@@ -2125,6 +2334,10 @@ function postProcessHomePerformance() {
   for (const lang of Object.keys(languages)) {
     const file = pathToOutputFile(languages[lang].home);
     if (!existsSync(file)) continue;
+    if (!overwriteExistingHtml) {
+      skippedExistingHtmlFiles.add(file);
+      continue;
+    }
     let html = readFileSync(file, "utf8");
     const assetPrefix = languages[lang].home === "/" ? "assets" : "../assets";
     const heroSrcset = `${assetPrefix}/hero-cervical-kyphosis-720.jpg 720w, ${assetPrefix}/hero-cervical-kyphosis-1200.jpg 1200w, ${assetPrefix}/hero-cervical-kyphosis.jpg 1672w`;
@@ -2176,6 +2389,32 @@ function postProcessHomePerformance() {
   }
 }
 
+function renderVisualExtraSection(visual, lang) {
+  if (lang !== "en") return "";
+  if (visual.slug === "cervical-curve-diagram") {
+    return `<section class="article-section">
+          <h2>How to use this normal neck curve diagram</h2>
+          <p>Use the diagram to compare common report phrases: normal cervical curvature, normal C-spine curve, loss of normal cervical lordosis, straightened cervical curve, reversed cervical curve, and cervical kyphosis.</p>
+          <p>The image is a starting point, not a diagnosis. If symptoms are mainly report anxiety, read the <a href="${localizedPath(lang, "cervical-curve")}">cervical curve guide</a>. If the wording says loss of lordosis or mild kyphosis, use the <a href="${articlePath(lang, "cervical-kyphosis-vs-loss-lordosis")}">kyphosis vs loss of lordosis guide</a>. If arm pain, finger numbness, weakness, hand clumsiness, or walking changes are present, start with the <a href="${articlePath(lang, "cervical-radiculopathy-myelopathy-red-flags")}">red flag guide</a>.</p>
+        </section>`;
+  }
+  if (visual.slug === "c6-c7-c8-finger-numbness-map") {
+    return `<section class="article-section">
+          <h2>How to read C6, C7, and C8 finger numbness</h2>
+          <p>Finger distribution is one clue, not a diagnosis. Thumb and index symptoms can overlap C6 and median nerve patterns; middle-finger symptoms can overlap C7; ring and little-finger symptoms can overlap C8 and the ulnar nerve.</p>
+          <p>Use this map with the <a href="${articlePath(lang, "finger-numbness-nerve-map")}">finger numbness guide</a> and the <a href="${articlePath(lang, "cervical-radiculopathy-myelopathy-red-flags")}">radiculopathy and myelopathy red flag guide</a>. Progressive weakness, spreading numbness, hand clumsiness, walking change, or bowel/bladder symptoms should move the next step toward medical evaluation.</p>
+        </section>`;
+  }
+  if (visual.slug === "24-hour-neck-symptom-response-chart") {
+    return `<section class="article-section">
+          <h2>Use this before changing neck exercise dose</h2>
+          <p>The chart turns a vague question, "is this neck exercise helping?", into a 24-hour response check. A calmer next day can support a small progression; spreading arm or hand numbness, weakness, hand clumsiness, walking change, or worse sleep should lower the dose or stop the experiment.</p>
+          <p>Pair it with the <a href="${localizedPath(lang, printableRoute)}">7-day neck pain and numbness tracker</a> before changing several variables at once. If your report says loss of normal cervical lordosis or mild cervical kyphosis, use the <a href="${localizedPath(lang, "cervical-curve")}">cervical curve guide</a> to keep image wording separate from symptom risk.</p>
+        </section>`;
+  }
+  return "";
+}
+
 function renderVisualPage(visual, lang) {
   const l = languages[lang];
   const [title, description] = visual.labels[lang];
@@ -2196,6 +2435,7 @@ function renderVisualPage(visual, lang) {
           <a class="button primary" href="/assets/visuals/${visual.file}" download>${escapeHtml({ zh: "下载 SVG", en: "Download SVG", ja: "SVGをダウンロード", es: "Descargar SVG" }[lang])}</a>
           <a class="button secondary light-button" href="${localizedPath(lang, visual.related)}">${escapeHtml(relatedTitle)}</a>
         </div>
+        ${renderVisualExtraSection(visual, lang)}
         <section class="article-section">
           <h2>${escapeHtml(l.related)}</h2>
           ${renderCardGrid(
@@ -2295,16 +2535,68 @@ function renderPrintableTrackerPage(lang) {
 
 function writePage(path, html) {
   mkdirSync(dirname(path), { recursive: true });
+  const canOverwriteTrafficSprint = overwriteTrafficSprintHtml && trafficSprintHtmlFiles.has(path);
+  if (path.endsWith(".html") && existsSync(path) && !overwriteExistingHtml && !canOverwriteTrafficSprint && !path.startsWith("en/")) {
+    skippedExistingHtmlFiles.add(path);
+    return;
+  }
   writeFileSync(path, html);
+  if (path.endsWith(".html")) {
+    generatedHtmlFiles.add(path);
+  }
 }
 
-const allArticles = [...existingArticles, ...newArticles];
+function renderEnglishRedirectStub(targetPath) {
+  const url = `${baseUrl}${targetPath}`;
+  const title = targetPath === "/" ? "Cervical Curve Guide" : "Moved";
+  const label = targetPath === "/" ? "cervicalcurveguide.com" : url;
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>${title}</title>
+    <link rel="canonical" href="${url}" />
+    <meta name="robots" content="noindex,follow" />
+    <meta http-equiv="refresh" content="0; url=${targetPath}" />
+    <script>location.replace("${targetPath}" + location.hash);</script>
+  </head>
+  <body><p>Moved to <a href="${targetPath}">${label}</a>.</p></body>
+</html>
+`;
+}
+
+function outputEnglishRedirect(targetPath) {
+  if (targetPath === "/") return join("en", "index.html");
+  return pathToOutputFile(`/en${targetPath}`);
+}
+
+function writeEnglishRedirectStubs() {
+  const targetPaths = [
+    "/",
+    ...allArticles.map((article) => articlePath("en", article.slug)),
+    ...pillarPages.map((pillar) => localizedPath("en", pillar.slug)),
+    ...Object.keys(hubs).map((route) => localizedPath("en", route)),
+    ...["tools", "videos", printableRoute].map((route) => localizedPath("en", route)),
+    ...visuals.map((visual) => localizedPath("en", `images/${visual.slug}`))
+  ];
+  for (const targetPath of targetPaths) {
+    writePage(outputEnglishRedirect(targetPath), renderEnglishRedirectStub(targetPath));
+  }
+}
+
+const generatedArticles = [...newArticles, ...trafficSprintArticles];
+const allArticles = [...existingArticles, ...generatedArticles];
+for (const article of trafficSprintArticles) {
+  for (const lang of Object.keys(languages)) {
+    trafficSprintHtmlFiles.add(outputArticle(lang, article.slug));
+  }
+}
 const ogEntries = buildOgEntries();
 const ogPngCount = writeOgAssets(ogEntries);
 
 writeVisualAssets();
 
-for (const article of newArticles) {
+for (const article of generatedArticles) {
   for (const lang of Object.keys(languages)) {
     writePage(outputArticle(lang, article.slug), renderArticlePage(article, lang));
   }
@@ -2331,6 +2623,8 @@ for (const lang of Object.keys(languages)) {
   }
 }
 
+writeEnglishRedirectStubs();
+
 const growthData = {
   strings: Object.fromEntries(Object.entries(languages).map(([lang, value]) => [lang, value.growthStrings])),
   articleCards: Object.fromEntries(
@@ -2343,7 +2637,7 @@ const growthData = {
           body: pillar.translations[lang].description,
           url: localizedPath(lang, pillar.slug)
         })),
-        ...newArticles.map((article) => cardForArticle(article, lang)),
+        ...generatedArticles.map((article) => cardForArticle(article, lang)),
         ...Object.entries(hubs).map(([route, hub]) => ({
           tag: hub.meta[lang][0],
           title: hub.meta[lang][1],
@@ -2461,7 +2755,7 @@ ${sitemapUrls
       .join("");
     return `  <url>
     <loc>${baseUrl}${path}</loc>
-    <lastmod>${reviewDate}</lastmod>${image}
+    <lastmod>${sitemapLastmod}</lastmod>${image}
   </url>`;
   })
   .join("\n")}
@@ -2473,5 +2767,10 @@ postProcessOgReferences(ogEntries);
 postProcessHomePerformance();
 
 console.log(
-  `Generated ${newArticles.length * Object.keys(languages).length} new article pages, ${pillarPages.length * Object.keys(languages).length} pillar pages, ${Object.keys(hubs).length * Object.keys(languages).length} hub pages, visual pages, tools/videos pages, ${ogPngCount} OG PNGs, growth data, and ${sitemapUrls.length} sitemap URLs.`
+  `Prepared ${generatedArticles.length * Object.keys(languages).length} new article pages, ${pillarPages.length * Object.keys(languages).length} pillar pages, ${Object.keys(hubs).length * Object.keys(languages).length} hub pages, visual pages, tools/videos pages, ${ogPngCount} OG PNGs, growth data, and ${sitemapUrls.length} sitemap URLs. Wrote ${generatedHtmlFiles.size} HTML files.`
 );
+if (skippedExistingHtmlFiles.size) {
+  console.log(
+    `Skipped ${skippedExistingHtmlFiles.size} existing HTML files; pass --overwrite-existing to regenerate them from scripts/build-growth.mjs.`
+  );
+}
