@@ -107,7 +107,17 @@
 
     actions.append(decline, accept);
     banner.append(copy, actions);
-    document.body.append(banner);
+    const anchor =
+      document.querySelector(".notice-band") ||
+      document.querySelector(".article-callout") ||
+      document.querySelector(".article-notice") ||
+      document.querySelector(".article-dek") ||
+      document.querySelector(".site-header");
+    if (anchor) {
+      anchor.after(banner);
+    } else {
+      document.body.append(banner);
+    }
   }
 
   function init() {
