@@ -4,12 +4,12 @@
   <circle cx="96" cy="96" r="24" fill="#c8902f"/>
   <text x="136" y="105" fill="#162026" font-family="Arial, sans-serif" font-size="25" font-weight="800">Cervical Curve Guide</text>
   <text x="84" y="188" fill="#c8902f" font-family="Arial, sans-serif" font-size="28" font-weight="900">Treatment hub</text>
-  <text x="84" y="254" fill="#162026" font-family="Arial, sans-serif" font-size="50" font-weight="850">Conservative boundaries for</text>
-  <text x="84" y="314" fill="#162026" font-family="Arial, sans-serif" font-size="50" font-weight="850">traction, pillows, massage, and</text>
-  <text x="84" y="374" fill="#162026" font-family="Arial, sans-serif" font-size="50" font-weight="850">manipulation</text>
-  <text x="86" y="465" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">Common tools may help some symptoms, but they should not</text>
-  <text x="86" y="501" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">promise realignment or curve restoration. Indications,</text>
-  <text x="86" y="537" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">contraindications, dose, and response matter.</text>
+  <text x="84" y="254" fill="#162026" font-family="Arial, sans-serif" font-size="50" font-weight="850">Cervical Traction</text>
+  <text x="84" y="314" fill="#162026" font-family="Arial, sans-serif" font-size="50" font-weight="850">Contraindications, Pillows and</text>
+  <text x="84" y="374" fill="#162026" font-family="Arial, sans-serif" font-size="50" font-weight="850">Massage</text>
+  <text x="86" y="465" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">When cervical traction, pillows, massage, or manipulation</text>
+  <text x="86" y="501" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">may help, when to stop, and which red flags or</text>
+  <text x="86" y="537" fill="#5b6a72" font-family="Arial, sans-serif" font-size="26">contraindications need professional care.</text>
   <text x="84" y="558" fill="#5b6a72" font-family="Arial, sans-serif" font-size="22">cervicalcurveguide.com</text>
   <g transform="translate(900 155)"><rect width="235" height="310" rx="24" fill="#fff" stroke="#d9e5e2" stroke-width="8"/><path d="M70 66 C128 120 128 206 72 254" fill="none" stroke="#167a7f" stroke-width="18" stroke-linecap="round"/><path d="M154 70 C126 130 124 196 156 254" fill="none" stroke="#d8644a" stroke-width="18" stroke-linecap="round"/><circle cx="78" cy="255" r="16" fill="#9db8b4"/><circle cx="158" cy="255" r="16" fill="#9db8b4"/></g>
 </svg>

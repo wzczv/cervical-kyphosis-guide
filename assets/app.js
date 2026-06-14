@@ -257,7 +257,7 @@ const content = {
     locale: "en-US",
     title: "Cervical Curve Guide | Conservative Rehab for Cervical Kyphosis",
     description:
-      "A multilingual education site about cervical kyphosis, loss of cervical lordosis, conservative rehabilitation, nerve glides, back strengthening, and sport-specific neck care.",
+      "Education on cervical kyphosis, loss of cervical lordosis, hand numbness, conservative rehab, traction risks, and sport-related neck care.",
     strings: {
       brand: "Cervical Curve Guide",
       "nav.learn": "Learn",
@@ -710,9 +710,9 @@ const content = {
       },
       {
         tag: "Imaging guide",
-        title: "Cervical kyphosis vs loss of cervical lordosis",
+        title: "Loss of Cervical Lordosis vs Cervical Kyphosis: Meaning",
         body:
-          "Plain-language differences between straightening, loss of lordosis, reversed curve, and cervical kyphosis without turning imaging words into a diagnosis.",
+          "Report says loss of normal cervical lordosis, straight neck, reversed curve, or mild cervical kyphosis? Compare terms, symptoms, and safer next steps.",
         url: "/articles/cervical-kyphosis-vs-loss-lordosis/"
       },
       {
@@ -724,9 +724,9 @@ const content = {
       },
       {
         tag: "Rehab expectations",
-        title: "Can cervical curve be restored?",
+        title: "Can You Restore Cervical Lordosis? What Rehab Can Track",
         body:
-          "Why this site does not promise curve restoration, and what to track instead: pain, numbness, sleep, motion, strength, and tolerance.",
+          "Exercises may improve pain, sleep, motion, and tolerance, but they cannot promise cervical curve restoration. Track symptoms and 24-hour response.",
         url: "/articles/can-cervical-curve-be-restored/"
       },
       {

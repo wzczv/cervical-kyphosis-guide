@@ -6,11 +6,11 @@ Timezone: Asia/Shanghai
 ## Current Baseline
 
 - Domain: `cervicalcurveguide.com`
-- Live sitemap: `180` page URLs after the 2026-06-12 long-tail sprint.
+- Live sitemap: `200` page URLs after the 2026-06-13 bilingual long-tail sprint.
 - GA4 property: `Cervical Curve Guide`
-- GA4 latest check on 2026-06-09: last 7 days active users `0`, events `0`, new users `0`; realtime active users `0`.
-- GSC latest check on 2026-06-09: Performance report says data is still processing; table has no clicks or impressions yet.
-- GSC indexing note from `SEO_MONITORING.md`: homepage is eligible/indexed in URL Inspection; expanded sitemap processing may lag.
+- GA4 latest check on 2026-06-14: last 7 days active users `4`, events `94`, new users `4`; realtime active users `0`.
+- GSC latest check on 2026-06-14: `3` clicks, `80` impressions, `3.8%` CTR, average position `29.7`.
+- GSC indexing latest check on 2026-06-14: indexed `7`, not indexed `15`; sitemap `/sitemap.xml` success with `200` discovered pages.
 
 ## Main Goal
 
@@ -191,6 +191,7 @@ Every week:
 | 2026-06-10 follow-up | 0 | 0 | n/a | Public priority URLs return 200 with indexable canonicals; old `/en/` URLs are noindex meta-refresh fallbacks | 156 live sitemap URLs; local sitemap files all exist | 2 | Front-end consent logic passed; GA4 dashboard realtime still needs logged-in confirmation | Top priority URLs are reachable, indexable, and load analytics script. Added Cloudflare Pages `_redirects` and Netlify forced 301 rules for old `/en/*` paths. | Confirm GA4 realtime in the logged-in dashboard, then execute D1 no-link community warm-up comments. |
 | 2026-06-11 | 0 | 0 | n/a | Processing; counts unavailable | 156 | 4 | Realtime active users 0 | GSC Performance now loads but still has 0 clicks and 0 impressions; Pages report is still processing. GA4 shows 73 events, 15 sessions, Direct 8 sessions, and Organic Search 7 sessions in the last 7 days. | Continue daily GSC watch; if GSC remains 0 on 2026-06-12, start the discovery-seed actions in the plan. |
 | 2026-06-12 | 2 | 22 | 59 | Processing; counts unavailable | 180 after local build | 4 | Realtime active users 0 | GSC Performance is now live: 2 clicks, 22 impressions, 9.1% CTR, average position 59, and 14 query rows. Early query impressions include `cervical kyphosis symptoms`, `normal cervical curvature`, `cervical lordosis 中文`, and `loss of normal cervical lordosis`. GA4 remains at 4 active users, 73 events, Direct 8 sessions, and Organic Search 7 sessions over the last 7 days. | Early-query optimization executed on canonical English URLs and second long-tail sprint generated 6 new article topics across 4 languages: loss of lordosis serious, mild kyphosis symptoms, hand numbness, normal lordosis vs straight neck, exercises to avoid, and C6/C7 finger numbness. Next: deploy, submit the 6 new English URLs in GSC, then publish only high-fit external seed answers/pins. |
+| 2026-06-14 | 3 | 80 | 29.7 | 7 indexed; 15 not indexed, main reason `Crawled - currently not indexed` | 200 | 4 | Realtime active users 0 | GSC impressions are rising and the site has first clicks. Top visible pages still include old `/en/*` URLs, but the canonical English URLs are also receiving impressions. GA4 shows Organic Search 10 sessions and Direct 9 sessions over the last 7 days; realtime self-test still did not show an active user. | Improve titles/meta for high-impression low-click canonical pages, keep sitemap at 200 URLs, submit changed canonical URLs for indexing, and fix real 301 redirects for old `/en/*` at hosting/CDN level. |
 
 ## What Not To Do Yet
 

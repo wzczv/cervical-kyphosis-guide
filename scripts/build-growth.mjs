@@ -5,7 +5,7 @@ import { dirname, join } from "node:path";
 const baseUrl = "https://cervicalcurveguide.com";
 const version = "20260609-pillar";
 const reviewDate = "2026-06-09";
-const sitemapLastmod = "2026-06-12";
+const sitemapLastmod = "2026-06-14";
 const generatedHtmlFiles = new Set();
 const skippedExistingHtmlFiles = new Set();
 const overwriteExistingHtml = process.argv.includes("--overwrite-existing");
@@ -325,7 +325,7 @@ const existingArticles = [
     category: "diagnosis",
     cards: {
       zh: ["影像解读", "颈椎反弓、后凸和曲度变直有什么区别？", "把报告词翻译成人话，避免把影像词直接当成疼痛诊断。"],
-      en: ["Imaging guide", "Cervical kyphosis vs loss of cervical lordosis", "Plain-language differences between straightening, reversed curve, and cervical kyphosis."],
+      en: ["Imaging guide", "Loss of Cervical Lordosis vs Cervical Kyphosis: Meaning", "Report says loss of normal cervical lordosis, straight neck, reversed curve, or mild cervical kyphosis? Compare terms, symptoms, and safer next steps."],
       ja: ["画像の読み方", "頸椎後弯と頸椎前弯減少の違い", "ストレートネック、前弯減少、逆カーブ、後弯を整理します。"],
       es: ["Guía de imagen", "Cifosis cervical vs pérdida de lordosis", "Diferencias entre rectificación, pérdida de lordosis, curva invertida y cifosis cervical."]
     }
@@ -345,7 +345,7 @@ const existingArticles = [
     category: "exercises",
     cards: {
       zh: ["康复预期", "颈椎曲度能练回来吗？", "不承诺恢复曲度，改为追踪疼痛、手麻、睡眠、活动和力量耐受。"],
-      en: ["Rehab expectations", "Can cervical curve be restored?", "Do not promise curve restoration; track pain, numbness, sleep, motion, strength, and tolerance."],
+      en: ["Rehab expectations", "Can You Restore Cervical Lordosis? What Rehab Can Track", "Exercises may improve pain, sleep, motion, and tolerance, but they cannot promise cervical curve restoration. Track symptoms and 24-hour response."],
       ja: ["リハビリの期待値", "頸椎カーブは運動で戻る？", "カーブ回復を約束せず、痛み、しびれ、睡眠、可動性、耐性を追います。"],
       es: ["Expectativas", "¿Se puede recuperar la curva cervical?", "No promete restaurar la curva; mide dolor, entumecimiento, sueño, movimiento y tolerancia."]
     }
@@ -618,6 +618,19 @@ function topic(slug, category, sourceList, translations, sections = null) {
   return sections ? { slug, category, sources: sourceList, translations, sections } : { slug, category, sources: sourceList, translations };
 }
 
+const supplementalBilingualArticleSlugs = [
+  "reversal-of-cervical-lordosis-meaning",
+  "straightening-of-cervical-lordosis-muscle-spasm",
+  "cervical-kyphosis-dizziness-when-to-worry",
+  "neck-pain-numb-thumb-index-finger",
+  "middle-finger-numbness-c7-nerve-root",
+  "ring-pinky-finger-numbness-neck-ulnar-nerve",
+  "cervical-kyphosis-sleeping-position",
+  "push-ups-with-cervical-kyphosis",
+  "neck-traction-made-symptoms-worse",
+  "loss-of-cervical-lordosis-exercises-to-avoid"
+];
+
 const hubs = {
   symptoms: {
     categories: ["symptoms"],
@@ -650,7 +663,7 @@ const hubs = {
     categories: ["treatments"],
     meta: {
       zh: ["治疗中心", "牵引、枕头、按摩和手法的保守边界", "常见工具可以帮助某些症状，但不能承诺复位或恢复曲度。重点是适应证、禁忌、剂量和反应。"],
-      en: ["Treatment hub", "Conservative boundaries for traction, pillows, massage, and manipulation", "Common tools may help some symptoms, but they should not promise realignment or curve restoration. Indications, contraindications, dose, and response matter."],
+      en: ["Treatment hub", "Cervical Traction Contraindications, Pillows and Massage", "When cervical traction, pillows, massage, or manipulation may help, when to stop, and which red flags or contraindications need professional care."],
       ja: ["治療ハブ", "牽引、枕、マッサージ、手技の境界", "一般的な道具や施術は一部の症状を助けることがありますが、整復やカーブ回復を約束しません。適応、禁忌、量、反応が重要です。"],
       es: ["Hub de tratamientos", "Límites para tracción, almohadas, masaje y manipulación", "Herramientas comunes pueden ayudar algunos síntomas, pero no deben prometer realineación ni restaurar curva. Importan indicaciones, contraindicaciones, dosis y respuesta."]
     }
@@ -729,9 +742,9 @@ const pillarPages = [
       },
       en: {
         kicker: "Pillar guide",
-        title: "Cervical Curve: Normal Neck Curve, Straightening, and Loss of Lordosis",
+        title: "Normal Cervical Curve vs Straight Neck and Loss of Lordosis",
         description:
-          "A plain-language guide to the cervical curve, normal neck lordosis, straightening, reversed curve, symptoms, conservative care, and when to seek medical evaluation.",
+          "See what a normal cervical curve looks like, how straight neck or loss of lordosis differs, and when arm numbness, weakness, or gait changes need care.",
         intro: [
           "The cervical curve is the natural curve of the neck seen from the side. Many people search for it after an X-ray or MRI report mentions straightening, loss of cervical lordosis, reversed curve, or cervical kyphosis.",
           "This guide answers the broad question first: what the normal neck curve is, what common report words mean, why symptoms matter more than the curve alone, and what conservative care can reasonably track."
@@ -2722,6 +2735,7 @@ const staticUrls = [
 const sitemapUrls = [
   ...Object.values(languages).map((lang) => lang.home),
   ...allArticles.flatMap((article) => Object.keys(languages).map((lang) => articlePath(lang, article.slug))),
+  ...supplementalBilingualArticleSlugs.flatMap((slug) => ["zh", "en"].map((lang) => articlePath(lang, slug))),
   ...pillarPages.flatMap((pillar) => Object.keys(languages).map((lang) => localizedPath(lang, pillar.slug))),
   ...Object.keys(hubs).flatMap((route) => Object.keys(languages).map((lang) => localizedPath(lang, route))),
   ...["tools", "videos"].flatMap((route) => Object.keys(languages).map((lang) => localizedPath(lang, route))),

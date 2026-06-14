@@ -215,8 +215,8 @@ window.CCG_GROWTH = {
     "en": [
       {
         "tag": "Pillar guide",
-        "title": "Cervical Curve: Normal Neck Curve, Straightening, and Loss of Lordosis",
-        "body": "A plain-language guide to the cervical curve, normal neck lordosis, straightening, reversed curve, symptoms, conservative care, and when to seek medical evaluation.",
+        "title": "Normal Cervical Curve vs Straight Neck and Loss of Lordosis",
+        "body": "See what a normal cervical curve looks like, how straight neck or loss of lordosis differs, and when arm numbness, weakness, or gait changes need care.",
         "url": "/cervical-curve/"
       },
       {
@@ -377,8 +377,8 @@ window.CCG_GROWTH = {
       },
       {
         "tag": "Treatment hub",
-        "title": "Conservative boundaries for traction, pillows, massage, and manipulation",
-        "body": "Common tools may help some symptoms, but they should not promise realignment or curve restoration. Indications, contraindications, dose, and response matter.",
+        "title": "Cervical Traction Contraindications, Pillows and Massage",
+        "body": "When cervical traction, pillows, massage, or manipulation may help, when to stop, and which red flags or contraindications need professional care.",
         "url": "/treatments/"
       },
       {
