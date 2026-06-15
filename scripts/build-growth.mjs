@@ -2569,7 +2569,6 @@ function renderEnglishRedirectStub(targetPath) {
     <meta charset="utf-8" />
     <title>${title}</title>
     <link rel="canonical" href="${url}" />
-    <meta name="robots" content="noindex,follow" />
     <meta http-equiv="refresh" content="0; url=${targetPath}" />
     <script>location.replace("${targetPath}" + location.hash);</script>
   </head>

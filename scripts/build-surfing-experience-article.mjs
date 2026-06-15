@@ -1967,7 +1967,6 @@ function renderEnglishRedirect() {
     <meta charset="utf-8" />
     <title>Moved</title>
     <link rel="canonical" href="${canonical}" />
-    <meta name="robots" content="noindex,follow" />
     <meta http-equiv="refresh" content="0; url=${pathFor("en")}" />
     <script>location.replace("${pathFor("en")}" + location.hash);</script>
   </head>
