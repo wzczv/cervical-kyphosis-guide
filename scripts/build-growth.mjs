@@ -3,9 +3,9 @@ import { execFileSync } from "node:child_process";
 import { dirname, join } from "node:path";
 
 const baseUrl = "https://cervicalcurveguide.com";
-const version = "20260609-pillar";
-const reviewDate = "2026-06-09";
-const sitemapLastmod = "2026-06-14";
+const version = "20260615-traffic-sprint";
+const reviewDate = "2026-06-15";
+const sitemapLastmod = "2026-06-15";
 const generatedHtmlFiles = new Set();
 const skippedExistingHtmlFiles = new Set();
 const overwriteExistingHtml = process.argv.includes("--overwrite-existing");
@@ -21,7 +21,7 @@ const languages = {
     short: "中文",
     label: "中文",
     read: "继续阅读",
-    updated: "最后审校：2026 年 6 月 9 日",
+    updated: "最后审校：2026 年 6 月 15 日",
     review:
       "编辑审阅：已按保守健康教育标准检查；尚未由具名执业临床人员独立审阅。",
     medicalLabel: "医疗提醒：",
@@ -62,7 +62,7 @@ const languages = {
     short: "EN",
     label: "English",
     read: "Read more",
-    updated: "Last reviewed: June 9, 2026",
+    updated: "Last reviewed: June 15, 2026",
     review:
       "Editorial review: checked for conservative health-education wording; not yet independently reviewed by a named licensed clinician.",
     medicalLabel: "Medical notice:",
@@ -103,7 +103,7 @@ const languages = {
     short: "日本語",
     label: "日本語",
     read: "続きを読む",
-    updated: "最終確認：2026年6月9日",
+    updated: "最終確認：2026年6月15日",
     review:
       "編集レビュー：保守的な健康教育表現として確認済み。現時点では、氏名を表示した有資格臨床家による独立レビューは未完了です。",
     medicalLabel: "医療上の注意：",
@@ -144,7 +144,7 @@ const languages = {
     short: "ES",
     label: "Español",
     read: "Leer más",
-    updated: "Última revisión: 9 de junio de 2026",
+    updated: "Última revisión: 15 de junio de 2026",
     review:
       "Revisión editorial: comprobado con lenguaje conservador de educación sanitaria; aún no revisado de forma independiente por un profesional clínico identificado.",
     medicalLabel: "Aviso médico:",
@@ -479,7 +479,7 @@ const trafficSprintArticles = [
   }),
   topic("mild-cervical-kyphosis-symptoms", "diagnosis", [sources.clevelandKyphosis, sources.kyphosisReview, sources.neckPainGuideline], {
     zh: ["影像解释", "轻度颈椎反弓会有什么症状？", "轻度 cervical kyphosis 报告词不等于症状一定轻，也不等于一定严重。需要把局部颈痛、手臂症状、红旗和 24 小时反应分开看。", "局部僵硬、疲劳、头痛和姿势敏感可以出现；手麻、无力、手变笨、走路问题或外伤后加重会改变处理优先级。", ["轻度影像不自动等于轻度症状。", "手臂和手指症状要单独筛查。", "下一步看进展和功能，而不是只看曲度词。"]],
-    en: ["Imaging explainer", "Mild cervical kyphosis symptoms: what to watch", "A conservative guide to mild cervical kyphosis symptoms, from local neck stiffness to arm pain, finger numbness, weakness, and red flags.", "Mild wording on a report does not always mean mild symptoms, and serious-sounding wording does not automatically mean an emergency. Symptom behavior decides the next step.", ["Mild imaging does not automatically mean mild symptoms.", "Arm and finger symptoms need their own screen.", "Progression and function matter more than the curve word alone."]],
+    en: ["Imaging explainer", "Mild Cervical Kyphosis Symptoms: What to Watch and When to Worry", "A conservative guide to mild cervical kyphosis symptoms, from local neck stiffness to arm pain, finger numbness, weakness, and red flags.", "Mild wording on a report does not always mean mild symptoms, and serious-sounding wording does not automatically mean an emergency. Symptom behavior decides the next step.", ["Mild imaging does not automatically mean mild symptoms.", "Arm and finger symptoms need their own screen.", "Progression and function matter more than the curve word alone."]],
     ja: ["画像解説", "軽度頸椎後弯の症状：何を見る？", "軽度頸椎後弯の症状を、局所のこわばり、腕痛、指のしびれ、筋力低下、危険サインに分けて整理します。", "軽度という報告語は症状も軽いという意味ではありません。逆に強い言葉だけで緊急とは限りません。症状の変化が次の判断を決めます。", ["軽度画像=軽度症状とは限らない。", "腕や指の症状は別に確認する。", "曲度語より進行と機能を見る。"]],
     es: ["Explicador de imagen", "Síntomas de cifosis cervical leve: qué vigilar", "Guía conservadora sobre síntomas de cifosis cervical leve: rigidez local, dolor de brazo, dedos dormidos, debilidad y alarmas.", "La palabra leve en un informe no siempre significa síntomas leves, y una frase seria no siempre significa urgencia. El comportamiento de los síntomas guía el siguiente paso.", ["Imagen leve no siempre significa síntomas leves.", "Síntomas de brazo y dedos necesitan cribado propio.", "Progresión y función importan más que la frase de curva."]]
   }, {
@@ -560,7 +560,7 @@ const trafficSprintArticles = [
   }),
   topic("cervical-kyphosis-exercises-to-avoid", "exercises", [sources.neckPainGuideline, sources.returnSport, sources.radiculopathy], {
     zh: ["练习边界", "颈椎反弓哪些练习先别硬做？", "没有一种动作对所有颈椎反弓都永远禁止，但症状加重、神经症状、外伤或不稳定风险出现时，某些拉伸、牵引和高负荷动作不适合硬扛。", "先避开会让疼痛扩散、手麻加重、无力明显、头晕或第二天反应持续变差的动作。", ["不要用疼痛硬测试颈椎。", "神经症状加重是停止信号。", "练习选择要看 24 小时反应。"]],
-    en: ["Exercise boundaries", "Cervical kyphosis exercises to avoid: what not to force", "There is no single exercise that every person with cervical kyphosis must avoid forever, but symptom-provoking stretches, traction, and heavy loading should be treated carefully.", "Avoid forcing movements that spread pain, worsen numbness, create weakness, trigger dizziness, or leave a worse next-day response.", ["Do not use pain to stress-test the neck.", "Worsening nerve symptoms are a stop sign.", "Choose exercises by the 24-hour response."]],
+    en: ["Exercise boundaries", "Cervical Kyphosis Exercises to Avoid: What Not to Force", "Cervical kyphosis exercises to avoid or modify: end-range stretching, traction, heavy loading, nerve symptoms, and the 24-hour response.", "Avoid forcing movements that spread pain, worsen numbness, create weakness, trigger dizziness, or leave a worse next-day response.", ["Do not use pain to stress-test the neck.", "Worsening nerve symptoms are a stop sign.", "Choose exercises by the 24-hour response."]],
     ja: ["運動の境界", "頸椎後弯で無理しない方がよい運動", "全員が永遠に避ける一つの運動はありませんが、症状を悪化させるストレッチ、牽引、高負荷は慎重に扱います。", "痛みの拡大、しびれ悪化、筋力低下、めまい、翌日の悪化が出る動きは無理に続けません。", ["痛みで首をテストしない。", "神経症状悪化は中止サイン。", "24時間反応で運動を選ぶ。"]],
     es: ["Límites de ejercicio", "Ejercicios a evitar con cifosis cervical: qué no forzar", "No hay un ejercicio que todos deban evitar para siempre, pero estiramientos, tracción y cargas que provocan síntomas deben manejarse con cuidado.", "Evita forzar movimientos que extiendan dolor, empeoren entumecimiento, creen debilidad, disparen mareo o dejen peor respuesta al día siguiente.", ["No uses dolor para probar el cuello.", "Empeorar síntomas nerviosos es señal de parar.", "Elige ejercicios por la respuesta de 24 horas."]]
   }, {
@@ -610,6 +610,141 @@ const trafficSprintArticles = [
       ["Qué puede sugerir el patrón", ["Pulgar e índice se discuten a menudo con C6 o nervio mediano. El dedo medio suele discutirse con C7. Pero los síntomas reales no siempre respetan fronteras de libro."]],
       ["Pistas del cuello vs muñeca", ["Pistas cervicales: síntomas que viajan de cuello o escápula al brazo, cambian con posición cervical o empeoran con tos/estornudo. Pistas de muñeca: entumecimiento nocturno, sacudir la mano ayuda, o relación con postura de muñeca y agarre repetitivo."]],
       ["Usa el mapa con prudencia", [{ html: `Usa el <a href="${localizedPath("es", "images/c6-c7-c8-finger-numbness-map")}">mapa C6 C7 C8</a> como ayuda de conversación, y revisa la <a href="${articlePath("es", "can-cervical-kyphosis-cause-hand-numbness")}">guía de mano dormida y cifosis cervical</a> si el informe de curva es parte de la preocupación.` }]]
+    ]
+  }),
+  topic("cervical-kyphosis-neurological-symptoms", "symptoms", [sources.radiculopathy, sources.ncbiRadiculopathy, sources.neckPainGuideline, sources.kyphosisReview], {
+    zh: ["症状专题", "颈椎反弓的神经症状：哪些不能拖？", "颈椎反弓或后凸本身不是神经诊断。更重要的是是否出现手臂放射痛、手麻、无力、手变笨、走路不稳或大小便异常。", "这些神经线索需要和症状进展、体格检查、影像节段和功能变化放在一起看，而不是只用曲度形状判断风险。", ["神经症状比曲度词更决定优先级。", "进行性无力、手变笨和走路变化需要更快评估。", "手麻分布要和力量、反射、诱因一起看。"]],
+    en: ["Symptom guide", "Cervical Kyphosis Neurological Symptoms: Red Flags to Know", "Cervical kyphosis neurological symptoms explained: arm pain, numbness, weakness, hand clumsiness, gait changes, and red flags to check.", "Neurological clues should be interpreted with progression, physical exam, imaging level, and function instead of judging risk from curve shape alone.", ["Neurological symptoms outrank curve wording.", "Progressive weakness, hand clumsiness, or walking change deserves faster assessment.", "Numbness patterns need strength, reflex, and trigger context."]],
+    ja: ["症状ガイド", "頸椎後弯の神経症状：注意すべきサイン", "頸椎後弯そのものは神経診断ではありません。腕へ走る痛み、しびれ、筋力低下、手の不器用さ、歩行変化、排尿排便異常があるかが重要です。", "神経の手がかりは、進行、診察、画像レベル、機能変化と合わせて読みます。カーブ形状だけで危険度は決まりません。", ["神経症状はカーブの言葉より優先。", "進行する筋力低下、手の不器用さ、歩行変化は早めに評価。", "しびれ分布は筋力、反射、誘因と合わせて見る。"]],
+    es: ["Guía de síntomas", "Síntomas neurológicos de cifosis cervical: alarmas", "La cifosis cervical no es por sí sola un diagnóstico neurológico. La prioridad es saber si hay dolor al brazo, entumecimiento, debilidad, torpeza de mano, cambios al caminar o síntomas urinarios/intestinales.", "Las pistas neurológicas se interpretan con progresión, exploración física, nivel de imagen y función, no solo por la forma de la curva.", ["Los síntomas neurológicos pesan más que la frase de curva.", "Debilidad progresiva, torpeza manual o marcha alterada merecen evaluación rápida.", "El entumecimiento necesita contexto de fuerza, reflejos y desencadenantes."]]
+  }, {
+    zh: [
+      ["先区分局部颈痛和神经症状", ["局部颈痛、僵硬、上背疲劳和姿势敏感可以出现在很多非急性颈痛模式里。神经症状更像疼痛、麻木或刺痛沿肩胛、手臂、前臂或手指走，或出现真实力量和协调变化。"]],
+      ["哪些情况优先级更高", [{ html: `新出现或加重的无力、手变笨、走路不稳、麻木扩散、大小便异常或外伤后症状，应该参考 <a href="${articlePath("zh", "cervical-radiculopathy-myelopathy-red-flags")}">神经根病和脊髓受压红旗指南</a>，而不是继续加大训练。` }]],
+      ["把曲度放回背景里", [{ html: `曲度词可以是背景线索，但神经模式才决定下一步。可以用 <a href="${localizedPath("zh", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 手指麻木地图</a> 和 <a href="${articlePath("zh", "c5-c8-nerve-root-symptoms")}">C5-C8 神经根症状</a> 先整理信息。` }]]
+    ],
+    en: [
+      ["Separate local neck pain from neurological symptoms", ["Local neck pain, stiffness, upper-back fatigue, and position sensitivity can fit many non-emergency neck-pain patterns. Neurological symptoms are more concerning when pain, numbness, tingling, weakness, or coordination change travels into the shoulder blade, arm, forearm, or fingers."]],
+      ["Which symptoms raise priority", [{ html: `New or worsening weakness, hand clumsiness, walking imbalance, spreading numbness, bowel/bladder symptoms, or symptoms after trauma belong with the <a href="${articlePath("en", "cervical-radiculopathy-myelopathy-red-flags")}">radiculopathy and myelopathy red flag guide</a>, not with more training intensity.` }]],
+      ["Put the curve finding back in context", [{ html: `Curve wording can be background context, but the neurological pattern decides the next step. Use the <a href="${localizedPath("en", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 finger numbness map</a> and <a href="${articlePath("en", "c5-c8-nerve-root-symptoms")}">C5-C8 nerve-root symptoms</a> guide to organize details before guessing from the report.` }]]
+    ],
+    ja: [
+      ["局所痛と神経症状を分ける", ["首だけの痛み、こわばり、背中上部の疲労、姿勢への敏感さは、多くの非緊急パターンで見られます。神経症状では、痛み、しびれ、刺す感じ、筋力低下、協調性の変化が肩甲部、腕、前腕、指へ広がります。"]],
+      ["優先度が上がる症状", [{ html: `新しいまたは悪化する筋力低下、手の不器用さ、歩行不安定、しびれ拡大、排尿排便異常、外傷後の症状は <a href="${articlePath("ja", "cervical-radiculopathy-myelopathy-red-flags")}">神経根症・脊髄症の危険サイン</a> として扱います。` }]],
+      ["カーブ所見は文脈へ戻す", [{ html: `カーブの言葉は背景情報ですが、次の判断は神経パターンで決まります。<a href="${localizedPath("ja", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 指のしびれマップ</a> と <a href="${articlePath("ja", "c5-c8-nerve-root-symptoms")}">C5-C8 神経根症状</a> で整理します。` }]]
+    ],
+    es: [
+      ["Separar dolor local de síntomas neurológicos", ["Dolor local de cuello, rigidez, fatiga de espalda alta y sensibilidad postural pueden encajar con muchos patrones no urgentes. Los síntomas neurológicos preocupan más cuando dolor, hormigueo, entumecimiento, debilidad o coordinación cambian hacia escápula, brazo, antebrazo o dedos."]],
+      ["Qué sube la prioridad", [{ html: `Debilidad nueva o progresiva, torpeza de mano, desequilibrio al caminar, entumecimiento que se extiende, síntomas urinarios/intestinales o síntomas tras trauma pertenecen a la <a href="${articlePath("es", "cervical-radiculopathy-myelopathy-red-flags")}">guía de alarmas de radiculopatía y mielopatía</a>.` }]],
+      ["Volver a poner la curva en contexto", [{ html: `La frase de curva puede ser contexto, pero el patrón neurológico decide el siguiente paso. Usa el <a href="${localizedPath("es", "images/c6-c7-c8-finger-numbness-map")}">mapa C6 C7 C8</a> y la guía de <a href="${articlePath("es", "c5-c8-nerve-root-symptoms")}">síntomas C5-C8</a> antes de sacar conclusiones del informe.` }]]
+    ]
+  }),
+  topic("cervical-kyphosis-in-adults", "diagnosis", [sources.clevelandKyphosis, sources.kyphosisReview, sources.lordosisReview, sources.neckPainGuideline], {
+    zh: ["影像解释", "成年人颈椎反弓：原因、症状和下一步", "成年人报告里出现 cervical kyphosis、反弓或后凸时，不要直接等同于严重疾病。常见背景包括疼痛保护、退变、旧外伤、术后改变、炎症或长期负荷。", "下一步取决于症状是否稳定、有没有神经体征、是否外伤相关，以及这个影像词是否和功能变化相符。", ["成年人颈椎反弓不是单一原因。", "稳定局部症状和进行性神经症状是不同路径。", "检查和治疗选择要服务于下一步决策。"]],
+    en: ["Imaging explainer", "Cervical Kyphosis in Adults: Causes, Symptoms, and Next Steps", "Adult cervical kyphosis causes and symptoms: report wording, neck pain, neurological red flags, conservative care, and when to seek assessment.", "The next step depends on symptom stability, neurological signs, trauma context, and whether the imaging wording matches functional change.", ["Adult cervical kyphosis has more than one possible context.", "Stable local symptoms and progressive neurological symptoms need different paths.", "Testing and treatment choices should serve the next decision."]],
+    ja: ["画像解説", "成人の頸椎後弯：原因、症状、次の一歩", "成人のレポートに頸椎後弯、逆カーブ、後弯曲線と書かれても、すぐ重症と決めるものではありません。痛みの防御、変性、外傷歴、術後変化、炎症、長期負荷などが背景になります。", "次の一歩は、症状の安定性、神経所見、外傷、画像語と機能変化の一致で決まります。", ["成人の頸椎後弯には複数の背景がある。", "安定した局所症状と進行性神経症状は別ルート。", "検査と治療は次の判断に役立つ時に意味がある。"]],
+    es: ["Explicador de imagen", "Cifosis cervical en adultos: causas, síntomas y próximos pasos", "Cuando un informe adulto menciona cifosis cervical, curva invertida o curva cifótica, no debe asumirse enfermedad grave por defecto. Puede relacionarse con protección por dolor, degeneración, trauma previo, cambio posquirúrgico, inflamación o carga prolongada.", "El siguiente paso depende de estabilidad de síntomas, signos neurológicos, trauma y concordancia entre imagen y función.", ["La cifosis cervical adulta tiene varios contextos posibles.", "Síntomas locales estables y neurológicos progresivos requieren rutas distintas.", "Pruebas y tratamiento deben servir a la decisión siguiente."]]
+  }, {
+    zh: [
+      ["成年人常见背景", ["成年人出现颈椎曲度变化，可能和工作姿势、疼痛保护、椎间盘或关节退变、旧外伤、炎症性疾病或术后改变有关。这些背景不能混成一个简单答案。"]],
+      ["先看症状路径", [{ html: `如果只是局部颈痛且稳定，可以从负荷、睡眠和运动耐受开始。如果伴随手麻、无力、手变笨或走路变化，先读 <a href="${articlePath("zh", "cervical-kyphosis-neurological-symptoms")}">神经症状指南</a> 和 <a href="${articlePath("zh", "when-to-see-doctor-cervical-kyphosis")}">就医分流指南</a>。` }]],
+      ["不要只追求曲度恢复", [{ html: `成年人保守处理更现实的目标，是疼痛、睡眠、活动、力量和 24 小时反应更稳定。关于预期，可以继续看 <a href="${articlePath("zh", "can-cervical-curve-be-restored")}">颈椎曲度能否练回来</a>。` }]]
+    ],
+    en: [
+      ["Common adult contexts", ["In adults, neck-curve changes can sit alongside work posture, pain guarding, disc or joint degeneration, old trauma, inflammatory disease, or post-surgical change. These contexts should not be blended into one simple internet explanation."]],
+      ["Start with the symptom path", [{ html: `If symptoms are local and stable, start with load, sleep, and movement tolerance. If there is numbness, weakness, hand clumsiness, or walking change, use the <a href="${articlePath("en", "cervical-kyphosis-neurological-symptoms")}">neurological symptoms guide</a> and <a href="${articlePath("en", "when-to-see-doctor-cervical-kyphosis")}">care triage guide</a>.` }]],
+      ["Do not chase curve restoration alone", [{ html: `For adults, conservative care usually tracks pain, sleep, motion, strength, and the 24-hour response. For realistic expectations, continue with <a href="${articlePath("en", "can-cervical-curve-be-restored")}">can cervical curve be restored?</a>` }]]
+    ],
+    ja: [
+      ["成人でよくある背景", ["成人の首カーブ変化は、仕事姿勢、痛みの防御、椎間板や関節の変性、外傷歴、炎症性疾患、術後変化と一緒に見られることがあります。単純な一つの説明にまとめないことが大切です。"]],
+      ["症状の道筋から始める", [{ html: `局所症状で安定しているなら、負荷、睡眠、動きの耐性から見ます。しびれ、筋力低下、手の不器用さ、歩行変化があれば <a href="${articlePath("ja", "cervical-kyphosis-neurological-symptoms")}">神経症状ガイド</a> と <a href="${articlePath("ja", "when-to-see-doctor-cervical-kyphosis")}">受診ガイド</a> を使います。` }]],
+      ["カーブ回復だけを追わない", [{ html: `成人の保存的ケアでは、痛み、睡眠、動き、筋力、24時間反応を追います。期待値は <a href="${articlePath("ja", "can-cervical-curve-be-restored")}">頸椎カーブは戻るか</a> で確認できます。` }]]
+    ],
+    es: [
+      ["Contextos adultos frecuentes", ["En adultos, los cambios de curva cervical pueden coexistir con postura laboral, protección por dolor, degeneración discal o articular, trauma antiguo, enfermedad inflamatoria o cirugía previa. No conviene mezclar todo en una sola explicación."]],
+      ["Empezar por la ruta de síntomas", [{ html: `Si los síntomas son locales y estables, empieza por carga, sueño y tolerancia al movimiento. Si hay entumecimiento, debilidad, torpeza manual o cambios al caminar, usa la <a href="${articlePath("es", "cervical-kyphosis-neurological-symptoms")}">guía de síntomas neurológicos</a> y la <a href="${articlePath("es", "when-to-see-doctor-cervical-kyphosis")}">guía de atención</a>.` }]],
+      ["No perseguir solo restaurar la curva", [{ html: `En adultos, el cuidado conservador suele seguir dolor, sueño, movimiento, fuerza y respuesta de 24 horas. Para expectativas realistas, lee <a href="${articlePath("es", "can-cervical-curve-be-restored")}">si se puede recuperar la curva cervical</a>.` }]]
+    ]
+  }),
+  topic("kyphosis-cervical-spine-symptoms", "symptoms", [sources.clevelandKyphosis, sources.radiculopathy, sources.neckPainGuideline], {
+    zh: ["症状专题", "颈椎后凸症状：从颈痛到手麻怎么判断", "Kyphosis cervical spine symptoms 这类搜索通常想知道：颈椎后凸会不会解释颈痛、头痛、手麻或无力。答案需要按症状层级看，而不是只看曲度。", "局部疼痛、姿势敏感和疲劳是一类；放射性手臂痛、手指麻木、力量下降和走路变化是另一类。", ["先按症状层级分流。", "手臂和手指症状需要神经模式判断。", "报告词和症状不匹配时不要强行归因。"]],
+    en: ["Symptom guide", "Kyphosis Cervical Spine Symptoms: Neck Pain, Numbness, and Red Flags", "Kyphosis cervical spine symptoms explained: neck pain, numbness, weakness, red flags, and when a curve finding needs symptom context.", "Local pain, position sensitivity, and fatigue are one pattern; radiating arm pain, finger numbness, strength loss, and walking changes are a higher-priority pattern.", ["Triage by symptom level first.", "Arm and finger symptoms need neurological patterning.", "Do not force a curve explanation when symptoms do not match."]],
+    ja: ["症状ガイド", "頸椎後弯の症状：首痛、しびれ、危険サイン", "頸椎後弯の症状を検索する人は、首痛、頭痛、しびれ、筋力低下がカーブ所見で説明できるかを知りたいことが多いです。答えはカーブだけでなく症状レベルで決まります。", "局所痛、姿勢への敏感さ、疲労は一つのパターンです。腕へ走る痛み、指のしびれ、筋力低下、歩行変化は優先度が高くなります。", ["まず症状レベルで分ける。", "腕や指の症状は神経パターンで見る。", "症状と合わない時にカーブへ無理に帰属しない。"]],
+    es: ["Guía de síntomas", "Síntomas de cifosis en columna cervical: dolor, entumecimiento y alarmas", "Quien busca síntomas de cifosis cervical suele preguntar si una curva explica dolor de cuello, cefalea, entumecimiento o debilidad. La respuesta depende del nivel de síntomas, no solo de la curva.", "Dolor local, sensibilidad postural y fatiga son un patrón; dolor irradiado al brazo, dedos dormidos, pérdida de fuerza y marcha alterada son prioridad mayor.", ["Clasifica primero por nivel de síntomas.", "Brazo y dedos necesitan patrón neurológico.", "No fuerces una explicación de curva cuando no encaja."]]
+  }, {
+    zh: [
+      ["常见但不一定紧急的症状", ["颈部僵硬、上背疲劳、工作时更不舒服、运动后第二天酸痛，可能和负荷、睡眠和姿势耐受有关。它们不一定说明曲度正在快速恶化。"]],
+      ["更需要重视的症状", [{ html: `疼痛向手臂放射、手指麻木、握力下降、手变笨、走路不稳或夜间持续痛醒，需要和 <a href="${articlePath("zh", "cervical-kyphosis-neurological-symptoms")}">神经症状</a> 与 <a href="${articlePath("zh", "cervical-radiculopathy-myelopathy-red-flags")}">红旗</a> 一起看。` }]],
+      ["下一步怎么选页面", [{ html: `想看报告词，读 <a href="${articlePath("zh", "cervical-kyphosis-vs-loss-lordosis")}">颈椎反弓 vs 曲度变直</a>；想看手麻，读 <a href="${articlePath("zh", "can-cervical-kyphosis-cause-hand-numbness")}">颈椎反弓会不会导致手麻</a>。` }]]
+    ],
+    en: [
+      ["Common but not automatically urgent symptoms", ["Neck stiffness, upper-back fatigue, worse symptoms during desk work, or next-day soreness after activity can relate to load, sleep, and position tolerance. They do not automatically mean the curve is rapidly worsening."]],
+      ["Symptoms that deserve more attention", [{ html: `Arm pain, finger numbness, grip loss, hand clumsiness, walking imbalance, or persistent night pain should be read with the <a href="${articlePath("en", "cervical-kyphosis-neurological-symptoms")}">neurological symptoms</a> and <a href="${articlePath("en", "cervical-radiculopathy-myelopathy-red-flags")}">red flag</a> guides.` }]],
+      ["Where to go next", [{ html: `For report wording, read <a href="${articlePath("en", "cervical-kyphosis-vs-loss-lordosis")}">cervical kyphosis vs loss of lordosis</a>. For numbness, read <a href="${articlePath("en", "can-cervical-kyphosis-cause-hand-numbness")}">can cervical kyphosis cause hand numbness?</a>` }]]
+    ],
+    ja: [
+      ["よくあるが直ちに緊急とは限らない症状", ["首のこわばり、背中上部の疲労、デスクワークで悪化、運動翌日の痛みは、負荷、睡眠、姿勢耐性と関係することがあります。すぐカーブ悪化を意味するとは限りません。"]],
+      ["注意を上げる症状", [{ html: `腕へ走る痛み、指のしびれ、握力低下、手の不器用さ、歩行不安定、持続する夜間痛は <a href="${articlePath("ja", "cervical-kyphosis-neurological-symptoms")}">神経症状</a> と <a href="${articlePath("ja", "cervical-radiculopathy-myelopathy-red-flags")}">危険サイン</a> と合わせて見ます。` }]],
+      ["次に読むページ", [{ html: `報告語なら <a href="${articlePath("ja", "cervical-kyphosis-vs-loss-lordosis")}">頸椎後弯 vs 前弯減少</a>、しびれなら <a href="${articlePath("ja", "can-cervical-kyphosis-cause-hand-numbness")}">頸椎後弯と手のしびれ</a> を確認します。` }]]
+    ],
+    es: [
+      ["Síntomas comunes no siempre urgentes", ["Rigidez cervical, fatiga de espalda alta, molestias en trabajo de escritorio o dolor al día siguiente de actividad pueden relacionarse con carga, sueño y tolerancia postural. No significan automáticamente que la curva empeore rápido."]],
+      ["Síntomas que merecen más atención", [{ html: `Dolor al brazo, dedos dormidos, pérdida de agarre, torpeza de mano, desequilibrio al caminar o dolor nocturno persistente se leen con las guías de <a href="${articlePath("es", "cervical-kyphosis-neurological-symptoms")}">síntomas neurológicos</a> y <a href="${articlePath("es", "cervical-radiculopathy-myelopathy-red-flags")}">alarmas</a>.` }]],
+      ["Qué leer después", [{ html: `Para lenguaje de informe, lee <a href="${articlePath("es", "cervical-kyphosis-vs-loss-lordosis")}">cifosis cervical vs pérdida de lordosis</a>. Para entumecimiento, lee <a href="${articlePath("es", "can-cervical-kyphosis-cause-hand-numbness")}">mano dormida y cifosis cervical</a>.` }]]
+    ]
+  }),
+  topic("cervical-kyphosis-neck-pain", "symptoms", [sources.neckPainGuideline, sources.lordosisReview, sources.clevelandKyphosis], {
+    zh: ["症状专题", "颈椎反弓和颈痛：怎么判断是不是曲度导致？", "颈痛和 cervical kyphosis 可以同时出现，但同时出现不等于曲度就是唯一原因。更有用的是看疼痛位置、诱因、持续时间、神经症状和 24 小时反应。", "如果颈痛是局部、稳定、能随负荷调整而改善，处理路径和伴随手麻无力的颈痛完全不同。", ["颈痛不能只用曲度解释。", "局部稳定痛先看负荷和耐受。", "手臂痛、手麻或无力会改变优先级。"]],
+    en: ["Symptom guide", "Cervical Kyphosis Neck Pain: Is the Curve the Cause?", "Cervical kyphosis neck pain guide: curve wording, triggers, 24-hour response, arm symptoms, and red flags.", "Local, stable neck pain that improves with load changes follows a different path from neck pain with numbness, weakness, or spreading arm symptoms.", ["Do not explain neck pain by curve shape alone.", "Stable local pain starts with load and tolerance.", "Arm pain, numbness, or weakness changes priority."]],
+    ja: ["症状ガイド", "頸椎後弯と首痛：カーブが原因？", "首痛と頸椎後弯は同時に見られますが、同時にあるだけでカーブが唯一の原因とは言えません。痛みの場所、誘因、期間、神経症状、24時間反応を見る方が実用的です。", "局所的で安定し、負荷調整で改善する首痛と、しびれや筋力低下を伴う首痛では対応が違います。", ["首痛をカーブ形状だけで説明しない。", "安定した局所痛は負荷と耐性から見る。", "腕痛、しびれ、筋力低下は優先度を変える。"]],
+    es: ["Guía de síntomas", "Dolor de cuello con cifosis cervical: ¿la curva es la causa?", "Dolor de cuello y cifosis cervical pueden coexistir, pero eso no prueba que la curva sea la única causa. Lo útil es ubicación, desencadenantes, duración, síntomas neurológicos y respuesta de 24 horas.", "Dolor local estable que mejora con cambios de carga sigue una ruta distinta al dolor con entumecimiento, debilidad o síntomas que bajan al brazo.", ["No expliques el dolor solo por la curva.", "Dolor local estable empieza por carga y tolerancia.", "Dolor al brazo, entumecimiento o debilidad cambian prioridad."]]
+  }, {
+    zh: [
+      ["曲度和疼痛为什么不能简单画等号", ["拍片体位、疼痛保护、肌肉紧张、退变和当天状态都会影响曲度外观。一个报告词可能是当前问题的一部分，也可能只是背景。"]],
+      ["先用 24 小时反应分层", [{ html: `如果改变坐姿、睡眠、训练量或休息节奏后，疼痛在 24 小时内更稳定，通常可以从保守负荷管理开始。可以配合 <a href="${localizedPath("zh", "images/24-hour-neck-symptom-response-chart")}">24 小时反应图</a>。` }]],
+      ["什么时候不是普通颈痛路径", [{ html: `如果颈痛伴随放射性手臂痛、手麻、无力、手变笨或走路变化，先转向 <a href="${articlePath("zh", "cervical-kyphosis-neurological-symptoms")}">神经症状指南</a>。` }]]
+    ],
+    en: [
+      ["Why curve and pain are not the same thing", ["Imaging position, pain guarding, muscle tone, degeneration, and day-to-day state can all change how the neck curve appears. A report term may be part of the current problem, or it may be background context."]],
+      ["Use the 24-hour response first", [{ html: `If changes to posture, sleep, training volume, or break rhythm make pain steadier within 24 hours, conservative load management is often the starting point. Use the <a href="${localizedPath("en", "images/24-hour-neck-symptom-response-chart")}">24-hour response chart</a> to keep the pattern readable.` }]],
+      ["When this is not the simple neck-pain path", [{ html: `If neck pain travels into the arm or comes with numbness, weakness, hand clumsiness, or walking change, move first to the <a href="${articlePath("en", "cervical-kyphosis-neurological-symptoms")}">neurological symptoms guide</a>.` }]]
+    ],
+    ja: [
+      ["カーブと痛みを同一視できない理由", ["撮影姿勢、痛みの防御、筋緊張、変性、その日の状態で首のカーブは変わります。報告語は現在の問題の一部かもしれませんが、背景にすぎないこともあります。"]],
+      ["まず24時間反応を使う", [{ html: `姿勢、睡眠、トレーニング量、休憩を変えて24時間以内に痛みが安定するなら、保存的な負荷管理から始めやすいです。<a href="${localizedPath("ja", "images/24-hour-neck-symptom-response-chart")}">24時間反応チャート</a> を使います。` }]],
+      ["単純な首痛ルートではない時", [{ html: `首痛が腕へ走る、しびれ、筋力低下、手の不器用さ、歩行変化を伴う場合は、まず <a href="${articlePath("ja", "cervical-kyphosis-neurological-symptoms")}">神経症状ガイド</a> へ進みます。` }]]
+    ],
+    es: [
+      ["Por qué curva y dolor no son lo mismo", ["Posición durante la imagen, protección por dolor, tono muscular, degeneración y estado del día pueden cambiar la apariencia de la curva. La frase del informe puede formar parte del problema o ser solo contexto."]],
+      ["Usa primero la respuesta de 24 horas", [{ html: `Si cambiar postura, sueño, volumen de entrenamiento o pausas deja el dolor más estable en 24 horas, la gestión conservadora de carga suele ser el inicio. Usa el <a href="${localizedPath("es", "images/24-hour-neck-symptom-response-chart")}">gráfico de respuesta 24 h</a>.` }]],
+      ["Cuándo no es una ruta simple de dolor cervical", [{ html: `Si el dolor baja al brazo o viene con entumecimiento, debilidad, torpeza de mano o cambios al caminar, empieza por la <a href="${articlePath("es", "cervical-kyphosis-neurological-symptoms")}">guía de síntomas neurológicos</a>.` }]]
+    ]
+  }),
+  topic("reversal-of-the-cervical-curvature", "diagnosis", [sources.spineBasics, sources.lordosisReview, sources.neckPainGuideline, sources.kyphosisReview], {
+    zh: ["影像解释", "Reversal of the cervical curvature：报告这样写是什么意思？", "Reversal of the cervical curvature 通常表示正常向前的颈椎曲线在影像上变平或转向反方向。它是影像描述，不是单独的治疗指令。", "真正决定下一步的是外伤、症状进展、神经体征、功能变化和这个报告词是否与症状匹配。", ["这是影像形态描述，不是完整诊断。", "反向曲度要和症状、检查和功能一起解释。", "不要只凭报告词加大牵引或强拉。"]],
+    en: ["Imaging explainer", "Reversal of the Cervical Curvature: What the Report Means", "Reversal of the cervical curvature explained: what the report phrase means, how it differs from loss of lordosis, and what symptoms matter.", "The next step depends on trauma, symptom progression, neurological signs, functional change, and whether the report wording matches the clinical picture.", ["It is an imaging description, not a complete diagnosis.", "A reversed curve needs symptom, exam, and function context.", "Do not increase traction or forceful stretching from report wording alone."]],
+    ja: ["画像解説", "Reversal of the cervical curvature：レポートの意味", "Reversal of the cervical curvature は、通常前向きの首カーブが画像上で平らまたは反対方向に見えることを指します。これは説明であり、単独の治療指示ではありません。", "次の判断は、外傷、症状進行、神経所見、機能変化、報告語と症状の一致で決まります。", ["画像上の形の説明で、完全診断ではない。", "逆カーブは症状、診察、機能と合わせて読む。", "報告語だけで牽引や強いストレッチを増やさない。"]],
+    es: ["Explicador de imagen", "Reversal of the cervical curvature: qué significa el informe", "Reversal of the cervical curvature suele significar que la curva normal hacia delante se ve aplanada o doblada al contrario en la imagen. Es una descripción, no una instrucción de tratamiento por sí sola.", "El siguiente paso depende de trauma, progresión de síntomas, signos neurológicos, cambio funcional y concordancia clínica.", ["Es una descripción de imagen, no un diagnóstico completo.", "Una curva invertida necesita contexto de síntomas, exploración y función.", "No aumentes tracción o estiramiento fuerte solo por la frase."]]
+  }, {
+    zh: [
+      ["它和 loss of lordosis 有什么关系", [{ html: `Loss of cervical lordosis 通常表示正常前凸减少；reversal 则表示曲线可能朝反方向。两者都需要和症状一起读。更完整的对照见 <a href="${articlePath("zh", "cervical-kyphosis-vs-loss-lordosis")}">颈椎反弓 vs 曲度变直</a>。` }]],
+      ["为什么同一个人报告会变", ["拍片姿势、疼痛保护、肌肉紧张、测量方式和退变，都可能让报告措辞变化。所以不要用一次影像词判断整个预后。"]],
+      ["下一步先看什么", [{ html: `先记录疼痛位置、手臂或手指症状、力量、走路、睡眠和 24 小时反应。如果重点是曲线图像，可看 <a href="${localizedPath("zh", "images/cervical-curve-diagram")}">颈椎曲度图解</a>。` }]]
+    ],
+    en: [
+      ["How it relates to loss of lordosis", [{ html: `Loss of cervical lordosis usually means the normal forward curve is reduced. Reversal suggests the curve may bend the other way. Both need symptom context. For the direct comparison, read <a href="${articlePath("en", "cervical-kyphosis-vs-loss-lordosis")}">cervical kyphosis vs loss of cervical lordosis</a>.` }]],
+      ["Why reports can change", ["Imaging position, pain guarding, muscle tone, measurement method, and degenerative findings can all change report wording. Do not use one phrase from one image to predict the whole future."]],
+      ["What to check next", [{ html: `Track pain location, arm or finger symptoms, strength, walking, sleep, and the 24-hour response. If the shape itself is confusing, use the <a href="${localizedPath("en", "images/cervical-curve-diagram")}">normal cervical curve diagram</a>.` }]]
+    ],
+    ja: [
+      ["前弯減少との関係", [{ html: `Loss of cervical lordosis は通常、正常な前弯が減っていることを指します。Reversal は反対方向へ曲がる可能性を示します。どちらも症状文脈が必要です。比較は <a href="${articlePath("ja", "cervical-kyphosis-vs-loss-lordosis")}">頸椎後弯 vs 前弯減少</a> を確認します。` }]],
+      ["報告が変わる理由", ["撮影姿勢、痛みの防御、筋緊張、測定方法、変性所見で報告語は変わります。一つの画像語だけで将来を決めないでください。"]],
+      ["次に確認すること", [{ html: `痛みの場所、腕や指の症状、筋力、歩行、睡眠、24時間反応を記録します。形そのものが分かりにくい時は <a href="${localizedPath("ja", "images/cervical-curve-diagram")}">頸椎カーブ図</a> を使います。` }]]
+    ],
+    es: [
+      ["Relación con pérdida de lordosis", [{ html: `Pérdida de lordosis suele indicar reducción de la curva normal hacia delante. Reversal sugiere curva hacia el otro lado. Ambas necesitan contexto de síntomas. Para comparar, lee <a href="${articlePath("es", "cervical-kyphosis-vs-loss-lordosis")}">cifosis cervical vs pérdida de lordosis</a>.` }]],
+      ["Por qué puede cambiar el informe", ["Posición de imagen, protección por dolor, tono muscular, método de medición y degeneración pueden cambiar el lenguaje del informe. No uses una sola frase para predecir todo el futuro."]],
+      ["Qué mirar después", [{ html: `Registra ubicación del dolor, síntomas de brazo o dedos, fuerza, marcha, sueño y respuesta de 24 horas. Si la forma confunde, usa el <a href="${localizedPath("es", "images/cervical-curve-diagram")}">diagrama de curva cervical</a>.` }]]
     ]
   })
 ];
@@ -719,9 +854,10 @@ const pillarPages = [
     sources: [sources.spineBasics, sources.curvesOfSpine, sources.lordosisReview, sources.neckPainGuideline],
     related: [
       "cervical-kyphosis-vs-loss-lordosis",
+      "normal-cervical-lordosis-vs-straight-neck",
+      "reversal-of-the-cervical-curvature",
       "can-cervical-curve-be-restored",
-      "office-neck-curve-ergonomics",
-      "pillow-height-sleep-position"
+      "office-neck-curve-ergonomics"
     ],
     translations: {
       zh: {
@@ -795,10 +931,10 @@ const pillarPages = [
     slug: "cervical-kyphosis",
     sources: [sources.clevelandKyphosis, sources.kyphosisReview, sources.lordosisReview, sources.neckPainGuideline],
     related: [
-      "cervical-kyphosis-vs-loss-lordosis",
-      "can-cervical-curve-be-restored",
-      "when-to-see-doctor-cervical-kyphosis",
-      "office-neck-curve-ergonomics"
+      "mild-cervical-kyphosis-symptoms",
+      "cervical-kyphosis-neurological-symptoms",
+      "cervical-kyphosis-in-adults",
+      "cervical-kyphosis-exercises-to-avoid"
     ],
     translations: {
       zh: {
@@ -819,9 +955,9 @@ const pillarPages = [
       },
       en: {
         kicker: "Pillar guide",
-        title: "Cervical Kyphosis: Report Meaning, Symptoms, Rehab, and Safety Boundaries",
+        title: "Cervical Kyphosis Symptoms, Report Meaning, Rehab, and Red Flags",
         description:
-          "A conservative, source-backed overview of cervical kyphosis: imaging language, symptom priority, rehab goals, treatment boundaries, and when to seek care.",
+          "A conservative, source-backed overview of cervical kyphosis symptoms, imaging language, neurological red flags, rehab goals, and when to seek care.",
         intro: [
           "Cervical kyphosis sounds alarming, but it is not a complete diagnosis by itself and it does not automatically prove the source of pain. The safer frame is to read the imaging language alongside symptoms, neurological signs, daily load, work exposure, and sport history.",
           "This is the main hub for the site. It does not promise to restore the curve and it does not turn one exercise into a treatment plan. It helps readers understand what the report may mean, which symptoms deserve priority, what conservative care can reasonably track, and when a clinician should be involved."

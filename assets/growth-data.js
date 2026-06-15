@@ -164,6 +164,36 @@ window.CCG_GROWTH = {
         "url": "/zh/articles/c6-c7-numbness-thumb-index-middle-finger/"
       },
       {
+        "tag": "症状专题",
+        "title": "颈椎反弓的神经症状：哪些不能拖？",
+        "body": "颈椎反弓或后凸本身不是神经诊断。更重要的是是否出现手臂放射痛、手麻、无力、手变笨、走路不稳或大小便异常。",
+        "url": "/zh/articles/cervical-kyphosis-neurological-symptoms/"
+      },
+      {
+        "tag": "影像解释",
+        "title": "成年人颈椎反弓：原因、症状和下一步",
+        "body": "成年人报告里出现 cervical kyphosis、反弓或后凸时，不要直接等同于严重疾病。常见背景包括疼痛保护、退变、旧外伤、术后改变、炎症或长期负荷。",
+        "url": "/zh/articles/cervical-kyphosis-in-adults/"
+      },
+      {
+        "tag": "症状专题",
+        "title": "颈椎后凸症状：从颈痛到手麻怎么判断",
+        "body": "Kyphosis cervical spine symptoms 这类搜索通常想知道：颈椎后凸会不会解释颈痛、头痛、手麻或无力。答案需要按症状层级看，而不是只看曲度。",
+        "url": "/zh/articles/kyphosis-cervical-spine-symptoms/"
+      },
+      {
+        "tag": "症状专题",
+        "title": "颈椎反弓和颈痛：怎么判断是不是曲度导致？",
+        "body": "颈痛和 cervical kyphosis 可以同时出现，但同时出现不等于曲度就是唯一原因。更有用的是看疼痛位置、诱因、持续时间、神经症状和 24 小时反应。",
+        "url": "/zh/articles/cervical-kyphosis-neck-pain/"
+      },
+      {
+        "tag": "影像解释",
+        "title": "Reversal of the cervical curvature：报告这样写是什么意思？",
+        "body": "Reversal of the cervical curvature 通常表示正常向前的颈椎曲线在影像上变平或转向反方向。它是影像描述，不是单独的治疗指令。",
+        "url": "/zh/articles/reversal-of-the-cervical-curvature/"
+      },
+      {
         "tag": "症状中心",
         "title": "手麻、手臂痛、头痛头晕和危险信号",
         "body": "从症状进入，而不是从影像恐慌开始。这里整理手指麻木、神经根、脊髓危险信号、晨起手麻和头痛头晕的保守判断路径。",
@@ -221,8 +251,8 @@ window.CCG_GROWTH = {
       },
       {
         "tag": "Pillar guide",
-        "title": "Cervical Kyphosis: Report Meaning, Symptoms, Rehab, and Safety Boundaries",
-        "body": "A conservative, source-backed overview of cervical kyphosis: imaging language, symptom priority, rehab goals, treatment boundaries, and when to seek care.",
+        "title": "Cervical Kyphosis Symptoms, Report Meaning, Rehab, and Red Flags",
+        "body": "A conservative, source-backed overview of cervical kyphosis symptoms, imaging language, neurological red flags, rehab goals, and when to seek care.",
         "url": "/cervical-kyphosis/"
       },
       {
@@ -329,7 +359,7 @@ window.CCG_GROWTH = {
       },
       {
         "tag": "Imaging explainer",
-        "title": "Mild cervical kyphosis symptoms: what to watch",
+        "title": "Mild Cervical Kyphosis Symptoms: What to Watch and When to Worry",
         "body": "A conservative guide to mild cervical kyphosis symptoms, from local neck stiffness to arm pain, finger numbness, weakness, and red flags.",
         "url": "/articles/mild-cervical-kyphosis-symptoms/"
       },
@@ -347,8 +377,8 @@ window.CCG_GROWTH = {
       },
       {
         "tag": "Exercise boundaries",
-        "title": "Cervical kyphosis exercises to avoid: what not to force",
-        "body": "There is no single exercise that every person with cervical kyphosis must avoid forever, but symptom-provoking stretches, traction, and heavy loading should be treated carefully.",
+        "title": "Cervical Kyphosis Exercises to Avoid: What Not to Force",
+        "body": "Cervical kyphosis exercises to avoid or modify: end-range stretching, traction, heavy loading, nerve symptoms, and the 24-hour response.",
         "url": "/articles/cervical-kyphosis-exercises-to-avoid/"
       },
       {
@@ -356,6 +386,36 @@ window.CCG_GROWTH = {
         "title": "C6 C7 numbness in the thumb, index, or middle finger",
         "body": "Thumb, index, and middle-finger numbness may suggest C6 or C7 nerve-root clues, but it can also overlap with carpal tunnel, ulnar nerve, or other peripheral nerve patterns.",
         "url": "/articles/c6-c7-numbness-thumb-index-middle-finger/"
+      },
+      {
+        "tag": "Symptom guide",
+        "title": "Cervical Kyphosis Neurological Symptoms: Red Flags to Know",
+        "body": "Cervical kyphosis neurological symptoms explained: arm pain, numbness, weakness, hand clumsiness, gait changes, and red flags to check.",
+        "url": "/articles/cervical-kyphosis-neurological-symptoms/"
+      },
+      {
+        "tag": "Imaging explainer",
+        "title": "Cervical Kyphosis in Adults: Causes, Symptoms, and Next Steps",
+        "body": "Adult cervical kyphosis causes and symptoms: report wording, neck pain, neurological red flags, conservative care, and when to seek assessment.",
+        "url": "/articles/cervical-kyphosis-in-adults/"
+      },
+      {
+        "tag": "Symptom guide",
+        "title": "Kyphosis Cervical Spine Symptoms: Neck Pain, Numbness, and Red Flags",
+        "body": "Kyphosis cervical spine symptoms explained: neck pain, numbness, weakness, red flags, and when a curve finding needs symptom context.",
+        "url": "/articles/kyphosis-cervical-spine-symptoms/"
+      },
+      {
+        "tag": "Symptom guide",
+        "title": "Cervical Kyphosis Neck Pain: Is the Curve the Cause?",
+        "body": "Cervical kyphosis neck pain guide: curve wording, triggers, 24-hour response, arm symptoms, and red flags.",
+        "url": "/articles/cervical-kyphosis-neck-pain/"
+      },
+      {
+        "tag": "Imaging explainer",
+        "title": "Reversal of the Cervical Curvature: What the Report Means",
+        "body": "Reversal of the cervical curvature explained: what the report phrase means, how it differs from loss of lordosis, and what symptoms matter.",
+        "url": "/articles/reversal-of-the-cervical-curvature/"
       },
       {
         "tag": "Symptom hub",
@@ -552,6 +612,36 @@ window.CCG_GROWTH = {
         "url": "/ja/articles/c6-c7-numbness-thumb-index-middle-finger/"
       },
       {
+        "tag": "症状ガイド",
+        "title": "頸椎後弯の神経症状：注意すべきサイン",
+        "body": "頸椎後弯そのものは神経診断ではありません。腕へ走る痛み、しびれ、筋力低下、手の不器用さ、歩行変化、排尿排便異常があるかが重要です。",
+        "url": "/ja/articles/cervical-kyphosis-neurological-symptoms/"
+      },
+      {
+        "tag": "画像解説",
+        "title": "成人の頸椎後弯：原因、症状、次の一歩",
+        "body": "成人のレポートに頸椎後弯、逆カーブ、後弯曲線と書かれても、すぐ重症と決めるものではありません。痛みの防御、変性、外傷歴、術後変化、炎症、長期負荷などが背景になります。",
+        "url": "/ja/articles/cervical-kyphosis-in-adults/"
+      },
+      {
+        "tag": "症状ガイド",
+        "title": "頸椎後弯の症状：首痛、しびれ、危険サイン",
+        "body": "頸椎後弯の症状を検索する人は、首痛、頭痛、しびれ、筋力低下がカーブ所見で説明できるかを知りたいことが多いです。答えはカーブだけでなく症状レベルで決まります。",
+        "url": "/ja/articles/kyphosis-cervical-spine-symptoms/"
+      },
+      {
+        "tag": "症状ガイド",
+        "title": "頸椎後弯と首痛：カーブが原因？",
+        "body": "首痛と頸椎後弯は同時に見られますが、同時にあるだけでカーブが唯一の原因とは言えません。痛みの場所、誘因、期間、神経症状、24時間反応を見る方が実用的です。",
+        "url": "/ja/articles/cervical-kyphosis-neck-pain/"
+      },
+      {
+        "tag": "画像解説",
+        "title": "Reversal of the cervical curvature：レポートの意味",
+        "body": "Reversal of the cervical curvature は、通常前向きの首カーブが画像上で平らまたは反対方向に見えることを指します。これは説明であり、単独の治療指示ではありません。",
+        "url": "/ja/articles/reversal-of-the-cervical-curvature/"
+      },
+      {
         "tag": "症状ハブ",
         "title": "手のしびれ、腕痛、頭痛、めまい、危険サイン",
         "body": "画像への不安からではなく症状から入ります。指のしびれ、神経根、脊髄サイン、朝のしびれ、頭痛、めまいを整理します。",
@@ -744,6 +834,36 @@ window.CCG_GROWTH = {
         "title": "Entumecimiento C6 C7 en pulgar, índice o dedo medio",
         "body": "Pulgar, índice y dedo medio dormidos pueden sugerir pistas de C6 o C7, pero también se superponen con túnel carpiano, nervio cubital u otros nervios.",
         "url": "/es/articles/c6-c7-numbness-thumb-index-middle-finger/"
+      },
+      {
+        "tag": "Guía de síntomas",
+        "title": "Síntomas neurológicos de cifosis cervical: alarmas",
+        "body": "La cifosis cervical no es por sí sola un diagnóstico neurológico. La prioridad es saber si hay dolor al brazo, entumecimiento, debilidad, torpeza de mano, cambios al caminar o síntomas urinarios/intestinales.",
+        "url": "/es/articles/cervical-kyphosis-neurological-symptoms/"
+      },
+      {
+        "tag": "Explicador de imagen",
+        "title": "Cifosis cervical en adultos: causas, síntomas y próximos pasos",
+        "body": "Cuando un informe adulto menciona cifosis cervical, curva invertida o curva cifótica, no debe asumirse enfermedad grave por defecto. Puede relacionarse con protección por dolor, degeneración, trauma previo, cambio posquirúrgico, inflamación o carga prolongada.",
+        "url": "/es/articles/cervical-kyphosis-in-adults/"
+      },
+      {
+        "tag": "Guía de síntomas",
+        "title": "Síntomas de cifosis en columna cervical: dolor, entumecimiento y alarmas",
+        "body": "Quien busca síntomas de cifosis cervical suele preguntar si una curva explica dolor de cuello, cefalea, entumecimiento o debilidad. La respuesta depende del nivel de síntomas, no solo de la curva.",
+        "url": "/es/articles/kyphosis-cervical-spine-symptoms/"
+      },
+      {
+        "tag": "Guía de síntomas",
+        "title": "Dolor de cuello con cifosis cervical: ¿la curva es la causa?",
+        "body": "Dolor de cuello y cifosis cervical pueden coexistir, pero eso no prueba que la curva sea la única causa. Lo útil es ubicación, desencadenantes, duración, síntomas neurológicos y respuesta de 24 horas.",
+        "url": "/es/articles/cervical-kyphosis-neck-pain/"
+      },
+      {
+        "tag": "Explicador de imagen",
+        "title": "Reversal of the cervical curvature: qué significa el informe",
+        "body": "Reversal of the cervical curvature suele significar que la curva normal hacia delante se ve aplanada o doblada al contrario en la imagen. Es una descripción, no una instrucción de tratamiento por sí sola.",
+        "url": "/es/articles/reversal-of-the-cervical-curvature/"
       },
       {
         "tag": "Hub de síntomas",
