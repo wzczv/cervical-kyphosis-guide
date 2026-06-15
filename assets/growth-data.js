@@ -359,8 +359,8 @@ window.CCG_GROWTH = {
       },
       {
         "tag": "Imaging explainer",
-        "title": "Mild Cervical Kyphosis Symptoms: What to Watch and When to Worry",
-        "body": "A conservative guide to mild cervical kyphosis symptoms, from local neck stiffness to arm pain, finger numbness, weakness, and red flags.",
+        "title": "Mild Cervical Kyphosis Symptoms: Neck Pain, Numbness, and Red Flags",
+        "body": "Mild cervical kyphosis symptoms explained: local neck stiffness, headache, arm pain, finger numbness, weakness, dizziness, and red flags.",
         "url": "/articles/mild-cervical-kyphosis-symptoms/"
       },
       {

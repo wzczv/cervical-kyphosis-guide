@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 const baseUrl = "https://cervicalcurveguide.com";
-const today = "2026-06-13";
+const today = "2026-06-15";
 const cssVersion = "20260613-header-consent";
 const analyticsVersion = "20260613-header-consent3";
 
@@ -65,6 +65,7 @@ const linkLabels = {
     "finger-numbness-nerve-map": "Finger numbness map",
     "headache-dizziness-neck-curve": "Headache and dizziness with neck curve changes",
     "is-loss-of-cervical-lordosis-serious": "Is loss of cervical lordosis serious?",
+    "mild-cervical-kyphosis-symptoms": "Mild cervical kyphosis symptoms",
     "morning-hand-numbness-differential": "Morning hand numbness differential",
     "normal-cervical-lordosis-vs-straight-neck": "Normal cervical lordosis vs straight neck",
     "office-neck-curve-ergonomics": "Office ergonomics for neck curve changes",
@@ -86,6 +87,7 @@ const linkLabels = {
     "finger-numbness-nerve-map": "手指麻木地图",
     "headache-dizziness-neck-curve": "颈曲变化、头痛和头晕",
     "is-loss-of-cervical-lordosis-serious": "颈椎生理曲度变直严重吗？",
+    "mild-cervical-kyphosis-symptoms": "轻度颈椎反弓症状",
     "morning-hand-numbness-differential": "晨起手麻的常见线索",
     "normal-cervical-lordosis-vs-straight-neck": "正常颈曲和直颈的区别",
     "office-neck-curve-ergonomics": "办公室颈椎曲度调整",
@@ -147,25 +149,25 @@ const topics = [
   {
     slug: "cervical-kyphosis-dizziness-when-to-worry",
     category: { en: "Symptom guide", zh: "症状专题" },
-    title: { en: "Cervical Kyphosis and Dizziness: When to Worry", zh: "颈椎反弓和头晕：什么时候需要警惕？" },
+    title: { en: "Cervical Kyphosis and Dizziness: When to Worry, What to Check", zh: "颈椎反弓和头晕：什么时候需要警惕、先查什么？" },
     description: {
-      en: "Dizziness should not be automatically blamed on cervical kyphosis. Learn when neck-related clues are plausible and when symptoms need medical evaluation.",
-      zh: "头晕不能自动归因于颈椎反弓。本文区分可能的颈部相关线索，以及哪些情况应尽快医学评估。"
+      en: "Cervical kyphosis and dizziness can appear together, but a curve report does not prove the cause. Learn red flags, neck-related clues, and what to track.",
+      zh: "颈椎反弓和头晕可以同时出现，但曲度报告不能直接证明原因。先区分危险信号、颈部相关线索和该记录什么。"
     },
     intent: {
-      en: "Neck symptoms and dizziness can coexist, but dizziness has many possible causes that are not explained by a curve report.",
-      zh: "颈部不适和头晕可以同时存在，但头晕有很多原因，不能用一个曲度报告直接解释。"
+      en: "The short answer: do not treat dizziness as proof that cervical kyphosis is the cause. First separate emergency signs, vestibular or medical causes, and neck-sensitive patterns.",
+      zh: "简短答案：不要把头晕当成颈椎反弓导致的证明。先分清紧急信号、前庭或全身原因，以及是否存在颈部敏感模式。"
     },
     nuance: {
-      en: "Urgency rises with new neurological symptoms, trouble walking, severe new headache, fainting, chest symptoms, trauma, fever, or rapidly worsening function.",
-      zh: "如果出现新的神经症状、走路异常、严重新发头痛、晕厥、胸部症状、外伤、发热或功能快速下降，优先级会升高。"
+      en: "Urgency rises with new neurological symptoms, trouble walking, severe new headache, spinning vertigo, fainting, chest symptoms, trauma, fever, or rapidly worsening function.",
+      zh: "如果出现新的神经症状、走路异常、严重新发头痛、旋转性眩晕、晕厥、胸部症状、外伤、发热或功能快速下降，优先级会升高。"
     },
     checks: {
-      en: ["Separate dizziness from neck stiffness in your log.", "Record whether head movement, position, exertion, or illness changes symptoms.", "Do not use neck exercises to self-manage sudden or severe dizziness."],
-      zh: ["记录时把头晕和颈部僵硬分开。", "记录头部动作、体位、运动或疾病状态是否改变症状。", "突发或严重头晕不要靠颈部练习自行处理。"]
+      en: ["Separate dizziness type: lightheaded, spinning, imbalance, or headache-related.", "Record whether head movement, neck position, exertion, illness, sleep, or medication changes symptoms.", "Do not use neck exercises to self-manage sudden, severe, spinning, or neurological dizziness."],
+      zh: ["先分清头晕类型：发飘、旋转、失衡，还是伴随头痛。", "记录头部动作、颈部姿势、运动、疾病、睡眠或用药是否改变症状。", "突发、严重、旋转性或伴神经症状的头晕，不要靠颈部练习自行处理。"]
     },
     sources: ["guideline", "kyphosis", "ncbiRadiculopathy"],
-    links: ["headache-dizziness-neck-curve", "cervical-radiculopathy-myelopathy-red-flags", "when-to-see-doctor-cervical-kyphosis"]
+    links: ["headache-dizziness-neck-curve", "mild-cervical-kyphosis-symptoms", "cervical-radiculopathy-myelopathy-red-flags", "when-to-see-doctor-cervical-kyphosis"]
   },
   {
     slug: "neck-pain-numb-thumb-index-finger",

@@ -479,7 +479,7 @@ const trafficSprintArticles = [
   }),
   topic("mild-cervical-kyphosis-symptoms", "diagnosis", [sources.clevelandKyphosis, sources.kyphosisReview, sources.neckPainGuideline], {
     zh: ["影像解释", "轻度颈椎反弓会有什么症状？", "轻度 cervical kyphosis 报告词不等于症状一定轻，也不等于一定严重。需要把局部颈痛、手臂症状、红旗和 24 小时反应分开看。", "局部僵硬、疲劳、头痛和姿势敏感可以出现；手麻、无力、手变笨、走路问题或外伤后加重会改变处理优先级。", ["轻度影像不自动等于轻度症状。", "手臂和手指症状要单独筛查。", "下一步看进展和功能，而不是只看曲度词。"]],
-    en: ["Imaging explainer", "Mild Cervical Kyphosis Symptoms: What to Watch and When to Worry", "A conservative guide to mild cervical kyphosis symptoms, from local neck stiffness to arm pain, finger numbness, weakness, and red flags.", "Mild wording on a report does not always mean mild symptoms, and serious-sounding wording does not automatically mean an emergency. Symptom behavior decides the next step.", ["Mild imaging does not automatically mean mild symptoms.", "Arm and finger symptoms need their own screen.", "Progression and function matter more than the curve word alone."]],
+    en: ["Imaging explainer", "Mild Cervical Kyphosis Symptoms: Neck Pain, Numbness, and Red Flags", "Mild cervical kyphosis symptoms explained: local neck stiffness, headache, arm pain, finger numbness, weakness, dizziness, and red flags.", "Mild wording on a report does not always mean mild symptoms, and serious-sounding wording does not automatically mean an emergency. The useful next step is sorting local stable symptoms from arm, hand, balance, or progressive neurological signs.", ["Mild imaging does not automatically mean mild symptoms.", "Local stable symptoms and arm or finger symptoms follow different paths.", "Progression, function, and the 24-hour response matter more than the curve word alone."]],
     ja: ["画像解説", "軽度頸椎後弯の症状：何を見る？", "軽度頸椎後弯の症状を、局所のこわばり、腕痛、指のしびれ、筋力低下、危険サインに分けて整理します。", "軽度という報告語は症状も軽いという意味ではありません。逆に強い言葉だけで緊急とは限りません。症状の変化が次の判断を決めます。", ["軽度画像=軽度症状とは限らない。", "腕や指の症状は別に確認する。", "曲度語より進行と機能を見る。"]],
     es: ["Explicador de imagen", "Síntomas de cifosis cervical leve: qué vigilar", "Guía conservadora sobre síntomas de cifosis cervical leve: rigidez local, dolor de brazo, dedos dormidos, debilidad y alarmas.", "La palabra leve en un informe no siempre significa síntomas leves, y una frase seria no siempre significa urgencia. El comportamiento de los síntomas guía el siguiente paso.", ["Imagen leve no siempre significa síntomas leves.", "Síntomas de brazo y dedos necesitan cribado propio.", "Progresión y función importan más que la frase de curva."]]
   }, {
@@ -491,7 +491,8 @@ const trafficSprintArticles = [
     en: [
       ["Local symptoms", ["Local neck stiffness, upper-back fatigue, headache, and position sensitivity can fit many non-emergency neck pain patterns. The useful question is whether symptoms are stable, improving, or accumulating with normal daily load."]],
       ["Arm or finger symptoms", [{ html: `Radiating arm pain, tingling, numbness, weakness, grip change, or finger symptoms should be organized with the <a href="${localizedPath("en", "images/c6-c7-c8-finger-numbness-map")}">C6 C7 C8 finger numbness map</a> and the <a href="${articlePath("en", "cervical-radiculopathy-myelopathy-red-flags")}">red flag guide</a>. The curve may be relevant, but the neurological pattern decides urgency.` }]],
-      ["When to slow down", ["Do not keep adding stretches or traction when symptoms spread, strength drops, gait changes, or sleep is worsening night after night. That is a different decision than managing stable local stiffness."]]
+      ["When to slow down", ["Do not keep adding stretches or traction when symptoms spread, strength drops, gait changes, or sleep is worsening night after night. That is a different decision than managing stable local stiffness."]],
+      ["A practical first-week plan", ["If symptoms are local and stable, keep the week boring on purpose: steady desk breaks, predictable sleep setup, easy walking, gentle range of motion, and no new traction or aggressive stretching. Watch whether the next day is calmer, unchanged, or clearly worse.", { html: `If the next question is exercise choice, use <a href="${articlePath("en", "cervical-kyphosis-exercises-to-avoid")}">cervical kyphosis exercises to avoid</a> and <a href="${articlePath("en", "strength-training-with-cervical-kyphosis")}">strength training with cervical kyphosis</a> before changing several variables at once.` }]]
     ],
     ja: [
       ["局所症状の読み方", ["首のこわばり、上背部の疲れ、頭痛、姿勢で変わる痛みは、緊急ではない首痛パターンにも見られます。大切なのは、症状が安定しているか、改善しているか、日常負荷で蓄積しているかです。"]],
@@ -567,21 +568,25 @@ const trafficSprintArticles = [
     zh: [
       ["不要硬推末端角度", ["强力末端拉伸、反复负重后仰或低头、以及让症状扩散的长时间保持，都不是好的自我测试。温和动作很快稳定下来，和硬扛一个姿势证明自己能忍，是两回事。"]],
       ["牵引和神经张力动作要谨慎", [{ html: `牵引和神经滑动不一定错，但如果麻木、无力、头晕或第二天反应加重，就应该停止尝试。可以配合 <a href="${articlePath("zh", "cervical-traction-contraindications")}">颈椎牵引禁忌指南</a> 和 <a href="${localizedPath("zh", "images/24-hour-neck-symptom-response-chart")}">24 小时反应图</a> 判断。` }]],
+      ["先换成什么", [{ html: `更稳妥的替代方向是短一点的工作间隔、轻松步行、胸椎活动、肩胛力量、温和颈部活动，以及不会把症状推向手臂远端的力量训练。具体动作边界可继续看 <a href="${articlePath("zh", "strength-training-with-cervical-kyphosis")}">颈椎反弓和力量训练</a> 与 <a href="${articlePath("zh", "loss-of-cervical-lordosis-exercises-to-avoid")}">曲度变直练习调整</a>。` }, "每次只改一个变量：时长、强度、幅度、次数或频率。这样第二天反应才读得出来。"]],
       ["相对安全的进阶标准", ["更合适的动作通常会让症状在 24 小时内相同或更平稳，不会让症状往手臂远端扩散，也不会降低力量、平衡或睡眠。"]]
     ],
     en: [
       ["Do not force end-range positions", ["Aggressive end-range stretching, repeated loaded neck extension or flexion, and long holds that create spreading symptoms are poor self-tests. A gentle movement that settles quickly is different from forcing a position to prove toughness."]],
       ["Be careful with traction and nerve tensioning", [{ html: `Traction and nerve glides are not automatically wrong, but worsening numbness, weakness, dizziness, or next-day escalation should stop the experiment. Pair this page with the <a href="${articlePath("en", "cervical-traction-contraindications")}">cervical traction contraindications guide</a> and the <a href="${localizedPath("en", "images/24-hour-neck-symptom-response-chart")}">24-hour response chart</a>.` }]],
+      ["What to do instead", [{ html: `Start with lower-irritability options: shorter desk blocks, easy walking, thoracic extension drills, scapular strength, gentle range of motion, and strength work that keeps symptoms local. The <a href="${articlePath("en", "strength-training-with-cervical-kyphosis")}">strength training guide</a> and <a href="${articlePath("en", "loss-of-cervical-lordosis-exercises-to-avoid")}">loss of lordosis exercise-modification guide</a> give practical substitutions.` }, "Progress only one variable at a time: duration, intensity, range, sets, or frequency. That makes the 24-hour response readable instead of noisy."]],
       ["Green-light criteria", ["Better choices usually leave symptoms the same or calmer within 24 hours, do not spread symptoms farther down the arm, and do not reduce strength, balance, or sleep."]]
     ],
     ja: [
       ["末端姿勢を無理に押さない", ["強い末端ストレッチ、負荷をかけた首の伸展や屈曲、症状が広がる長い保持は自己テストとして不向きです。すぐ落ち着く軽い動きと、無理に耐える姿勢は違います。"]],
       ["牽引と神経テンションに注意", [{ html: `牽引や神経グライドは自動的に悪いわけではありませんが、しびれ、筋力低下、めまい、翌日の悪化があれば中止します。<a href="${articlePath("ja", "cervical-traction-contraindications")}">頸椎牽引の禁忌ガイド</a> と <a href="${localizedPath("ja", "images/24-hour-neck-symptom-response-chart")}">24時間反応チャート</a> を併用します。` }]],
+      ["代わりに何をするか", [{ html: `刺激が少ない選択から始めます。作業時間を短く区切る、軽い歩行、胸椎の動き、肩甲骨の筋力、軽い可動域運動、症状が局所に留まる筋力練習です。具体例は <a href="${articlePath("ja", "strength-training-with-cervical-kyphosis")}">頸椎後弯と筋トレ</a> と <a href="${articlePath("ja", "can-cervical-curve-be-restored")}">頸椎カーブは戻るか</a> を参照します。` }, "時間、強度、範囲、セット数、頻度のうち一つだけを変えると、24時間反応が読みやすくなります。"]],
       ["進めてもよい目安", ["よい選択は、多くの場合24時間以内に症状が同じか落ち着き、腕の遠くへ広がらず、筋力、バランス、睡眠を悪化させません。"]]
     ],
     es: [
       ["No fuerces posiciones finales", ["Estiramientos agresivos al final del rango, extensión o flexión cervical cargada repetida, y mantenimientos largos que extienden síntomas son malos autotests. Un movimiento suave que se calma rápido no es lo mismo que forzar para demostrar tolerancia."]],
       ["Cuidado con tracción y tensión neural", [{ html: `Tracción y deslizamientos neurales no son automáticamente incorrectos, pero empeorar entumecimiento, debilidad, mareo o respuesta al día siguiente debe detener el experimento. Combínalo con la <a href="${articlePath("es", "cervical-traction-contraindications")}">guía de contraindicaciones de tracción cervical</a> y el <a href="${localizedPath("es", "images/24-hour-neck-symptom-response-chart")}">gráfico de respuesta 24 h</a>.` }]],
+      ["Qué hacer en su lugar", [{ html: `Empieza con opciones de baja irritabilidad: bloques de escritorio más cortos, caminar suave, movilidad torácica, fuerza escapular, rango cervical suave y fuerza que mantenga síntomas locales. La <a href="${articlePath("es", "strength-training-with-cervical-kyphosis")}">guía de fuerza</a> y la guía sobre <a href="${articlePath("es", "can-cervical-curve-be-restored")}">si se puede recuperar la curva cervical</a> dan sustituciones prácticas.` }, "Cambia solo una variable cada vez: duración, intensidad, rango, series o frecuencia. Así la respuesta de 24 horas se puede leer con claridad."]],
       ["Criterios de luz verde", ["Las mejores opciones suelen dejar los síntomas igual o más calmados en 24 horas, no los extienden por el brazo y no reducen fuerza, equilibrio ni sueño."]]
     ]
   }),
@@ -1305,6 +1310,7 @@ const categoryFaqs = {
 };
 
 const seoTitleRewrites = {
+  "Mild Cervical Kyphosis Symptoms: Neck Pain, Numbness, and Red Flags": "Mild Cervical Kyphosis Symptoms",
   "Cervical Kyphosis vs Loss of Cervical Lordosis: What the Report Means": "Cervical Kyphosis vs Loss of Lordosis",
   "Can You Surf, Ski, Snowboard, or Climb with Cervical Kyphosis?": "Sports with Cervical Kyphosis: Surf, Snow, Climb",
   "Can Cervical Curve Be Restored? What Conservative Rehab Should Track": "Can Cervical Curve Be Restored?",
