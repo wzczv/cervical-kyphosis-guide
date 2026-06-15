@@ -1,6 +1,6 @@
 # Cervical Curve Guide SEO Monitoring
 
-Last updated: 2026-06-12
+Last updated: 2026-06-15
 
 ## Current Verified Setup
 
@@ -8,9 +8,9 @@ Last updated: 2026-06-12
 | --- | --- | --- |
 | HTTPS | Done | `https://cervicalcurveguide.com/` returns 200; `http://` redirects to HTTPS |
 | Google Search Console | Done | Property: `https://cervicalcurveguide.com/` |
-| Google sitemap | Done | GSC Sitemaps: `/sitemap.xml`, status `Success`; discovered URLs updated to 180 on 2026-06-12 |
-| Bing Webmaster Tools | Done | Site: `cervicalcurveguide.com`; sitemap status `Success`, 120 discovered URLs on 2026-06-12; still lagging current 180-URL sitemap |
-| IndexNow | Done | Key file: `/16d893c718cadee9837fbde922d08c8f.txt`; Bing IndexNow UI shows 180 self-submitted URLs at 2026-06-12 12:06 |
+| Google sitemap | Done | GSC Sitemaps: `/sitemap.xml`, resubmitted on 2026-06-15 after live sitemap expanded to 220 URLs; GSC row may lag before it rereads |
+| Bing Webmaster Tools | Done | Site: `cervicalcurveguide.com`; sitemap status previously `Success`; IndexNow was refreshed with 220 URLs on 2026-06-15 |
+| IndexNow | Done | Key file: `/16d893c718cadee9837fbde922d08c8f.txt`; IndexNow API and Bing IndexNow both returned `200 OK` for 220 URLs on 2026-06-15 |
 | GA4 | Done | Property: `Cervical Curve Guide`; measurement ID `G-L8TWWKFELJ` |
 
 ## Daily Search Console Check
@@ -20,6 +20,7 @@ Last updated: 2026-06-12
 | 2026-06-09 | Success | 36 visible in GSC after resubmitting expanded 120-URL sitemap; processing may lag | Homepage URL Inspection says indexed; priority article pages requested and pending | Page indexing report still processing; new URLs may need crawl/index time | Homepage plus 5 priority article URLs checked/requested | Public Google `site:` visibility may lag behind URL Inspection; Bing sitemap resubmitted and processing 36 at latest check |
 | 2026-06-10 | Success | 152 visible in GSC sitemap report | Homepage and 5 priority article URL Inspection checks show indexed/on Google | Page indexing overview still says processing data; full coverage totals may lag | Homepage plus 5 priority article URLs checked | Public Google `site:cervicalcurveguide.com` shows homepage and multiple hub/language pages; Bing sitemap is Success but still shows 120 discovered URLs |
 | 2026-06-12 | Success | 180 visible in GSC sitemap report | Homepage and 5 priority article URL Inspection checks show indexed/on Google | No issue observed in sampled URLs; broad coverage totals can still lag after content expansion | Homepage plus 5 priority article URLs checked | Public Google `site:cervicalcurveguide.com` shows homepage plus diagnosis, symptoms, sports, exercises, multilingual pages; Bing sitemap remains Success/120, but IndexNow lists 180 submitted URLs |
+| 2026-06-15 | Success before resubmit; resubmitted after deploy | 200 visible in GSC before resubmit; live sitemap now 220 | 8 priority URLs requested through URL Inspection | Indexed 48 / not indexed 136 in Page Indexing overview; new sprint pages initially showed unknown or discovered states | 5 new pages + 2 refreshed article pages + main cervical kyphosis pillar requested | 5 four-language GSC response pages published; Search Console requests accepted; revisit in 24-72 hours |
 
 ## Key Queries To Track Weekly
 
@@ -53,6 +54,14 @@ Last updated: 2026-06-12
 | 2026-06-09 | `https://cervicalcurveguide.com/articles/can-cervical-curve-be-restored/` | Request indexing accepted | Recheck in 24-72 hours |
 | 2026-06-09 | `https://cervicalcurveguide.com/articles/traction-pillow-manipulation-risk-guide/` | Request indexing accepted | Recheck in 24-72 hours |
 | 2026-06-09 | `https://cervicalcurveguide.com/en/articles/cervical-kyphosis-vs-loss-lordosis/` | Request indexing accepted | Recheck in 24-72 hours |
+| 2026-06-15 | `https://cervicalcurveguide.com/articles/cervical-kyphosis-neurological-symptoms/` | Request indexing accepted; added to priority crawl queue | Recheck in 24-72 hours |
+| 2026-06-15 | `https://cervicalcurveguide.com/articles/cervical-kyphosis-in-adults/` | Request indexing accepted; added to priority crawl queue | Recheck in 24-72 hours |
+| 2026-06-15 | `https://cervicalcurveguide.com/articles/kyphosis-cervical-spine-symptoms/` | Request indexing accepted; added to priority crawl queue | Recheck in 24-72 hours |
+| 2026-06-15 | `https://cervicalcurveguide.com/articles/cervical-kyphosis-neck-pain/` | Request indexing accepted; added to priority crawl queue | Recheck in 24-72 hours |
+| 2026-06-15 | `https://cervicalcurveguide.com/articles/reversal-of-the-cervical-curvature/` | Request indexing accepted; added to priority crawl queue | Recheck in 24-72 hours |
+| 2026-06-15 | `https://cervicalcurveguide.com/articles/mild-cervical-kyphosis-symptoms/` | Request indexing accepted after title/meta refresh | Recheck in 24-72 hours |
+| 2026-06-15 | `https://cervicalcurveguide.com/articles/cervical-kyphosis-exercises-to-avoid/` | Request indexing accepted after title/meta refresh | Recheck in 24-72 hours |
+| 2026-06-15 | `https://cervicalcurveguide.com/cervical-kyphosis/` | Request indexing accepted after title/meta and internal-link refresh | Recheck in 24-72 hours |
 
 ## Sitemap and IndexNow Submission Log
 
@@ -71,6 +80,8 @@ Last updated: 2026-06-12
 | 2026-06-12 | Google Search Console | `https://cervicalcurveguide.com/sitemap.xml` | Success; discovered URLs updated to 180; last read 2026-06-12 | Continue normal weekly monitoring |
 | 2026-06-12 | Bing Webmaster Tools | `https://cervicalcurveguide.com/sitemap.xml` | Success; 120 URLs discovered; last submit/crawl still shown as 2026-06-09 | Bing sitemap discovery is lagging current 180-URL sitemap |
 | 2026-06-12 | Bing IndexNow | 180 URLs visible in IndexNow list | UI shows self-submitted URLs today at 12:06 and 360 submitted in the last 13 hours | Let Bing sitemap discovery catch up; IndexNow submission itself is visible |
+| 2026-06-15 | IndexNow API | 220 live sitemap URLs | `https://api.indexnow.org/IndexNow`: `200 OK`; `https://www.bing.com/indexnow`: `200 OK` | Recheck Bing discovery and referral signals later |
+| 2026-06-15 | Google Search Console | `https://cervicalcurveguide.com/sitemap.xml` | Resubmission accepted; dialog showed `Sitemap submitted successfully` | Recheck GSC discovered URLs after processing catches up from 200 to 220 |
 
 ## Weekly Quality Checks
 
