@@ -82,6 +82,7 @@ Last updated: 2026-06-15
 | 2026-06-12 | Bing IndexNow | 180 URLs visible in IndexNow list | UI shows self-submitted URLs today at 12:06 and 360 submitted in the last 13 hours | Let Bing sitemap discovery catch up; IndexNow submission itself is visible |
 | 2026-06-15 | IndexNow API | 220 live sitemap URLs | `https://api.indexnow.org/IndexNow`: `200 OK`; `https://www.bing.com/indexnow`: `200 OK` | Recheck Bing discovery and referral signals later |
 | 2026-06-15 | Google Search Console | `https://cervicalcurveguide.com/sitemap.xml` | Resubmission accepted; dialog showed `Sitemap submitted successfully` | Recheck GSC discovered URLs after processing catches up from 200 to 220 |
+| 2026-06-23 | IndexNow API | 220 live sitemap URLs after high-CTR snippet refresh | `https://api.indexnow.org/IndexNow`: `200 OK`; `https://www.bing.com/indexnow`: `200 OK` | Recheck Bing discovery and referral signals later |
 
 ## Weekly Quality Checks
 
