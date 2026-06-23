@@ -6,11 +6,11 @@ Timezone: Asia/Shanghai
 ## Current Baseline
 
 - Domain: `cervicalcurveguide.com`
-- Live sitemap: `200` page URLs after the 2026-06-13 bilingual long-tail sprint.
+- Live sitemap: `220` page URLs after the 2026-06-15 GSC response sprint.
 - GA4 property: `Cervical Curve Guide`
-- GA4 latest check on 2026-06-14: last 7 days active users `4`, events `94`, new users `4`; realtime active users `0`.
-- GSC latest check on 2026-06-15: `3` clicks, `138` impressions, `2.2%` CTR, average position `41.5` for the available 28-day window.
-- GSC indexing latest check on 2026-06-15: indexed `48`, not indexed `136`; sitemap `/sitemap.xml` was resubmitted after the live sitemap expanded to `220` URLs.
+- GA4 latest check on 2026-06-23: last 7 days active users `1`, events `3`, sessions `1`; realtime self-test passed after delay.
+- GSC latest check on 2026-06-23: `6` clicks, `667` impressions, `0.9%` CTR, average position `51` for the available 28-day window.
+- GSC indexing latest check on 2026-06-23: indexed `48`, not indexed `136`; sitemap `/sitemap.xml` was last read successfully on 2026-06-23 with `220` discovered URLs.
 
 ## Main Goal
 
@@ -193,6 +193,7 @@ Every week:
 | 2026-06-12 | 2 | 22 | 59 | Processing; counts unavailable | 180 after local build | 4 | Realtime active users 0 | GSC Performance is now live: 2 clicks, 22 impressions, 9.1% CTR, average position 59, and 14 query rows. Early query impressions include `cervical kyphosis symptoms`, `normal cervical curvature`, `cervical lordosis 中文`, and `loss of normal cervical lordosis`. GA4 remains at 4 active users, 73 events, Direct 8 sessions, and Organic Search 7 sessions over the last 7 days. | Early-query optimization executed on canonical English URLs and second long-tail sprint generated 6 new article topics across 4 languages: loss of lordosis serious, mild kyphosis symptoms, hand numbness, normal lordosis vs straight neck, exercises to avoid, and C6/C7 finger numbness. Next: deploy, submit the 6 new English URLs in GSC, then publish only high-fit external seed answers/pins. |
 | 2026-06-14 | 3 | 80 | 29.7 | 7 indexed; 15 not indexed, main reason `Crawled - currently not indexed` | 200 | 4 | Realtime active users 0 | GSC impressions are rising and the site has first clicks. Top visible pages still include old `/en/*` URLs, but the canonical English URLs are also receiving impressions. GA4 shows Organic Search 10 sessions and Direct 9 sessions over the last 7 days; realtime self-test still did not show an active user. | Improve titles/meta for high-impression low-click canonical pages, keep sitemap at 200 URLs, submit changed canonical URLs for indexing, and fix real 301 redirects for old `/en/*` at hosting/CDN level. |
 | 2026-06-15 | 3 | 138 | 41.5 | 48 indexed; 136 not indexed, main reasons include `Discovered - currently not indexed` and `Crawled - currently not indexed` | 220 live sitemap; GSC row still showed 200 before resubmission | Not checked | Not checked | Published 5 four-language GSC response pages, refreshed high-impression title/meta targets, removed old noindex redirect risk in the prior commit, submitted 220 URLs to IndexNow/Bing, requested indexing for 8 priority URLs in GSC, and resubmitted `/sitemap.xml`. | Recheck GSC sitemap and Page Indexing in 24-72 hours; execute only high-fit Reddit/Quora/Pinterest distribution from the execution package. |
+| 2026-06-23 | 6 | 667 | 51 | 48 indexed; 136 not indexed, index report still dated 2026-06-12 | 220 | 1 | Passed after delay: realtime showed 1 active user and page_view/session_start/user_engagement | GSC exposure grew but CTR fell to 0.9%. Top high-impression 0-click pages: `/articles/mild-cervical-kyphosis-symptoms/` 183 impressions, `/cervical-kyphosis/` 82, `/articles/reversal-of-cervical-lordosis-meaning/` 77, `/articles/kyphosis-cervical-spine-symptoms/` 51. GA4 remains a low-volume consented-session view: 1 user, 3 events, 1 Organic Search session in 7 days. | Execute high-impression low-CTR title/meta sprint on the four exposed pages; do not create new pages until existing exposed pages earn better CTR. |
 
 ## What Not To Do Yet
 
