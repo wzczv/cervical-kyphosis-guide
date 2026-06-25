@@ -5,6 +5,7 @@ import { dirname, join } from "node:path";
 const baseUrl = "https://cervicalcurveguide.com";
 const version = "20260615-traffic-sprint";
 const reviewDate = "2026-06-15";
+const reviewDateTime = `${reviewDate}T00:00:00+00:00`;
 const sitemapLastmod = "2026-06-15";
 const generatedHtmlFiles = new Set();
 const skippedExistingHtmlFiles = new Set();
@@ -2175,9 +2176,8 @@ function renderVideosPage(lang) {
     name: title,
     description: `${source}: ${tag}. ${meta[2]}`,
     thumbnailUrl: [`https://i.ytimg.com/vi/${id}/hqdefault.jpg`],
-    uploadDate: reviewDate,
+    uploadDate: reviewDateTime,
     embedUrl: `https://www.youtube-nocookie.com/embed/${id}`,
-    contentUrl: `https://www.youtube.com/watch?v=${id}`,
     publisher: { "@id": `${baseUrl}/#organization` },
     isPartOf: { "@id": `${localizedUrl(lang, "videos")}#medical-page` }
   }));
