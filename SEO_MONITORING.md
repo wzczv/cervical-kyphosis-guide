@@ -83,6 +83,7 @@ Last updated: 2026-06-15
 | 2026-06-15 | IndexNow API | 220 live sitemap URLs | `https://api.indexnow.org/IndexNow`: `200 OK`; `https://www.bing.com/indexnow`: `200 OK` | Recheck Bing discovery and referral signals later |
 | 2026-06-15 | Google Search Console | `https://cervicalcurveguide.com/sitemap.xml` | Resubmission accepted; dialog showed `Sitemap submitted successfully` | Recheck GSC discovered URLs after processing catches up from 200 to 220 |
 | 2026-06-23 | IndexNow API | 220 live sitemap URLs after high-CTR snippet refresh | `https://api.indexnow.org/IndexNow`: `200 OK`; `https://www.bing.com/indexnow`: `200 OK` | Recheck Bing discovery and referral signals later |
+| 2026-06-30 | IndexNow API | 50 changed URLs: 48 legacy `/en/` redirect shells plus 2 high-exposure canonical pages | `https://api.indexnow.org/IndexNow`: `200 OK`; `https://www.bing.com/indexnow`: `200 OK` | Watch whether old `/en/` impressions decay and canonical page CTR improves |
 
 ## Weekly Quality Checks
 
