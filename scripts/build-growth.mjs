@@ -2630,6 +2630,12 @@ function renderVisualPage(visual, lang) {
         url: imageUrl,
         inLanguage: l.htmlLang,
         creditText: "Cervical Curve Guide",
+        creator: {
+          "@type": "Organization",
+          name: "Cervical Curve Guide",
+          url: `${baseUrl}/`
+        },
+        copyrightNotice: "Copyright 2026 Cervical Curve Guide",
         license: `${baseUrl}/terms.html`,
         acquireLicensePage: `${baseUrl}/contact.html`,
         isPartOf: { "@id": `${url}#medical-page` }
