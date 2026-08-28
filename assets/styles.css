@@ -1802,6 +1802,8 @@ td:first-child {
   .legal-article h1,
   .article-page h1 {
     font-size: 2.1rem;
+    max-width: 100%;
+    width: 100%;
   }
 
   .research-intro h3,
